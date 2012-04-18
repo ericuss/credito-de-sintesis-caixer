@@ -7,10 +7,7 @@ namespace TestClasses.Class
 {
     public class Barco : Vehiculo
     {
-        private Double _eslora;
-        private Double _calado;
-        private Double _manga;
-
+    
         public Barco()
         {
             this.Matricula = "Undefined";
@@ -28,23 +25,11 @@ namespace TestClasses.Class
         }
 
 
-        public Double Eslora
-        {
-            get { return _eslora; }
-            set { _eslora = value; }
-        }
+        public Double Eslora { get; set; }
 
-        public Double Manga
-        {
-            get { return _manga; }
-            set { _manga = value; }
-        }
+        public Double Manga { get; set; }
 
-        public Double Calado
-        {
-            get { return _calado; }
-            set { _calado = value; }
-        }
+        public Double Calado { get; set; }
 
         public override string ToString()
         {
