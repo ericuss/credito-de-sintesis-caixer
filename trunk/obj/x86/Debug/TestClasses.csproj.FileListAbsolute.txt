@@ -24,3 +24,5 @@ C:\Documents and Settings\Administrador\Escritorio\TestClasses\TestClasses\obj\x
 C:\Documents and Settings\Administrador\Escritorio\TestClasses\TestClasses\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Documents and Settings\Administrador\Escritorio\TestClasses\TestClasses\obj\x86\Debug\TestClasses.exe
 C:\Documents and Settings\Administrador\Escritorio\TestClasses\TestClasses\obj\x86\Debug\TestClasses.pdb
+C:\Users\Rom\Desktop\TESTSVN\obj\x86\Debug\TestClasses.exe
+C:\Users\Rom\Desktop\TESTSVN\obj\x86\Debug\TestClasses.pdb
