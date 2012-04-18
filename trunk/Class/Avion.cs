@@ -7,10 +7,7 @@ namespace TestClasses.Class
 {
     public class Avion:Vehiculo
     {
-        private int _motores;
-        private double _velocidad;
-        private String _compania;
-
+        
         public Avion()
         {
             this.Matricula = "Undefined";
@@ -29,18 +26,10 @@ namespace TestClasses.Class
 
 
         public String Compania{get;set;}
-        public int Motores
-        {
-            get { return _motores; }
-            set { _motores = value; }
-        }
+        public int Motores { get; set; }
 
 
-        public double Velocidad
-        {
-            get { return _velocidad; }
-            set { _velocidad = value; }
-        }
+        public double Velocidad { get; set; }
 
         public override string ToString()
         {
