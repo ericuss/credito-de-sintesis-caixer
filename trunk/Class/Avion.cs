@@ -28,12 +28,7 @@ namespace TestClasses.Class
         }
 
 
-        public String Compania
-        {
-            get { return _compania; }
-            set { _compania = value; }
-
-        }
+        public String Compania{get;set;}
         public int Motores
         {
             get { return _motores; }
