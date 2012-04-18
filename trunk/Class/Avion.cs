@@ -20,7 +20,7 @@ namespace TestClasses.Class
         {
             this.Matricula = Matricula;
             this.Compania = comania;
-            this.Motores = _motores;
+            this.Motores = Motores;
             this.Velocidad = Velocidad;
         }
 
