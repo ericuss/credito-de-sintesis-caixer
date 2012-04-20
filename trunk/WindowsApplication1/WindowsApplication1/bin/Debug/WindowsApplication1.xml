@@ -1,0 +1,763 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WindowsApplication1
+</name>
+</assembly>
+<members>
+<member name="M:WindowsApplication1.dellEntities.#ctor">
+	<summary>
+ Initializes a new dellEntities object using the connection string found in the 'dellEntities' section of the application configuration file.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.#ctor(System.String)">
+	<summary>
+ Initialize a new dellEntities object.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+	<summary>
+ Initialize a new dellEntities object.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.categorias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.CPU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.financiacion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.sysdiagrams">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.dellEntities.TiposComponentes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddTocategorias(WindowsApplication1.categorias)">
+	<summary>
+ Deprecated Method for adding a new object to the categorias EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToCPU(WindowsApplication1.CPU)">
+	<summary>
+ Deprecated Method for adding a new object to the CPU EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddTofabricante(WindowsApplication1.fabricante)">
+	<summary>
+ Deprecated Method for adding a new object to the fabricante EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddTofinanciacion(WindowsApplication1.financiacion)">
+	<summary>
+ Deprecated Method for adding a new object to the financiacion EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToGRAFICA(WindowsApplication1.GRAFICA)">
+	<summary>
+ Deprecated Method for adding a new object to the GRAFICA EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToHDD(WindowsApplication1.HDD)">
+	<summary>
+ Deprecated Method for adding a new object to the HDD EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToiva(WindowsApplication1.iva)">
+	<summary>
+ Deprecated Method for adding a new object to the iva EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToportatiles(WindowsApplication1.portatiles)">
+	<summary>
+ Deprecated Method for adding a new object to the portatiles EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToRAMM(WindowsApplication1.RAMM)">
+	<summary>
+ Deprecated Method for adding a new object to the RAMM EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddTosysdiagrams(WindowsApplication1.sysdiagrams)">
+	<summary>
+ Deprecated Method for adding a new object to the sysdiagrams EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddTotipo(WindowsApplication1.tipo)">
+	<summary>
+ Deprecated Method for adding a new object to the tipo EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="M:WindowsApplication1.dellEntities.AddToTiposComponentes(WindowsApplication1.TiposComponentes)">
+	<summary>
+ Deprecated Method for adding a new object to the TiposComponentes EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
+ </summary>
+</member><member name="T:WindowsApplication1.dellEntities">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.categorias.Createcategorias(System.Int32)">
+	<summary>
+ Create a new categorias object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.categorias.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.categorias.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.categorias.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.categorias.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.categorias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.CPU.CreateCPU(System.Int32)">
+	<summary>
+ Create a new CPU object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.CPU.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.idFabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.numNucleos">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.mhz">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.rpm">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.precio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.idIva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.fabricanteReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.ivaReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.CPU.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.CPU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.fabricante.Createfabricante(System.Int32)">
+	<summary>
+ Create a new fabricante object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.fabricante.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.direccion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.telefono">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.fax">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.CPU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.fabricante.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.financiacion.Createfinanciacion(System.Int32)">
+	<summary>
+ Create a new financiacion object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.financiacion.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.financiacion.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.financiacion.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.financiacion.condiciones">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.financiacion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.GRAFICA.CreateGRAFICA(System.Int32)">
+	<summary>
+ Create a new GRAFICA object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.GRAFICA.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.idFabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.precio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.memoria">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.idTipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.idIva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.fabricanteReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.ivaReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.tipoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.GRAFICA.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.HDD.CreateHDD(System.Int32)">
+	<summary>
+ Create a new HDD object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.HDD.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.precio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.idtipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.idiva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.rpm">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.pulgadas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.idFabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.fabricanteReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.ivaReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.tipoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.HDD.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.iva.Createiva(System.Int32)">
+	<summary>
+ Create a new iva object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.iva.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.porcentaje">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.CPU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.iva.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.portatiles.Createportatiles(System.Int32,System.Boolean)">
+	<summary>
+ Create a new portatiles object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+	<param name="cancelado">Initial value of the cancelado property.</param>
+</member><member name="P:WindowsApplication1.portatiles.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idCategoria">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idHdd">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idRamm">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idCpu">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idGrafica">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.subtotal">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.idIva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.numEstrellas">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.codigoEValue">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.cancelado">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.categorias">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.categoriasReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.CPU">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.CPUReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.GRAFICAReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.HDDReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.ivaReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.portatiles.RAMMReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.RAMM.CreateRAMM(System.Int32)">
+	<summary>
+ Create a new RAMM object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.RAMM.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.precio">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.idtipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.idtiva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.ddr">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.velocidad">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.idFabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.fabricante">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.fabricanteReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.iva">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.ivaReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.portatiles">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.RAMM.tipoReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.sysdiagrams.Createsysdiagrams(System.String,System.Int32,System.Int32)">
+	<summary>
+ Create a new sysdiagrams object.
+ </summary>
+	<param name="name">Initial value of the name property.</param>
+	<param name="principal_id">Initial value of the principal_id property.</param>
+	<param name="diagram_id">Initial value of the diagram_id property.</param>
+</member><member name="P:WindowsApplication1.sysdiagrams.name">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.sysdiagrams.principal_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.sysdiagrams.diagram_id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.sysdiagrams.version">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.sysdiagrams.definition">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.sysdiagrams">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.tipo.Createtipo(System.Int32)">
+	<summary>
+ Create a new tipo object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.tipo.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.idTipoComponente">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.GRAFICA">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.HDD">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.RAMM">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.TiposComponentes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.tipo.TiposComponentesReference">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:WindowsApplication1.TiposComponentes.CreateTiposComponentes(System.Int32)">
+	<summary>
+ Create a new TiposComponentes object.
+ </summary>
+	<param name="id">Initial value of the id property.</param>
+</member><member name="P:WindowsApplication1.TiposComponentes.id">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.TiposComponentes.nombre">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.TiposComponentes.descripcion">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.TiposComponentes.tipo">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="T:WindowsApplication1.TiposComponentes">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

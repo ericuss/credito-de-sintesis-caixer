@@ -1,0 +1,5 @@
+D:\S2J\Sintesi\Proyecto\dll\tools.dll
+D:\S2J\Sintesi\Proyecto\dll\tools.pdb
+D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\tools.dll
+D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\tools.pdb

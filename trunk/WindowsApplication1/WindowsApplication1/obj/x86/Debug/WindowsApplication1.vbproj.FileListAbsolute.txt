@@ -1,0 +1,12 @@
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.exe
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.pdb
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\bin\Debug\WindowsApplication1.xml
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.Form1.resources
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.Resources.resources
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.exe
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.xml
+D:\S2J\Sintesi\Proyecto\WindowsApplication1\WindowsApplication1\obj\x86\Debug\WindowsApplication1.pdb

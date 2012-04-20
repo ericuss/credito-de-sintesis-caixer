@@ -1,0 +1,1182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dellModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dellModelStoreContainer">
+          <EntitySet Name="categorias" EntityType="dellModel.Store.categorias" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CPU" EntityType="dellModel.Store.CPU" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="fabricante" EntityType="dellModel.Store.fabricante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="financiacion" EntityType="dellModel.Store.financiacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GRAFICA" EntityType="dellModel.Store.GRAFICA" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="HDD" EntityType="dellModel.Store.HDD" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="iva" EntityType="dellModel.Store.iva" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="portatiles" EntityType="dellModel.Store.portatiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RAMM" EntityType="dellModel.Store.RAMM" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="dellModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tipo" EntityType="dellModel.Store.tipo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposComponentes" EntityType="dellModel.Store.TiposComponentes" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CPU_fabricante" Association="dellModel.Store.FK_CPU_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_iva" Association="dellModel.Store.FK_CPU_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_fabricante" Association="dellModel.Store.FK_GRAFICA_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_iva" Association="dellModel.Store.FK_GRAFICA_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_tipo" Association="dellModel.Store.FK_GRAFICA_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_fabricante" Association="dellModel.Store.FK_HDD_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_iva" Association="dellModel.Store.FK_HDD_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_tipo" Association="dellModel.Store.FK_HDD_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_categorias" Association="dellModel.Store.FK_portatiles_categorias">
+            <End Role="categorias" EntitySet="categorias" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_CPU" Association="dellModel.Store.FK_portatiles_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_GRAFICA" Association="dellModel.Store.FK_portatiles_GRAFICA">
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_HDD" Association="dellModel.Store.FK_portatiles_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_iva" Association="dellModel.Store.FK_portatiles_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_RAMM" Association="dellModel.Store.FK_portatiles_RAMM">
+            <End Role="RAMM" EntitySet="RAMM" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_fabricante" Association="dellModel.Store.FK_RAMM_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_iva" Association="dellModel.Store.FK_RAMM_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_tipo" Association="dellModel.Store.FK_RAMM_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_TiposComponentes" Association="dellModel.Store.FK_tipo_TiposComponentes">
+            <End Role="TiposComponentes" EntitySet="TiposComponentes" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="categorias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idFabricante" Type="int" />
+          <Property Name="numNucleos" Type="int" />
+          <Property Name="mhz" Type="int" />
+          <Property Name="rpm" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="precio" Type="decimal" Scale="2" />
+          <Property Name="idIva" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="fabricante">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="direccion" Type="varchar" MaxLength="150" />
+          <Property Name="telefono" Type="varchar" MaxLength="25" />
+          <Property Name="fax" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="financiacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="condiciones" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="GRAFICA">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idFabricante" Type="int" />
+          <Property Name="precio" Type="decimal" Scale="2" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="memoria" Type="varchar" MaxLength="25" />
+          <Property Name="idTipo" Type="int" />
+          <Property Name="idIva" Type="int" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="precio" Type="numeric" Scale="2" />
+          <Property Name="idtipo" Type="int" />
+          <Property Name="idiva" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="rpm" Type="int" />
+          <Property Name="pulgadas" Type="int" />
+          <Property Name="idFabricante" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="iva">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="porcentaje" Type="decimal" Scale="2" />
+        </EntityType>
+        <EntityType Name="portatiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" />
+          <Property Name="idCategoria" Type="int" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="idHdd" Type="int" />
+          <Property Name="idRamm" Type="int" />
+          <Property Name="idCpu" Type="int" />
+          <Property Name="idGrafica" Type="int" />
+          <Property Name="subtotal" Type="decimal" Scale="2" />
+          <Property Name="idIva" Type="int" />
+          <Property Name="numEstrellas" Type="int" />
+          <Property Name="codigoEValue" Type="varchar" MaxLength="25" />
+          <Property Name="cancelado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAMM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="precio" Type="int" />
+          <Property Name="idtipo" Type="int" />
+          <Property Name="idtiva" Type="int" />
+          <Property Name="ddr" Type="int" />
+          <Property Name="velocidad" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="255" />
+          <Property Name="idFabricante" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+          <Property Name="idTipoComponente" Type="int" />
+        </EntityType>
+        <EntityType Name="TiposComponentes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="descripcion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_CPU_fabricante">
+          <End Role="fabricante" Type="dellModel.Store.fabricante" Multiplicity="0..1" />
+          <End Role="CPU" Type="dellModel.Store.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_iva">
+          <End Role="iva" Type="dellModel.Store.iva" Multiplicity="0..1" />
+          <End Role="CPU" Type="dellModel.Store.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_fabricante">
+          <End Role="fabricante" Type="dellModel.Store.fabricante" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.Store.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_iva">
+          <End Role="iva" Type="dellModel.Store.iva" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.Store.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_tipo">
+          <End Role="tipo" Type="dellModel.Store.tipo" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.Store.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_fabricante">
+          <End Role="fabricante" Type="dellModel.Store.fabricante" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.Store.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_iva">
+          <End Role="iva" Type="dellModel.Store.iva" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.Store.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_tipo">
+          <End Role="tipo" Type="dellModel.Store.tipo" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.Store.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_categorias">
+          <End Role="categorias" Type="dellModel.Store.categorias" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categorias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_CPU">
+          <End Role="CPU" Type="dellModel.Store.CPU" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idCpu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_GRAFICA">
+          <End Role="GRAFICA" Type="dellModel.Store.GRAFICA" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRAFICA">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idGrafica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_HDD">
+          <End Role="HDD" Type="dellModel.Store.HDD" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idHdd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_iva">
+          <End Role="iva" Type="dellModel.Store.iva" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_RAMM">
+          <End Role="RAMM" Type="dellModel.Store.RAMM" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.Store.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAMM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idRamm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_fabricante">
+          <End Role="fabricante" Type="dellModel.Store.fabricante" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.Store.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_iva">
+          <End Role="iva" Type="dellModel.Store.iva" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.Store.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idtiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_tipo">
+          <End Role="tipo" Type="dellModel.Store.tipo" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.Store.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_TiposComponentes">
+          <End Role="TiposComponentes" Type="dellModel.Store.TiposComponentes" Multiplicity="0..1" />
+          <End Role="tipo" Type="dellModel.Store.tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposComponentes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="idTipoComponente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dellModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dellEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categorias" EntityType="dellModel.categorias" />
+          <EntitySet Name="CPU" EntityType="dellModel.CPU" />
+          <EntitySet Name="fabricante" EntityType="dellModel.fabricante" />
+          <EntitySet Name="financiacion" EntityType="dellModel.financiacion" />
+          <EntitySet Name="GRAFICA" EntityType="dellModel.GRAFICA" />
+          <EntitySet Name="HDD" EntityType="dellModel.HDD" />
+          <EntitySet Name="iva" EntityType="dellModel.iva" />
+          <EntitySet Name="portatiles" EntityType="dellModel.portatiles" />
+          <EntitySet Name="RAMM" EntityType="dellModel.RAMM" />
+          <EntitySet Name="sysdiagrams" EntityType="dellModel.sysdiagrams" />
+          <EntitySet Name="tipo" EntityType="dellModel.tipo" />
+          <EntitySet Name="TiposComponentes" EntityType="dellModel.TiposComponentes" />
+          <AssociationSet Name="FK_portatiles_categorias" Association="dellModel.FK_portatiles_categorias">
+            <End Role="categorias" EntitySet="categorias" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_fabricante" Association="dellModel.FK_CPU_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CPU_iva" Association="dellModel.FK_CPU_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="CPU" EntitySet="CPU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_CPU" Association="dellModel.FK_portatiles_CPU">
+            <End Role="CPU" EntitySet="CPU" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_fabricante" Association="dellModel.FK_GRAFICA_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_fabricante" Association="dellModel.FK_HDD_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_fabricante" Association="dellModel.FK_RAMM_fabricante">
+            <End Role="fabricante" EntitySet="fabricante" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_iva" Association="dellModel.FK_GRAFICA_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GRAFICA_tipo" Association="dellModel.FK_GRAFICA_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_GRAFICA" Association="dellModel.FK_portatiles_GRAFICA">
+            <End Role="GRAFICA" EntitySet="GRAFICA" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_iva" Association="dellModel.FK_HDD_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HDD_tipo" Association="dellModel.FK_HDD_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="HDD" EntitySet="HDD" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_HDD" Association="dellModel.FK_portatiles_HDD">
+            <End Role="HDD" EntitySet="HDD" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_iva" Association="dellModel.FK_portatiles_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_iva" Association="dellModel.FK_RAMM_iva">
+            <End Role="iva" EntitySet="iva" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_portatiles_RAMM" Association="dellModel.FK_portatiles_RAMM">
+            <End Role="RAMM" EntitySet="RAMM" />
+            <End Role="portatiles" EntitySet="portatiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAMM_tipo" Association="dellModel.FK_RAMM_tipo">
+            <End Role="tipo" EntitySet="tipo" />
+            <End Role="RAMM" EntitySet="RAMM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tipo_TiposComponentes" Association="dellModel.FK_tipo_TiposComponentes">
+            <End Role="TiposComponentes" EntitySet="TiposComponentes" />
+            <End Role="tipo" EntitySet="tipo" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="categorias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_categorias" FromRole="categorias" ToRole="portatiles" />
+        </EntityType>
+        <EntityType Name="CPU">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFabricante" Type="Int32" />
+          <Property Name="numNucleos" Type="Int32" />
+          <Property Name="mhz" Type="Int32" />
+          <Property Name="rpm" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idIva" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="fabricante" Relationship="dellModel.FK_CPU_fabricante" FromRole="CPU" ToRole="fabricante" />
+          <NavigationProperty Name="iva" Relationship="dellModel.FK_CPU_iva" FromRole="CPU" ToRole="iva" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_CPU" FromRole="CPU" ToRole="portatiles" />
+        </EntityType>
+        <EntityType Name="fabricante">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="direccion" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="CPU" Relationship="dellModel.FK_CPU_fabricante" FromRole="fabricante" ToRole="CPU" />
+          <NavigationProperty Name="GRAFICA" Relationship="dellModel.FK_GRAFICA_fabricante" FromRole="fabricante" ToRole="GRAFICA" />
+          <NavigationProperty Name="HDD" Relationship="dellModel.FK_HDD_fabricante" FromRole="fabricante" ToRole="HDD" />
+          <NavigationProperty Name="RAMM" Relationship="dellModel.FK_RAMM_fabricante" FromRole="fabricante" ToRole="RAMM" />
+        </EntityType>
+        <EntityType Name="financiacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="condiciones" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GRAFICA">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFabricante" Type="Int32" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nombre" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="memoria" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="idTipo" Type="Int32" />
+          <Property Name="idIva" Type="Int32" />
+          <NavigationProperty Name="fabricante" Relationship="dellModel.FK_GRAFICA_fabricante" FromRole="GRAFICA" ToRole="fabricante" />
+          <NavigationProperty Name="iva" Relationship="dellModel.FK_GRAFICA_iva" FromRole="GRAFICA" ToRole="iva" />
+          <NavigationProperty Name="tipo" Relationship="dellModel.FK_GRAFICA_tipo" FromRole="GRAFICA" ToRole="tipo" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_GRAFICA" FromRole="GRAFICA" ToRole="portatiles" />
+        </EntityType>
+        <EntityType Name="HDD">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idtipo" Type="Int32" />
+          <Property Name="idiva" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="rpm" Type="Int32" />
+          <Property Name="pulgadas" Type="Int32" />
+          <Property Name="idFabricante" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="fabricante" Relationship="dellModel.FK_HDD_fabricante" FromRole="HDD" ToRole="fabricante" />
+          <NavigationProperty Name="iva" Relationship="dellModel.FK_HDD_iva" FromRole="HDD" ToRole="iva" />
+          <NavigationProperty Name="tipo" Relationship="dellModel.FK_HDD_tipo" FromRole="HDD" ToRole="tipo" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_HDD" FromRole="HDD" ToRole="portatiles" />
+        </EntityType>
+        <EntityType Name="iva">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="porcentaje" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="CPU" Relationship="dellModel.FK_CPU_iva" FromRole="iva" ToRole="CPU" />
+          <NavigationProperty Name="GRAFICA" Relationship="dellModel.FK_GRAFICA_iva" FromRole="iva" ToRole="GRAFICA" />
+          <NavigationProperty Name="HDD" Relationship="dellModel.FK_HDD_iva" FromRole="iva" ToRole="HDD" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_iva" FromRole="iva" ToRole="portatiles" />
+          <NavigationProperty Name="RAMM" Relationship="dellModel.FK_RAMM_iva" FromRole="iva" ToRole="RAMM" />
+        </EntityType>
+        <EntityType Name="portatiles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="idCategoria" Type="Int32" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="idHdd" Type="Int32" />
+          <Property Name="idRamm" Type="Int32" />
+          <Property Name="idCpu" Type="Int32" />
+          <Property Name="idGrafica" Type="Int32" />
+          <Property Name="subtotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="idIva" Type="Int32" />
+          <Property Name="numEstrellas" Type="Int32" />
+          <Property Name="codigoEValue" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="cancelado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="categorias" Relationship="dellModel.FK_portatiles_categorias" FromRole="portatiles" ToRole="categorias" />
+          <NavigationProperty Name="CPU" Relationship="dellModel.FK_portatiles_CPU" FromRole="portatiles" ToRole="CPU" />
+          <NavigationProperty Name="GRAFICA" Relationship="dellModel.FK_portatiles_GRAFICA" FromRole="portatiles" ToRole="GRAFICA" />
+          <NavigationProperty Name="HDD" Relationship="dellModel.FK_portatiles_HDD" FromRole="portatiles" ToRole="HDD" />
+          <NavigationProperty Name="iva" Relationship="dellModel.FK_portatiles_iva" FromRole="portatiles" ToRole="iva" />
+          <NavigationProperty Name="RAMM" Relationship="dellModel.FK_portatiles_RAMM" FromRole="portatiles" ToRole="RAMM" />
+        </EntityType>
+        <EntityType Name="RAMM">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="precio" Type="Int32" />
+          <Property Name="idtipo" Type="Int32" />
+          <Property Name="idtiva" Type="Int32" />
+          <Property Name="ddr" Type="Int32" />
+          <Property Name="velocidad" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="idFabricante" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="fabricante" Relationship="dellModel.FK_RAMM_fabricante" FromRole="RAMM" ToRole="fabricante" />
+          <NavigationProperty Name="iva" Relationship="dellModel.FK_RAMM_iva" FromRole="RAMM" ToRole="iva" />
+          <NavigationProperty Name="portatiles" Relationship="dellModel.FK_portatiles_RAMM" FromRole="RAMM" ToRole="portatiles" />
+          <NavigationProperty Name="tipo" Relationship="dellModel.FK_RAMM_tipo" FromRole="RAMM" ToRole="tipo" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tipo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="idTipoComponente" Type="Int32" />
+          <NavigationProperty Name="GRAFICA" Relationship="dellModel.FK_GRAFICA_tipo" FromRole="tipo" ToRole="GRAFICA" />
+          <NavigationProperty Name="HDD" Relationship="dellModel.FK_HDD_tipo" FromRole="tipo" ToRole="HDD" />
+          <NavigationProperty Name="RAMM" Relationship="dellModel.FK_RAMM_tipo" FromRole="tipo" ToRole="RAMM" />
+          <NavigationProperty Name="TiposComponentes" Relationship="dellModel.FK_tipo_TiposComponentes" FromRole="tipo" ToRole="TiposComponentes" />
+        </EntityType>
+        <EntityType Name="TiposComponentes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tipo" Relationship="dellModel.FK_tipo_TiposComponentes" FromRole="TiposComponentes" ToRole="tipo" />
+        </EntityType>
+        <Association Name="FK_portatiles_categorias">
+          <End Role="categorias" Type="dellModel.categorias" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categorias">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_fabricante">
+          <End Role="fabricante" Type="dellModel.fabricante" Multiplicity="0..1" />
+          <End Role="CPU" Type="dellModel.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CPU_iva">
+          <End Role="iva" Type="dellModel.iva" Multiplicity="0..1" />
+          <End Role="CPU" Type="dellModel.CPU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="CPU">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_CPU">
+          <End Role="CPU" Type="dellModel.CPU" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CPU">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idCpu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_fabricante">
+          <End Role="fabricante" Type="dellModel.fabricante" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_fabricante">
+          <End Role="fabricante" Type="dellModel.fabricante" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_fabricante">
+          <End Role="fabricante" Type="dellModel.fabricante" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="fabricante">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idFabricante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_iva">
+          <End Role="iva" Type="dellModel.iva" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GRAFICA_tipo">
+          <End Role="tipo" Type="dellModel.tipo" Multiplicity="0..1" />
+          <End Role="GRAFICA" Type="dellModel.GRAFICA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GRAFICA">
+              <PropertyRef Name="idTipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_GRAFICA">
+          <End Role="GRAFICA" Type="dellModel.GRAFICA" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRAFICA">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idGrafica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_iva">
+          <End Role="iva" Type="dellModel.iva" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HDD_tipo">
+          <End Role="tipo" Type="dellModel.tipo" Multiplicity="0..1" />
+          <End Role="HDD" Type="dellModel.HDD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="HDD">
+              <PropertyRef Name="idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_HDD">
+          <End Role="HDD" Type="dellModel.HDD" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HDD">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idHdd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_iva">
+          <End Role="iva" Type="dellModel.iva" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idIva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_iva">
+          <End Role="iva" Type="dellModel.iva" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iva">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idtiva" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_portatiles_RAMM">
+          <End Role="RAMM" Type="dellModel.RAMM" Multiplicity="0..1" />
+          <End Role="portatiles" Type="dellModel.portatiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAMM">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="portatiles">
+              <PropertyRef Name="idRamm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAMM_tipo">
+          <End Role="tipo" Type="dellModel.tipo" Multiplicity="0..1" />
+          <End Role="RAMM" Type="dellModel.RAMM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RAMM">
+              <PropertyRef Name="idtipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tipo_TiposComponentes">
+          <End Role="TiposComponentes" Type="dellModel.TiposComponentes" Multiplicity="0..1" />
+          <End Role="tipo" Type="dellModel.tipo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposComponentes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="tipo">
+              <PropertyRef Name="idTipoComponente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dellModelStoreContainer" CdmEntityContainer="dellEntities">
+          <EntitySetMapping Name="categorias"><EntityTypeMapping TypeName="dellModel.categorias"><MappingFragment StoreEntitySet="categorias">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CPU"><EntityTypeMapping TypeName="dellModel.CPU"><MappingFragment StoreEntitySet="CPU">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="idFabricante" ColumnName="idFabricante" />
+            <ScalarProperty Name="numNucleos" ColumnName="numNucleos" />
+            <ScalarProperty Name="mhz" ColumnName="mhz" />
+            <ScalarProperty Name="rpm" ColumnName="rpm" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="idIva" ColumnName="idIva" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="fabricante"><EntityTypeMapping TypeName="dellModel.fabricante"><MappingFragment StoreEntitySet="fabricante">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="direccion" ColumnName="direccion" />
+            <ScalarProperty Name="telefono" ColumnName="telefono" />
+            <ScalarProperty Name="fax" ColumnName="fax" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="financiacion"><EntityTypeMapping TypeName="dellModel.financiacion"><MappingFragment StoreEntitySet="financiacion">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="condiciones" ColumnName="condiciones" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="GRAFICA"><EntityTypeMapping TypeName="dellModel.GRAFICA"><MappingFragment StoreEntitySet="GRAFICA">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="idFabricante" ColumnName="idFabricante" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="memoria" ColumnName="memoria" />
+            <ScalarProperty Name="idTipo" ColumnName="idTipo" />
+            <ScalarProperty Name="idIva" ColumnName="idIva" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="HDD"><EntityTypeMapping TypeName="dellModel.HDD"><MappingFragment StoreEntitySet="HDD">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="idtipo" ColumnName="idtipo" />
+            <ScalarProperty Name="idiva" ColumnName="idiva" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="rpm" ColumnName="rpm" />
+            <ScalarProperty Name="pulgadas" ColumnName="pulgadas" />
+            <ScalarProperty Name="idFabricante" ColumnName="idFabricante" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="iva"><EntityTypeMapping TypeName="dellModel.iva"><MappingFragment StoreEntitySet="iva">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="porcentaje" ColumnName="porcentaje" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="portatiles"><EntityTypeMapping TypeName="dellModel.portatiles"><MappingFragment StoreEntitySet="portatiles">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="idHdd" ColumnName="idHdd" />
+            <ScalarProperty Name="idRamm" ColumnName="idRamm" />
+            <ScalarProperty Name="idCpu" ColumnName="idCpu" />
+            <ScalarProperty Name="idGrafica" ColumnName="idGrafica" />
+            <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+            <ScalarProperty Name="idIva" ColumnName="idIva" />
+            <ScalarProperty Name="numEstrellas" ColumnName="numEstrellas" />
+            <ScalarProperty Name="codigoEValue" ColumnName="codigoEValue" />
+            <ScalarProperty Name="cancelado" ColumnName="cancelado" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RAMM"><EntityTypeMapping TypeName="dellModel.RAMM"><MappingFragment StoreEntitySet="RAMM">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="precio" ColumnName="precio" />
+            <ScalarProperty Name="idtipo" ColumnName="idtipo" />
+            <ScalarProperty Name="idtiva" ColumnName="idtiva" />
+            <ScalarProperty Name="ddr" ColumnName="ddr" />
+            <ScalarProperty Name="velocidad" ColumnName="velocidad" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="idFabricante" ColumnName="idFabricante" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams"><EntityTypeMapping TypeName="dellModel.sysdiagrams"><MappingFragment StoreEntitySet="sysdiagrams">
+            <ScalarProperty Name="name" ColumnName="name" />
+            <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+            <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+            <ScalarProperty Name="version" ColumnName="version" />
+            <ScalarProperty Name="definition" ColumnName="definition" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tipo"><EntityTypeMapping TypeName="dellModel.tipo"><MappingFragment StoreEntitySet="tipo">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+            <ScalarProperty Name="idTipoComponente" ColumnName="idTipoComponente" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TiposComponentes"><EntityTypeMapping TypeName="dellModel.TiposComponentes"><MappingFragment StoreEntitySet="TiposComponentes">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="m">
+        <EntityTypeShape EntityType="dellModel.categorias" Width="1.5" PointX="6" PointY="7.25" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.CPU" Width="1.5" PointX="3" PointY="10.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.fabricante" Width="1.5" PointX="0.75" PointY="4" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.financiacion" Width="1.5" PointX="2.75" PointY="2.625" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.GRAFICA" Width="1.5" PointX="6" PointY="10.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.HDD" Width="1.5" PointX="3" PointY="5.375" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.iva" Width="1.5" PointX="0.75" PointY="11" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.portatiles" Width="1.5" PointX="8.25" PointY="9.875" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.RAMM" Width="1.5" PointX="3" PointY="15.375" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="2.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.tipo" Width="1.5" PointX="0.5" PointY="0.5" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="dellModel.TiposComponentes" Width="1.5" PointX="1.5" PointY="20.625" Height="1.7879850260416745" IsExpanded="true" />
+        <AssociationConnector Association="dellModel.FK_portatiles_categorias" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="8.1439925130208337" />
+          <ConnectorPoint PointX="8.5104141666666653" PointY="8.1439925130208337" />
+          <ConnectorPoint PointX="8.6770808333333331" PointY="8.1439925130208337" />
+          <ConnectorPoint PointX="9" PointY="8.1439925130208337" />
+          <ConnectorPoint PointX="9" PointY="9.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_CPU_fabricante" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.9417936197916656" />
+          <ConnectorPoint PointX="2.78125" PointY="7.4730436197916656" />
+          <ConnectorPoint PointX="2.78125" PointY="12.1631982421875" />
+          <ConnectorPoint PointX="3" PointY="12.1631982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_CPU_iva" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="12.826543782552083" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="12.826543782552083" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="12.826543782552083" />
+          <ConnectorPoint PointX="3" PointY="12.826543782552083" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_portatiles_CPU" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="13.826396484375" />
+          <ConnectorPoint PointX="3.75" PointY="14.186951997395834" />
+          <ConnectorPoint PointX="8.25" PointY="14.186951997395834" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_GRAFICA_fabricante" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.9048695428685889" />
+          <ConnectorPoint PointX="2.875" PointY="7.5298695428685889" />
+          <ConnectorPoint PointX="2.875" PointY="10.125" />
+          <ConnectorPoint PointX="5.6261528461538459" PointY="10.125" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="10.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_HDD_fabricante" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.114451502203524" />
+          <ConnectorPoint PointX="3" PointY="6.114451502203524" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_RAMM_fabricante" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2130769230769229" PointY="6.9417936197916656" />
+          <ConnectorPoint PointX="2.625" PointY="7.3537166967147432" />
+          <ConnectorPoint PointX="2.625" PointY="17.134348958333334" />
+          <ConnectorPoint PointX="3" PointY="17.134348958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_GRAFICA_iva" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="13.302580630608976" />
+          <ConnectorPoint PointX="2.5660744349011213" PointY="13.618655065510096" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="13.736506195707854" />
+          <ConnectorPoint PointX="2.8125" PointY="13.865080630608976" />
+          <ConnectorPoint PointX="2.8125" PointY="13.951396484375" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="13.951396484375" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="13.951396484375" />
+          <ConnectorPoint PointX="5.8761528461538468" PointY="13.951396484375" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="13.826396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_GRAFICA_tipo" ManuallyRouted="false">
+          <ConnectorPoint PointX="2" PointY="1.5312505" />
+          <ConnectorPoint PointX="6.75" PointY="1.5312505" />
+          <ConnectorPoint PointX="6.75" PointY="7" />
+          <ConnectorPoint PointX="5.75" PointY="7" />
+          <ConnectorPoint PointX="5.75" PointY="10" />
+          <ConnectorPoint PointX="6.7818284230769228" PointY="10" />
+          <ConnectorPoint PointX="6.7818284230769228" PointY="10.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_portatiles_GRAFICA" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="12.1631982421875" />
+          <ConnectorPoint PointX="8.25" PointY="12.1631982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_HDD_iva" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.063460538461539" />
+          <ConnectorPoint PointX="2.5660744349011204" PointY="10.747386103560418" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="10.629534973362661" />
+          <ConnectorPoint PointX="2.6875" PointY="10.625960538461539" />
+          <ConnectorPoint PointX="2.6875" PointY="7.535326709435096" />
+          <ConnectorPoint PointX="3" PointY="7.535326709435096" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_HDD_tipo" ManuallyRouted="false">
+          <ConnectorPoint PointX="0.59375" PointY="3.0571907552083317" />
+          <ConnectorPoint PointX="0.59375" PointY="8.2457648130508812" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="8.24576481305088" />
+          <ConnectorPoint PointX="2.9583333333333335" PointY="8.2457648130508812" />
+          <ConnectorPoint PointX="3" PointY="8.2457648130508812" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_portatiles_HDD" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.1875" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="6.1874999999999991" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="6.1875" />
+          <ConnectorPoint PointX="8.5937475" PointY="6.1875" />
+          <ConnectorPoint PointX="8.5937475" PointY="9.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_portatiles_iva" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.364889322916667" />
+          <ConnectorPoint PointX="1.5" PointY="14.398481753906252" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="14.398481753906252" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="14.398481753906252" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="14.398481753906252" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="14.398481753906252" />
+          <ConnectorPoint PointX="8.25" PointY="14.398481753906252" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_RAMM_iva" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="13.364889322916667" />
+          <ConnectorPoint PointX="1.9062525" PointY="16.223421979166666" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="16.223421979166666" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="16.223421979166666" />
+          <ConnectorPoint PointX="3" PointY="16.223421979166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_portatiles_RAMM" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="17.134348958333334" />
+          <ConnectorPoint PointX="9" PointY="17.134348958333334" />
+          <ConnectorPoint PointX="9" PointY="14.547506510416667" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_RAMM_tipo" ManuallyRouted="false">
+          <ConnectorPoint PointX="0.62500249999999991" PointY="3.0571907552083317" />
+          <ConnectorPoint PointX="0.62500249999999991" PointY="18.0452759375" />
+          <ConnectorPoint PointX="3" PointY="18.0452759375" />
+        </AssociationConnector>
+        <AssociationConnector Association="dellModel.FK_tipo_TiposComponentes" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="21.518992513020837" />
+          <ConnectorPoint PointX="0.56249750000000009" PointY="21.518992513020837" />
+          <ConnectorPoint PointX="0.56249750000000009" PointY="3.0571907552083317" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
