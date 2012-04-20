@@ -9,8 +9,14 @@ using System.Windows.Forms;
 
 namespace uMdi
 {
+    /// <summary>
+    /// Clase SplashScreen
+    /// </summary>
     public partial class frmSplashScreen : Form
     {
+        /// <summary>
+        /// Constructor del SplashScreen
+        /// </summary>
         public frmSplashScreen()
         {
             InitializeComponent();

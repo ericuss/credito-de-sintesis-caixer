@@ -1,5 +1,7 @@
 ﻿namespace frm
-{
+{   ///<summary>
+    ///MDI Principal.
+    /// </summary>
     partial class mdiPral
     {
         /// <summary>
