@@ -11,6 +11,9 @@ namespace uMdi
 {
     public partial class frmLoggin : Form
     {
+        /// <summary>
+        /// Constructor del Login
+        /// </summary>
         public frmLoggin()
         {
             InitializeComponent();
