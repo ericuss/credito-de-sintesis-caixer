@@ -15,6 +15,9 @@ namespace frm
             private int childFormNumber = 0;
         #endregion
     #region "New"
+        /// <summary>
+        /// Constructor del MDI Principal
+        /// </summary>
             public mdiPral()
             {
                 InitializeComponent();
