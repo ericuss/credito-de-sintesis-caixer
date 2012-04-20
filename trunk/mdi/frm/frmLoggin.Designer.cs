@@ -1,5 +1,7 @@
 ﻿namespace uMdi
-{
+{///<summary>
+ ///Formulario para Iniciar sesion.
+ ///</summary>
     partial class frmLoggin
     {
         /// <summary>

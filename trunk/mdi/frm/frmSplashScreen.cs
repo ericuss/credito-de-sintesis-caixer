@@ -18,7 +18,7 @@ namespace uMdi
 
         private void frmSplashScreen_Load(object sender, EventArgs e)
         {
-            Info.Text
+         
 
         }
     }
