@@ -80,7 +80,7 @@ namespace frm
                 uMdi.frmAbout frm = new uMdi.frmAbout();
                 frm.Show();
             }
-
+    #region "Load"
             private void mdiPral_Load(object sender, EventArgs e)
             {
                 Thread th = new Thread(new ThreadStart(DoSplash));
@@ -94,6 +94,7 @@ namespace frm
                 uMdi.frmSplashScreen sp = new uMdi.frmSplashScreen();
                 sp.ShowDialog();
             }
+    #endregion
     #region "Metodos"
         
     
