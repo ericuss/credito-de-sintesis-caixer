@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace frm
 {
@@ -78,6 +79,20 @@ namespace frm
             {
                 uMdi.frmAbout frm = new uMdi.frmAbout();
                 frm.Show();
+            }
+
+            private void mdiPral_Load(object sender, EventArgs e)
+            {
+                Thread th = new Thread(new ThreadStart(DoSplash));
+                th.Start();
+                Thread.Sleep(500);
+                th.Abort();
+                Thread.Sleep(500);
+            }
+            void DoSplash()
+            {
+                uMdi.frmSplashScreen sp = new uMdi.frmSplashScreen();
+                sp.ShowDialog();
             }
     #region "Metodos"
         
