@@ -33,12 +33,15 @@ namespace uMdi
         {
             if (cbTipo.SelectedIndex != -1)
             {
-              
+                if (txtUsuario.Text.Trim() != "" && txtPass.Text.Trim() != "")
+                {
+                    
+                }// error de usuario y/o contraseña mal
 
 
 
 
-            }
+            }//error de que no has seleccionado la combo
         }
     }
 }
