@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data;
 
 namespace tools
 {
@@ -52,6 +53,27 @@ namespace tools
                 }
             }
             return res;
+        }
+
+        public void msg(String strId)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                ds.ReadXml(System.AppDomain.CurrentDomain.BaseDirectory + "msg.xml");
+                foreach (DataRow drTemp in ds.Tables["msg"].Rows)
+                {
+                    if (drTemp["id"] == strId)
+                    {
+                        
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
