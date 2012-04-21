@@ -33,7 +33,7 @@ namespace uMdi
         {
             if (cbTipo.SelectedIndex != -1)
             {
-              cbTipo.SelectedText  
+              
 
 
 
