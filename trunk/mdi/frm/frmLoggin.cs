@@ -18,5 +18,27 @@ namespace uMdi
         {
             InitializeComponent();
         }
+
+        private void frmLoggin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (cbTipo.SelectedIndex != -1)
+            {
+              cbTipo.SelectedText  
+
+
+
+
+            }
+        }
     }
 }
