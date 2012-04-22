@@ -18,8 +18,8 @@ namespace frm
             
             //Application.Run(frm);
            //Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new mdiPral());
-             Application.Run(new uMdi.frmLoggin());
+             Application.Run(new mdiPral());
+            // Application.Run(new uMdi.frmLoggin());
         
         }
 
