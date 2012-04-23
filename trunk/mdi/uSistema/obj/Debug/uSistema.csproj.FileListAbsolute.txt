@@ -9,3 +9,12 @@ D:\S2J\Sintesi\Proyecto\mdi\uSistema\obj\Debug\uSistema.frmTreeMenu.resources
 D:\S2J\Sintesi\Proyecto\mdi\uSistema\obj\Debug\GenerateResource.read.1.tlog
 D:\S2J\Sintesi\Proyecto\mdi\uSistema\obj\Debug\GenerateResource.write.1.tlog
 D:\S2J\Sintesi\Proyecto\mdi\uSistema\obj\Debug\uSistema.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\dll\User\uSistema.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\User\uSistema.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.frmManteBase.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.frmTreeMenu.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\uSistema\obj\Debug\uSistema.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\User\uSistema.XML
