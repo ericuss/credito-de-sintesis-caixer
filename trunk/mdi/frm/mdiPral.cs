@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using uMdi;
 
 namespace frm
 {
@@ -88,6 +89,9 @@ namespace frm
                 Thread.Sleep(500);
                 th.Abort();
                 Thread.Sleep(500);
+                frmLoggin frm = new frmLoggin();
+                frm.Show();
+
             }
             void DoSplash()
             {
