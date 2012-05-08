@@ -86,12 +86,20 @@ namespace frm
             {
                 Thread th = new Thread(new ThreadStart(DoSplash));
                 th.Start();
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
                 th.Abort();
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
+                doLogin();
                 frmLoggin frm = new frmLoggin();
                 frm.Show();
 
+            }
+
+            private void doLogin()
+            {
+                uMdi.frmLoggin login = new uMdi.frmLoggin();
+             
+                login.ShowDialog();
             }
             void DoSplash()
             {

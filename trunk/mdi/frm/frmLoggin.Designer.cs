@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.MaskedTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.txtPass = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -79,21 +79,14 @@
             this.txtUsuario.Location = new System.Drawing.Point(336, 31);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 6;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(336, 69);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 7;
+            this.txtUsuario.TabIndex = 1;
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(233, 105);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -103,7 +96,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(361, 105);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -122,6 +115,14 @@
             this.cbTipo.Size = new System.Drawing.Size(121, 21);
             this.cbTipo.TabIndex = 10;
             // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(336, 69);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
+            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.TabIndex = 2;
+            // 
             // frmLoggin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,7 +140,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLoggin";
             this.Text = "loggin";
-            this.Load += new System.EventHandler(this.frmLoggin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,9 +151,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.MaskedTextBox txtPass;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.ComboBox cbTipo;
+        private System.Windows.Forms.MaskedTextBox txtPass;
     }
 }
