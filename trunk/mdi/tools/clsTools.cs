@@ -7,7 +7,7 @@ using System.Data;
 
 namespace tools
 {
-    public class clsTools
+    public static class clsTools
     {
 
 
@@ -18,7 +18,7 @@ namespace tools
         /// <param name="children">Array de formularios hijos</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public Boolean compIfFormExistInChildrenAndFocus(Form frm, Form[] children)
+        public static Boolean compIfFormExistInChildrenAndFocus(Form frm, Form[] children)
         {
             Boolean res = true;
             foreach (Form temp in children)
@@ -41,7 +41,7 @@ namespace tools
         /// <param name="children">Array de formularios hijos</param>
         /// <returns></returns>
         /// <remarks></remarks>
-        public Boolean compIfFormExistInChildren(Form frm, Form[] children)
+        public static Boolean compIfFormExistInChildren(Form frm, Form[] children)
         {
             Boolean res = true;
             foreach (Form temp in children)
@@ -55,7 +55,16 @@ namespace tools
             return res;
         }
 
-        public void msg(String strId)
+
+
+
+
+
+
+
+
+
+        public static void msg(String strId)
         {
             try
             {

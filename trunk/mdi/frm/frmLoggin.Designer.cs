@@ -80,6 +80,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.Text = "nick2";
             // 
             // btnCancel
             // 
@@ -122,6 +123,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 2;
+            this.txtPass.Text = "12345";
             // 
             // frmLoggin
             // 
