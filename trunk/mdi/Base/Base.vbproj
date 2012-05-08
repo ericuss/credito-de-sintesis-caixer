@@ -50,6 +50,12 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AccDatos">
+      <HintPath>..\..\dll\AccDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="CusomTextBox">
+      <HintPath>..\..\dll\CusomTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -117,16 +123,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AccDatos\AccDatos.vbproj">
-      <Project>{C26C8243-A555-4DD5-8B10-8AD20046639D}</Project>
-      <Name>AccDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CusomTextBox\CusomTextBox.vbproj">
-      <Project>{46B5CED6-D9E0-410F-9D54-60FCBF485012}</Project>
-      <Name>CusomTextBox</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

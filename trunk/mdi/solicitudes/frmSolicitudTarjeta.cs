@@ -15,5 +15,14 @@ namespace solicitudes
         {
             InitializeComponent();
         }
+        public frmSolicitudTarjeta(int idCliente, int idCuenta)
+        {
+            InitializeComponent();
+
+        }
+
+      
+
+    
     }
 }

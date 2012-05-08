@@ -5,3 +5,8 @@ C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.pdb
+D:\S2J\Sintesi\LanreSuit\dll\CustomTreeViewNode.dll
+D:\S2J\Sintesi\LanreSuit\dll\CustomTreeViewNode.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\CustomTreeViewNode\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.dll
+D:\S2J\Sintesi\LanreSuit\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.pdb

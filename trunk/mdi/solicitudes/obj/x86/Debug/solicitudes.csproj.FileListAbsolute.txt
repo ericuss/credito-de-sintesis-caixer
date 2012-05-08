@@ -10,3 +10,13 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.Pr
 C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.csproj.GenerateResource.Cache
 C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.pdb
+D:\S2J\Sintesi\LanreSuit\dll\solicitudes.dll.config
+D:\S2J\Sintesi\LanreSuit\dll\solicitudes.dll
+D:\S2J\Sintesi\LanreSuit\dll\solicitudes.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\solicitudes.frmSolPendientes.resources
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\solicitudes.Properties.Resources.resources
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\solicitudes.dll
+D:\S2J\Sintesi\LanreSuit\mdi\solicitudes\obj\x86\Debug\solicitudes.pdb
