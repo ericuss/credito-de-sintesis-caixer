@@ -19,7 +19,13 @@ namespace solicitudes
 
         void dgvSolicitudes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-           MessageBox.Show(dgvSolicitudes.SelectedRows[0].Cells["idTipoSol"].Value.ToString());
+            // MessageBox.Show(dgvSolicitudes.SelectedRows[0].Cells["idTipoSol"].Value.ToString());
+            String tipoSol = dgvSolicitudes.SelectedRows[0].Cells["idTipoSol"].Value.ToString();
+            if (tipoSol == "1")
+            {
+                Form petTarj = new frmSolicitudTarjeta(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+                petTarj.Show();
+            }
         }
 
         private void frmSolPendientes_Load(object sender, EventArgs e)
@@ -42,10 +48,14 @@ namespace solicitudes
                                  DNI = cli.dni,
                                  Descripcion = tsol.descripcion,
                                  Estado = esol.tag,
-                                 idTipoSol = tsol.id
+                                 idTipoSol = tsol.id,
+                                 idCliente = cli.id,
+                                 idCuenta = cue.id
                              };
             dgvSolicitudes.DataSource = datasource;
             this.dgvSolicitudes.Columns["idTipoSol"].Visible = false;
+            this.dgvSolicitudes.Columns["idCliente"].Visible = false;
+            this.dgvSolicitudes.Columns["idCuenta"].Visible = false;
         }
     }
 }

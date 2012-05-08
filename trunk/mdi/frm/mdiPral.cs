@@ -157,7 +157,7 @@ namespace frm
                 String dll = (((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll);
                 String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
 
-                System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom("User/" + dll + ".dll");
+                System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
                 Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
                 extForm.ShowDialog();
             }

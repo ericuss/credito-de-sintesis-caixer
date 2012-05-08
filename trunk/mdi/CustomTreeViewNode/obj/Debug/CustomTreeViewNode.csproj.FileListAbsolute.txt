@@ -1,6 +1,5 @@
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\bin\Debug\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\bin\Debug\CustomTreeViewNode.pdb
-C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.XML
 C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.dll

@@ -237,7 +237,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmSolicitudTarjeta";
             this.Text = "Consulta de Peticion de Tarjeta al Detalle";
-            this.Load += new System.EventHandler(this.frmSolicitudTarjeta_Load);
+          //  this.Load += new System.EventHandler(this.frmSolicitudTarjeta_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
