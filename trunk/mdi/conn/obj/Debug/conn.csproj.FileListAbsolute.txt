@@ -1,5 +1,0 @@
-C:\Users\Rom\Documents\CreditCaixer\mdi\conn\bin\Debug\conn.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\conn\bin\Debug\conn.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\conn\obj\Debug\conn.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\conn\obj\Debug\conn.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\conn\obj\Debug\conn.csprojResolveAssemblyReference.cache

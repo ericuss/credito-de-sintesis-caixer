@@ -1,9 +1,0 @@
-D:\S2J\Sintesi\Proyecto\dll\tools.dll
-D:\S2J\Sintesi\Proyecto\dll\tools.pdb
-D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\ResolveAssemblyReference.cache
-D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\tools.dll
-D:\S2J\Sintesi\Proyecto\mdi\tools\obj\Debug\tools.pdb
-C:\Users\Rom\Documents\CreditCaixer\dll\tools.dll
-C:\Users\Rom\Documents\CreditCaixer\dll\tools.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\tools\obj\Debug\tools.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\tools\obj\Debug\tools.pdb
