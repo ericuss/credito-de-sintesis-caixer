@@ -1,0 +1,10 @@
+C:\Users\Rom\Documents\CreditCaixer\dll\solicitudes.dll.config
+C:\Users\Rom\Documents\CreditCaixer\dll\solicitudes.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\solicitudes.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.frmSolicitudTarjeta.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.frmSolPendientes.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\solicitudes\obj\x86\Debug\solicitudes.csprojResolveAssemblyReference.cache

@@ -28,8 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tcMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtPoblacion = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -37,29 +43,34 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.txtCenta = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvTitulares = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtPoblacion = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnDenegar = new System.Windows.Forms.Button();
+            this.btnMantener = new System.Windows.Forms.Button();
+            this.tcMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTitulares)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tcMain
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 23);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(348, 374);
-            this.tabControl1.TabIndex = 0;
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcMain.Controls.Add(this.tabPage1);
+            this.tcMain.Controls.Add(this.tabPage2);
+            this.tcMain.Location = new System.Drawing.Point(12, 23);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(360, 374);
+            this.tcMain.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -78,10 +89,52 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(340, 348);
+            this.tabPage1.Size = new System.Drawing.Size(352, 348);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(129, 185);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(191, 20);
+            this.txtCorreo.TabIndex = 12;
+            // 
+            // txtPoblacion
+            // 
+            this.txtPoblacion.Location = new System.Drawing.Point(129, 152);
+            this.txtPoblacion.Name = "txtPoblacion";
+            this.txtPoblacion.Size = new System.Drawing.Size(191, 20);
+            this.txtPoblacion.TabIndex = 11;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(129, 121);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(191, 20);
+            this.txtTelefono.TabIndex = 10;
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(129, 84);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(191, 20);
+            this.txtApellidos.TabIndex = 9;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(129, 56);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(191, 20);
+            this.txtNombre.TabIndex = 8;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(129, 25);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(191, 20);
+            this.txtDNI.TabIndex = 7;
             // 
             // label7
             // 
@@ -139,13 +192,71 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.txtSaldo);
+            this.tabPage2.Controls.Add(this.txtCenta);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(340, 348);
+            this.tabPage2.Size = new System.Drawing.Size(352, 348);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Datos de la Cuenta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.Location = new System.Drawing.Point(114, 57);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(206, 20);
+            this.txtSaldo.TabIndex = 4;
+            // 
+            // txtCenta
+            // 
+            this.txtCenta.Location = new System.Drawing.Point(114, 25);
+            this.txtCenta.Name = "txtCenta";
+            this.txtCenta.Size = new System.Drawing.Size(206, 20);
+            this.txtCenta.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvTitulares);
+            this.groupBox1.Location = new System.Drawing.Point(6, 105);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(331, 237);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Titulares de la Cuenta";
+            // 
+            // dgvTitulares
+            // 
+            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTitulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTitulares.Location = new System.Drawing.Point(6, 19);
+            this.dgvTitulares.Name = "dgvTitulares";
+            this.dgvTitulares.Size = new System.Drawing.Size(319, 212);
+            this.dgvTitulares.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(32, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Saldo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Cuenta";
             // 
             // label1
             // 
@@ -156,91 +267,55 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Solicitud:";
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.Location = new System.Drawing.Point(28, 441);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAceptar.Location = new System.Drawing.Point(16, 441);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // button2
+            // btnDenegar
             // 
-            this.button2.Location = new System.Drawing.Point(145, 441);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Denegar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDenegar.Location = new System.Drawing.Point(156, 441);
+            this.btnDenegar.Name = "btnDenegar";
+            this.btnDenegar.Size = new System.Drawing.Size(75, 23);
+            this.btnDenegar.TabIndex = 3;
+            this.btnDenegar.Text = "Denegar";
+            this.btnDenegar.UseVisualStyleBackColor = true;
+            this.btnDenegar.Click += new System.EventHandler(this.btnDenegar_Click);
             // 
-            // button3
+            // btnMantener
             // 
-            this.button3.Location = new System.Drawing.Point(261, 441);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Mantener";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(129, 25);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(191, 20);
-            this.txtDNI.TabIndex = 7;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(129, 56);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(191, 20);
-            this.txtNombre.TabIndex = 8;
-            // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(129, 84);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(191, 20);
-            this.txtApellidos.TabIndex = 9;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(129, 121);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(191, 20);
-            this.txtTelefono.TabIndex = 10;
-            // 
-            // txtPoblacion
-            // 
-            this.txtPoblacion.Location = new System.Drawing.Point(129, 152);
-            this.txtPoblacion.Name = "txtPoblacion";
-            this.txtPoblacion.Size = new System.Drawing.Size(191, 20);
-            this.txtPoblacion.TabIndex = 11;
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.Location = new System.Drawing.Point(129, 185);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(191, 20);
-            this.txtCorreo.TabIndex = 12;
+            this.btnMantener.Location = new System.Drawing.Point(297, 441);
+            this.btnMantener.Name = "btnMantener";
+            this.btnMantener.Size = new System.Drawing.Size(75, 23);
+            this.btnMantener.TabIndex = 4;
+            this.btnMantener.Text = "Mantener";
+            this.btnMantener.UseVisualStyleBackColor = true;
+            this.btnMantener.Click += new System.EventHandler(this.btnMantener_Click);
             // 
             // frmSolicitudTarjeta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 476);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(384, 476);
+            this.Controls.Add(this.btnMantener);
+            this.Controls.Add(this.btnDenegar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcMain);
             this.Name = "frmSolicitudTarjeta";
             this.Text = "Consulta de Peticion de Tarjeta al Detalle";
-          //  this.Load += new System.EventHandler(this.frmSolicitudTarjeta_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tcMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTitulares)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +323,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -258,14 +333,20 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnDenegar;
+        private System.Windows.Forms.Button btnMantener;
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtPoblacion;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.TextBox txtApellidos;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.TextBox txtCenta;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvTitulares;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

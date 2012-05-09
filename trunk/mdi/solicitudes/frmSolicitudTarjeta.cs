@@ -11,6 +11,9 @@ namespace solicitudes
 {
     public partial class frmSolicitudTarjeta : Form
     {
+        private Int16 idCliente;
+        private Int16 idCuenta;
+
         public frmSolicitudTarjeta()
         {
             InitializeComponent();
@@ -18,38 +21,176 @@ namespace solicitudes
         public frmSolicitudTarjeta(String idCliente, String idCuenta)
         {
             InitializeComponent();
-            fillTextbox(idCliente);
+            this.idCliente = Convert.ToInt16(idCliente);
+            this.idCuenta =  Convert.ToInt16(idCuenta);
+            fillTextbox();
+            fillTextCuenta();
+
         }
 
-        private void fillTextbox(string idCliente)
+        private void fillTextCuenta()
         {
-            int idcl = Convert.ToInt32(idCliente);
-              santanderEntities1 context = new santanderEntities1();
-              var cliente = from cli in context.cliente
-                            where cli.id == idcl
-                            select new
-                            {
-                                DNI = cli.dni,
-                                Nombre= cli.nombre,
-                                Apellido = cli.apellidos,
-                                Telefono = cli.telefono,
-                                Poblacion = cli.poblacion,
-                                Correo = "Algun Dia"
-                            };
+            int idcl =idCuenta;
+            santanderEntities1 context = new santanderEntities1();
 
-            
-              foreach (var item in cliente)
-              {
-                  txtDNI.Text = item.DNI;
-                  txtNombre.Text = item.Nombre;
-                  txtApellidos.Text = item.Apellido;
-                  txtPoblacion.Text = item.Poblacion;
-                  txtTelefono.Text = item.Telefono;
-              }
+            var centas = from cue in context.cuenta
+                         join cuc in context.cuentacliente
+                           on cue.id equals cuc.idCuenta
+                         join cli in context.cliente
+                           on cuc.idCliente equals cli.id
+                         where cue.id == idcl
+                         select new
+                         {
+                             Saldo = cue.saldo,
+                             Cuenta = cue.codigoEntidad + " - " + cue.codigoOficina + " - " + cue.codigoControl + " - " + cue.codigoCuenta,
+                             Nombre = cli.nombre,
+                             Apellidos = cli.apellidos,
+                             DNI = cli.dni
+                         };
+            dgvTitulares.DataSource = centas;
+            this.dgvTitulares.Columns["Cuenta"].Visible = false;
+            foreach (var item in centas)
+            {
+                txtCenta.Text = item.Cuenta;
+                txtSaldo.Text = item.Saldo.ToString();
+            }
+        }
+
+        private void fillTextbox()
+        {
+            int idcl = idCliente;
+            santanderEntities1 context = new santanderEntities1();
+            var cliente = from cli in context.cliente
+                          where cli.id == idcl
+                          select new
+                          {
+                              DNI = cli.dni,
+                              Nombre = cli.nombre,
+                              Apellido = cli.apellidos,
+                              Telefono = cli.telefono,
+                              Poblacion = cli.poblacion,
+                              Correo = "Algun Dia"
+                          };
+
+
+            foreach (var item in cliente)
+            {
+                txtDNI.Text = item.DNI;
+                txtNombre.Text = item.Nombre;
+                txtApellidos.Text = item.Apellido;
+                txtPoblacion.Text = item.Poblacion;
+                txtTelefono.Text = item.Telefono;
+                txtCorreo.Text = item.Correo;
+            }
+        }
+
+        private void btnMantener_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            aceptarSolicitud();
+
+        }
+
+        private void aceptarSolicitud()
+        {
+            santanderEntities1 context = new santanderEntities1();
+            solicitud solt = new solicitud();
+            var tmpSol = from sol in context.solicitud
+                         where sol.idCliente==idCliente &&
+                                sol.idCuenta == idCuenta
+                         select sol;
+            foreach (var item in tmpSol)
+            {
+                solt = item;
+
+            }
+            solt.idEstadoSolicitud = 2;
+
+            int mon = DateTime.Now.Month;
+            String cdigo = genRandCod();
+            int yr = DateTime.Now.Year + 5;
+            Random r = new Random(DateTime.Now.Millisecond);
+            String tcvv = Convert.ToString(r.Next(100,999));
+
+            String titular = txtNombre.Text + " " + txtApellidos.Text;
+            tarjeta tmpTarj = new tarjeta
+            {
+                idCuenta = idCuenta,
+                titular = titular,
+                fechaCaducidad = mon + "/" + yr,
+                codigo=cdigo,
+                cvv=tcvv
+            };
+            context.AddTotarjeta(tmpTarj);
+            notificacion tnot = new notificacion
+            {
+                idCliente= Convert.ToInt16(idCliente),
+                text="Se ha aceptado la solicitud de la tarjeta para la cuenta "+txtCenta.Text,
+                asunto="Solicitud Tarjeta Acetada",
+                fecha = DateTime.Now
+            };
+            context.AddTonotificacion(tnot);
+            context.SaveChanges();
+            this.Dispose();
+        }
+
+        private string genRandCod()
+        {
+            Random r = new Random(DateTime.Now.Millisecond);
+            String tnum = "";
+            for (int i = 0; i < 4; i++)
+            {
+                tnum += "" + r.Next(1000, 9999);
+            }
+
+            santanderEntities1 context = new santanderEntities1();
+
+            int num = (from tarj in context.tarjeta
+                       where tarj.codigo == tnum
+                       select tarj).Count();
+            if (num > 0)
+            {
+                tnum = genRandCod();
+            }
+            return tnum;
+        }
+
+        private void btnDenegar_Click(object sender, EventArgs e)
+        {
+            santanderEntities1 context = new santanderEntities1();
+            solicitud solt = new solicitud();
+            var tmpSol = from sol in context.solicitud
+                         where sol.idCliente == idCliente &&
+                                sol.idCuenta == idCuenta
+                         select sol;
+            foreach (var item in tmpSol)
+            {
+                solt = item;
+
+            }
+            solt.idEstadoSolicitud = 4;
+            notificacion tnot = new notificacion
+            {
+                idCliente = Convert.ToInt16(idCliente),
+                text = "Se ha denegado la solicitud de la tarjeta para la cuenta " + txtCenta.Text+". Dirijase a su oficina para mas información." ,
+                asunto = "Solicitud Tarjeta Denegada",
+                fecha = DateTime.Now
+            };
+            context.AddTonotificacion(tnot);
+            context.SaveChanges();
+            this.Dispose();
         }
 
       
 
-    
+
+
+
+
+
     }
 }

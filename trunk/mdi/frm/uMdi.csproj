@@ -162,6 +162,10 @@
       <Project>{CDA89F08-F7DC-4C53-8702-DD1BB7B0CC3A}</Project>
       <Name>CustomTreeViewNode</Name>
     </ProjectReference>
+    <ProjectReference Include="..\tools\tools.csproj">
+      <Project>{0EC21CB3-D160-4AFF-AE4F-F4D8B7143D44}</Project>
+      <Name>tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
