@@ -47,10 +47,6 @@
       <End Role="cuenta" EntitySet="cuenta" />
       <End Role="movimiento" EntitySet="movimiento" />
     </AssociationSet>
-    <AssociationSet Name="cuenta_tarjeta_fk" Association="santanderModel.Store.cuenta_tarjeta_fk">
-      <End Role="cuenta" EntitySet="cuenta" />
-      <End Role="tarjeta" EntitySet="tarjeta" />
-    </AssociationSet>
     <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.Store.cuenta_transferencia_fk">
       <End Role="cuenta" EntitySet="cuenta" />
       <End Role="transferencia" EntitySet="transferencia" />
@@ -122,6 +118,7 @@
   </EntityType>
   <!--Se encontraron errores durante la generación:
       advertencia 6035: La relación 'cuentacliente_solicitud_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      advertencia 6035: La relación 'cuentacliente_tarjeta_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
       -->
   <EntityType Name="cuentacliente">
     <Key>
@@ -229,6 +226,7 @@
     <Property Name="idCliente" Type="int" Nullable="false" />
     <Property Name="leido" Type="bit" Nullable="false" />
     <Property Name="asunto" Type="varchar" MaxLength="45" />
+    <Property Name="borrado" Type="bit" />
   </EntityType>
   <EntityType Name="oficina">
     <Key>
@@ -256,7 +254,7 @@
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="idCuenta" Type="int" Nullable="false" />
     <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="45" />
-    <Property Name="titular" Type="varchar" MaxLength="45" />
+    <Property Name="idCliente" Type="int" />
     <Property Name="cvv" Type="varchar" MaxLength="3" />
     <Property Name="fechaCaducidad" Type="varchar" MaxLength="5" />
   </EntityType>
@@ -372,18 +370,6 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="movimiento">
-        <PropertyRef Name="idCuenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="cuenta_tarjeta_fk">
-    <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
-    <End Role="tarjeta" Type="santanderModel.Store.tarjeta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="cuenta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tarjeta">
         <PropertyRef Name="idCuenta" />
       </Dependent>
     </ReferentialConstraint>

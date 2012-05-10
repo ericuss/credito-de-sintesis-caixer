@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="santanderModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="santanderModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="santanderModelStoreContainer">
           <EntitySet Name="accion" EntityType="santanderModel.Store.accion" store:Type="Tables" Schema="santander" />
           <EntitySet Name="cliente" EntityType="santanderModel.Store.cliente" store:Type="Tables" Schema="santander" />
@@ -51,10 +51,6 @@
           <AssociationSet Name="cuenta_movimiento_fk" Association="santanderModel.Store.cuenta_movimiento_fk">
             <End Role="cuenta" EntitySet="cuenta" />
             <End Role="movimiento" EntitySet="movimiento" />
-          </AssociationSet>
-          <AssociationSet Name="cuenta_tarjeta_fk" Association="santanderModel.Store.cuenta_tarjeta_fk">
-            <End Role="cuenta" EntitySet="cuenta" />
-            <End Role="tarjeta" EntitySet="tarjeta" />
           </AssociationSet>
           <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.Store.cuenta_transferencia_fk">
             <End Role="cuenta" EntitySet="cuenta" />
@@ -127,6 +123,7 @@
         </EntityType>
         <!--Se encontraron errores durante la generación:
       advertencia 6035: La relación 'cuentacliente_solicitud_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      advertencia 6035: La relación 'cuentacliente_tarjeta_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
       -->
         <EntityType Name="cuentacliente">
           <Key>
@@ -234,6 +231,7 @@
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="leido" Type="bit" Nullable="false" />
           <Property Name="asunto" Type="varchar" MaxLength="45" />
+          <Property Name="borrado" Type="bit" />
         </EntityType>
         <EntityType Name="oficina">
           <Key>
@@ -261,7 +259,7 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="idCuenta" Type="int" Nullable="false" />
           <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="45" />
-          <Property Name="titular" Type="varchar" MaxLength="45" />
+          <Property Name="idCliente" Type="int" />
           <Property Name="cvv" Type="varchar" MaxLength="3" />
           <Property Name="fechaCaducidad" Type="varchar" MaxLength="5" />
         </EntityType>
@@ -381,18 +379,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="cuenta_tarjeta_fk">
-          <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
-          <End Role="tarjeta" Type="santanderModel.Store.tarjeta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cuenta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="tarjeta">
-              <PropertyRef Name="idCuenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="cuenta_transferencia_fk">
           <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
           <End Role="transferencia" Type="santanderModel.Store.transferencia" Multiplicity="*" />
@@ -491,8 +477,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="santanderModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -511,7 +496,6 @@
           <EntitySet Name="notificacion" EntityType="santanderModel.notificacion" />
           <EntitySet Name="oficina" EntityType="santanderModel.oficina" />
           <EntitySet Name="solicitud" EntityType="santanderModel.solicitud" />
-          <EntitySet Name="tarjeta" EntityType="santanderModel.tarjeta" />
           <EntitySet Name="tiposolicitud" EntityType="santanderModel.tiposolicitud" />
           <EntitySet Name="transferencia" EntityType="santanderModel.transferencia" />
           <EntitySet Name="usuario" EntityType="santanderModel.usuario" />
@@ -547,10 +531,6 @@
             <End Role="cuenta" EntitySet="cuenta" />
             <End Role="movimiento" EntitySet="movimiento" />
           </AssociationSet>
-          <AssociationSet Name="cuenta_tarjeta_fk" Association="santanderModel.cuenta_tarjeta_fk">
-            <End Role="cuenta" EntitySet="cuenta" />
-            <End Role="tarjeta" EntitySet="tarjeta" />
-          </AssociationSet>
           <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.cuenta_transferencia_fk">
             <End Role="cuenta" EntitySet="cuenta" />
             <End Role="transferencia" EntitySet="transferencia" />
@@ -579,6 +559,7 @@
             <End Role="tiposolicitud" EntitySet="tiposolicitud" />
             <End Role="solicitud" EntitySet="solicitud" />
           </AssociationSet>
+          <EntitySet Name="tarjeta" EntityType="santanderModel.tarjeta" />
         </EntityContainer>
         <EntityType Name="accion">
           <Key>
@@ -624,7 +605,6 @@
           <Property Name="saldo" Type="Decimal" />
           <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cuenta_cuentaCliente_fj" FromRole="cuenta" ToRole="cuentacliente" />
           <NavigationProperty Name="movimiento" Relationship="santanderModel.cuenta_movimiento_fk" FromRole="cuenta" ToRole="movimiento" />
-          <NavigationProperty Name="tarjeta" Relationship="santanderModel.cuenta_tarjeta_fk" FromRole="cuenta" ToRole="tarjeta" />
           <NavigationProperty Name="transferencia" Relationship="santanderModel.cuenta_transferencia_fk" FromRole="cuenta" ToRole="transferencia" />
         </EntityType>
         <EntityType Name="cuentacliente">
@@ -743,6 +723,7 @@
           <Property Name="leido" Type="Boolean" Nullable="false" />
           <Property Name="asunto" Type="String" />
           <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_notificacion_fk" FromRole="notificacion" ToRole="cliente" />
+          <Property Type="Boolean" Name="borrado" />
         </EntityType>
         <EntityType Name="oficina">
           <Key>
@@ -765,18 +746,6 @@
           <NavigationProperty Name="depositocliente" Relationship="santanderModel.solicitud_depositoCliente_fk" FromRole="solicitud" ToRole="depositocliente" />
           <NavigationProperty Name="estadosolicitud" Relationship="santanderModel.estadoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="estadosolicitud" />
           <NavigationProperty Name="tiposolicitud" Relationship="santanderModel.tipoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="tiposolicitud" />
-        </EntityType>
-        <EntityType Name="tarjeta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idCuenta" Type="Int32" Nullable="false" />
-          <Property Name="codigo" Type="String" Nullable="false" />
-          <Property Name="titular" Type="String" />
-          <Property Name="cvv" Type="String" />
-          <Property Name="fechaCaducidad" Type="String" />
-          <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_tarjeta_fk" FromRole="tarjeta" ToRole="cuenta" />
         </EntityType>
         <EntityType Name="tiposolicitud">
           <Key>
@@ -909,18 +878,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="cuenta_tarjeta_fk">
-          <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
-          <End Role="tarjeta" Type="santanderModel.tarjeta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cuenta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="tarjeta">
-              <PropertyRef Name="idCuenta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="cuenta_transferencia_fk">
           <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
           <End Role="transferencia" Type="santanderModel.transferencia" Multiplicity="*" />
@@ -1007,6 +964,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="idCuenta" Nullable="false" />
+          <Property Type="String" Name="codigo" Nullable="false" />
+          <Property Type="Int32" Name="idCliente" />
+          <Property Type="String" Name="cvv" />
+          <Property Type="String" Name="fechaCaducidad" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1153,6 +1121,7 @@
           <EntitySetMapping Name="notificacion">
             <EntityTypeMapping TypeName="santanderModel.notificacion">
               <MappingFragment StoreEntitySet="notificacion">
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="text" ColumnName="text" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -1180,18 +1149,6 @@
                 <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="idEstadoSolicitud" ColumnName="idEstadoSolicitud" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tarjeta">
-            <EntityTypeMapping TypeName="santanderModel.tarjeta">
-              <MappingFragment StoreEntitySet="tarjeta">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
-                <ScalarProperty Name="codigo" ColumnName="codigo" />
-                <ScalarProperty Name="titular" ColumnName="titular" />
-                <ScalarProperty Name="cvv" ColumnName="cvv" />
-                <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1230,6 +1187,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tarjeta">
+            <EntityTypeMapping TypeName="santanderModel.tarjeta">
+              <MappingFragment StoreEntitySet="tarjeta">
+                <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+                <ScalarProperty Name="cvv" ColumnName="cvv" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1250,7 +1219,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model">
+      <Diagram Name="Model" ZoomLevel="77">
         <EntityTypeShape EntityType="santanderModel.accion" Width="1.5" PointX="3" PointY="10.375" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.cliente" Width="1.5" PointX="0.75" PointY="9.75" Height="3.7109993489583317" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.cuenta" Width="1.5" PointX="3.75" PointY="14.125" Height="2.9417936197916674" IsExpanded="true" />
@@ -1265,7 +1234,6 @@
         <EntityTypeShape EntityType="santanderModel.notificacion" Width="1.5" PointX="3" PointY="19" Height="2.3648893229166745" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.oficina" Width="1.5" PointX="8.75" PointY="2.25" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.solicitud" Width="1.5" PointX="6" PointY="1.625" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="santanderModel.tarjeta" Width="1.5" PointX="6" PointY="17.375" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.tiposolicitud" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.transferencia" Width="1.5" PointX="6" PointY="20.375" Height="2.7494921875000031" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.usuario" Width="1.5" PointX="3" PointY="22.125" Height="2.3648893229166674" IsExpanded="true" />
@@ -1316,17 +1284,10 @@
           <ConnectorPoint PointX="5.25" PointY="15.37292430068109" />
           <ConnectorPoint PointX="6" PointY="15.37292430068109" />
         </AssociationConnector>
-        <AssociationConnector Association="santanderModel.cuenta_tarjeta_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.90625" PointY="17.066793619791667" />
-          <ConnectorPoint PointX="4.90625" PointY="18.15625" />
-          <ConnectorPoint PointX="5.0260441666666669" PointY="18.15625" />
-          <ConnectorPoint PointX="5.1927108333333329" PointY="18.15625" />
-          <ConnectorPoint PointX="6" PointY="18.15625" />
-        </AssociationConnector>
         <AssociationConnector Association="santanderModel.cuenta_transferencia_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.1093775" PointY="17.066793619791667" />
-          <ConnectorPoint PointX="5.1093775" PointY="21.744944661458337" />
-          <ConnectorPoint PointX="6" PointY="21.744944661458337" />
+          <ConnectorPoint PointX="4.90625" PointY="16.8744921875" />
+          <ConnectorPoint PointX="4.90625" PointY="21.841095377604169" />
+          <ConnectorPoint PointX="6" PointY="21.841095377604169" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cuentacliente_depositoCliente_fk" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="11.5862939453125" />
@@ -1356,6 +1317,7 @@
           <ConnectorPoint PointX="5.25" PointY="2.0814925130208337" />
           <ConnectorPoint PointX="6" PointY="2.0814925130208337" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="santanderModel.tarjeta" Width="1.5" PointX="5.75" PointY="4.625" Height="2.1725878906250031" />
       </Diagram>
     </Diagrams>
   </Designer>

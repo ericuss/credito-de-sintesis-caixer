@@ -14,10 +14,13 @@ namespace solicitudes
         private Int16 idCliente;
         private Int16 idCuenta;
 
+
         public frmSolicitudTarjeta()
         {
             InitializeComponent();
         }
+
+
         public frmSolicitudTarjeta(String idCliente, String idCuenta)
         {
             InitializeComponent();
@@ -25,8 +28,10 @@ namespace solicitudes
             this.idCuenta =  Convert.ToInt16(idCuenta);
             fillTextbox();
             fillTextCuenta();
-
+           
         }
+
+      
 
         private void fillTextCuenta()
         {
@@ -116,11 +121,11 @@ namespace solicitudes
             Random r = new Random(DateTime.Now.Millisecond);
             String tcvv = Convert.ToString(r.Next(100,999));
 
-            String titular = txtNombre.Text + " " + txtApellidos.Text;
+          //  String titular = txtNombre.Text + " " + txtApellidos.Text;
             tarjeta tmpTarj = new tarjeta
             {
                 idCuenta = idCuenta,
-                titular = titular,
+                idCliente = idCliente,
                 fechaCaducidad = mon + "/" + yr,
                 codigo=cdigo,
                 cvv=tcvv

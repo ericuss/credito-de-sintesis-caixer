@@ -15,7 +15,6 @@
     <EntitySet Name="notificacion" EntityType="santanderModel.notificacion" />
     <EntitySet Name="oficina" EntityType="santanderModel.oficina" />
     <EntitySet Name="solicitud" EntityType="santanderModel.solicitud" />
-    <EntitySet Name="tarjeta" EntityType="santanderModel.tarjeta" />
     <EntitySet Name="tiposolicitud" EntityType="santanderModel.tiposolicitud" />
     <EntitySet Name="transferencia" EntityType="santanderModel.transferencia" />
     <EntitySet Name="usuario" EntityType="santanderModel.usuario" />
@@ -51,10 +50,6 @@
       <End Role="cuenta" EntitySet="cuenta" />
       <End Role="movimiento" EntitySet="movimiento" />
     </AssociationSet>
-    <AssociationSet Name="cuenta_tarjeta_fk" Association="santanderModel.cuenta_tarjeta_fk">
-      <End Role="cuenta" EntitySet="cuenta" />
-      <End Role="tarjeta" EntitySet="tarjeta" />
-    </AssociationSet>
     <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.cuenta_transferencia_fk">
       <End Role="cuenta" EntitySet="cuenta" />
       <End Role="transferencia" EntitySet="transferencia" />
@@ -83,6 +78,7 @@
       <End Role="tiposolicitud" EntitySet="tiposolicitud" />
       <End Role="solicitud" EntitySet="solicitud" />
     </AssociationSet>
+    <EntitySet Name="tarjeta" EntityType="santanderModel.tarjeta" />
   </EntityContainer>
   <EntityType Name="accion">
     <Key>
@@ -128,7 +124,6 @@
     <Property Name="saldo" Type="Decimal" />
     <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cuenta_cuentaCliente_fj" FromRole="cuenta" ToRole="cuentacliente" />
     <NavigationProperty Name="movimiento" Relationship="santanderModel.cuenta_movimiento_fk" FromRole="cuenta" ToRole="movimiento" />
-    <NavigationProperty Name="tarjeta" Relationship="santanderModel.cuenta_tarjeta_fk" FromRole="cuenta" ToRole="tarjeta" />
     <NavigationProperty Name="transferencia" Relationship="santanderModel.cuenta_transferencia_fk" FromRole="cuenta" ToRole="transferencia" />
   </EntityType>
   <EntityType Name="cuentacliente">
@@ -247,6 +242,7 @@
     <Property Name="leido" Type="Boolean" Nullable="false" />
     <Property Name="asunto" Type="String" />
     <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_notificacion_fk" FromRole="notificacion" ToRole="cliente" />
+    <Property Type="Boolean" Name="borrado" />
   </EntityType>
   <EntityType Name="oficina">
     <Key>
@@ -269,18 +265,6 @@
     <NavigationProperty Name="depositocliente" Relationship="santanderModel.solicitud_depositoCliente_fk" FromRole="solicitud" ToRole="depositocliente" />
     <NavigationProperty Name="estadosolicitud" Relationship="santanderModel.estadoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="estadosolicitud" />
     <NavigationProperty Name="tiposolicitud" Relationship="santanderModel.tipoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="tiposolicitud" />
-  </EntityType>
-  <EntityType Name="tarjeta">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idCuenta" Type="Int32" Nullable="false" />
-    <Property Name="codigo" Type="String" Nullable="false" />
-    <Property Name="titular" Type="String" />
-    <Property Name="cvv" Type="String" />
-    <Property Name="fechaCaducidad" Type="String" />
-    <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_tarjeta_fk" FromRole="tarjeta" ToRole="cuenta" />
   </EntityType>
   <EntityType Name="tiposolicitud">
     <Key>
@@ -413,18 +397,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="cuenta_tarjeta_fk">
-    <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
-    <End Role="tarjeta" Type="santanderModel.tarjeta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="cuenta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="tarjeta">
-        <PropertyRef Name="idCuenta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="cuenta_transferencia_fk">
     <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
     <End Role="transferencia" Type="santanderModel.transferencia" Multiplicity="*" />
@@ -511,4 +483,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="tarjeta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="idCuenta" Nullable="false" />
+    <Property Type="String" Name="codigo" Nullable="false" />
+    <Property Type="Int32" Name="idCliente" />
+    <Property Type="String" Name="cvv" />
+    <Property Type="String" Name="fechaCaducidad" />
+  </EntityType>
 </Schema>

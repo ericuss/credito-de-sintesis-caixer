@@ -141,6 +141,7 @@
     <EntitySetMapping Name="notificacion">
       <EntityTypeMapping TypeName="santanderModel.notificacion">
         <MappingFragment StoreEntitySet="notificacion">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="text" ColumnName="text" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -168,18 +169,6 @@
           <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
           <ScalarProperty Name="idEstadoSolicitud" ColumnName="idEstadoSolicitud" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tarjeta">
-      <EntityTypeMapping TypeName="santanderModel.tarjeta">
-        <MappingFragment StoreEntitySet="tarjeta">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
-          <ScalarProperty Name="codigo" ColumnName="codigo" />
-          <ScalarProperty Name="titular" ColumnName="titular" />
-          <ScalarProperty Name="cvv" ColumnName="cvv" />
-          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -215,6 +204,18 @@
           <ScalarProperty Name="idioma" ColumnName="idioma" />
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
           <ScalarProperty Name="paginaPreferida" ColumnName="paginaPreferida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjeta">
+      <EntityTypeMapping TypeName="santanderModel.tarjeta">
+        <MappingFragment StoreEntitySet="tarjeta">
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+          <ScalarProperty Name="cvv" ColumnName="cvv" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

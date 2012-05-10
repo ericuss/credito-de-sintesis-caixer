@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoOficina = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.gbSolicitudes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.chkTodos);
             this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -167,6 +169,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Codigo Oficina";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(741, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(25, 23);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "button1";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmSolPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,6 +211,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkTodos;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

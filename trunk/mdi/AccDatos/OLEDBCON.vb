@@ -7,9 +7,7 @@ Public Class OLEDBCON
     Public Function ObtenerTablaVacia(ByVal nTable As String) As DataSet
         Dim dtaset As DataSet
         Try
-
             Dim connection As New OleDbConnection(connectionString)
-
             dtaset = LanzarQuery("select * from " & nTable + " where 2=1", connection)
             Return dtaset
         Catch ex As Exception
@@ -38,6 +36,12 @@ Public Class OLEDBCON
         Dim dataset = LanzarQuery(query, connection)
         Return dataset
     End Function
+    Public Function LanzarConsultaT(ByVal query As String) As DataTable
+        Dim connection As New MySqlConnection(connectionString)
+
+        Dim dataset = LanzarQueryT(query, connection)
+        Return dataset
+    End Function
 
    
 
@@ -57,6 +61,17 @@ Public Class OLEDBCON
         connection.Open()
         Dim adapter = New MySqlDataAdapter(query, connection)
         adapter.FillSchema(dtSet, SchemaType.Source)
+        adapter.Fill(dtSet)
+        adapter.Dispose()
+        connection.Close()
+        Return dtSet
+    End Function
+
+    Private Function LanzarQueryT(ByVal query As String, ByVal connection As MySqlConnection) As DataTable
+        Dim dtSet As New DataTable
+        connection.Open()
+        Dim adapter = New MySqlDataAdapter(query, connection)
+        'adapter.FillSchema(dtSet, SchemaType.Source)
         adapter.Fill(dtSet)
         adapter.Dispose()
         connection.Close()

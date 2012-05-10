@@ -27,7 +27,6 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("santanderModel", "cliente_usuario_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cliente), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.usuario), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "cuenta_cuentaCliente_fj", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.cuentacliente), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "cuenta_movimiento_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.movimiento), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_tarjeta_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "tarjeta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.tarjeta), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "cuenta_transferencia_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "transferencia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.transferencia), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "cuentacliente_depositoCliente_fk", "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuentacliente), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.depositocliente), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "deposito_depositocliente_fk", "deposito", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.deposito), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.depositocliente), true)]
@@ -313,22 +312,6 @@ namespace solicitudes
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        public ObjectSet<tarjeta> tarjeta
-        {
-            get
-            {
-                if ((_tarjeta == null))
-                {
-                    _tarjeta = base.CreateObjectSet<tarjeta>("tarjeta");
-                }
-                return _tarjeta;
-            }
-        }
-        private ObjectSet<tarjeta> _tarjeta;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
         public ObjectSet<tiposolicitud> tiposolicitud
         {
             get
@@ -373,6 +356,22 @@ namespace solicitudes
             }
         }
         private ObjectSet<usuario> _usuario;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<tarjeta> tarjeta
+        {
+            get
+            {
+                if ((_tarjeta == null))
+                {
+                    _tarjeta = base.CreateObjectSet<tarjeta>("tarjeta");
+                }
+                return _tarjeta;
+            }
+        }
+        private ObjectSet<tarjeta> _tarjeta;
 
         #endregion
 
@@ -491,14 +490,6 @@ namespace solicitudes
         }
     
         /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet tarjeta. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddTotarjeta(tarjeta tarjeta)
-        {
-            base.AddObject("tarjeta", tarjeta);
-        }
-    
-        /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet tiposolicitud. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
         public void AddTotiposolicitud(tiposolicitud tiposolicitud)
@@ -520,6 +511,14 @@ namespace solicitudes
         public void AddTousuario(usuario usuario)
         {
             base.AddObject("usuario", usuario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet tarjeta. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddTotarjeta(tarjeta tarjeta)
+        {
+            base.AddObject("tarjeta", tarjeta);
         }
 
         #endregion
@@ -1367,28 +1366,6 @@ namespace solicitudes
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<movimiento>("santanderModel.cuenta_movimiento_fk", "movimiento", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cuenta_tarjeta_fk", "tarjeta")]
-        public EntityCollection<tarjeta> tarjeta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tarjeta>("santanderModel.cuenta_tarjeta_fk", "tarjeta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tarjeta>("santanderModel.cuenta_tarjeta_fk", "tarjeta", value);
                 }
             }
         }
@@ -3538,6 +3515,30 @@ namespace solicitudes
         private global::System.String _asunto;
         partial void OnasuntoChanging(global::System.String value);
         partial void OnasuntoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> borrado
+        {
+            get
+            {
+                return _borrado;
+            }
+            set
+            {
+                OnborradoChanging(value);
+                ReportPropertyChanging("borrado");
+                _borrado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("borrado");
+                OnborradoChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _borrado;
+        partial void OnborradoChanging(Nullable<global::System.Boolean> value);
+        partial void OnborradoChanged();
 
         #endregion
 
@@ -4083,24 +4084,24 @@ namespace solicitudes
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String titular
+        public Nullable<global::System.Int32> idCliente
         {
             get
             {
-                return _titular;
+                return _idCliente;
             }
             set
             {
-                OntitularChanging(value);
-                ReportPropertyChanging("titular");
-                _titular = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("titular");
-                OntitularChanged();
+                OnidClienteChanging(value);
+                ReportPropertyChanging("idCliente");
+                _idCliente = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idCliente");
+                OnidClienteChanged();
             }
         }
-        private global::System.String _titular;
-        partial void OntitularChanging(global::System.String value);
-        partial void OntitularChanged();
+        private Nullable<global::System.Int32> _idCliente;
+        partial void OnidClienteChanging(Nullable<global::System.Int32> value);
+        partial void OnidClienteChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -4153,48 +4154,6 @@ namespace solicitudes
         #endregion
 
     
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cuenta_tarjeta_fk", "cuenta")]
-        public cuenta cuenta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_tarjeta_fk", "cuenta").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_tarjeta_fk", "cuenta").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<cuenta> cuentaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_tarjeta_fk", "cuenta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<cuenta>("santanderModel.cuenta_tarjeta_fk", "cuenta", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>
