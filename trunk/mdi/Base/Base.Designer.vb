@@ -26,17 +26,21 @@ Partial Class Base
         Me.txtSalir = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnTodos = New System.Windows.Forms.Button()
-        Me.txtC = New CusomTextBox.CustomTextBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgv
         '
+        Me.dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv.BackgroundColor = System.Drawing.Color.White
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv.Location = New System.Drawing.Point(12, 107)
+        Me.dgv.Location = New System.Drawing.Point(2, 107)
         Me.dgv.Name = "dgv"
-        Me.dgv.Size = New System.Drawing.Size(467, 219)
+        Me.dgv.Size = New System.Drawing.Size(518, 249)
         Me.dgv.TabIndex = 1
         '
         'txtSalir
@@ -66,20 +70,6 @@ Partial Class Base
         Me.btnTodos.Text = "Obtener Todos"
         Me.btnTodos.UseVisualStyleBackColor = True
         '
-        'txtC
-        '
-        Me.txtC.CAMPDB = "nombre"
-        Me.txtC.Dll = Nothing
-        Me.txtC.Form = Nothing
-        Me.txtC.isID = "True"
-        Me.txtC.Location = New System.Drawing.Point(12, 12)
-        Me.txtC.Name = "txtC"
-        Me.txtC.NomTaula = ""
-        Me.txtC.Size = New System.Drawing.Size(161, 20)
-        Me.txtC.TabIndex = 0
-        Me.txtC.Tag = "CustomTXT"
-        Me.txtC.TipoDato = CusomTextBox.CustomTextBox.eTipoDato.Caracter
-        '
         'btnLimpiar
         '
         Me.btnLimpiar.Location = New System.Drawing.Point(360, 39)
@@ -93,25 +83,23 @@ Partial Class Base
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 338)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(522, 358)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnTodos)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.txtSalir)
         Me.Controls.Add(Me.dgv)
-        Me.Controls.Add(Me.txtC)
         Me.Name = "Base"
         Me.Text = "Form1"
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Protected Friend WithEvents txtC As CusomTextBox.CustomTextBox
-    Protected Friend WithEvents dgv As System.Windows.Forms.DataGridView
-    Friend WithEvents txtSalir As System.Windows.Forms.Button
-    Friend WithEvents btnUpdate As System.Windows.Forms.Button
-    Friend WithEvents btnTodos As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
+    Public WithEvents dgv As System.Windows.Forms.DataGridView
+    Public WithEvents txtSalir As System.Windows.Forms.Button
+    Public WithEvents btnUpdate As System.Windows.Forms.Button
+    Public WithEvents btnTodos As System.Windows.Forms.Button
+    Public WithEvents btnLimpiar As System.Windows.Forms.Button
 
 End Class

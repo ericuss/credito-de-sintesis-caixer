@@ -1,7 +1,7 @@
 ﻿Public Class Base
 
     Protected Friend tablaBBDD As String
-    Private dts As DataSet
+    Protected Friend dts As DataSet
   
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Dim conn As New AccDatos.OLEDBCON
