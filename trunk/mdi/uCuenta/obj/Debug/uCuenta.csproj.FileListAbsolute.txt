@@ -1,0 +1,17 @@
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\uCuenta.dll
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\uCuenta.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\Base.dll
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\AccDatos.dll
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\Base.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\Base.xml
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\AccDatos.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\bin\Debug\AccDatos.xml
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmConsultaExtracto.resources
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.dll
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.pdb
+D:\S2J\Sintesi\LanreSuit\dll\uCuenta.dll
+D:\S2J\Sintesi\LanreSuit\dll\uCuenta.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.Properties.Resources.resources
