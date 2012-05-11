@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html;
+using iTextSharp.text.html.simpleparser;
 
 namespace tools
 {
@@ -58,9 +63,102 @@ namespace tools
 
 
 
+        public static void imprimirDataTableEnPdf(DataSet dsOriginal)
+        {
 
+            Document document = new Document();
+            String strNombreFichero = "";
 
+            strNombreFichero = "borrar\\" + DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString() + DateTime.Now.Day.ToString() + DateTime.Now.Millisecond.ToString() + ".pdf";
+            
+            PdfWriter.GetInstance(document, new FileStream(strNombreFichero, FileMode.OpenOrCreate));
+            document.Open();
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.AppDomain.CurrentDomain.BaseDirectory +
+                                            "\\images\\logosantander.jpg");
 
+            jpg.Alignment = iTextSharp.text.Image.LEFT_ALIGN;
+            jpg.ScaleAbsoluteWidth(192);
+            jpg.ScaleAbsoluteHeight(75);
+
+            document.Add(jpg);
+
+            document.Add(new Paragraph("Consulta de Saldo", FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE)));
+            document.Add(new Paragraph(" "));
+            document.Add(new Paragraph(" "));
+            int columnasSinId = 0;
+
+            DataTable dtTemp = new DataTable();
+            dtTemp = dsOriginal.Tables[0].Copy();
+            dtTemp.PrimaryKey = null;
+            foreach (DataColumn dcTemp in dsOriginal.Tables[0].Columns)
+            {
+                if (!dcTemp.ColumnName.ToString().StartsWith("id"))
+                {
+                    columnasSinId++;
+                }
+                else
+                {
+                    dtTemp.Columns.Remove(dcTemp.ColumnName);
+                }
+            }
+            PdfPTable tabla = new PdfPTable(columnasSinId);
+            tabla.WidthPercentage = 100;
+            PdfPCell cell = new PdfPCell();
+
+            foreach (DataColumn dcTemp in dtTemp.Columns)
+            {
+                cell = new PdfPCell(new Phrase(dcTemp.ColumnName.ToUpper()));
+                cell.HorizontalAlignment = 1;
+                tabla.AddCell(cell);
+            }
+            foreach (DataRow drTemp in dtTemp.Rows)
+            {
+                foreach (var dcTemp in drTemp.ItemArray)
+                {
+                    if (dcTemp.GetType().ToString() == "System.DateTime")
+                    {
+
+                        cell = new PdfPCell(new Phrase(Convert.ToDateTime(dcTemp).ToShortDateString()));
+
+                    }
+                    else if (dcTemp.GetType().ToString() == "System.Decimal")
+                    {
+                        // Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1)
+                        cell = new PdfPCell(new Phrase(Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1)));
+                    }
+                    else
+                    {
+
+                        cell = new PdfPCell(new Phrase(Convert.ToString(dcTemp)));
+
+                    }
+                    cell.HorizontalAlignment = 1;
+                    tabla.AddCell(cell);
+                }
+            }
+
+            document.Add(tabla);
+            // Chunk chunk = new Chunk("Texto subrayado", FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE));
+            //document.Add(new Paragraph(chunk));
+
+            document.Close();
+            System.Diagnostics.Process.Start("AcroRd32.exe", strNombreFichero);
+
+        }
+
+        public static Boolean isNumeric(String str)
+        {
+            try
+            {
+                Double i;
+                i = Convert.ToDouble(str);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
 
 
@@ -74,7 +172,7 @@ namespace tools
                 {
                     if (drTemp["id"] == strId)
                     {
-                        
+
                     }
                 }
             }
