@@ -1,36 +1,43 @@
-﻿Public Class Base
+﻿
+Public Class Base
 
     Protected Friend tablaBBDD As String
     Protected Friend dts As DataSet
-  
-    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim conn As New AccDatos.OLEDBCON
         dts = conn.ObtenerTablaVacia(tablaBBDD)
         bindearDTS()
+        ocultarId()
+    End Sub
+    Public Overridable Sub ocultarId()
+
     End Sub
 
     Protected Friend Sub loadfirst()
         Dim conn As New AccDatos.OLEDBCON
         dts = conn.ObtenerTablaVacia(tablaBBDD)
+        ocultarId()
         bindearDTS()
     End Sub
-    Private Sub txtSalir_Click(sender As System.Object, e As System.EventArgs) Handles txtSalir.Click
+    Private Sub txtSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSalir.Click
         Me.Dispose()
     End Sub
 
 
-    Private Sub btnUpdate_Click(sender As System.Object, e As System.EventArgs) Handles btnUpdate.Click
+    Private Sub btnUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdate.Click
         Dim conn As New AccDatos.OLEDBCON
         conn.UpdateDB(dts, "select * from " + tablaBBDD)
     End Sub
 
 
 
-    Private Sub btnTodos_Click(sender As System.Object, e As System.EventArgs) Handles btnTodos.Click
+    Private Sub btnTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTodos.Click
         Dim conn As New AccDatos.OLEDBCON
         dts = conn.ObtenerTabla(tablaBBDD)
         limpiarBinding()
         bindearDTS()
+        ocultarId()
     End Sub
 
     Private Sub bindearDTS()
@@ -56,7 +63,7 @@
 
     Private Sub limpiarBinding()
         Try
-   
+
             For Each txt In Me.Controls
 
                 If txt.tag = "CustomTXT" Then
@@ -70,11 +77,17 @@
         End Try
     End Sub
 
-    Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click
+    Private Sub btnLimpiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiar.Click
 
         limpiarBinding()
         Dim conn As New AccDatos.OLEDBCON
         dts = conn.ObtenerTablaVacia(tablaBBDD)
         bindearDTS()
+        ocultarId()
+    End Sub
+
+    Private Sub btnPdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPdf.Click
+
+        tools.clsTools.imprimirDataTableEnPdf(dts)
     End Sub
 End Class
