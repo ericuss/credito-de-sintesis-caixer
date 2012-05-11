@@ -4,44 +4,6 @@
         <name>solicitudes</name>
     </assembly>
     <members>
-        <member name="M:solicitudes.Program.Main">
-            <summary>
-            Punto de entrada principal para la aplicación.
-            </summary>
-        </member>
-        <member name="T:solicitudes.Properties.Resources">
-            <summary>
-              Clase de recurso con establecimiento inflexible de tipos para buscar cadenas traducidas, etc.
-            </summary>
-        </member>
-        <member name="P:solicitudes.Properties.Resources.ResourceManager">
-            <summary>
-              Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
-            </summary>
-        </member>
-        <member name="P:solicitudes.Properties.Resources.Culture">
-            <summary>
-              Invalida la propiedad CurrentUICulture del subproceso actual para todas las
-              búsquedas de recursos usando esta clase de recursos con establecimiento inflexible de tipos.
-            </summary>
-        </member>
-        <member name="F:solicitudes.frmSolPendientes.components">
-            <summary>
-            Variable del diseñador requerida.
-            </summary>
-        </member>
-        <member name="M:solicitudes.frmSolPendientes.Dispose(System.Boolean)">
-            <summary>
-            Limpiar los recursos que se estén utilizando.
-            </summary>
-            <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
-        </member>
-        <member name="M:solicitudes.frmSolPendientes.InitializeComponent">
-            <summary>
-            Método necesario para admitir el Diseñador. No se puede modificar
-            el contenido del método con el editor de código.
-            </summary>
-        </member>
         <member name="T:solicitudes.santanderEntities1">
             <summary>
             No hay documentación de metadatos disponible.
@@ -1269,6 +1231,44 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:solicitudes.Properties.Resources">
+            <summary>
+              Clase de recurso con establecimiento inflexible de tipos para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:solicitudes.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:solicitudes.Properties.Resources.Culture">
+            <summary>
+              Invalida la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos usando esta clase de recursos con establecimiento inflexible de tipos.
+            </summary>
+        </member>
+        <member name="M:solicitudes.Program.Main">
+            <summary>
+            Punto de entrada principal para la aplicación.
+            </summary>
+        </member>
+        <member name="F:solicitudes.frmSolPendientes.components">
+            <summary>
+            Variable del diseñador requerida.
+            </summary>
+        </member>
+        <member name="M:solicitudes.frmSolPendientes.Dispose(System.Boolean)">
+            <summary>
+            Limpiar los recursos que se estén utilizando.
+            </summary>
+            <param name="disposing">true si los recursos administrados se deben eliminar; false en caso contrario, false.</param>
+        </member>
+        <member name="M:solicitudes.frmSolPendientes.InitializeComponent">
+            <summary>
+            Método necesario para admitir el Diseñador. No se puede modificar
+            el contenido del método con el editor de código.
             </summary>
         </member>
     </members>
