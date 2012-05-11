@@ -119,20 +119,26 @@ namespace tools
                     {
 
                         cell = new PdfPCell(new Phrase(Convert.ToDateTime(dcTemp).ToShortDateString()));
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
 
                     }
                     else if (dcTemp.GetType().ToString() == "System.Decimal")
                     {
                         // Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1)
-                        cell = new PdfPCell(new Phrase(Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1)));
+                        String strTemp =  Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1) + " €";
+
+                        cell = new PdfPCell(new Phrase(strTemp));
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
+                        //cell.HorizontalAlignment = Element.ALIGN_l;
                     }
                     else
                     {
 
                         cell = new PdfPCell(new Phrase(Convert.ToString(dcTemp)));
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
 
                     }
-                    cell.HorizontalAlignment = 1;
+                    cell.VerticalAlignment = PdfPCell.ALIGN_MIDDLE;
                     tabla.AddCell(cell);
                 }
             }
@@ -140,7 +146,7 @@ namespace tools
             document.Add(tabla);
             // Chunk chunk = new Chunk("Texto subrayado", FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE));
             //document.Add(new Paragraph(chunk));
-
+           
             document.Close();
             System.Diagnostics.Process.Start("AcroRd32.exe", strNombreFichero);
 
