@@ -33,6 +33,7 @@
             this.txtCodCuenta = new System.Windows.Forms.TextBox();
             this.gbSolicitudes = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigoOficina = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.gbSolicitudes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -48,6 +48,9 @@
             // 
             // dgvSolicitudes
             // 
+            this.dgvSolicitudes.AllowUserToAddRows = false;
+            this.dgvSolicitudes.AllowUserToDeleteRows = false;
+            this.dgvSolicitudes.AllowUserToOrderColumns = true;
             this.dgvSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -55,6 +58,7 @@
             this.dgvSolicitudes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSolicitudes.Location = new System.Drawing.Point(6, 19);
             this.dgvSolicitudes.Name = "dgvSolicitudes";
+            this.dgvSolicitudes.ReadOnly = true;
             this.dgvSolicitudes.Size = new System.Drawing.Size(772, 307);
             this.dgvSolicitudes.TabIndex = 0;
             // 
@@ -106,6 +110,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(741, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(25, 23);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "button1";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // chkTodos
             // 
@@ -168,16 +182,6 @@
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Codigo Oficina";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(741, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(25, 23);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "button1";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // frmSolPendientes
             // 

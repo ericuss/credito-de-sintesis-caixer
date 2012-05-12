@@ -9,3 +9,4 @@ C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\dll\CustomTreeViewNode.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\CustomTreeViewNode\obj\Debug\CustomTreeViewNode.csprojResolveAssemblyReference.cache

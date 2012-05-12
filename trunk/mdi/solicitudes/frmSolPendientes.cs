@@ -16,10 +16,10 @@ namespace solicitudes
         {
             InitializeComponent();
             dgvSolicitudes.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgvSolicitudes_RowHeaderMouseDoubleClick);
-            
+
         }
 
-   
+
 
         void dgvSolicitudes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -30,7 +30,13 @@ namespace solicitudes
                 Form petTarj = new frmSolicitudTarjeta(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString());
                 petTarj.MdiParent = this.MdiParent;
                 petTarj.Show();
-            
+
+            }
+            else if (tipoSol == "3")
+            {
+                Form petTarj = new frmSolDeposito(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
+                petTarj.MdiParent = this.MdiParent;
+                petTarj.Show();
             }
         }
 
@@ -57,9 +63,11 @@ namespace solicitudes
                                  Estado = esol.tag,
                                  idTipoSol = tsol.id,
                                  idCliente = cli.id,
-                                 idCuenta = cue.id
+                                 idCuenta = cue.id,
+                                 idSol=sol.id
                              };
             dgvSolicitudes.DataSource = datasource;
+            this.dgvSolicitudes.Columns["idSol"].Visible = false;
             this.dgvSolicitudes.Columns["idTipoSol"].Visible = false;
             this.dgvSolicitudes.Columns["idCliente"].Visible = false;
             this.dgvSolicitudes.Columns["idCuenta"].Visible = false;
@@ -121,14 +129,14 @@ namespace solicitudes
         }
         public void filtrar()
         {
-           String jaja = "select concat(cuenta.codigoEntidad ,' - ' , concat(cuenta.codigoOficina ,' - ' , concat(cuenta.codigoControl,' - ' , cuenta.codigoCuenta))) as Cuenta, "
-                            + " date_format(solicitud.fecha,'%d/%m/%Y')  as Fecha, concat(cliente.nombre,' ', cliente.apellidos) as Ciente, "
-                            + " cliente.dni as DNI, replace(tiposolicitud.tag, 'solicitud','')as Tipo, estadosolicitud.tag as Estado, "
-                            + " tiposolicitud.id as idTipoSol, cliente.id as idCliente, cuenta.id as idCuenta "
-                            + " from cuenta, solicitud, cliente, estadosolicitud, tiposolicitud "
-                            + " where cuenta.id = solicitud.idCuenta and solicitud.idCliente= cliente.id and  "
-                            + " solicitud.idTipoSolicitud = tiposolicitud.id and solicitud.idEstadoSolicitud= estadosolicitud.id " + buildWhere();
-     
+            String jaja = "select concat(cuenta.codigoEntidad ,' - ' , concat(cuenta.codigoOficina ,' - ' , concat(cuenta.codigoControl,' - ' , cuenta.codigoCuenta))) as Cuenta, "
+                             + " date_format(solicitud.fecha,'%d/%m/%Y')  as Fecha, concat(cliente.nombre,' ', cliente.apellidos) as Ciente, "
+                             + " cliente.dni as DNI, replace(tiposolicitud.tag, 'solicitud','')as Tipo, estadosolicitud.tag as Estado, "
+                             + " tiposolicitud.id as idTipoSol, cliente.id as idCliente, cuenta.id as idCuenta, solicitud.id as idSol "
+                             + " from cuenta, solicitud, cliente, estadosolicitud, tiposolicitud "
+                             + " where cuenta.id = solicitud.idCuenta and solicitud.idCliente= cliente.id and  "
+                             + " solicitud.idTipoSolicitud = tiposolicitud.id and solicitud.idEstadoSolicitud= estadosolicitud.id " + buildWhere();
+
             DataTable ds = conn.LanzarConsultaT(jaja);
             dgvSolicitudes.DataSource = ds;
         }
