@@ -18,6 +18,7 @@ namespace uCuenta
         {
             InitializeComponent();
             tablaBBDD = "movimiento";
+            strOpcional = "cuenta: 2100 - 2000 - 12 - 012345678       Nombre: Hannah42";
         }
 
         #endregion
