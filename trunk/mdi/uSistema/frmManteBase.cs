@@ -11,9 +11,11 @@ namespace uSistema
 {
     public partial class frmManteBase : Form
     {
+
         public frmManteBase()
         {
             InitializeComponent();
         }
+
     }
 }

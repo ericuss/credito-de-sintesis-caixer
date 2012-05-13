@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaExtracto));
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
             this.dtpIni = new System.Windows.Forms.DateTimePicker();
@@ -217,6 +218,7 @@
             this.Controls.Add(this.dtpIni);
             this.Controls.Add(this.dtpFin);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultaExtracto";
             this.Text = "Consulta del Extracto";
             this.Load += new System.EventHandler(this.frmConsultaExtracto_Load);

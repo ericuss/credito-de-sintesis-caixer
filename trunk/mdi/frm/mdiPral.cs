@@ -94,6 +94,7 @@ namespace frm
             doLogin();
 
             loadMenu();
+            this.WindowState = FormWindowState.Maximized;
 
         }
 

@@ -7,18 +7,18 @@ Public Class OLEDBCON
     Public Function ObtenerTablaVacia(ByVal nTable As String) As DataSet
         Dim dtaset As DataSet
         Try
-            Dim connection As New OleDbConnection(connectionString)
+            Dim connection As New MySqlConnection(connectionString)
             dtaset = LanzarQuery("select * from " & nTable + " where 2=1", connection)
             Return dtaset
         Catch ex As Exception
-
+            Return Nothing
         End Try
 
     End Function
 
     Public Function ObtenerTabla(ByVal nTable As String) As DataSet
         Dim dtaset As DataSet
-        Dim connection As New OleDbConnection(connectionString)
+        Dim connection As New MySqlConnection(connectionString)
 
         dtaset = LanzarQuery("select * from " & nTable, connection)
         Return dtaset
@@ -107,7 +107,8 @@ Public Class OLEDBCON
 
     Public Function loadConnectionString() As String
         Dim ds As New DataSet
-        ds.ReadXml("C:\temp\ConnectionString.xml")
+
+        ds.ReadXml(System.AppDomain.CurrentDomain.BaseDirectory & "ConnectionString.xml")
         Dim connection = ds.Tables(0).Rows(0).Item("path")
         Return connection
     End Function
