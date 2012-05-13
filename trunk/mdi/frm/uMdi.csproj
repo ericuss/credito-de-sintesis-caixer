@@ -53,6 +53,14 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AccDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dll\AccDatos.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomTreeViewNode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dll\CustomTreeViewNode.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -154,14 +162,6 @@
     <None Include="Resources\lupaRecot.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccDatos\AccDatos.vbproj">
-      <Project>{C26C8243-A555-4DD5-8B10-8AD20046639D}</Project>
-      <Name>AccDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CustomTreeViewNode\CustomTreeViewNode.csproj">
-      <Project>{CDA89F08-F7DC-4C53-8702-DD1BB7B0CC3A}</Project>
-      <Name>CustomTreeViewNode</Name>
-    </ProjectReference>
     <ProjectReference Include="..\tools\tools.csproj">
       <Project>{0EC21CB3-D160-4AFF-AE4F-F4D8B7143D44}</Project>
       <Name>tools</Name>
