@@ -3,6 +3,7 @@ Public Class Base
 
     Protected Friend tablaBBDD As String
     Protected Friend dts As DataSet
+    Protected Friend strOpcional As String
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim conn As New AccDatos.OLEDBCON
@@ -88,6 +89,6 @@ Public Class Base
 
     Private Sub btnPdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPdf.Click
 
-        tools.clsTools.imprimirDataTableEnPdf(dts)
+        tools.clsTools.imprimirDataTableEnPdf(dts, strOpcional)
     End Sub
 End Class
