@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSplashScreen));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Info = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,8 +77,9 @@
             this.Controls.Add(this.Info);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSplashScreen";
-            this.Text = "frmSplashScreen";
+            this.Text = "Santander";
             this.Load += new System.EventHandler(this.frmSplashScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
