@@ -63,7 +63,7 @@ namespace tools
 
 
 
-        public static void imprimirDataTableEnPdf(DataSet dsOriginal)
+        public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamOp)
         {
 
             Document document = new Document();
@@ -73,6 +73,8 @@ namespace tools
             
             PdfWriter.GetInstance(document, new FileStream(strNombreFichero, FileMode.OpenOrCreate));
             document.Open();
+
+            document.Add(new Paragraph("Banco Santander S.A. Todos los derechos reservados. Sede corporativa: CGS Av. Cantabria s/n 28660 Boadilla del Monte, Madrid (España) " + DateTime.Now.ToString(), FontFactory.GetFont("ARIAL", 6, iTextSharp.text.Font.UNDERLINE)));
             iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(System.AppDomain.CurrentDomain.BaseDirectory +
                                             "\\images\\logosantander.jpg");
 
@@ -84,6 +86,7 @@ namespace tools
 
             document.Add(new Paragraph("Consulta de Saldo", FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE)));
             document.Add(new Paragraph(" "));
+            document.Add(new Paragraph(strParamOp));
             document.Add(new Paragraph(" "));
             int columnasSinId = 0;
 
