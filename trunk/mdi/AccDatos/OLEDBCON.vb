@@ -80,13 +80,13 @@ Public Class OLEDBCON
 
 
     Public Sub UpdateDB(ByVal dataset As DataSet, ByVal query As String)
-        Dim connection As New OleDbConnection(connectionString)
+        Dim connection As New MySqlConnection(connectionString)
         connection.Open()
-        Dim adapter As New OleDbDataAdapter(query, connectionString)
-        Dim Construct As New OleDbCommandBuilder(adapter)
+        Dim adapter As New MySqlDataAdapter(query, connectionString)
+        Dim Construct As New MySqlCommandBuilder(adapter)
         Try
             adapter.Update(dataset)
-        Catch ex As OleDbException
+        Catch ex As MySqlException
         End Try
         adapter.Dispose()
         connection.Close()

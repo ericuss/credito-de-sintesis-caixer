@@ -113,11 +113,11 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Image = global::solicitudes.Properties.Resources.refresh;
             this.btnRefresh.Location = new System.Drawing.Point(741, 12);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(25, 23);
             this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.Text = "button1";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 

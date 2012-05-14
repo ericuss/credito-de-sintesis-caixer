@@ -16,8 +16,10 @@ namespace solicitudes
         {
             InitializeComponent();
             dgvSolicitudes.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgvSolicitudes_RowHeaderMouseDoubleClick);
-
+           
         }
+
+
 
 
 

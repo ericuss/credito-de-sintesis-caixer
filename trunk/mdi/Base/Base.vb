@@ -54,7 +54,7 @@ Public Class Base
 
             dgv.DataSource = dts.Tables(0)
         Catch ex As Exception
-            '  MsgBox(ex.Message.ToString)
+            'MsgBox(ex.Message.ToString)
         End Try
     End Sub
     Private Sub validartext(ByVal sender As Object, ByVal e As System.EventArgs)
