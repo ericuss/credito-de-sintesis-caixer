@@ -128,7 +128,7 @@ namespace tools
                     else if (dcTemp.GetType().ToString() == "System.Decimal")
                     {
                         // Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1)
-                        String strTemp =  Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1) + " €";
+                        String strTemp =  Convert.ToString(dcTemp).Substring(0, Convert.ToString(dcTemp).Length - 1) + " ";
 
                         cell = new PdfPCell(new Phrase(strTemp));
                         cell.HorizontalAlignment = PdfPCell.ALIGN_RIGHT;
