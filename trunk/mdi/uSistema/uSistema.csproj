@@ -49,6 +49,12 @@
     <Compile Include="frmManteBase.Designer.cs">
       <DependentUpon>frmManteBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManteUsuarios.Designer.cs">
+      <DependentUpon>frmManteUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTreeMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmManteBase.resx">
       <DependentUpon>frmManteBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManteUsuarios.resx">
+      <DependentUpon>frmManteUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTreeMenu.resx">
       <DependentUpon>frmTreeMenu.cs</DependentUpon>
