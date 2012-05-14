@@ -153,20 +153,26 @@ namespace frm
 
         void tvMenu_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
-            if (tvMenu.SelectedNode.Tag.ToString() != "-1")
+            try
             {
-                String dll = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll;
-                String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
-
-                System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
-                Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
-
-                if (tools.clsTools.compIfFormExistInChildrenAndFocus(extForm, this.MdiChildren))
+                if (tvMenu.SelectedNode.Tag.ToString() != "-1")
                 {
-                    extForm.MdiParent = this;
-                    extForm.Show();
+                    String dll = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll;
+                    String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
+
+                    System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
+                    Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
+
+                    if (tools.clsTools.compIfFormExistInChildrenAndFocus(extForm, this.MdiChildren))
+                    {
+                        extForm.MdiParent = this;
+                        extForm.Show();
+                    }
                 }
+            }
+            catch (Exception exx)
+            {
+
             }
 
         }

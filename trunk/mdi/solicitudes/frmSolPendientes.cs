@@ -27,7 +27,7 @@ namespace solicitudes
             String tipoSol = dgvSolicitudes.SelectedRows[0].Cells["idTipoSol"].Value.ToString();
             if (tipoSol == "1")
             {
-                Form petTarj = new frmSolicitudTarjeta(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+                Form petTarj = new frmSolicitudTarjeta(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
                 petTarj.MdiParent = this.MdiParent;
                 petTarj.Show();
 

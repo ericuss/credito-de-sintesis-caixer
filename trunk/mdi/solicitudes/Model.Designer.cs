@@ -4579,13 +4579,15 @@ namespace solicitudes
         /// <param name="login">Valor inicial de la propiedad login.</param>
         /// <param name="password">Valor inicial de la propiedad password.</param>
         /// <param name="idCliente">Valor inicial de la propiedad idCliente.</param>
-        public static usuario Createusuario(global::System.Int32 id, global::System.String login, global::System.String password, global::System.Int32 idCliente)
+        /// <param name="inactivo">Valor inicial de la propiedad inactivo.</param>
+        public static usuario Createusuario(global::System.Int32 id, global::System.String login, global::System.String password, global::System.Int32 idCliente, global::System.Boolean inactivo)
         {
             usuario usuario = new usuario();
             usuario.id = id;
             usuario.login = login;
             usuario.password = password;
             usuario.idCliente = idCliente;
+            usuario.inactivo = inactivo;
             return usuario;
         }
 
@@ -4739,6 +4741,30 @@ namespace solicitudes
         private global::System.String _paginaPreferida;
         partial void OnpaginaPreferidaChanging(global::System.String value);
         partial void OnpaginaPreferidaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean inactivo
+        {
+            get
+            {
+                return _inactivo;
+            }
+            set
+            {
+                OninactivoChanging(value);
+                ReportPropertyChanging("inactivo");
+                _inactivo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("inactivo");
+                OninactivoChanged();
+            }
+        }
+        private global::System.Boolean _inactivo;
+        partial void OninactivoChanging(global::System.Boolean value);
+        partial void OninactivoChanged();
 
         #endregion
 

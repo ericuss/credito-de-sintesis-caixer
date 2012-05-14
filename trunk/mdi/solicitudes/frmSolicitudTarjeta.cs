@@ -13,6 +13,7 @@ namespace solicitudes
     {
         private Int16 idCliente;
         private Int16 idCuenta;
+        private int idSolicitud;
 
 
         public frmSolicitudTarjeta()
@@ -21,21 +22,40 @@ namespace solicitudes
         }
 
 
-        public frmSolicitudTarjeta(String idCliente, String idCuenta)
+        public frmSolicitudTarjeta(String idCliente, String idCuenta, String idSol)
         {
             InitializeComponent();
             this.idCliente = Convert.ToInt16(idCliente);
-            this.idCuenta =  Convert.ToInt16(idCuenta);
+            this.idCuenta = Convert.ToInt16(idCuenta);
+            this.idSolicitud = Convert.ToInt16(idSol);
             fillTextbox();
             fillTextCuenta();
-           
+            disableIfNecessary();
         }
 
-      
+        private void disableIfNecessary()
+        {
+            MessageBox.Show(idSolicitud.ToString());
+            santanderEntities1 context = new santanderEntities1();
+            var sol = from ss in context.solicitud
+                      where ss.id == idSolicitud
+                      select ss;
+            foreach (var item in sol)
+            {
+                if (item.idEstadoSolicitud != 1)
+                {
+                    btnAceptar.Visible = false;
+                    btnDenegar.Visible = false;
+                    btnMantener.Text = "Cerrar";
+                }
+            }
+        }
+
+
 
         private void fillTextCuenta()
         {
-            int idcl =idCuenta;
+            int idcl = idCuenta;
             santanderEntities1 context = new santanderEntities1();
 
             var centas = from cue in context.cuenta
@@ -105,8 +125,9 @@ namespace solicitudes
             santanderEntities1 context = new santanderEntities1();
             solicitud solt = new solicitud();
             var tmpSol = from sol in context.solicitud
-                         where sol.idCliente==idCliente &&
-                                sol.idCuenta == idCuenta
+                         where sol.idCliente == idCliente &&
+                                sol.idCuenta == idCuenta &&
+                                sol.id == idSolicitud
                          select sol;
             foreach (var item in tmpSol)
             {
@@ -119,23 +140,23 @@ namespace solicitudes
             String cdigo = genRandCod();
             int yr = DateTime.Now.Year + 5;
             Random r = new Random(DateTime.Now.Millisecond);
-            String tcvv = Convert.ToString(r.Next(100,999));
+            String tcvv = Convert.ToString(r.Next(100, 999));
 
-          //  String titular = txtNombre.Text + " " + txtApellidos.Text;
+            //  String titular = txtNombre.Text + " " + txtApellidos.Text;
             tarjeta tmpTarj = new tarjeta
             {
                 idCuenta = idCuenta,
                 idCliente = idCliente,
                 fechaCaducidad = mon + "/" + yr,
-                codigo=cdigo,
-                cvv=tcvv
+                codigo = cdigo,
+                cvv = tcvv
             };
             context.AddTotarjeta(tmpTarj);
             notificacion tnot = new notificacion
             {
-                idCliente= Convert.ToInt16(idCliente),
-                text="Se ha aceptado la solicitud de la tarjeta para la cuenta "+txtCenta.Text,
-                asunto="Solicitud Tarjeta Acetada",
+                idCliente = Convert.ToInt16(idCliente),
+                text = "Se ha aceptado la solicitud de la tarjeta para la cuenta " + txtCenta.Text,
+                asunto = "Solicitud Tarjeta Acetada",
                 fecha = DateTime.Now
             };
             context.AddTonotificacion(tnot);
@@ -170,7 +191,8 @@ namespace solicitudes
             solicitud solt = new solicitud();
             var tmpSol = from sol in context.solicitud
                          where sol.idCliente == idCliente &&
-                                sol.idCuenta == idCuenta
+                                sol.idCuenta == idCuenta &&
+                                sol.id == idSolicitud
                          select sol;
             foreach (var item in tmpSol)
             {
@@ -180,8 +202,10 @@ namespace solicitudes
             solt.idEstadoSolicitud = 4;
             notificacion tnot = new notificacion
             {
+                borrado = false,
+                leido = false,
                 idCliente = Convert.ToInt16(idCliente),
-                text = "Se ha denegado la solicitud de la tarjeta para la cuenta " + txtCenta.Text+". Dirijase a su oficina para mas información." ,
+                text = "Se ha denegado la solicitud de la tarjeta para la cuenta " + txtCenta.Text + ". Dirijase a su oficina para mas información.",
                 asunto = "Solicitud Tarjeta Denegada",
                 fecha = DateTime.Now
             };
@@ -190,7 +214,7 @@ namespace solicitudes
             this.Dispose();
         }
 
-      
+
 
 
 

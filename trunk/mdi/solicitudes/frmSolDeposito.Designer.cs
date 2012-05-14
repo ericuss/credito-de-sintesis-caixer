@@ -56,6 +56,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tcMain = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtTAE = new System.Windows.Forms.TextBox();
+            this.txtImporteMin = new System.Windows.Forms.TextBox();
+            this.txtPlazos = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtFechaP = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.txtImporteSol = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.rbPresContratados = new System.Windows.Forms.RadioButton();
             this.rbDepContratados = new System.Windows.Forms.RadioButton();
@@ -63,22 +78,7 @@
             this.dgvInfo = new System.Windows.Forms.DataGridView();
             this.txtPresCon = new System.Windows.Forms.TextBox();
             this.txtDepCon = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtImporteSol = new System.Windows.Forms.TextBox();
-            this.txtSaldo = new System.Windows.Forms.TextBox();
-            this.txtFechaP = new System.Windows.Forms.TextBox();
             this.txtError = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtPlazos = new System.Windows.Forms.TextBox();
-            this.txtImporteMin = new System.Windows.Forms.TextBox();
-            this.txtTAE = new System.Windows.Forms.TextBox();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistAcciones)).BeginInit();
@@ -91,12 +91,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tcMain.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -117,6 +117,7 @@
             this.btnDenegar.TabIndex = 3;
             this.btnDenegar.Text = "Denegar";
             this.btnDenegar.UseVisualStyleBackColor = true;
+            this.btnDenegar.Click += new System.EventHandler(this.btnDenegar_Click);
             // 
             // btnMantener
             // 
@@ -402,6 +403,150 @@
             this.tcMain.Size = new System.Drawing.Size(535, 345);
             this.tcMain.TabIndex = 1;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox7);
+            this.tabPage5.Controls.Add(this.groupBox6);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(527, 319);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Resumen";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.txtTAE);
+            this.groupBox7.Controls.Add(this.txtImporteMin);
+            this.groupBox7.Controls.Add(this.txtPlazos);
+            this.groupBox7.Controls.Add(this.label13);
+            this.groupBox7.Controls.Add(this.label12);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Location = new System.Drawing.Point(6, 102);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(235, 211);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Deposito Solicitado";
+            // 
+            // txtTAE
+            // 
+            this.txtTAE.Location = new System.Drawing.Point(138, 119);
+            this.txtTAE.Name = "txtTAE";
+            this.txtTAE.ReadOnly = true;
+            this.txtTAE.Size = new System.Drawing.Size(41, 20);
+            this.txtTAE.TabIndex = 5;
+            // 
+            // txtImporteMin
+            // 
+            this.txtImporteMin.Location = new System.Drawing.Point(138, 74);
+            this.txtImporteMin.Name = "txtImporteMin";
+            this.txtImporteMin.ReadOnly = true;
+            this.txtImporteMin.Size = new System.Drawing.Size(68, 20);
+            this.txtImporteMin.TabIndex = 4;
+            // 
+            // txtPlazos
+            // 
+            this.txtPlazos.Location = new System.Drawing.Point(138, 28);
+            this.txtPlazos.Name = "txtPlazos";
+            this.txtPlazos.ReadOnly = true;
+            this.txtPlazos.Size = new System.Drawing.Size(41, 20);
+            this.txtPlazos.TabIndex = 3;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(77, 122);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "TAE";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 77);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Importe Minimo";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(67, 31);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Plazos";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtFechaP);
+            this.groupBox6.Controls.Add(this.txtSaldo);
+            this.groupBox6.Controls.Add(this.txtImporteSol);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Controls.Add(this.label9);
+            this.groupBox6.Controls.Add(this.label8);
+            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(515, 90);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Informacion Deposito Contratado";
+            // 
+            // txtFechaP
+            // 
+            this.txtFechaP.Location = new System.Drawing.Point(105, 51);
+            this.txtFechaP.Name = "txtFechaP";
+            this.txtFechaP.ReadOnly = true;
+            this.txtFechaP.Size = new System.Drawing.Size(144, 20);
+            this.txtFechaP.TabIndex = 6;
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.Location = new System.Drawing.Point(312, 22);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.ReadOnly = true;
+            this.txtSaldo.Size = new System.Drawing.Size(110, 20);
+            this.txtSaldo.TabIndex = 5;
+            // 
+            // txtImporteSol
+            // 
+            this.txtImporteSol.Location = new System.Drawing.Point(69, 22);
+            this.txtImporteSol.Name = "txtImporteSol";
+            this.txtImporteSol.ReadOnly = true;
+            this.txtImporteSol.Size = new System.Drawing.Size(110, 20);
+            this.txtImporteSol.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(195, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(97, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Saldo en la Cuenta";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(18, 54);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(81, 13);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Fecha Peticion:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(18, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Importe:";
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.rbPresContratados);
@@ -479,84 +624,6 @@
             this.txtDepCon.Size = new System.Drawing.Size(28, 20);
             this.txtDepCon.TabIndex = 2;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.groupBox7);
-            this.tabPage5.Controls.Add(this.groupBox6);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(527, 319);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Resumen";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.txtFechaP);
-            this.groupBox6.Controls.Add(this.txtSaldo);
-            this.groupBox6.Controls.Add(this.txtImporteSol);
-            this.groupBox6.Controls.Add(this.label11);
-            this.groupBox6.Controls.Add(this.label9);
-            this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Location = new System.Drawing.Point(6, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(515, 90);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Informacion Deposito Contratado";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Importe:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 54);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 13);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Fecha Peticion:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(195, 25);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Saldo en la Cuenta";
-            // 
-            // txtImporteSol
-            // 
-            this.txtImporteSol.Location = new System.Drawing.Point(69, 22);
-            this.txtImporteSol.Name = "txtImporteSol";
-            this.txtImporteSol.ReadOnly = true;
-            this.txtImporteSol.Size = new System.Drawing.Size(110, 20);
-            this.txtImporteSol.TabIndex = 4;
-            // 
-            // txtSaldo
-            // 
-            this.txtSaldo.Location = new System.Drawing.Point(312, 22);
-            this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.ReadOnly = true;
-            this.txtSaldo.Size = new System.Drawing.Size(110, 20);
-            this.txtSaldo.TabIndex = 5;
-            // 
-            // txtFechaP
-            // 
-            this.txtFechaP.Location = new System.Drawing.Point(105, 51);
-            this.txtFechaP.Name = "txtFechaP";
-            this.txtFechaP.ReadOnly = true;
-            this.txtFechaP.Size = new System.Drawing.Size(144, 20);
-            this.txtFechaP.TabIndex = 6;
-            // 
             // txtError
             // 
             this.txtError.Location = new System.Drawing.Point(9, 431);
@@ -565,72 +632,6 @@
             this.txtError.Size = new System.Drawing.Size(531, 20);
             this.txtError.TabIndex = 6;
             this.txtError.Visible = false;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.txtTAE);
-            this.groupBox7.Controls.Add(this.txtImporteMin);
-            this.groupBox7.Controls.Add(this.txtPlazos);
-            this.groupBox7.Controls.Add(this.label13);
-            this.groupBox7.Controls.Add(this.label12);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Location = new System.Drawing.Point(6, 102);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(235, 211);
-            this.groupBox7.TabIndex = 1;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Deposito Solicitado";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(67, 31);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Plazos";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 77);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "Importe Minimo";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(77, 122);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 13);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "TAE";
-            // 
-            // txtPlazos
-            // 
-            this.txtPlazos.Location = new System.Drawing.Point(138, 28);
-            this.txtPlazos.Name = "txtPlazos";
-            this.txtPlazos.ReadOnly = true;
-            this.txtPlazos.Size = new System.Drawing.Size(41, 20);
-            this.txtPlazos.TabIndex = 3;
-            // 
-            // txtImporteMin
-            // 
-            this.txtImporteMin.Location = new System.Drawing.Point(138, 74);
-            this.txtImporteMin.Name = "txtImporteMin";
-            this.txtImporteMin.ReadOnly = true;
-            this.txtImporteMin.Size = new System.Drawing.Size(68, 20);
-            this.txtImporteMin.TabIndex = 4;
-            // 
-            // txtTAE
-            // 
-            this.txtTAE.Location = new System.Drawing.Point(138, 119);
-            this.txtTAE.Name = "txtTAE";
-            this.txtTAE.ReadOnly = true;
-            this.txtTAE.Size = new System.Drawing.Size(41, 20);
-            this.txtTAE.TabIndex = 5;
             // 
             // frmSolDeposito
             // 
@@ -658,15 +659,15 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tcMain.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

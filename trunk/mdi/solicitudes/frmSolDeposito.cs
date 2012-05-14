@@ -225,10 +225,18 @@ namespace solicitudes
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDouble(txtImporteSol.Text) > Convert.ToDouble(txtSaldo.Text))
+            if (txtSaldo.Text == "" || txtImporteSol.Text=="")
             {
                 txtError.BackColor = Color.Red;
                 txtError.ForeColor = Color.Black;
+                txtError.Text = "Error Genral.";
+                txtError.Visible = true;
+            }
+            else if (Convert.ToDouble(txtImporteSol.Text) > Convert.ToDouble(txtSaldo.Text))
+            {
+                txtError.BackColor = Color.Red;
+                txtError.ForeColor = Color.Black;
+                txtError.Text = "Saldo en cuenta Insuficiente.";
                 txtError.Visible = true;
             }
             else
@@ -263,15 +271,54 @@ namespace solicitudes
                 movimiento mov = new movimiento()
                 {
                     idCuenta = idCuenta,
+                    fecha = DateTime.Now,
                     importe = imp * (-1),
                     concepto = "Deposito",
                     descripcion = "Aceptacion de la solicitud del deposito de " + txtImporteSol.Text + "€ a " + txtPlazos.Text + " meses."
                 };
+
+                notificacion nott = new notificacion()
+                {
+                    borrado = false,
+                    leido = false,
+                    idCliente = idCliente,
+                    text = "Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".",
+                    asunto = "Solicitud de Deposito Aceptada",
+                    fecha = DateTime.Now
+
+                };
                 context.AddTomovimiento(mov);
                 context.SaveChanges();
-               
+
                 this.Dispose();
             }
+        }
+
+        private void btnDenegar_Click(object sender, EventArgs e)
+        {
+            santanderEntities1 context = new santanderEntities1();
+            solicitud solt = new solicitud();
+            var tmpSol = from sol in context.solicitud
+                         where sol.idCliente == idCliente &&
+                                sol.idCuenta == idCuenta
+                         select sol;
+            foreach (var item in tmpSol)
+            {
+                solt = item;
+
+            }
+            solt.idEstadoSolicitud = 4;
+            notificacion tnot = new notificacion
+            {
+                borrado = false,
+                idCliente = idCliente,
+                text = "Se ha denegado la solicitud de Deposito con el importe de " + txtImporteSol.Text + ". Dirijase a su oficina para mas información.",
+                asunto = "Solicitud Tarjeta Denegada",
+                fecha = DateTime.Now
+            };
+            context.AddTonotificacion(tnot);
+            context.SaveChanges();
+            this.Dispose();
         }
 
     }

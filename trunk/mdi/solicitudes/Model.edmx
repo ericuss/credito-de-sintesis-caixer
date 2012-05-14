@@ -290,10 +290,11 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="login" Type="varchar" Nullable="false" MaxLength="45" />
-          <Property Name="password" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="password" Type="text" Nullable="false" />
           <Property Name="idioma" Type="varchar" MaxLength="2" />
           <Property Name="idCliente" Type="int" Nullable="false" />
           <Property Name="paginaPreferida" Type="varchar" MaxLength="100" />
+          <Property Name="inactivo" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="cliente_accion_fk">
           <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="0..1" />
@@ -781,6 +782,7 @@
           <Property Name="idCliente" Type="Int32" Nullable="false" />
           <Property Name="paginaPreferida" Type="String" />
           <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_usuario_fk" FromRole="usuario" ToRole="cliente" />
+          <Property Type="Boolean" Name="inactivo" Nullable="false" />
         </EntityType>
         <Association Name="cliente_accion_fk">
           <End Role="cliente" Type="santanderModel.cliente" Multiplicity="0..1" />
@@ -1178,6 +1180,7 @@
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="santanderModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="inactivo" ColumnName="inactivo" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />

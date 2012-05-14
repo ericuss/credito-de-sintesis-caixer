@@ -12,6 +12,7 @@ namespace uCuenta
     public partial class frmConsultaExtracto : Base.Base
     {
         #region "Variables privadas"
+      
         #endregion
         #region "New"
         public frmConsultaExtracto()
