@@ -1029,6 +1029,30 @@ namespace EntityModel
         private global::System.String _fechaNacimiento;
         partial void OnfechaNacimientoChanging(global::System.String value);
         partial void OnfechaNacimientoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> inactivo
+        {
+            get
+            {
+                return _inactivo;
+            }
+            set
+            {
+                OninactivoChanging(value);
+                ReportPropertyChanging("inactivo");
+                _inactivo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("inactivo");
+                OninactivoChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _inactivo;
+        partial void OninactivoChanging(Nullable<global::System.Boolean> value);
+        partial void OninactivoChanged();
 
         #endregion
 

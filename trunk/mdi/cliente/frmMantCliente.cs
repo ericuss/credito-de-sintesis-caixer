@@ -27,6 +27,7 @@ namespace cliente
         private void loadAllClients()
         {
             var clientes = from cli in context.cliente
+                           where cli.inactivo==false
                            select new
                             {
                                 idCliente = cli.id,
@@ -35,7 +36,7 @@ namespace cliente
                                 Direccion = cli.direccion,
                                 Correo = cli.mail,
                                 DNI = cli.dni,
-                                FechaNacimiento =cli.fechaNacimiento
+                                FechaNacimiento = cli.fechaNacimiento
 
                             };
             this.dgv.DataSource = clientes;
@@ -54,7 +55,41 @@ namespace cliente
         {
             if (dgv.SelectedRows.Count != 0)
             {
-               String idCliente= dgv.SelectedRows[0].Cells["idCliente"].Value.ToString();
+                int idCliente =Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString());
+                EntityModel.cliente tmpC = new EntityModel.cliente();
+                var cliente = from cli in context.cliente
+                              where cli.id == idCliente
+                              select cli;
+                foreach (var v in cliente)
+                {
+                    tmpC = v;
+                }
+
+                tmpC.inactivo = true;
+
+
+                EntityModel.usuario tmpU = new EntityModel.usuario();
+
+                var user = from us in context.usuario
+                              where us.id == idCliente
+                              select us;
+                foreach (var val in user)
+                {
+                    tmpU = val;
+                }
+
+                tmpU.inactivo = true;
+                context.SaveChanges();
+            }
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count > 0 && dgv.SelectedRows.Count <= 1)
+            {
+                Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString()));
+                frmEdit.MdiParent = this.MdiParent;
+                frmEdit.Show();
             }
         }
     }

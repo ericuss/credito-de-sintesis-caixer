@@ -109,6 +109,7 @@
           <Property Name="mail" Type="varchar" MaxLength="45" />
           <Property Name="dni" Type="varchar" MaxLength="45" />
           <Property Name="fechaNacimiento" Type="varchar" MaxLength="45" />
+          <Property Name="inactivo" Type="bit" />
         </EntityType>
         <EntityType Name="cuenta">
           <Key>
@@ -593,6 +594,7 @@
           <NavigationProperty Name="historicoinversion" Relationship="santanderModel.cliente_historicoInversion_fk" FromRole="cliente" ToRole="historicoinversion" />
           <NavigationProperty Name="notificacion" Relationship="santanderModel.cliente_notificacion_fk" FromRole="cliente" ToRole="notificacion" />
           <NavigationProperty Name="usuario" Relationship="santanderModel.cliente_usuario_fk" FromRole="cliente" ToRole="usuario" />
+          <Property Type="Boolean" Name="inactivo" />
         </EntityType>
         <EntityType Name="cuenta">
           <Key>
@@ -998,6 +1000,7 @@
           <EntitySetMapping Name="cliente">
             <EntityTypeMapping TypeName="santanderModel.cliente">
               <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="inactivo" ColumnName="inactivo" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />

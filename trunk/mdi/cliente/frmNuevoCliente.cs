@@ -13,10 +13,50 @@ namespace cliente
 {
     public partial class frmNuevoCliente : Form
     {
+        private int idCliente;
         santanderEntities1 context = new santanderEntities1();
         public frmNuevoCliente()
         {
             InitializeComponent();
+            idCliente = -1;
+        }
+
+        public frmNuevoCliente(int idc)
+        {
+            InitializeComponent();
+            this.idCliente = idc;
+            setData(idc);
+        }
+
+        private void setData(int idc)
+        {
+            var cliente = from cli in context.cliente
+                           where cli.id == idc
+                           select new
+                           {
+                               idCliente = cli.id,
+                               Nombre = cli.nombre ,
+                               Apellido =  cli.apellidos,
+                               Telefono = cli.telefono,
+                               Direccion = cli.direccion,
+                               Poblacion = cli.poblacion,
+                               Correo = cli.mail,
+                               DNI = cli.dni,
+                               FechaNacimiento = cli.fechaNacimiento
+
+                           };
+            foreach (var item in cliente)
+            {
+                txtApellido.Text = item.Apellido;
+                txtDireccion.Text = item.Direccion;
+                txtDNI.Text = item.DNI;
+                txtFechaNacimiento.Text = item.FechaNacimiento;
+                txtMail.Text = item.Correo;
+                txtNombre.Text = item.Nombre;
+                txtPoblacion.Text = item.Poblacion;
+                txtTelfono.Text = item.Telefono;
+            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -35,57 +75,72 @@ namespace cliente
             }
             else
             {
-
-                EntityModel.cliente tmpCliente = new EntityModel.cliente
-                 {
-                     nombre = txtNombre.Text,
-                     apellidos = txtApellido.Text,
-                     telefono = txtTelfono.Text,
-                     direccion = txtDireccion.Text,
-                     poblacion = txtPoblacion.Text,
-                     mail = txtMail.Text,
-                     dni = txtDNI.Text,
-                     fechaNacimiento = txtFechaNacimiento.Text
-                 };
-
-
-                context.AddTocliente(tmpCliente);
-                cuenta tmpCuenta = new cuenta
+                if (idCliente == -1)
                 {
-                    codigoEntidad = "2100",
-                    codigoOficina = "9999",
-                    codigoControl = genrandom(2, false),
-                    codigoCuenta = genrandom(8, true),
-                    saldo = 0
-                };
-                context.AddTocuenta(tmpCuenta);
-
-
-                cuentacliente tmpcc = new cuentacliente
+                    crearCliente();
+                }
+                else
                 {
-                    idCliente = tmpCliente.id,
-                    idCuenta = tmpCuenta.id
-                };
-                context.AddTocuentacliente(tmpcc);
-
-                if (chkCrearUser.Checked == true)
-                {
-                    usuario tmpUsuario = new usuario
-                    {
-                        login = txtNombre.Text + txtApellido.Text.Substring(0, 2) + genrandom(2, false),
-                        password = getmd5("12345"),
-                        idioma = "es",
-                        paginaPreferida = "/backend/cuenta/cuenta",
-                        inactivo = false
-                    };
-                    context.AddTousuario(tmpUsuario);
+                    updateCliente();
                 }
 
-
-                context.SaveChanges();
-
-
             }
+        }
+
+        private void updateCliente()
+        {
+            
+        }
+
+        private void crearCliente()
+        {
+            EntityModel.cliente tmpCliente = new EntityModel.cliente
+            {
+                nombre = txtNombre.Text,
+                apellidos = txtApellido.Text,
+                telefono = txtTelfono.Text,
+                direccion = txtDireccion.Text,
+                poblacion = txtPoblacion.Text,
+                mail = txtMail.Text,
+                dni = txtDNI.Text,
+                fechaNacimiento = txtFechaNacimiento.Text
+            };
+
+
+            context.AddTocliente(tmpCliente);
+            cuenta tmpCuenta = new cuenta
+            {
+                codigoEntidad = "2100",
+                codigoOficina = "9999",
+                codigoControl = genrandom(2, false),
+                codigoCuenta = genrandom(8, true),
+                saldo = 0
+            };
+            context.AddTocuenta(tmpCuenta);
+
+
+            cuentacliente tmpcc = new cuentacliente
+            {
+                idCliente = tmpCliente.id,
+                idCuenta = tmpCuenta.id
+            };
+            context.AddTocuentacliente(tmpcc);
+
+            if (chkCrearUser.Checked == true)
+            {
+                usuario tmpUsuario = new usuario
+                {
+                    login = txtNombre.Text + txtApellido.Text.Substring(0, 2) + genrandom(2, false),
+                    password = getmd5("12345"),
+                    idioma = "es",
+                    paginaPreferida = "/backend/cuenta/cuenta",
+                    inactivo = false
+                };
+                context.AddTousuario(tmpUsuario);
+            }
+
+
+            context.SaveChanges();
         }
 
         private bool checkCampos()
