@@ -632,6 +632,7 @@
             this.txtError.Size = new System.Drawing.Size(531, 20);
             this.txtError.TabIndex = 6;
             this.txtError.Visible = false;
+            //this.txtError.TextChanged += new System.EventHandler(this.txtError_TextChanged);
             // 
             // frmSolDeposito
             // 

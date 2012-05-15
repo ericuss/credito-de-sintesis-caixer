@@ -308,7 +308,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tcMain);
             this.Name = "frmSolicitudTarjeta";
-            this.Text = "Consulta de Peticion de Tarjeta al Detalle";
+            this.Text = "6";
             this.tcMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

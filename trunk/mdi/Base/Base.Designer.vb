@@ -36,6 +36,7 @@ Partial Class Base
         '
         'dgv
         '
+        Me.dgv.AllowUserToOrderColumns = True
         Me.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv.BackgroundColor = System.Drawing.Color.White
         Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -84,8 +85,8 @@ Partial Class Base
         'gbResultado
         '
         Me.gbResultado.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbResultado.Controls.Add(Me.dgv)
         Me.gbResultado.Location = New System.Drawing.Point(12, 107)
         Me.gbResultado.Name = "gbResultado"
@@ -97,7 +98,7 @@ Partial Class Base
         'gbFiltro
         '
         Me.gbFiltro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbFiltro.Location = New System.Drawing.Point(15, 12)
         Me.gbFiltro.Name = "gbFiltro"
         Me.gbFiltro.Size = New System.Drawing.Size(623, 60)
@@ -107,9 +108,9 @@ Partial Class Base
         '
         'btnPdf
         '
-        Me.btnPdf.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnPdf.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPdf.Image = Global.Base.My.Resources.Resources.pdf
-        Me.btnPdf.Location = New System.Drawing.Point(7, 78)
+        Me.btnPdf.Location = New System.Drawing.Point(644, 25)
         Me.btnPdf.Name = "btnPdf"
         Me.btnPdf.Size = New System.Drawing.Size(27, 37)
         Me.btnPdf.TabIndex = 15

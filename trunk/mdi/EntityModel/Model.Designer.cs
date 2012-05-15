@@ -1011,7 +1011,7 @@ namespace EntityModel
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> fechaNacimiento
+        public global::System.String fechaNacimiento
         {
             get
             {
@@ -1021,13 +1021,13 @@ namespace EntityModel
             {
                 OnfechaNacimientoChanging(value);
                 ReportPropertyChanging("fechaNacimiento");
-                _fechaNacimiento = StructuralObject.SetValidValue(value);
+                _fechaNacimiento = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("fechaNacimiento");
                 OnfechaNacimientoChanged();
             }
         }
-        private Nullable<global::System.DateTime> _fechaNacimiento;
-        partial void OnfechaNacimientoChanging(Nullable<global::System.DateTime> value);
+        private global::System.String _fechaNacimiento;
+        partial void OnfechaNacimientoChanging(global::System.String value);
         partial void OnfechaNacimientoChanged();
 
         #endregion

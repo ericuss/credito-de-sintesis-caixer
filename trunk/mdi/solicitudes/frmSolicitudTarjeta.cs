@@ -95,7 +95,7 @@ namespace solicitudes
                               Apellido = cli.apellidos,
                               Telefono = cli.telefono,
                               Poblacion = cli.poblacion,
-                              Correo = "Algun Dia"
+                              Correo = cli.mail
                           };
 
 
