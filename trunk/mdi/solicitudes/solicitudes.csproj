@@ -71,11 +71,6 @@
     <Compile Include="frmSolPendientes.Designer.cs">
       <DependentUpon>frmSolPendientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmSolDeposito.resx">
@@ -98,11 +93,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Properties\DataSources\santanderEntities1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,9 +108,16 @@
       <Project>{C26C8243-A555-4DD5-8B10-8AD20046639D}</Project>
       <Name>AccDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntityModel\EntityModel.csproj">
+      <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
+      <Name>EntityModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

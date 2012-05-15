@@ -72,6 +72,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telerik.WinControls, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.UI, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="TelerikCommon, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmAbout.cs">
@@ -162,6 +165,10 @@
     <None Include="Resources\lupaRecot.PNG" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EntityModel\EntityModel.csproj">
+      <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
+      <Name>EntityModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tools\tools.csproj">
       <Project>{0EC21CB3-D160-4AFF-AE4F-F4D8B7143D44}</Project>
       <Name>tools</Name>

@@ -19,25 +19,25 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("santanderModel", "cliente_accion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(solicitudes.cliente), "accion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.accion), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "empresa_accion_fk", "empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(solicitudes.empresa), "accion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.accion), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cliente_cuentaClienta_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cliente), "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.cuentacliente), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cliente_historicoInversion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(solicitudes.cliente), "historicoinversion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.historicoinversion), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cliente_notificacion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cliente), "notificacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.notificacion), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cliente_usuario_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cliente), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.usuario), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_cuentaCliente_fj", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.cuentacliente), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_movimiento_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.movimiento), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_transferencia_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuenta), "transferencia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.transferencia), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "cuentacliente_depositoCliente_fk", "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.cuentacliente), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.depositocliente), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "deposito_depositocliente_fk", "deposito", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.deposito), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.depositocliente), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "solicitud_depositoCliente_fk", "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.solicitud), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.depositocliente), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "empresa_historicoInversion_fk", "empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(solicitudes.empresa), "historicoinversion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.historicoinversion), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "estadoSolicitud_solicitud_fk", "estadosolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(solicitudes.estadosolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.solicitud), true)]
-[assembly: EdmRelationshipAttribute("santanderModel", "tipoSolicitud_solicitud_fk", "tiposolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(solicitudes.tiposolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(solicitudes.solicitud), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_accion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.cliente), "accion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.accion), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "empresa_accion_fk", "empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.empresa), "accion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.accion), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_cuentaClienta_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cliente), "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.cuentacliente), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_historicoInversion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.cliente), "historicoinversion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.historicoinversion), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_notificacion_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cliente), "notificacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.notificacion), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_usuario_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cliente), "usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.usuario), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_cuentaCliente_fj", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cuenta), "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.cuentacliente), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_movimiento_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cuenta), "movimiento", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.movimiento), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_transferencia_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cuenta), "transferencia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.transferencia), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cuentacliente_depositoCliente_fk", "cuentacliente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.cuentacliente), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.depositocliente), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "deposito_depositocliente_fk", "deposito", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.deposito), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.depositocliente), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "solicitud_depositoCliente_fk", "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.solicitud), "depositocliente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.depositocliente), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "empresa_historicoInversion_fk", "empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.empresa), "historicoinversion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.historicoinversion), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "estadoSolicitud_solicitud_fk", "estadosolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.estadosolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.solicitud), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "tipoSolicitud_solicitud_fk", "tiposolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.tiposolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.solicitud), true)]
 
 #endregion
 
-namespace solicitudes
+namespace EntityModel
 {
     #region Contextos
     
@@ -312,6 +312,22 @@ namespace solicitudes
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
+        public ObjectSet<tarjeta> tarjeta
+        {
+            get
+            {
+                if ((_tarjeta == null))
+                {
+                    _tarjeta = base.CreateObjectSet<tarjeta>("tarjeta");
+                }
+                return _tarjeta;
+            }
+        }
+        private ObjectSet<tarjeta> _tarjeta;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
         public ObjectSet<tiposolicitud> tiposolicitud
         {
             get
@@ -356,22 +372,6 @@ namespace solicitudes
             }
         }
         private ObjectSet<usuario> _usuario;
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        public ObjectSet<tarjeta> tarjeta
-        {
-            get
-            {
-                if ((_tarjeta == null))
-                {
-                    _tarjeta = base.CreateObjectSet<tarjeta>("tarjeta");
-                }
-                return _tarjeta;
-            }
-        }
-        private ObjectSet<tarjeta> _tarjeta;
 
         #endregion
 
@@ -490,6 +490,14 @@ namespace solicitudes
         }
     
         /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet tarjeta. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddTotarjeta(tarjeta tarjeta)
+        {
+            base.AddObject("tarjeta", tarjeta);
+        }
+    
+        /// <summary>
         /// Método desusado para agregar un nuevo objeto al EntitySet tiposolicitud. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
         /// </summary>
         public void AddTotiposolicitud(tiposolicitud tiposolicitud)
@@ -511,14 +519,6 @@ namespace solicitudes
         public void AddTousuario(usuario usuario)
         {
             base.AddObject("usuario", usuario);
-        }
-    
-        /// <summary>
-        /// Método desusado para agregar un nuevo objeto al EntitySet tarjeta. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
-        /// </summary>
-        public void AddTotarjeta(tarjeta tarjeta)
-        {
-            base.AddObject("tarjeta", tarjeta);
         }
 
         #endregion

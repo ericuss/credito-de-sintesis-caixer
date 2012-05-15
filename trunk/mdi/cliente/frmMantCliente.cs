@@ -15,5 +15,15 @@ namespace cliente
         {
             InitializeComponent();
         }
+
+        private void frmMantCliente_Load(object sender, EventArgs e)
+        {
+            loadAllClients();
+        }
+
+        private void loadAllClients()
+        {
+        
+        }
     }
 }

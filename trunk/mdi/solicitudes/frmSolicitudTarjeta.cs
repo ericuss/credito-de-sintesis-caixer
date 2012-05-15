@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using EntityModel;
 
 namespace solicitudes
 {
@@ -35,7 +36,7 @@ namespace solicitudes
 
         private void disableIfNecessary()
         {
-            MessageBox.Show(idSolicitud.ToString());
+           
             santanderEntities1 context = new santanderEntities1();
             var sol = from ss in context.solicitud
                       where ss.id == idSolicitud

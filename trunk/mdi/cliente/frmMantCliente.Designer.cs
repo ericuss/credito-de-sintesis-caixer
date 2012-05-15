@@ -28,9 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // gbFiltro
+            // 
+            this.gbFiltro.Size = new System.Drawing.Size(581, 60);
+            // 
+            // btnPdf
+            // 
+            this.btnPdf.Location = new System.Drawing.Point(632, 12);
+            // 
+            // frmMantCliente
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(674, 467);
+            this.Name = "frmMantCliente";
             this.Text = "frmMantCliente";
+            this.Load += new System.EventHandler(this.frmMantCliente_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
