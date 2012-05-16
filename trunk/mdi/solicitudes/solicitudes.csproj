@@ -108,10 +108,6 @@
       <Project>{C26C8243-A555-4DD5-8B10-8AD20046639D}</Project>
       <Name>AccDatos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EntityModel\EntityModel.csproj">
-      <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
-      <Name>EntityModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\refresh.png" />

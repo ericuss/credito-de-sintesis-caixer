@@ -66,7 +66,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Guifreaks\NaviSuite2.0\Guifreaks.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Guifreaks.Navisuite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7f6dc13cbca790ea, processorArchitecture=MSIL" />
+    <Reference Include="Guifreaks.Navisuite, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7f6dc13cbca790ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Guifreaks\NaviSuite2.0\Guifreaks.Navisuite.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -78,9 +81,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.WinControls, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
-    <Reference Include="Telerik.WinControls.UI, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
-    <Reference Include="TelerikCommon, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmAbout.cs">

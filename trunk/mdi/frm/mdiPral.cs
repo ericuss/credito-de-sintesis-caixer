@@ -56,16 +56,16 @@ namespace uMdi
             loadMenuLateral();
             loadMenu();
             this.WindowState = FormWindowState.Maximized;
-            //Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
-            //customBtn.btnLink jj = new customBtn.btnLink();
-            //jj.dll = "hh.dll";
-            //jj.formulario = "uoo";
-            //temp.Text = "esto es editado";
+            Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
+            customBtn.btnLink jj = new customBtn.btnLink();
+            jj.dll = "hh.dll";
+            jj.formulario = "uoo";
+            temp.Text = "esto es editado";
 
-            //// btn = new Button();
-            ////btn.Text = "butun";
-            //temp.ClientArea.Controls.Add(jj);
-            //naviBar2.Bands.Add(temp);
+            // btn = new Button();
+            //btn.Text = "butun";
+            temp.ClientArea.Controls.Add(jj);
+            naviBar2.Bands.Add(temp);
 
             //naviBar2.VisibleLargeButtons = naviBar2.Bands.Count;
 
@@ -76,21 +76,28 @@ namespace uMdi
             DataSet dsMenu = new DataSet();
             AccDatos.OLEDBCON CON = new AccDatos.OLEDBCON();
             dsMenu = CON.LanzarConsulta("select * from MDImenu where padre = 0 order by nombreMenu ; select * from MDImenu where padre <> 0");
-
+            List<customBtn.btnLink> lstBotones = new List<customBtn.btnLink>();
             foreach (DataRow drTronco in dsMenu.Tables[0].Rows)
             {
 
                 Guifreaks.Navisuite.NaviBand btnTronco = new Guifreaks.Navisuite.NaviBand();
-               // btnTronco.Text = drTronco['nombreMenu'];
+                btnTronco.Text = drTronco["nombreMenu"].ToString();
                 DataRow[] arrDrHijo;
                 arrDrHijo = dsMenu.Tables[1].Select("padre = " + drTronco["id"].ToString());
                 foreach (DataRow drHijo in arrDrHijo)
                 {
-                    customBtn.btnLink btnHijo = new customBtn.btnLink();
-                    btnHijo.id = drHijo["id"].ToString();
-                    btnHijo.dll = drHijo["id"].ToString();
-                    btnHijo.formulario = drHijo["id"].ToString();
-                    btnTronco.Controls.Add(btnHijo);
+                    lstBotones.Add(new customBtn.btnLink());
+                    lstBotones[lstBotones.Count - 1].id = drHijo["id"].ToString();
+                    lstBotones[lstBotones.Count - 1].dll = drHijo["dll"].ToString();
+                    lstBotones[lstBotones.Count - 1].Text = drHijo["nombreMenu"].ToString();
+                    lstBotones[lstBotones.Count - 1].formulario = drHijo["form"].ToString();
+                    lstBotones[lstBotones.Count - 1].Name = drHijo["id"].ToString() + drHijo["nombreMenu"].ToString();
+                    lstBotones[lstBotones.Count - 1].Width = 100;
+
+                    lstBotones[lstBotones.Count - 1].Visible = true;
+                    lstBotones[lstBotones.Count - 1].Parent = this;
+                    this.Controls.Add(lstBotones[lstBotones.Count - 1]);
+                    btnTronco.ClientArea.Controls.Add(lstBotones[lstBotones.Count - 1]);
                 }
                 naviBar2.Bands.Add(btnTronco);
             }

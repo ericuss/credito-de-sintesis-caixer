@@ -74,8 +74,8 @@
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
             this.naviBar2.VisibleLargeButtons = 10;
-            this.naviBar2.LayoutChanged += new System.EventHandler(this.naviBar2_LayoutChanged);
-            this.naviBar2.Click += new System.EventHandler(this.naviBar2_Click);
+            //this.naviBar2.LayoutChanged += new System.EventHandler(this.naviBar2_LayoutChanged);
+            //this.naviBar2.Click += new System.EventHandler(this.naviBar2_Click);
             // 
             // mdiPral
             // 
