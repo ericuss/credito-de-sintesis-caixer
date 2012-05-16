@@ -1,7 +1,7 @@
 ﻿Imports txtCs
 Public Class txtBuscar
 #Region "Propiedades"
-    Private 
+    Private dt As New DataTable()
     Private widthId_ As String = 100
     Public Property zzWidthId() As String
         Get
@@ -119,6 +119,7 @@ Public Class txtBuscar
                     If dt Is Nothing OrElse dt.Rows.Count <> 1 Then
                         txtId.Text = ""
                         txtDesc.Text = ""
+
                     Else
                         txtDesc.Text = ""
                         For Each item As String In dt.Rows(0).ItemArray
@@ -152,12 +153,19 @@ Public Class txtBuscar
         End If
     End Sub
 
+    Private Function obtenerDt() As DataTable
+        Dim query As New AccDatos.OLEDBCON
+        Return query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla)
 
+    End Function
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-        Dim frm As New txtCs.frmCs
-        frm.ShowDialog()
+
+        If Not dt Is Nothing Then
+            Dim frm As New txtCs.frmCs(obtenerDt)
+            frm.ShowDialog()
+            Dim i As Integer = 0
+        End If
 
 
-        Dim i As Integer = 0
     End Sub
 End Class
