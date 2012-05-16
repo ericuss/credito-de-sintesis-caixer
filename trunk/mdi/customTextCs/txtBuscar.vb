@@ -1,7 +1,21 @@
 ﻿Imports txtCs
+Imports System.Data
+Imports System.Windows.Forms
+
 Public Class txtBuscar
 #Region "Propiedades"
     Private dt As New DataTable()
+
+    Private idVisible_ As Boolean = False
+    Public Property zzIdVisible() As Boolean
+        Get
+            Return idVisible_
+        End Get
+        Set(ByVal value As Boolean)
+            idVisible_ = value
+        End Set
+    End Property
+
     Private widthId_ As String = 100
     Public Property zzWidthId() As String
         Get
@@ -155,15 +169,59 @@ Public Class txtBuscar
 
     Private Function obtenerDt() As DataTable
         Dim query As New AccDatos.OLEDBCON
-        Return query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla)
+        Return query.LanzarConsultaT("Select id, " & zzCampoId & ", " & zzCampoDesc & " from " & zzTabla)
+
+    End Function
+    Private Function obtenerRegistro(ByVal strid As String) As DataTable
+        Dim query As New AccDatos.OLEDBCON
+        Return query.LanzarConsultaT("Select " & zzCampoId & ", " & zzCampoDesc & " from " & zzTabla & " where id = " & strid)
+
 
     End Function
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
 
         If Not dt Is Nothing Then
-            Dim frm As New txtCs.frmCs(obtenerDt)
-            frm.ShowDialog()
-            Dim i As Integer = 0
+
+            If idVisible_ Then
+                Dim frm As New txtCs.frmCs(obtenerDt, "")
+                frm.ShowDialog()
+                If frm.isAceptar Then
+                    Dim dtFrm As DataTable
+                    ''dr = frm.dr
+                    dtFrm = obtenerRegistro(frm.id)
+                    txtId.Text = ""
+                    txtDesc.Text = ""
+                    If dtFrm.Rows.Count = 1 Then
+                        txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
+                        txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
+                        For Each strCampo As String In zzCampoDesc.Split(CChar(","))
+                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
+                        Next
+                    End If
+                   
+
+                End If
+            Else
+                Dim frm As New txtCs.frmCs(obtenerDt, zzCampoId)
+                frm.ShowDialog()
+                If frm.isAceptar Then
+                    Dim dtFrm As DataTable
+                    ''dr = frm.dr
+                    dtFrm = obtenerRegistro(frm.id)
+                    txtId.Text = ""
+                    txtDesc.Text = ""
+                    If dtFrm.Rows.Count = 1 Then
+                        txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
+                        txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
+                        For Each strCampo As String In zzCampoDesc.Split(CChar(","))
+                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
+                        Next
+                    End If
+                   
+
+                End If
+            End If
+
         End If
 
 

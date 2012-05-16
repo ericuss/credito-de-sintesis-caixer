@@ -216,10 +216,10 @@
             this.txtBuscar1.Name = "txtBuscar1";
             this.txtBuscar1.Size = new System.Drawing.Size(363, 33);
             this.txtBuscar1.TabIndex = 18;
-            this.txtBuscar1.zzCampoDesc = null;
-            this.txtBuscar1.zzCampoId = null;
+            this.txtBuscar1.zzCampoDesc = "nombre, apellidos";
+            this.txtBuscar1.zzCampoId = "dni";
             this.txtBuscar1.zzIdIsNumber = false;
-            this.txtBuscar1.zzTabla = null;
+            this.txtBuscar1.zzTabla = "cliente";
             this.txtBuscar1.zzWidthDesc = "160";
             this.txtBuscar1.zzWidthId = "100";
             // 

@@ -12,8 +12,11 @@ namespace txtCs
 {
     public partial class frmCs : Form
     {
-        Boolean isAceptar= false;
+        public Boolean isAceptar= false;
         DataTable dt;
+        String idVisible;
+        public string id = "";
+        public DataGridViewRow dr;
         public frmCs()
         {
             InitializeComponent();
@@ -24,6 +27,24 @@ namespace txtCs
             dt = dtOriginal;
 
         }
+        public frmCs(DataTable dtOriginal, String idVis )
+        {
+            InitializeComponent();
+            dgv.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgv_RowHeaderMouseDoubleClick);
+
+
+            dt = dtOriginal;
+           idVisible= idVis;
+
+        }
+
+        void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dr = dgv.SelectedRows[0];
+            id = dr.Cells["id"].Value.ToString();
+            isAceptar = true;
+            this.Dispose();
+        }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
@@ -33,16 +54,25 @@ namespace txtCs
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            isAceptar = false;
+           // isAceptar = false;
             this.Dispose();
         }
 
         private void frmCs_Load(object sender, EventArgs e)
         {
+            if (dgv.Columns.Contains("id"))
+            {
+                dgv.Columns["id"].Visible = false;
+            }
             if (dt != null)
             {
                 dgv.DataSource = dt;
             }
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
