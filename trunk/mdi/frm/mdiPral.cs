@@ -10,6 +10,7 @@ using System.Threading;
 using uMdi;
 using CustomTreeViewNode;
 using customBtn;
+using Microsoft.VisualBasic;
 
 
 namespace uMdi
@@ -45,7 +46,7 @@ namespace uMdi
         #region "Load"
         private void mdiPral_Load(object sender, EventArgs e)
         {
-            tvMenu.MouseDoubleClick += new MouseEventHandler(tvMenu_MouseDoubleClick);
+           // tvMenu.MouseDoubleClick += new MouseEventHandler(tvMenu_MouseDoubleClick);
             Thread th = new Thread(new ThreadStart(DoSplash));
             th.Start();
             Thread.Sleep(1000);
@@ -56,16 +57,16 @@ namespace uMdi
             loadMenuLateral();
             loadMenu();
             this.WindowState = FormWindowState.Maximized;
-            Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
-            customBtn.btnLink jj = new customBtn.btnLink();
-            jj.dll = "hh.dll";
-            jj.formulario = "uoo";
-            temp.Text = "esto es editado";
+            //Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
+            //customBtn.btnLink jj = new customBtn.btnLink();
+            //jj.dll = "hh.dll";
+            //jj.formulario = "uoo";
+            //temp.Text = "esto es editado";
 
-            // btn = new Button();
-            //btn.Text = "butun";
-            temp.ClientArea.Controls.Add(jj);
-            naviBar2.Bands.Add(temp);
+            //// btn = new Button();
+            ////btn.Text = "butun";
+            //temp.ClientArea.Controls.Add(jj);
+            //naviBar2.Bands.Add(temp);
 
             //naviBar2.VisibleLargeButtons = naviBar2.Bands.Count;
 
@@ -84,23 +85,37 @@ namespace uMdi
                 btnTronco.Text = drTronco["nombreMenu"].ToString();
                 DataRow[] arrDrHijo;
                 arrDrHijo = dsMenu.Tables[1].Select("padre = " + drTronco["id"].ToString());
+                int pos = 1;
                 foreach (DataRow drHijo in arrDrHijo)
                 {
-                    lstBotones.Add(new customBtn.btnLink());
-                    lstBotones[lstBotones.Count - 1].id = drHijo["id"].ToString();
-                    lstBotones[lstBotones.Count - 1].dll = drHijo["dll"].ToString();
-                    lstBotones[lstBotones.Count - 1].Text = drHijo["nombreMenu"].ToString();
-                    lstBotones[lstBotones.Count - 1].formulario = drHijo["form"].ToString();
-                    lstBotones[lstBotones.Count - 1].Name = drHijo["id"].ToString() + drHijo["nombreMenu"].ToString();
-                    lstBotones[lstBotones.Count - 1].Width = 100;
+                    customBtn.btnLink btnHijo =new customBtn.btnLink();
+                    btnHijo.id = drHijo["id"].ToString();
+                    btnHijo.dll = drHijo["dll"].ToString();
+                    btnHijo.Text = drHijo["nombreMenu"].ToString();
+                    btnHijo.formulario = drHijo["form"].ToString();
 
-                    lstBotones[lstBotones.Count - 1].Visible = true;
-                    lstBotones[lstBotones.Count - 1].Parent = this;
-                    this.Controls.Add(lstBotones[lstBotones.Count - 1]);
-                    btnTronco.ClientArea.Controls.Add(lstBotones[lstBotones.Count - 1]);
+                    btnHijo.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drHijo["icoS"].ToString());
+                    btnHijo.BackgroundImageLayout=ImageLayout.None;
+                    btnHijo.Name = drHijo["id"].ToString() + drHijo["nombreMenu"].ToString();
+                    btnHijo.Width = 165;
+                    btnHijo.Location = new System.Drawing.Point(0, 28 * pos);
+                    btnHijo.Visible = true;
+                    btnHijo.Parent = this;
+                    this.Controls.Add(btnHijo);
+                    btnTronco.ClientArea.Controls.Add(btnHijo);
+                    pos++;
                 }
                 naviBar2.Bands.Add(btnTronco);
             }
+
+           
+        }
+        private void loadMenu()
+        {
+            //DataSet ArbolDataSet = new DataSet();
+            //AccDatos.OLEDBCON CON = new AccDatos.OLEDBCON();
+            //ArbolDataSet = CON.LanzarConsulta("select * from MDImenu");
+
 
             //String NombreNodo = "nombreMenu";
             //String TextoNodo = "nombreMenu";
@@ -131,42 +146,6 @@ namespace uMdi
             //    datavie.RowFilter = string.Format("padre = 0");
             //}
         }
-        private void loadMenu()
-        {
-            DataSet ArbolDataSet = new DataSet();
-            AccDatos.OLEDBCON CON = new AccDatos.OLEDBCON();
-            ArbolDataSet = CON.LanzarConsulta("select * from MDImenu");
-
-
-            String NombreNodo = "nombreMenu";
-            String TextoNodo = "nombreMenu";
-            String identificadorNodo = "id";
-            String form = "form";
-            String dll = "dll";
-            DataView datavie = new DataView();
-            datavie.Table = ArbolDataSet.Tables[0];
-            datavie.RowFilter = string.Format("padre = 0");
-            for (int i = 0; i <= datavie.Count - 1; i++)
-            {
-                CustomTreeViewNode.CustomTreeViewNode Nod = new CustomTreeViewNode.CustomTreeViewNode();
-                Nod.Text = datavie[i][TextoNodo].ToString();
-                Nod.Name = datavie[i][NombreNodo].ToString();
-                Nod.Tag = -1;
-                tvMenu.Nodes.Add(Nod);
-                datavie.RowFilter = string.Format("padre = " + datavie[i]["id"]);
-                for (int k = 0; k <= datavie.Count - 1; k++)
-                {
-                    CustomTreeViewNode.CustomTreeViewNode Nodd = new CustomTreeViewNode.CustomTreeViewNode();
-                    Nodd.Text = datavie[k][TextoNodo].ToString();
-                    Nodd.Name = datavie[k][NombreNodo].ToString();
-                    Nodd.Tag = datavie[k][identificadorNodo];
-                    Nodd.dll = datavie[k][dll].ToString();
-                    Nodd.Form = datavie[k][form].ToString();
-                    tvMenu.Nodes[i].Nodes.Add(Nodd);
-                }
-                datavie.RowFilter = string.Format("padre = 0");
-            }
-        }
 
         private void doLogin()
         {
@@ -186,27 +165,27 @@ namespace uMdi
 
         void tvMenu_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                if (tvMenu.SelectedNode.Tag.ToString() != "-1")
-                {
-                    String dll = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll;
-                    String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
+            //try
+            //{
+            //    if (tvMenu.SelectedNode.Tag.ToString() != "-1")
+            //    {
+            //        String dll = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll;
+            //        String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
 
-                    System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
-                    Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
+            //        System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
+            //        Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
 
-                    if (tools.clsTools.compIfFormExistInChildrenAndFocus(extForm, this.MdiChildren))
-                    {
-                        extForm.MdiParent = this;
-                        extForm.Show();
-                    }
-                }
-            }
-            catch (Exception exx)
-            {
+            //        if (tools.clsTools.compIfFormExistInChildrenAndFocus(extForm, this.MdiChildren))
+            //        {
+            //            extForm.MdiParent = this;
+            //            extForm.Show();
+            //        }
+            //    }
+            //}
+            //catch (Exception exx)
+            //{
 
-            }
+            //}
 
         }
 

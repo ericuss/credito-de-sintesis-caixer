@@ -35,9 +35,10 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tvMenu = new System.Windows.Forms.TreeView();
             this.naviBar2 = new Guifreaks.Navisuite.NaviBar(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
+            this.naviBar2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -56,26 +57,28 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // tvMenu
-            // 
-            this.tvMenu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tvMenu.Location = new System.Drawing.Point(231, -3);
-            this.tvMenu.Name = "tvMenu";
-            this.tvMenu.Size = new System.Drawing.Size(121, 431);
-            this.tvMenu.TabIndex = 4;
-            // 
             // naviBar2
             // 
             this.naviBar2.ActiveBand = null;
+            this.naviBar2.Controls.Add(this.button1);
             this.naviBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.naviBar2.Location = new System.Drawing.Point(0, 0);
             this.naviBar2.Name = "naviBar2";
             this.naviBar2.Size = new System.Drawing.Size(168, 431);
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
-            this.naviBar2.VisibleLargeButtons = 10;
-            //this.naviBar2.LayoutChanged += new System.EventHandler(this.naviBar2_LayoutChanged);
-            //this.naviBar2.Click += new System.EventHandler(this.naviBar2_Click);
+            this.naviBar2.VisibleLargeButtons = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::uMdi.Properties.Resources.money;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Location = new System.Drawing.Point(3, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // mdiPral
             // 
@@ -84,7 +87,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.naviBar2);
-            this.Controls.Add(this.tvMenu);
             this.Controls.Add(this.statusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -93,6 +95,7 @@
             this.Load += new System.EventHandler(this.mdiPral_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.naviBar2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,10 +105,10 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.TreeView tvMenu;
         private Guifreaks.Navisuite.NaviBar naviBar1;
         private Guifreaks.Navisuite.NaviBand naviBand1;
         private Guifreaks.Navisuite.NaviBar naviBar2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
