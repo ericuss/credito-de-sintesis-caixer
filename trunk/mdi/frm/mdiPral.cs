@@ -85,6 +85,9 @@ namespace uMdi
                 btnTronco.Text = drTronco["nombreMenu"].ToString();
                 DataRow[] arrDrHijo;
                 arrDrHijo = dsMenu.Tables[1].Select("padre = " + drTronco["id"].ToString());
+                btnTronco.LargeImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drTronco["icoXL"].ToString());
+                btnTronco.SmallImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drTronco["icoXL"].ToString());
+                
                 int pos = 1;
                 foreach (DataRow drHijo in arrDrHijo)
                 {

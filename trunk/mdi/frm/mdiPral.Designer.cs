@@ -36,9 +36,7 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.naviBar2 = new Guifreaks.Navisuite.NaviBar(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
-            this.naviBar2.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
@@ -59,8 +57,6 @@
             // 
             // naviBar2
             // 
-            this.naviBar2.ActiveBand = null;
-            this.naviBar2.Controls.Add(this.button1);
             this.naviBar2.Dock = System.Windows.Forms.DockStyle.Left;
             this.naviBar2.Location = new System.Drawing.Point(0, 0);
             this.naviBar2.Name = "naviBar2";
@@ -68,17 +64,6 @@
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
             this.naviBar2.VisibleLargeButtons = 5;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::uMdi.Properties.Resources.money;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Location = new System.Drawing.Point(3, 62);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // mdiPral
             // 
@@ -95,7 +80,6 @@
             this.Load += new System.EventHandler(this.mdiPral_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            this.naviBar2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,7 +92,6 @@
         private Guifreaks.Navisuite.NaviBar naviBar1;
         private Guifreaks.Navisuite.NaviBand naviBand1;
         private Guifreaks.Navisuite.NaviBar naviBar2;
-        private System.Windows.Forms.Button button1;
     }
 }
 
