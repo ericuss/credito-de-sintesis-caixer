@@ -54,17 +54,18 @@ namespace uMdi
             doLogin();
 
             loadMenuLateral();
+            loadMenu();
             this.WindowState = FormWindowState.Maximized;
-            Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
-            customBtn.btnLink jj = new customBtn.btnLink();
-            jj.dll = "hh.dll";
-            jj.formulario = "uoo";
-            temp.Text = "esto es editado";
+            //Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
+            //customBtn.btnLink jj = new customBtn.btnLink();
+            //jj.dll = "hh.dll";
+            //jj.formulario = "uoo";
+            //temp.Text = "esto es editado";
 
-            // btn = new Button();
-            //btn.Text = "butun";
-            temp.ClientArea.Controls.Add(jj);
-            naviBar2.Bands.Add(temp);
+            //// btn = new Button();
+            ////btn.Text = "butun";
+            //temp.ClientArea.Controls.Add(jj);
+            //naviBar2.Bands.Add(temp);
 
             //naviBar2.VisibleLargeButtons = naviBar2.Bands.Count;
 
@@ -78,11 +79,20 @@ namespace uMdi
 
             foreach (DataRow drTronco in dsMenu.Tables[0].Rows)
             {
-               
+
                 Guifreaks.Navisuite.NaviBand btnTronco = new Guifreaks.Navisuite.NaviBand();
-                customBtn.btnLink jj = new customBtn.btnLink();
-
-
+               // btnTronco.Text = drTronco['nombreMenu'];
+                DataRow[] arrDrHijo;
+                arrDrHijo = dsMenu.Tables[1].Select("padre = " + drTronco["id"].ToString());
+                foreach (DataRow drHijo in arrDrHijo)
+                {
+                    customBtn.btnLink btnHijo = new customBtn.btnLink();
+                    btnHijo.id = drHijo["id"].ToString();
+                    btnHijo.dll = drHijo["id"].ToString();
+                    btnHijo.formulario = drHijo["id"].ToString();
+                    btnTronco.Controls.Add(btnHijo);
+                }
+                naviBar2.Bands.Add(btnTronco);
             }
 
             //String NombreNodo = "nombreMenu";
@@ -193,26 +203,6 @@ namespace uMdi
 
         }
 
-        private void menu1_Click(object sender, EventArgs e)
-        {
-            int i = 0;
-
-        }
-
-        private void naviBar2_Click(object sender, EventArgs e)
-        {
-            int i = 0;
-        }
-
-        private void naviBand3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void naviBar2_LayoutChanged(object sender, EventArgs e)
-        {
-            int i = 0;
-        }
 
 
     }
