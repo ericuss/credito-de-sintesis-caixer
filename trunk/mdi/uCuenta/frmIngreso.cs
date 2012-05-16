@@ -7,21 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace deposito
+namespace uCuenta
 {
-    public partial class frmMantDeposito : Base.Base
+    public partial class frmIngreso : Form
     {
-        public frmMantDeposito()
+        public frmIngreso()
         {
             InitializeComponent();
-            tablaBBDD = "deposito";
         }
-
-        public override void ocultarId()
-        {
-            dgv.Columns["id"].Visible = false;
-        }
-
-       
     }
 }

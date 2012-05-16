@@ -131,6 +131,7 @@
             this.Name = "frmLoggin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Santander";
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

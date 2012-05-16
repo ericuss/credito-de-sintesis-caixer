@@ -159,7 +159,8 @@ namespace solicitudes
                 idCliente = Convert.ToInt16(idCliente),
                 text = "Se ha aceptado la solicitud de la tarjeta para la cuenta " + txtCenta.Text,
                 asunto = "Solicitud Tarjeta Acetada",
-                fecha = DateTime.Now
+                fecha = DateTime.Now,
+                borrado=false
             };
             context.AddTonotificacion(tnot);
             context.SaveChanges();

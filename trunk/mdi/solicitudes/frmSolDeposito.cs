@@ -284,7 +284,7 @@ namespace solicitudes
                     leido = false,
                     idCliente = idCliente,
                     text = "Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".",
-                    asunto = "Solicitud de Deposito Aceptada",
+                    asunto = "Solicitud de Deposito Aceptado",
                     fecha = DateTime.Now
 
                 };
@@ -314,7 +314,7 @@ namespace solicitudes
                 borrado = false,
                 idCliente = idCliente,
                 text = "Se ha denegado la solicitud de Deposito con el importe de " + txtImporteSol.Text + ". Dirijase a su oficina para mas información.",
-                asunto = "Solicitud Tarjeta Denegada",
+                asunto = "Solicitud de Deposito Denegado",
                 fecha = DateTime.Now
             };
             context.AddTonotificacion(tnot);

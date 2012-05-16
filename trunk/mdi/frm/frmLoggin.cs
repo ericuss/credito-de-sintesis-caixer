@@ -19,6 +19,12 @@ namespace uMdi
         public frmLoggin()
         {
             InitializeComponent();
+            this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
+        }
+
+        void frmLoggin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -72,6 +78,8 @@ namespace uMdi
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+
+     
 
     }
 }

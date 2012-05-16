@@ -39,6 +39,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // txtSalir
+            // 
+            this.txtSalir.Location = new System.Drawing.Point(327, 78);
+            // 
             // gbFiltro
             // 
             this.gbFiltro.Location = new System.Drawing.Point(590, 12);

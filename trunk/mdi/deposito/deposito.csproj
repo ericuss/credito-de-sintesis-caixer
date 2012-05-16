@@ -59,6 +59,10 @@
       <Project>{EB4F406D-10FE-4477-84DF-B5B7124DE303}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomValidatorTextBox\CustomValidatorTextBox.csproj">
+      <Project>{8B61828F-A9BB-4573-8FD0-579EB8A40717}</Project>
+      <Name>CustomValidatorTextBox</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmMantDeposito.resx">
