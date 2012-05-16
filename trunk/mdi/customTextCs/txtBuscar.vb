@@ -83,10 +83,10 @@ Public Class txtBuscar
 #Region "Eventos"
 
     Private Sub txtId_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtId.GotFocus
-        BackColor = Drawing.Color.Yellow
+        txtId.BackColor = Drawing.Color.Yellow
     End Sub
     Private Sub txtId_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtId.Leave
-        BackColor = Drawing.Color.White
+        txtId.BackColor = Drawing.Color.White
         txtid_LostFocus(Nothing, Nothing)
     End Sub
 
@@ -102,7 +102,7 @@ Public Class txtBuscar
             Else
                 dt = query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = '" & txtId.Text & "'")
             End If
-            If dt.Rows.Count <= 0 Then
+            If dt.Rows.Count <> 1 Then
                 Return dt
             Else
                 Return Nothing
