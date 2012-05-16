@@ -14,6 +14,7 @@ namespace uSistema
         public frmManteUsuarios()
         {
             InitializeComponent();
+            
         }
     }
 }

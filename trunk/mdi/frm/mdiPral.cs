@@ -9,8 +9,10 @@ using System.Windows.Forms;
 using System.Threading;
 using uMdi;
 using CustomTreeViewNode;
+using customBtn;
 
-namespace frm
+
+namespace uMdi
 {
     public partial class mdiPral : Form
     {
@@ -34,12 +36,12 @@ namespace frm
             childForm.Text = "Window " + childFormNumber++;
             childForm.Show();
         }
-       
-     
-       
+
+
+
         #endregion
 
-    
+
         #region "Load"
         private void mdiPral_Load(object sender, EventArgs e)
         {
@@ -51,11 +53,67 @@ namespace frm
             Thread.Sleep(1000);
             doLogin();
 
-            loadMenu();
+            loadMenuLateral();
             this.WindowState = FormWindowState.Maximized;
+            Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
+            customBtn.btnLink jj = new customBtn.btnLink();
+            jj.dll = "hh.dll";
+            jj.formulario = "uoo";
+            temp.Text = "esto es editado";
+
+            // btn = new Button();
+            //btn.Text = "butun";
+            temp.ClientArea.Controls.Add(jj);
+            naviBar2.Bands.Add(temp);
+
+            //naviBar2.VisibleLargeButtons = naviBar2.Bands.Count;
+
 
         }
+        private void loadMenuLateral()
+        {
+            DataSet dsMenu = new DataSet();
+            AccDatos.OLEDBCON CON = new AccDatos.OLEDBCON();
+            dsMenu = CON.LanzarConsulta("select * from MDImenu where padre = 0 order by nombreMenu ; select * from MDImenu where padre <> 0");
 
+            foreach (DataRow drTronco in dsMenu.Tables[0].Rows)
+            {
+               
+                Guifreaks.Navisuite.NaviBand btnTronco = new Guifreaks.Navisuite.NaviBand();
+                customBtn.btnLink jj = new customBtn.btnLink();
+
+
+            }
+
+            //String NombreNodo = "nombreMenu";
+            //String TextoNodo = "nombreMenu";
+            //String identificadorNodo = "id";
+            //String form = "form";
+            //String dll = "dll";
+            //DataView datavie = new DataView();
+            //datavie.Table = ArbolDataSet.Tables[0];
+            //datavie.RowFilter = string.Format("padre = 0");
+            //for (int i = 0; i <= datavie.Count - 1; i++)
+            //{
+            //    CustomTreeViewNode.CustomTreeViewNode Nod = new CustomTreeViewNode.CustomTreeViewNode();
+            //    Nod.Text = datavie[i][TextoNodo].ToString();
+            //    Nod.Name = datavie[i][NombreNodo].ToString();
+            //    Nod.Tag = -1;
+            //    tvMenu.Nodes.Add(Nod);
+            //    datavie.RowFilter = string.Format("padre = " + datavie[i]["id"]);
+            //    for (int k = 0; k <= datavie.Count - 1; k++)
+            //    {
+            //        CustomTreeViewNode.CustomTreeViewNode Nodd = new CustomTreeViewNode.CustomTreeViewNode();
+            //        Nodd.Text = datavie[k][TextoNodo].ToString();
+            //        Nodd.Name = datavie[k][NombreNodo].ToString();
+            //        Nodd.Tag = datavie[k][identificadorNodo];
+            //        Nodd.dll = datavie[k][dll].ToString();
+            //        Nodd.Form = datavie[k][form].ToString();
+            //        tvMenu.Nodes[i].Nodes.Add(Nodd);
+            //    }
+            //    datavie.RowFilter = string.Format("padre = 0");
+            //}
+        }
         private void loadMenu()
         {
             DataSet ArbolDataSet = new DataSet();
@@ -135,6 +193,27 @@ namespace frm
 
         }
 
-       
+        private void menu1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+
+        }
+
+        private void naviBar2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+        }
+
+        private void naviBand3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void naviBar2_LayoutChanged(object sender, EventArgs e)
+        {
+            int i = 0;
+        }
+
+
     }
 }
