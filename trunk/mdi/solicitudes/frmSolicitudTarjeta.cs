@@ -139,7 +139,8 @@ namespace solicitudes
 
             int mon = DateTime.Now.Month;
             String cdigo = genRandCod();
-            int yr = DateTime.Now.Year + 5;
+            String yr = (DateTime.Now.Year + 5).ToString().Substring(2,2);
+           
             Random r = new Random(DateTime.Now.Millisecond);
             String tcvv = Convert.ToString(r.Next(100, 999));
 

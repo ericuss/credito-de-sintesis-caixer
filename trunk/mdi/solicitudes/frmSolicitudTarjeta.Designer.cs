@@ -308,7 +308,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tcMain);
             this.Name = "frmSolicitudTarjeta";
-            this.Text = "6";
+            this.Text = "Solicitud de Tarjeta";
             this.tcMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
