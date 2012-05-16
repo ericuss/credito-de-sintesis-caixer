@@ -1,6 +1,8 @@
-﻿Public Class txtBuscar
+﻿Imports txtCs
+Public Class txtBuscar
 #Region "Propiedades"
-    Private widthId_ As String
+    Private 
+    Private widthId_ As String = 100
     Public Property zzWidthId() As String
         Get
             Return widthId_
@@ -10,7 +12,7 @@
             txtId.Width = value
         End Set
     End Property
-    Private widthDesc_ As String
+    Private widthDesc_ As String = 160
     Public Property zzWidthDesc() As String
         Get
             Return widthDesc_
@@ -21,7 +23,7 @@
         End Set
     End Property
 
-    Private idIsNumeric_ As Boolean
+    Private idIsNumeric_ As Boolean = False
     Public Property zzIdIsNumber() As Boolean
         Get
             Return idIsNumeric_
@@ -71,7 +73,7 @@
     End Sub
     Private Sub txtId_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtId.Leave
         BackColor = Drawing.Color.White
-        txtBuscar_LostFocus(Nothing, Nothing)
+        txtid_LostFocus(Nothing, Nothing)
     End Sub
 
 #End Region
@@ -82,9 +84,9 @@
             Dim query As New AccDatos.OLEDBCON
             Dim dt As New DataTable
             If zzIdIsNumber Then
-                dt = query.LanzarConsultaT("Select " & zzCampoDesc & ", " & zzCampoId & " from " & zzTabla & " where " & zzCampoId & " = " & txtId.Text)
+                dt = query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = " & txtId.Text)
             Else
-                dt = query.LanzarConsultaT("Select " & zzCampoDesc & ", " & zzCampoId & " from " & zzTabla & " where " & zzCampoId & " = '" & txtId.Text & "'")
+                dt = query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = '" & txtId.Text & "'")
             End If
             If dt.Rows.Count <= 0 Then
                 Return dt
@@ -98,14 +100,32 @@
     End Function
 #End Region
 
+    Public Sub New()
 
+        ' This call is required by the designer.
+        InitializeComponent()
+        txtId.Visible = True
+        txtDesc.Visible = True
+        ' Add any initialization after the InitializeComponent() call.
 
-    Private Sub txtBuscar_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LostFocus
+    End Sub
+
+    Private Sub txtid_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtId.LostFocus
         If Not txtId.Text Is Nothing AndAlso Not txtId.Text.Trim = "" Then
             Dim dt As New DataTable
             If zzIdIsNumber Then
                 If IsNumeric(txtId) Then
                     dt = existeId(txtId.Text)
+                    If dt Is Nothing OrElse dt.Rows.Count <> 1 Then
+                        txtId.Text = ""
+                        txtDesc.Text = ""
+                    Else
+                        txtDesc.Text = ""
+                        For Each item As String In dt.Rows(0).ItemArray
+                            txtDesc.Text &= item & ""
+                        Next
+
+                    End If
                 Else
                     txtId.Text = ""
                     txtDesc.Text = ""
@@ -113,6 +133,18 @@
                 End If
             Else
                 dt = existeId(txtId.Text)
+
+                If dt Is Nothing OrElse dt.Rows.Count <> 1 Then
+                    txtId.Text = ""
+                    txtDesc.Text = ""
+                Else
+                    txtDesc.Text = ""
+                    For Each item As String In dt.Rows(0).ItemArray
+                        txtDesc.Text &= item & ""
+                    Next
+
+                End If
+
             End If
         Else
             txtId.Text = ""
@@ -121,4 +153,11 @@
     End Sub
 
 
+    Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
+        Dim frm As New txtCs.frmCs
+        frm.ShowDialog()
+
+
+        Dim i As Integer = 0
+    End Sub
 End Class

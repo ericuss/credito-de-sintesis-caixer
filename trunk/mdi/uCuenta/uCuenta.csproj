@@ -43,6 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\dll\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -82,6 +83,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\customTextCs\customTextCs.vbproj">
+      <Project>{CED040CD-910C-4E4B-A013-34A91920A79B}</Project>
+      <Name>customTextCs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
