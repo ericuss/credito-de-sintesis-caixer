@@ -17,6 +17,8 @@ namespace customBtn
         public btnLink()
         {
             this.Click += new EventHandler(btnLink_Click);
+           // this.Height = 48;
+          //  this.Width = 48;
         }
 
         void btnLink_Click(object sender, EventArgs e)
