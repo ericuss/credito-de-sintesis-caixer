@@ -175,6 +175,10 @@
       <Project>{0D53D99F-DB7A-471C-B1BD-7BF29A61FCED}</Project>
       <Name>customBtn</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomValidatorTextBox\CustomValidatorTextBox.csproj">
+      <Project>{8B61828F-A9BB-4573-8FD0-579EB8A40717}</Project>
+      <Name>CustomValidatorTextBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\tools\tools.csproj">
       <Project>{0EC21CB3-D160-4AFF-AE4F-F4D8B7143D44}</Project>
       <Name>tools</Name>

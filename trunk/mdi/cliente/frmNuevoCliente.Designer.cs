@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.chkCrearUser = new System.Windows.Forms.CheckBox();
@@ -47,7 +48,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.txtError = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
+            this.txtFechaNacimiento.Mask = "00/00/0000";
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(155, 20);
+            this.txtFechaNacimiento.TabIndex = 19;
+            this.txtFechaNacimiento.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
             // 
             // btnCancelar
             // 
@@ -252,16 +262,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
-            this.txtFechaNacimiento.Mask = "00/00/0000";
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(155, 20);
-            this.txtFechaNacimiento.TabIndex = 19;
-            this.txtFechaNacimiento.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
-            // 
             // txtError
             // 
             this.txtError.Location = new System.Drawing.Point(12, 353);
@@ -274,6 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(317, 385);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.groupBox1);

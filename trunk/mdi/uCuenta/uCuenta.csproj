@@ -108,6 +108,10 @@
     <None Include="Resources\pdf.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\customTextCs\customTextCs.vbproj">
+      <Project>{CED040CD-910C-4E4B-A013-34A91920A79B}</Project>
+      <Name>customTextCs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">
       <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
       <Name>EntityModel</Name>

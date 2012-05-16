@@ -34,10 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtPass = new System.Windows.Forms.MaskedTextBox();
+            this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtPass = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,14 +74,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password:";
             // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(336, 31);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "nick2";
-            // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -103,14 +95,22 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(336, 33);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 6;
+            this.txtUsuario.ValidValue = "";
+            // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(336, 69);
+            this.txtPass.Location = new System.Drawing.Point(336, 71);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
-            this.txtPass.TabIndex = 2;
-            this.txtPass.Text = "12345";
+            this.txtPass.TabIndex = 7;
+            this.txtPass.ValidValue = "";
             // 
             // frmLoggin
             // 
@@ -119,10 +119,10 @@
             this.BackColor = System.Drawing.Color.Red;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(468, 136);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,10 +131,10 @@
             this.Name = "frmLoggin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Santander";
-           
+            this.Load += new System.EventHandler(this.frmLoggin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
+            
         }
 
         #endregion
@@ -142,9 +142,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.MaskedTextBox txtPass;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtPass;
     }
 }

@@ -19,13 +19,10 @@ namespace uMdi
         public frmLoggin()
         {
             InitializeComponent();
-            this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
+
         }
 
-        void frmLoggin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -34,14 +31,19 @@ namespace uMdi
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            submit();
+        }
+
+        private void submit()
+        {
 
             if (txtUsuario.Text.Trim() != "" && txtPass.Text.Trim() != "")
             {
                 AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-                DataSet loginDS = conn.LanzarConsulta("Select * from usuario where login= '" + txtUsuario.Text + "'");
+                DataSet loginDS = conn.LanzarConsulta("Select * from usuario where login= '" + txtUsuario.ValidValue + "'");
                 if (loginDS.Tables[0].Rows.Count != 0)
                 {
-                    if (getmd5(txtPass.Text) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
+                    if (getmd5(txtPass.ValidValue) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
                     {
 
                         this.Dispose();
@@ -79,7 +81,23 @@ namespace uMdi
             return sBuilder.ToString();
         }
 
-     
+        private void frmLoggin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
+
+        }
+
+        void frmLoggin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                submit();
+            }
+        }
+
+
+
 
     }
 }
