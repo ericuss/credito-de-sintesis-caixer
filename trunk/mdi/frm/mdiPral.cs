@@ -49,9 +49,9 @@ namespace uMdi
            // tvMenu.MouseDoubleClick += new MouseEventHandler(tvMenu_MouseDoubleClick);
             Thread th = new Thread(new ThreadStart(DoSplash));
             th.Start();
-            Thread.Sleep(1000);
+            Thread.Sleep(2800);
             th.Abort();
-            Thread.Sleep(1000);
+            Thread.Sleep(2800);
             doLogin();
 
             loadMenuLateral();

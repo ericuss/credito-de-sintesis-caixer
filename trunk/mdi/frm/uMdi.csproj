@@ -190,6 +190,18 @@
   <ItemGroup>
     <None Include="Resources\bank_redXL.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logosantander.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logosantanderM.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bank_red.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DLL.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

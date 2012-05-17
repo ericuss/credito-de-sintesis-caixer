@@ -60,9 +60,37 @@ namespace uMdi.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bank_red {
+            get {
+                object obj = ResourceManager.GetObject("bank_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap bank_redXL {
             get {
                 object obj = ResourceManager.GetObject("bank_redXL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap DLL {
+            get {
+                object obj = ResourceManager.GetObject("DLL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap logosantander {
+            get {
+                object obj = ResourceManager.GetObject("logosantander", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap logosantanderM {
+            get {
+                object obj = ResourceManager.GetObject("logosantanderM", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

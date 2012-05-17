@@ -20,6 +20,12 @@ namespace uCuenta
             InitializeComponent();
             tablaBBDD = "movimiento";
             strOpcional = "cuenta: 2100 - 2000 - 12 - 012345678       Nombre: Hannah42";
+            txtBuscar1.LostFocus += new EventHandler(txtBuscar1_LostFocus);
+        }
+
+        void txtBuscar1_LostFocus(object sender, EventArgs e)
+        {
+            MessageBox.Show("pene");
         }
 
         #endregion
@@ -28,6 +34,7 @@ namespace uCuenta
         private void dtpIni_ValueChanged(object sender, EventArgs e)
         {
             filtrarGrid();
+
         }
 
 
