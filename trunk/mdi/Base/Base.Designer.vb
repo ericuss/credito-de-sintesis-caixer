@@ -85,8 +85,8 @@ Partial Class Base
         'gbResultado
         '
         Me.gbResultado.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbResultado.Controls.Add(Me.dgv)
         Me.gbResultado.Location = New System.Drawing.Point(12, 107)
         Me.gbResultado.Name = "gbResultado"
@@ -98,7 +98,7 @@ Partial Class Base
         'gbFiltro
         '
         Me.gbFiltro.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbFiltro.Location = New System.Drawing.Point(15, 12)
         Me.gbFiltro.Name = "gbFiltro"
         Me.gbFiltro.Size = New System.Drawing.Size(623, 60)

@@ -10,8 +10,12 @@ Public Class Base
         dts = conn.ObtenerTablaVacia(tablaBBDD)
         bindearDTS()
         ocultarId()
+        KeyPreview = True
     End Sub
     Public Overridable Sub ocultarId()
+
+    End Sub
+    Public Overridable Sub filtrarGrid()
 
     End Sub
 
@@ -90,5 +94,12 @@ Public Class Base
     Private Sub btnPdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPdf.Click
 
         tools.clsTools.imprimirDataTableEnPdf(dts, strOpcional)
+    End Sub
+
+    Private Sub Base_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
+        If e.KeyCode = 114 Then
+            filtrarGrid()
+        End If
+
     End Sub
 End Class

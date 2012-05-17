@@ -20,13 +20,11 @@ namespace uCuenta
             InitializeComponent();
             tablaBBDD = "movimiento";
             strOpcional = "cuenta: 2100 - 2000 - 12 - 012345678       Nombre: Hannah42";
-            txtBuscar1.LostFocus += new EventHandler(txtBuscar1_LostFocus);
+          
+
         }
 
-        void txtBuscar1_LostFocus(object sender, EventArgs e)
-        {
-            MessageBox.Show("pene");
-        }
+      
 
         #endregion
 
@@ -74,32 +72,42 @@ namespace uCuenta
         {
             filtrarGrid();
         }
-        private void filtrarGrid()
+        public override void filtrarGrid()
         {
-            string strQuery = "select * from movimiento where 1 = 1 ";
+            string strQuery = "select movimiento.* from movimiento "+
+                                " join cuenta on cuenta.id = movimiento.idcuenta "+
+                                " join cuentacliente on  cuenta.id = cuentacliente.idCuenta"+
+                                " join cliente on cliente.id = cuentacliente.idcuenta "+
+                               " where 1 = 1 ";
 
             if (chkIncluirFechas.Checked)
             {
-                strQuery += " and fecha >= date('" + dtpIni.Value.Year + "/" + dtpIni.Value.Month + "/" + dtpIni.Value.Day + "') ";
-                strQuery += " and fecha <= date('" + dtpFin.Value.Year + "/" + dtpFin.Value.Month + "/" + dtpFin.Value.Day + "') ";
+                strQuery += " and movimiento.fecha >= date('" + dtpIni.Value.Year + "/" + dtpIni.Value.Month + "/" + dtpIni.Value.Day + "') ";
+                strQuery += " and movimiento.fecha <= date('" + dtpFin.Value.Year + "/" + dtpFin.Value.Month + "/" + dtpFin.Value.Day + "') ";
             }
             if (txtImporteIni.Text != "")
             {
-                strQuery += " and importe >= " + txtImporteIni.Text + " ";
+                strQuery += " and movimiento.importe >= " + txtImporteIni.Text + " ";
             }
 
             if (txtImporteFin.Text != "")
             {
-                strQuery += " and importe <= " + txtImporteFin.Text + " ";
+                strQuery += " and movimiento.importe <= " + txtImporteFin.Text + " ";
             }
             if (txtDescrip.Text != "")
             {
-                strQuery += " and descripcion like '%" + txtDescrip.Text + "%' ";
+                strQuery += " and movimiento.descripcion like '%" + txtDescrip.Text + "%' ";
             }
             if (txtCon.Text != "")
             {
-                strQuery += " and concepto like '%" + txtCon.Text + "%' ";
+                strQuery += " and movimiento.concepto like '%" + txtCon.Text + "%' ";
             }
+            if (txtBuscar1.zzTxtId != "")
+            {
+                strQuery += " and cliente.dni = '" + txtBuscar1.zzTxtId + "' ";
+
+            }
+
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
             DataTable dtTemp = conn.LanzarConsultaT(strQuery);
             dgv.DataSource = dtTemp;
