@@ -10,6 +10,8 @@ namespace CustomValidatorTextBox
     {
         public Boolean zzValidateLength { get; set; }
         public Int16 zzValidMaxLength { get; set; }
+        public Boolean zzValidateIsNumeric { get; set; }
+      
         public String ValidValue
         {
             get
@@ -69,7 +71,27 @@ namespace CustomValidatorTextBox
                     this.Text = "";
                 }
             }
+            if (this.zzValidateIsNumeric == true)
+            {
+                if (!isNumeric(this.Text))
+                {
+                    this.Text = "";
+                }
+            }
         }
-        
+        private static Boolean isNumeric(String str)
+        {
+            try
+            {
+                Double i;
+                i = Convert.ToDouble(str);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
