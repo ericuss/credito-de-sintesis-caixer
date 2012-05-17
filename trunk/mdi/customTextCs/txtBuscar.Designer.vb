@@ -30,26 +30,27 @@ Partial Class txtBuscar
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(69, 5)
+        Me.txtId.Location = New System.Drawing.Point(69, 7)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(100, 20)
         Me.txtId.TabIndex = 0
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(176, 3)
+        Me.btnBuscar.BackgroundImage = Global.customTextCs.My.Resources.Resources.filefind
+        Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.btnBuscar.Location = New System.Drawing.Point(175, 0)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.Size = New System.Drawing.Size(32, 33)
         Me.btnBuscar.TabIndex = 1
-        Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtDesc
         '
         Me.txtDesc.Enabled = False
-        Me.txtDesc.Location = New System.Drawing.Point(257, 5)
+        Me.txtDesc.Location = New System.Drawing.Point(213, 7)
         Me.txtDesc.Name = "txtDesc"
-        Me.txtDesc.Size = New System.Drawing.Size(160, 20)
+        Me.txtDesc.Size = New System.Drawing.Size(191, 20)
         Me.txtDesc.TabIndex = 2
         '
         'lbEtiqueta
@@ -70,7 +71,7 @@ Partial Class txtBuscar
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtId)
         Me.Name = "txtBuscar"
-        Me.Size = New System.Drawing.Size(426, 30)
+        Me.Size = New System.Drawing.Size(426, 35)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

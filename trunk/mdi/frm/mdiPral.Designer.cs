@@ -36,13 +36,15 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.naviBar2 = new Guifreaks.Navisuite.NaviBar(this.components);
+            this.menuLog = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
+            this.toolStripStatusLabel,
+            this.menuLog});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(632, 22);
@@ -66,6 +68,12 @@
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
             this.naviBar2.VisibleLargeButtons = 5;
+            // 
+            // menuLog
+            // 
+            this.menuLog.Name = "menuLog";
+            this.menuLog.Size = new System.Drawing.Size(0, 17);
+            this.menuLog.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // mdiPral
             // 
@@ -96,6 +104,7 @@
         private Guifreaks.Navisuite.NaviBar naviBar1;
         private Guifreaks.Navisuite.NaviBand naviBand1;
         private Guifreaks.Navisuite.NaviBar naviBar2;
+        private System.Windows.Forms.ToolStripStatusLabel menuLog;
     }
 }
 
