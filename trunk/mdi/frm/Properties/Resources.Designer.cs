@@ -60,6 +60,13 @@ namespace uMdi.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap bank_redXL {
+            get {
+                object obj = ResourceManager.GetObject("bank_redXL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap LogoWeb30_small {
             get {
                 object obj = ResourceManager.GetObject("LogoWeb30_small", resourceCulture);

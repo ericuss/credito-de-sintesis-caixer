@@ -57,7 +57,9 @@
             // 
             // naviBar2
             // 
+            this.naviBar2.ActiveBand = null;
             this.naviBar2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.naviBar2.LayoutStyle = Guifreaks.Navisuite.NaviLayoutStyle.Office2007Silver;
             this.naviBar2.Location = new System.Drawing.Point(0, 0);
             this.naviBar2.Name = "naviBar2";
             this.naviBar2.Size = new System.Drawing.Size(168, 431);
@@ -73,6 +75,8 @@
             this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.naviBar2);
             this.Controls.Add(this.statusStrip);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "mdiPral";
