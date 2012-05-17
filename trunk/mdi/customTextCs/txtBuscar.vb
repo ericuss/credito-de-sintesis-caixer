@@ -5,7 +5,15 @@ Imports System.Windows.Forms
 Public Class txtBuscar
 #Region "Propiedades"
     Private dt As New DataTable()
-
+    Private strEtiqueta As String = "Cliente"
+    Public Property zzEtiqueta() As String
+        Get
+            Return lbEtiqueta.Text
+        End Get
+        Set(ByVal value As String)
+            lbEtiqueta.Text = value
+        End Set
+    End Property
     Private idVisible_ As Boolean = False
     Public Property zzIdVisible() As Boolean
         Get
@@ -98,14 +106,14 @@ Public Class txtBuscar
             Dim query As New AccDatos.OLEDBCON
             Dim dt As New DataTable
             If zzIdIsNumber Then
-                dt = query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = " & txtId.Text)
+                dt = query.LanzarConsultaT("Select " & zzCampoId & ", " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = " & txtId.Text)
             Else
-                dt = query.LanzarConsultaT("Select " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = '" & txtId.Text & "'")
+                dt = query.LanzarConsultaT("Select  " & zzCampoId & ", " & zzCampoDesc & " from " & zzTabla & " where " & zzCampoId & " = '" & txtId.Text & "'")
             End If
             If dt.Rows.Count <> 1 Then
-                Return dt
-            Else
                 Return Nothing
+            Else
+                Return dt
             End If
 
         Catch ex As Exception
@@ -133,13 +141,13 @@ Public Class txtBuscar
                     If dt Is Nothing OrElse dt.Rows.Count <> 1 Then
                         txtId.Text = ""
                         txtDesc.Text = ""
-
                     Else
+                        txtId.Text = ""
                         txtDesc.Text = ""
-                        For Each item As String In dt.Rows(0).ItemArray
-                            txtDesc.Text &= item & ""
+                        txtId.Text = dt.Rows(0)(zzCampoId)
+                        For Each strCampos As String In zzCampoDesc.Split(CChar(","))
+                            txtDesc.Text &= dt.Rows(0)(strCampos.Trim) & " "
                         Next
-
                     End If
                 Else
                     txtId.Text = ""
@@ -154,8 +162,9 @@ Public Class txtBuscar
                     txtDesc.Text = ""
                 Else
                     txtDesc.Text = ""
-                    For Each item As String In dt.Rows(0).ItemArray
-                        txtDesc.Text &= item & ""
+                    txtId.Text = dt.Rows(0)(zzCampoId)
+                    For Each strCampos As String In zzCampoDesc.Split(CChar(","))
+                        txtDesc.Text &= dt.Rows(0)(strCampos.Trim) & " "
                     Next
 
                 End If
