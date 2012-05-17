@@ -112,6 +112,10 @@
       <Project>{CED040CD-910C-4E4B-A013-34A91920A79B}</Project>
       <Name>customTextCs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CustomValidatorTextBox\CustomValidatorTextBox.csproj">
+      <Project>{8B61828F-A9BB-4573-8FD0-579EB8A40717}</Project>
+      <Name>CustomValidatorTextBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">
       <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
       <Name>EntityModel</Name>

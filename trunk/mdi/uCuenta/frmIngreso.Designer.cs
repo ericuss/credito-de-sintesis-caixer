@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIngreso));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtError = new System.Windows.Forms.TextBox();
             this.dgvCuentas = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnRealizar = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtImporte = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             this.SuspendLayout();
@@ -55,14 +55,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cuentas";
-            // 
-            // txtError
-            // 
-            this.txtError.Location = new System.Drawing.Point(18, 395);
-            this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(544, 20);
-            this.txtError.TabIndex = 2;
-            this.txtError.Visible = false;
             // 
             // dgvCuentas
             // 
@@ -156,12 +148,24 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "€";
             // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(12, 395);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(544, 20);
+            this.txtError.TabIndex = 11;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
+            // 
             // frmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(568, 427);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.label1);
@@ -169,7 +173,6 @@
             this.Controls.Add(this.btnNueva);
             this.Controls.Add(this.btnRealizar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.txtError);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.csCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -187,7 +190,6 @@
 
         private customTextCs.txtBuscar csCliente;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtError;
         private System.Windows.Forms.DataGridView dgvCuentas;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnRealizar;
@@ -196,5 +198,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtImporte;
         private System.Windows.Forms.Label label2;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }

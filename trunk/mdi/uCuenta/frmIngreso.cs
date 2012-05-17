@@ -20,37 +20,61 @@ namespace uCuenta
 
         private void frmIngreso_Load(object sender, EventArgs e)
         {
+            this.KeyPreview = true;
+            this.KeyUp += new KeyEventHandler(frmIngreso_KeyUp);
+        }
 
+        void frmIngreso_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (csCliente.zzTxtId != "")
+            {
+
+                if (e.KeyValue.ToString() == "114")
+                {
+                    Buscar();
+                }
+            }
         }
 
         private void txtBuscar_Click(object sender, EventArgs e)
         {
+            Buscar();
+        }
+
+        private void Buscar()
+        {
+
             String id = csCliente.zzTxtId;
-           
+
             this.dgvCuentas.DataSource = conn.LanzarConsultaT("select cuenta.id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta, saldo"
                                                             + "  from cuenta "
                                                             + "  join cuentacliente  "
                                                             + "    on cuenta.id = cuentacliente.idCuenta"
                                                             + "  join cliente "
                                                             + "    on cuentacliente.idCliente = cliente.id"
-                                                            + " where dni='"+id+"'");
-
+                                                            + " where dni='" + id + "'");
         }
 
         private void btnRealizar_Click(object sender, EventArgs e)
         {
-            int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
-            conn.LanzarConsulta("insert into movimiento(idCuenta,importe,descripcion,concepto) values ("+idCuenta+","+txtImporte.Text+",'Ingreso por caja de "+txtImporte.Text+"','Ingreso')");
-            txtImporte.Text = "";
-            msgOK();
+            if (this.dgvCuentas.SelectedRows.Count == 1)
+            {
+                try
+                {
+                    int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+                    conn.LanzarConsulta("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + "," + txtImporte.Text + ",'Ingreso por caja de " + txtImporte.Text + "','Ingreso')");
+                    txtImporte.Text = "";
+                    txtError.setOK("Ingreso Realizado");
+                }
+                catch (Exception exx)
+                {
+                    txtError.setError("Error Cuenta Erronia");
+                }
+            } 
         }
 
-        private void msgOK()
-        {
-            txtError.ForeColor = System.Drawing.Color.Black;
-            txtError.BackColor = System.Drawing.Color.Green;
-            txtError.Text = "Ingreso realizado";
-        }
+    
 
 
 

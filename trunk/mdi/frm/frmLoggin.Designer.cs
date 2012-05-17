@@ -101,7 +101,8 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 6;
-            this.txtUsuario.ValidValue = "";
+            this.txtUsuario.Text = "nick2";
+            this.txtUsuario.ValidValue = "nick2";
             // 
             // txtPass
             // 
@@ -110,7 +111,8 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 7;
-            this.txtPass.ValidValue = "";
+            this.txtPass.Text = "12345";
+            this.txtPass.ValidValue = "12345";
             // 
             // frmLoggin
             // 
@@ -134,7 +136,7 @@
             this.Load += new System.EventHandler(this.frmLoggin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-            
+
         }
 
         #endregion

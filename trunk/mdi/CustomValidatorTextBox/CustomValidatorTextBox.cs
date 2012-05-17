@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Timers;
+using System.Threading;
+using System.Windows.Forms;
+using System.Reflection;
 
 namespace CustomValidatorTextBox
 {
     public class CustomValidatorTextBox : System.Windows.Forms.TextBox
     {
+
         public Boolean zzValidateLength { get; set; }
         public Int16 zzValidMaxLength { get; set; }
         public Boolean zzValidateIsNumeric { get; set; }
-      
+
         public String ValidValue
         {
             get
@@ -35,32 +39,45 @@ namespace CustomValidatorTextBox
         public void setError(String msg)
         {
             this.Visible = true;
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 5000;
-            aTimer.Enabled = true;
+
             this.ForeColor = System.Drawing.Color.Black;
             this.BackColor = System.Drawing.Color.Red;
             this.Text = msg;
+            Thread th = new Thread(new ThreadStart(sleep));
+            th.Start();
         }
+
+
         public void setOK(String msg)
         {
             this.Visible = true;
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 5000;
-            aTimer.Enabled = true;
-            this.ForeColor = System.Drawing.Color.Black;
+                        this.ForeColor = System.Drawing.Color.Black;
             this.BackColor = System.Drawing.Color.Green;
             this.Text = msg;
+            Thread th = new Thread(new ThreadStart(sleep));
+            th.Start();
 
         }
 
-        private static void OnTimedEvent(object source, ElapsedEventArgs e)
+        private delegate void SetControlPropertyThreadSafeDelegate(Control control, string propertyName, object propertyValue);
+
+        public static void SetControlPropertyThreadSafe(Control control, string propertyName, object propertyValue)
         {
-            ((CustomValidatorTextBox)source).Visible = false;
+            if (control.InvokeRequired)
+            {
+                control.Invoke(new SetControlPropertyThreadSafeDelegate(SetControlPropertyThreadSafe), new object[] { control, propertyName, propertyValue });
+            }
+            else
+            {
+                control.GetType().InvokeMember(propertyName, BindingFlags.SetProperty, null, control, new object[] { propertyValue });
+            }
         }
 
+        private void sleep()
+        {
+            Thread.Sleep(3000);
+            SetControlPropertyThreadSafe(this, "Visible", false);
+        }
 
         protected override void OnValidating(System.ComponentModel.CancelEventArgs e)
         {
