@@ -61,13 +61,14 @@ namespace txtCs
 
         private void frmCs_Load(object sender, EventArgs e)
         {
-            if (dgv.Columns.Contains("id"))
-            {
-                dgv.Columns["id"].Visible = false;
-            }
+            
             if (dt != null)
             {
                 dgv.DataSource = dt;
+            }
+            if (dgv.Columns.Contains("id"))
+            {
+                dgv.Columns["id"].Visible = false;
             }
         }
 
