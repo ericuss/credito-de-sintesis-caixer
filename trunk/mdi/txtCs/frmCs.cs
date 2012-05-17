@@ -25,6 +25,7 @@ namespace txtCs
         {
             InitializeComponent();
             dt = dtOriginal;
+            
 
         }
         public frmCs(DataTable dtOriginal, String idVis )

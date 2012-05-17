@@ -37,12 +37,12 @@ Partial Class txtBuscar
         '
         'btnBuscar
         '
-        Me.btnBuscar.BackgroundImage = Global.customTextCs.My.Resources.Resources.filefind
         Me.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnBuscar.Location = New System.Drawing.Point(175, 0)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(32, 33)
         Me.btnBuscar.TabIndex = 1
+        Me.btnBuscar.Text = "..."
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'txtDesc
