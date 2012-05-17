@@ -31,6 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AccDatos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
@@ -45,8 +47,15 @@
     <Reference Include="Telerik.WinControls, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="Telerik.WinControls.UI, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
     <Reference Include="TelerikCommon, Version=2012.1.321.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="uFrmCs, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoUsuario.Designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMantCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,12 +75,23 @@
       <Project>{EB4F406D-10FE-4477-84DF-B5B7124DE303}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\customTextCs\customTextCs.vbproj">
+      <Project>{CED040CD-910C-4E4B-A013-34A91920A79B}</Project>
+      <Name>customTextCs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomValidatorTextBox\CustomValidatorTextBox.csproj">
+      <Project>{8B61828F-A9BB-4573-8FD0-579EB8A40717}</Project>
+      <Name>CustomValidatorTextBox</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntityModel\EntityModel.csproj">
       <Project>{DFE6C62B-53EE-4358-A0CD-A196CF692ED5}</Project>
       <Name>EntityModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMantCliente.resx">
       <DependentUpon>frmMantCliente.cs</DependentUpon>
     </EmbeddedResource>
