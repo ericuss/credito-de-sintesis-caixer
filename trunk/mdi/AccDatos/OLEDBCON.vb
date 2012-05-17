@@ -43,7 +43,14 @@ Public Class OLEDBCON
         Return dataset
     End Function
 
-   
+    Public Sub Ejecutar(ByVal query As String)
+        Dim connection As New MySqlConnection(connectionString)
+        connection.Open()
+        Dim myCommand = New MySqlCommand(query, connection)
+        myCommand.ExecuteNonQuery()
+        connection.Close()
+    End Sub
+ 
 
     Private Function LanzarQuery(ByVal query As String, ByVal connection As OleDbConnection) As DataSet
         Dim dtSet As New DataSet

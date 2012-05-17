@@ -54,6 +54,7 @@ namespace uCuenta
                                                             + "  join cliente "
                                                             + "    on cuentacliente.idCliente = cliente.id"
                                                             + " where dni='" + id + "'");
+            this.dgvCuentas.Columns["idCuenta"].Visible=false;
         }
 
         private void btnRealizar_Click(object sender, EventArgs e)
@@ -62,8 +63,10 @@ namespace uCuenta
             {
                 try
                 {
+                    String id = csCliente.zzTxtId;
                     int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
-                    conn.LanzarConsulta("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + "," + txtImporte.Text + ",'Ingreso por caja de " + txtImporte.Text + "','Ingreso')");
+                    conn.Ejecutar("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + "," + txtImporte.Text + ",'Ingreso por caja de " + txtImporte.Text + "','Ingreso')");
+                    conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han ingresado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Ingreso')");
                     txtImporte.Text = "";
                     txtError.setOK("Ingreso Realizado");
                 }
