@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.customValidatorTextBox2 = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.customValidatorTextBox1 = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtPass = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtUser = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.SuspendLayout();
             // 
             // txtBuscar1
@@ -91,37 +91,38 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // customValidatorTextBox2
+            // txtPass
             // 
-            this.customValidatorTextBox2.Location = new System.Drawing.Point(106, 71);
-            this.customValidatorTextBox2.Name = "customValidatorTextBox2";
-            this.customValidatorTextBox2.Size = new System.Drawing.Size(101, 20);
-            this.customValidatorTextBox2.TabIndex = 4;
-            this.customValidatorTextBox2.ValidValue = "";
-            this.customValidatorTextBox2.zzValidateLength = false;
-            this.customValidatorTextBox2.zzValidMaxLength = ((short)(0));
+            this.txtPass.Location = new System.Drawing.Point(106, 71);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(101, 20);
+            this.txtPass.TabIndex = 4;
+            this.txtPass.ValidValue = "";
+            this.txtPass.zzValidateLength = false;
+            this.txtPass.zzValidMaxLength = ((short)(0));
             // 
-            // customValidatorTextBox1
+            // txtUser
             // 
-            this.customValidatorTextBox1.Location = new System.Drawing.Point(106, 47);
-            this.customValidatorTextBox1.Name = "customValidatorTextBox1";
-            this.customValidatorTextBox1.Size = new System.Drawing.Size(101, 20);
-            this.customValidatorTextBox1.TabIndex = 3;
-            this.customValidatorTextBox1.ValidValue = "";
-            this.customValidatorTextBox1.zzValidateLength = false;
-            this.customValidatorTextBox1.zzValidMaxLength = ((short)(0));
+            this.txtUser.Location = new System.Drawing.Point(106, 47);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(101, 20);
+            this.txtUser.TabIndex = 3;
+            this.txtUser.ValidValue = "";
+            this.txtUser.zzValidateLength = false;
+            this.txtUser.zzValidMaxLength = ((short)(0));
             // 
             // frmNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(475, 176);
+            this.ClientSize = new System.Drawing.Size(419, 176);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.customValidatorTextBox2);
-            this.Controls.Add(this.customValidatorTextBox1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar1);
@@ -138,8 +139,8 @@
         private customTextCs.txtBuscar txtBuscar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private CustomValidatorTextBox.CustomValidatorTextBox customValidatorTextBox1;
-        private CustomValidatorTextBox.CustomValidatorTextBox customValidatorTextBox2;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtUser;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtPass;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
     }

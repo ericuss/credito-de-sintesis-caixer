@@ -57,6 +57,7 @@ namespace uMdi
             loadMenuLateral();
             loadMenu();
             this.WindowState = FormWindowState.Maximized;
+            this.BackColor = Color.White;
             //Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
             //customBtn.btnLink jj = new customBtn.btnLink();
             //jj.dll = "hh.dll";

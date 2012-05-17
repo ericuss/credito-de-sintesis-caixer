@@ -34,9 +34,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mdiPral));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.menuLog = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.naviBar2 = new Guifreaks.Navisuite.NaviBar(this.components);
-            this.menuLog = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // menuLog
+            // 
+            this.menuLog.Name = "menuLog";
+            this.menuLog.Size = new System.Drawing.Size(0, 17);
+            this.menuLog.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
             // naviBar2
             // 
             this.naviBar2.ActiveBand = null;
@@ -68,12 +74,6 @@
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
             this.naviBar2.VisibleLargeButtons = 5;
-            // 
-            // menuLog
-            // 
-            this.menuLog.Name = "menuLog";
-            this.menuLog.Size = new System.Drawing.Size(0, 17);
-            this.menuLog.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // mdiPral
             // 
