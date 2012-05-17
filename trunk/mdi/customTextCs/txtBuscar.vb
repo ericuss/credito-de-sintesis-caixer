@@ -4,6 +4,24 @@ Imports System.Windows.Forms
 
 Public Class txtBuscar
 #Region "Propiedades"
+
+    Public Property zzTxtId() As String
+        Get
+            Return txtId.Text
+        End Get
+        Set(ByVal value As String)
+            txtId.Text = value
+        End Set
+    End Property
+    Public Property zzTxtDesc() As String
+        Get
+            Return txtDesc.Text
+        End Get
+        Set(ByVal value As String)
+            txtDesc.Text = value
+        End Set
+    End Property
+
     Private dt As New DataTable()
     Private strEtiqueta As String = "Cliente"
     Public Property zzEtiqueta() As String
@@ -234,5 +252,9 @@ Public Class txtBuscar
         End If
 
 
+    End Sub
+
+    Private Sub txtBuscar_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.LostFocus
+        txtid_LostFocus(sender, e)
     End Sub
 End Class
