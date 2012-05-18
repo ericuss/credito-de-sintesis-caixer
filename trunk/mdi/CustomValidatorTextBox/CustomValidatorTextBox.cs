@@ -11,7 +11,7 @@ namespace CustomValidatorTextBox
 {
     public class CustomValidatorTextBox : System.Windows.Forms.TextBox
     {
-
+        public String zzCampoBd { get; set; }     
         public Boolean zzValidateLength { get; set; }
         public Int16 zzValidMaxLength { get; set; }
         public Boolean zzValidateIsNumeric { get; set; }

@@ -27,11 +27,13 @@ namespace cliente
             {
                 if (!existeUsuario())
                 {
-                   // String strIdCliente = dameIdClientePorId();
+                    bCliente.clsBCliente bCliente = new bCliente.clsBCliente();
+                    String strIdCliente = bCliente.dameIdClienteByDni(txtBuscar1.zzCampoId);
+                    insertUsuario(strIdCliente);
                 }
             }
         }
-        private Boolean insertUsuario()
+        private Boolean insertUsuario(String strIdCliente)
         {
             try
             {
@@ -44,7 +46,7 @@ namespace cliente
                 return false;
             }
 
-            
+
         }
         private Boolean existeUsuario()
         {
@@ -54,7 +56,7 @@ namespace cliente
                 OLEDBCON datos = new OLEDBCON();
                 dtUsuario = datos.LanzarConsultaT(" select login from usuario " +
                                                   " where login = '" + txtUser.Text + "'");
-                if (dtUsuario.Rows.Count == 0)
+                if (dtUsuario.Rows.Count > 0)
                 {
                     return true;
                 }

@@ -75,6 +75,10 @@
       <Project>{EB4F406D-10FE-4477-84DF-B5B7124DE303}</Project>
       <Name>Base</Name>
     </ProjectReference>
+    <ProjectReference Include="..\bCliente\bCliente.csproj">
+      <Project>{00F5A25D-FDDB-4347-980B-D9008148F712}</Project>
+      <Name>bCliente</Name>
+    </ProjectReference>
     <ProjectReference Include="..\customTextCs\customTextCs.vbproj">
       <Project>{CED040CD-910C-4E4B-A013-34A91920A79B}</Project>
       <Name>customTextCs</Name>

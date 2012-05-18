@@ -34,8 +34,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCs));
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.gbDatos = new System.Windows.Forms.GroupBox();
-            this.gbFiltros = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.gbDatos.SuspendLayout();
             this.SuspendLayout();
@@ -88,6 +88,16 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(650, 103);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // gbDatos
             // 
             this.gbDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -101,24 +111,13 @@
             this.gbDatos.TabStop = false;
             this.gbDatos.Text = "Datos";
             // 
-            // gbFiltros
-            // 
-            this.gbFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbFiltros.Location = new System.Drawing.Point(6, 12);
-            this.gbFiltros.Name = "gbFiltros";
-            this.gbFiltros.Size = new System.Drawing.Size(745, 114);
-            this.gbFiltros.TabIndex = 3;
-            this.gbFiltros.TabStop = false;
-            this.gbFiltros.Text = "Filtros";
-            // 
             // frmCs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(752, 514);
-            this.Controls.Add(this.gbFiltros);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -136,8 +135,8 @@
 
         public System.Windows.Forms.DataGridView dgv;
         public System.Windows.Forms.Button btnSalir;
+        public System.Windows.Forms.Button btnBuscar;
         public System.Windows.Forms.GroupBox gbDatos;
-        public System.Windows.Forms.GroupBox gbFiltros;
 
     }
 }

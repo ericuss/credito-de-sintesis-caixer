@@ -212,13 +212,13 @@ Public Class txtBuscar
 
             If idVisible_ Then
                 Dim frm As uFrmCs.frmCs
-                'If zzTabla = "cliente" Then
-                '    frm = New uFrmCsHijos.frmCsCliente(obtenerDt, "")
-                '    frm.ShowDialog()
-                'Else
-                frm = New uFrmCs.frmCs(obtenerDt, "")
-                frm.ShowDialog()
-                'End If
+                If zzTabla = "cliente" Then
+                    frm = New uFrmCsHijos.frmCsCliente("cliente")
+                    frm.ShowDialog()
+                Else
+                    frm = New uFrmCs.frmCs(obtenerDt, "")
+                    frm.ShowDialog()
+                End If
 
 
                 If frm.isAceptar Then
@@ -231,7 +231,7 @@ Public Class txtBuscar
                         txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
                         txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
                         For Each strCampo As String In zzCampoDesc.Split(CChar(","))
-                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
+                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString() + " "
                         Next
                     End If
 
@@ -239,13 +239,13 @@ Public Class txtBuscar
                 End If
             Else
                 Dim frm As uFrmCs.frmCs
-                '' If zzTabla = "cliente" Then
-                ''frm = New uFrmCsHijos.frmCsCliente(obtenerDt, "")
-                ''frm.ShowDialog()
-                ''Else
-                frm = New uFrmCs.frmCs(obtenerDt, "")
-                frm.ShowDialog()
-                'End If
+                If zzTabla = "cliente" Then
+                    frm = New uFrmCsHijos.frmCsCliente("cliente")
+                    frm.ShowDialog()
+                Else
+                    frm = New uFrmCs.frmCs(obtenerDt, "")
+                    frm.ShowDialog()
+                End If
                 If frm.isAceptar Then
                     Dim dtFrm As DataTable
                     ''dr = frm.dr
@@ -256,7 +256,7 @@ Public Class txtBuscar
                         txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
                         txtId.Text = dtFrm.Rows(0)(zzCampoId).ToString()
                         For Each strCampo As String In zzCampoDesc.Split(CChar(","))
-                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
+                            txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString() + " "
                         Next
                     End If
 
