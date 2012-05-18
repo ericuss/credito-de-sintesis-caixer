@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtFechaNacimiento = new System.Windows.Forms.MaskedTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.chkCrearUser = new System.Windows.Forms.CheckBox();
@@ -50,6 +49,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,16 +84,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
-            this.txtFechaNacimiento.Mask = "00/00/0000";
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(155, 20);
-            this.txtFechaNacimiento.TabIndex = 19;
-            this.txtFechaNacimiento.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
-            this.txtFechaNacimiento.ValidatingType = typeof(System.DateTime);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -127,7 +117,6 @@
             this.chkCrearUser.TabIndex = 16;
             this.chkCrearUser.Text = "Crear Usuario Web";
             this.chkCrearUser.UseVisualStyleBackColor = true;
-          //  this.chkCrearUser.CheckedChanged += new System.EventHandler(this.chkCrearUser_CheckedChanged);
             // 
             // txtDNI
             // 
@@ -275,6 +264,15 @@
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(157, 20);
+            this.txtFechaNacimiento.TabIndex = 19;
+            // 
             // frmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,7 +312,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.CheckBox chkCrearUser;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.MaskedTextBox txtFechaNacimiento;
         private CustomValidatorTextBox.CustomValidatorTextBox txtError;
+        private System.Windows.Forms.TextBox txtFechaNacimiento;
     }
 }

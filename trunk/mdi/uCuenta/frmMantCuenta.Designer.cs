@@ -103,6 +103,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Nuevo";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMantCuenta
             // 
@@ -111,6 +112,7 @@
             this.ClientSize = new System.Drawing.Size(704, 433);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.KeyPreview = true;
             this.Name = "frmMantCuenta";
             this.Text = "frmMantCuenta";
             this.Load += new System.EventHandler(this.frmMantCuenta_Load);

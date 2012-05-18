@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantCliente));
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
@@ -302,9 +303,10 @@
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnNew);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "frmMantCliente";
-            this.Text = "frmMantCliente";
+            this.Text = "Mantenimiento de Clientes";
             this.Load += new System.EventHandler(this.frmMantCliente_Load);
             this.Controls.SetChildIndex(this.btnTodos, 0);
             this.Controls.SetChildIndex(this.btnUpdate, 0);

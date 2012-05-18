@@ -68,5 +68,12 @@ namespace uCuenta
             dgv.DataSource = cuentas;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frmNueva = new frmNuevaCuenta();
+            frmNueva.MdiParent = this.MdiParent;
+            frmNueva.Show();
+        }
     }
 }

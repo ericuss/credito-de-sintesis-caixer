@@ -41,7 +41,7 @@ namespace cliente
 
                             };
             this.dgv.DataSource = clientes;
-            
+            ocultarId();
 
         }
 
@@ -50,6 +50,10 @@ namespace cliente
             if (dgv.Columns.Contains("id"))
             {
                dgv.Columns["id"].Visible = false;
+            }
+            else if (dgv.Columns.Contains("idCliente"))
+            {
+                dgv.Columns["idCliente"].Visible = false;
             }
         }
 
@@ -112,38 +116,39 @@ namespace cliente
 
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
             this.dgv.DataSource = conn.LanzarConsultaT("SELECT * FROM CLIENTE WHERE 1=1" + buildWhere());
+            ocultarId();
         }
 
         private String buildWhere()
         {
             String where = " ";
-            if (txtApellidos.Text != "")
+            if (txtApellidos.ValidValue != "")
             {
-                where += " and apellidos like '%" + txtApellidos.Text + "%'";
+                where += " and apellidos like '%" + txtApellidos.ValidValue + "%'";
             }
-            if (txtDireccion.Text != "")
+            if (txtDireccion.ValidValue != "")
             {
-                where += " and direccion like '%" + txtDireccion.Text + "%'";
+                where += " and direccion like '%" + txtDireccion.ValidValue + "%'";
             }
-            if (txtDNI.Text != "")
+            if (txtDNI.ValidValue != "")
             {
-                where += " and dni like '%" + txtDNI.Text + "%'";
+                where += " and dni like '%" + txtDNI.ValidValue + "%'";
             }
-            if (txtMail.Text != "")
+            if (txtMail.ValidValue != "")
             {
-                where += " and mail like '%" + txtMail.Text + "%'";
+                where += " and mail like '%" + txtMail.ValidValue + "%'";
             }
-            if (txtNombre.Text != "")
+            if (txtNombre.ValidValue != "")
             {
-                where += " and nombre like '%" + txtNombre.Text + "%'";
+                where += " and nombre like '%" + txtNombre.ValidValue + "%'";
             }
-            if (txtPoblacion.Text != "")
+            if (txtPoblacion.ValidValue != "")
             {
-                where += " and poblacion like '%" + txtPoblacion.Text + "%'";
+                where += " and poblacion like '%" + txtPoblacion.ValidValue + "%'";
             }
-            if (txtTelefono.Text != "")
+            if (txtTelefono.ValidValue != "")
             {
-                where += " and telefono like '%" + txtTelefono.Text + "%'";
+                where += " and telefono like '%" + txtTelefono.ValidValue + "%'";
             }
             if (chkActivos.Checked)
             {
