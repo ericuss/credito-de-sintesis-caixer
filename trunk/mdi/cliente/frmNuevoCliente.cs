@@ -31,20 +31,20 @@ namespace cliente
         private void setData(int idc)
         {
             var cliente = from cli in context.cliente
-                           where cli.id == idc
-                           select new
-                           {
-                               idCliente = cli.id,
-                               Nombre = cli.nombre ,
-                               Apellido =  cli.apellidos,
-                               Telefono = cli.telefono,
-                               Direccion = cli.direccion,
-                               Poblacion = cli.poblacion,
-                               Correo = cli.mail,
-                               DNI = cli.dni,
-                               FechaNacimiento = cli.fechaNacimiento
+                          where cli.id == idc
+                          select new
+                          {
+                              idCliente = cli.id,
+                              Nombre = cli.nombre,
+                              Apellido = cli.apellidos,
+                              Telefono = cli.telefono,
+                              Direccion = cli.direccion,
+                              Poblacion = cli.poblacion,
+                              Correo = cli.mail,
+                              DNI = cli.dni,
+                              FechaNacimiento = cli.fechaNacimiento
 
-                           };
+                          };
             foreach (var item in cliente)
             {
                 txtApellido.Text = item.Apellido;
@@ -68,10 +68,9 @@ namespace cliente
         {
             if (!checkCampos())
             {
-                txtError.BackColor = Color.Red;
-                txtError.ForeColor = Color.Black;
-                txtError.Text = "Error! Faltan Datos.";
-                txtError.Visible = true;
+
+                txtError.setError("Error! Faltan Datos.");
+
             }
             else
             {
@@ -89,7 +88,23 @@ namespace cliente
 
         private void updateCliente()
         {
-            
+            EntityModel.cliente clientFnal = new EntityModel.cliente();
+            var clieT = from cln in context.cliente
+                        where cln.id == idCliente
+                        select cln;
+            foreach (var item in clieT)
+            {
+                clientFnal = item;
+            }
+            clientFnal.nombre = txtNombre.Text;
+            clientFnal.apellidos = txtApellido.Text;
+            clientFnal.telefono = txtTelfono.Text;
+            clientFnal.direccion = txtDireccion.Text;
+            clientFnal.poblacion = txtPoblacion.Text;
+            clientFnal.mail = txtMail.Text;
+            clientFnal.dni = txtDNI.Text;
+            clientFnal.fechaNacimiento = txtFechaNacimiento.Text;
+            context.SaveChanges();
         }
 
         private void crearCliente()
@@ -145,7 +160,42 @@ namespace cliente
 
         private bool checkCampos()
         {
-            throw new NotImplementedException();
+            if (txtApellido.Text == "")
+            {
+                return false;
+            }
+            else if (txtDireccion.Text == "")
+            {
+                return false;
+            }
+            else if (txtDNI.Text == "")
+            {
+                return false;
+            }
+            else if (txtFechaNacimiento.Text == "")
+            {
+                return false;
+            }
+            else if (txtMail.Text == "")
+            {
+                return false;
+            }
+            else if (txtNombre.Text == "")
+            {
+                return false;
+            }
+            else if (txtPoblacion.Text == "")
+            {
+                return false;
+            }
+            else if (txtTelfono.Text == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 
@@ -212,6 +262,7 @@ namespace cliente
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+
 
     }
 }
