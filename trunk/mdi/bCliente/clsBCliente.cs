@@ -13,7 +13,7 @@ namespace bCliente
         {
 
         }
-      
+        AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
       
 
         public string dameIdClienteByDni(String strDni)
