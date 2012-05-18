@@ -26,5 +26,69 @@ namespace bCliente
             }
             return null;
         }
+        public Boolean insertUsuario(String strIdCliente, String strUsuario, String strPass)
+        {
+            try
+            {
+                String strSQL = " insert into usuario(login, password, idCliente, paginaPreferida, inactivo) " +
+                " values('" + strUsuario + "','" + strPass + "', " + strIdCliente + ", '/backend/cuenta/cuenta',0";
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+
+        }
+        public Boolean existeUsuario(String strUsuario)
+        {
+            try
+            {
+                DataTable dtUsuario;
+                OLEDBCON datos = new OLEDBCON();
+                dtUsuario = datos.LanzarConsultaT(" select login from usuario " +
+                                                  " where login = '" + strUsuario + "'");
+                if (dtUsuario.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public Boolean tieneUsuario(String strDni)
+        {
+            try
+            {
+
+                DataTable dtUsuario;
+                OLEDBCON datos = new OLEDBCON();
+                dtUsuario = datos.LanzarConsultaT(" select dni from cliente " +
+                                                  " join usuario on cliente.id =usuario.idCliente " +
+                                                  " where dni = '" + strDni + "'");
+                if (dtUsuario.Rows.Count == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }
