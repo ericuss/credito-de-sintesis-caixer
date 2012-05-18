@@ -14,11 +14,11 @@ namespace bCliente
         {
             DataTable dtCliente;
             dtCliente = oDatos.LanzarConsultaT("Select id from cliente where dni = '" + strDni + "'");
-            if (dtCliente.Rows.Count > 0)
+            if (dtCliente.Rows.Count == 1)
             {
-
+               return dtCliente.Rows[0]["id"].ToString();
             }
-            return "";
+            return null;
         }
     }
 }
