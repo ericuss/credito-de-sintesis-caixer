@@ -16,6 +16,7 @@ namespace uCuenta
         public frmMantCuenta()
         {
             InitializeComponent();
+
         }
 
         private void frmMantCuenta_Load(object sender, EventArgs e)
@@ -36,11 +37,12 @@ namespace uCuenta
                            select new
                            {
                                Cliente = cli.nombre + " " + cli.apellidos,
-                               DNI = cli.dni
-
+                               DNI = cli.dni,
+                               idCliente = cli.id
                            };
+
             this.dgvCliente.DataSource = clientes;
-            
+            dgvCliente.Columns["idCliente"].Visible = false;
         }
 
 
@@ -57,14 +59,14 @@ namespace uCuenta
         {
             var cuentas = from cue in context.cuenta
                           select new
-{
-    idCuenta = cue.id,
-    CodigoEntidad = cue.codigoEntidad,
-    CodigoOficina = cue.codigoOficina,
-    CodigoControl = cue.codigoControl,
-    CodigoCuenta = cue.codigoCuenta,
-    Saldo = cue.saldo
-};
+                            {
+                                idCuenta = cue.id,
+                                CodigoEntidad = cue.codigoEntidad,
+                                CodigoOficina = cue.codigoOficina,
+                                CodigoControl = cue.codigoControl,
+                                CodigoCuenta = cue.codigoCuenta,
+                                Saldo = cue.saldo
+                            };
             dgv.DataSource = cuentas;
 
         }
@@ -74,6 +76,88 @@ namespace uCuenta
             Form frmNueva = new frmNuevaCuenta();
             frmNueva.MdiParent = this.MdiParent;
             frmNueva.Show();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+
+            cuentacliente tmpCC = new cuentacliente();
+            var ccu = from cc in context.cuentacliente
+                      where cc.idCuenta == idCuenta
+                      select cc;
+            foreach (var item in ccu)
+            {
+                tmpCC = item;
+            }
+            context.DeleteObject(tmpCC);
+
+
+            cuenta tmpCuenta = new cuenta();
+            var cun = from cu in context.cuenta
+                      where cu.id == idCuenta
+                      select cu;
+            foreach (var item in cun)
+            {
+                tmpCuenta = item;
+            }
+            context.DeleteObject(tmpCuenta);
+            context.SaveChanges();
+            loadCuentas();
+        }
+
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+            Form frmAn = new frmAnadirTitulares(idCuenta);
+            frmAn.MdiParent = this.MdiParent;
+            frmAn.Show();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            filtrarGrid();
+        }
+
+        public override void filtrarGrid()
+        {
+       
+            AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+            this.dgv.DataSource = conn.LanzarConsultaT("select id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta , saldo from cuenta " + buildWhere());
+        }
+
+        private String buildWhere()
+        {
+            String where = " where 1=1 ";
+            if (csBuscar.zzTxtId != "")
+            {
+                int idCliente = Convert.ToInt16(dameIdClienteByDni(csBuscar.zzTxtId));
+                where += "and id in "
+                      + "  (select cuenta.id "
+                      + "     from cuenta "
+                      + "     join cuentacliente on cuenta.id = cuentacliente.idCuenta   "
+                      + "     join cliente on cuentacliente.idCliente= cliente.id   "
+                      + "    where cliente.id=61    )";
+
+            }
+            if (txtCuenta.ValidValue != "")
+            {
+                where += " and codigocuenta like '%"+txtCuenta.ValidValue+"%'";
+            }
+            return where;
+        }
+        private string dameIdClienteByDni(String strDni)
+        {
+            AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
+            DataTable dtCliente = oDatos.LanzarConsultaT("Select id from cliente where dni = '" + strDni + "'");
+            if (dtCliente.Rows.Count == 1)
+            {
+                return dtCliente.Rows[0]["id"].ToString();
+            }
+            return null;
         }
     }
 }

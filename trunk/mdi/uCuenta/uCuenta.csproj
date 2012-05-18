@@ -64,6 +64,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAnadirTitulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnadirTitulares.Designer.cs">
+      <DependentUpon>frmAnadirTitulares.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConsultaExtracto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAnadirTitulares.resx">
+      <DependentUpon>frmAnadirTitulares.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaExtracto.resx">
       <DependentUpon>frmConsultaExtracto.cs</DependentUpon>
     </EmbeddedResource>
