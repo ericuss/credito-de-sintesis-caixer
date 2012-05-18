@@ -10,6 +10,11 @@ namespace bCliente
     public class clsBCliente
     {
         AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
+        public clsBCliente()
+        {
+            
+        }
+
         public string dameIdClienteByDni(String strDni)
         {
             DataTable dtCliente;
