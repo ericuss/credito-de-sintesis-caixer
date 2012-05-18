@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualBasic ;
 
-namespace txtCs
+namespace uFrmCs
 {
     public partial class frmCs : Form
     {

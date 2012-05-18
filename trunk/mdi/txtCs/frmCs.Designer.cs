@@ -1,4 +1,4 @@
-﻿namespace txtCs
+﻿namespace uFrmCs
 {
     partial class frmCs
     {
@@ -28,25 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCs));
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.gbDatos = new System.Windows.Forms.GroupBox();
+            this.gbFiltros = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            this.gbDatos.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
             // 
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(2, 0);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.GridColor = System.Drawing.Color.White;
+            this.dgv.Location = new System.Drawing.Point(3, 16);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(749, 402);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv.Size = new System.Drawing.Size(742, 332);
             this.dgv.TabIndex = 0;
             this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(676, 408);
+            this.btnSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalir.Location = new System.Drawing.Point(676, 489);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 1;
@@ -54,27 +88,57 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // gbDatos
+            // 
+            this.gbDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbDatos.Controls.Add(this.dgv);
+            this.gbDatos.Location = new System.Drawing.Point(3, 132);
+            this.gbDatos.Name = "gbDatos";
+            this.gbDatos.Size = new System.Drawing.Size(748, 351);
+            this.gbDatos.TabIndex = 2;
+            this.gbDatos.TabStop = false;
+            this.gbDatos.Text = "Datos";
+            // 
+            // gbFiltros
+            // 
+            this.gbFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbFiltros.Location = new System.Drawing.Point(6, 12);
+            this.gbFiltros.Name = "gbFiltros";
+            this.gbFiltros.Size = new System.Drawing.Size(745, 114);
+            this.gbFiltros.TabIndex = 3;
+            this.gbFiltros.TabStop = false;
+            this.gbFiltros.Text = "Filtros";
+            // 
             // frmCs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(752, 433);
+            this.ClientSize = new System.Drawing.Size(752, 514);
+            this.Controls.Add(this.gbFiltros);
+            this.Controls.Add(this.gbDatos);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.dgv);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCs";
             this.Text = "Selecciona un registro";
             this.Load += new System.EventHandler(this.frmCs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            this.gbDatos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Button btnSalir;
+        public System.Windows.Forms.DataGridView dgv;
+        public System.Windows.Forms.Button btnSalir;
+        public System.Windows.Forms.GroupBox gbDatos;
+        public System.Windows.Forms.GroupBox gbFiltros;
+
     }
 }
 
