@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolPendientes));
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodCuenta = new System.Windows.Forms.TextBox();
@@ -192,6 +193,7 @@
             this.ClientSize = new System.Drawing.Size(808, 470);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbSolicitudes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolPendientes";
             this.Text = "Solicitudes";
             this.Load += new System.EventHandler(this.frmSolPendientes_Load);

@@ -47,11 +47,31 @@ namespace CustomValidatorTextBox
             th.Start();
         }
 
+        public void setErrorColor(String msg)
+        {
+            this.Visible = true;
+
+            this.ForeColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.Red;
+            this.Text = msg;
+
+            Thread th = new Thread(new ThreadStart(changeColor));
+            th.Start();
+
+        }
+
+        private void changeColor()
+        {
+            Thread.Sleep(3000);
+            SetControlPropertyThreadSafe(this, "BackColor",  System.Drawing.Color.White);
+            SetControlPropertyThreadSafe(this, "Text", "");
+          
+        }
 
         public void setOK(String msg)
         {
             this.Visible = true;
-                        this.ForeColor = System.Drawing.Color.Black;
+            this.ForeColor = System.Drawing.Color.Black;
             this.BackColor = System.Drawing.Color.Green;
             this.Text = msg;
             Thread th = new Thread(new ThreadStart(sleep));

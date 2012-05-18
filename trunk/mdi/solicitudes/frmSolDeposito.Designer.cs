@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolDeposito));
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnDenegar = new System.Windows.Forms.Button();
             this.btnMantener = new System.Windows.Forms.Button();
@@ -632,7 +633,6 @@
             this.txtError.Size = new System.Drawing.Size(531, 20);
             this.txtError.TabIndex = 6;
             this.txtError.Visible = false;
-            //this.txtError.TextChanged += new System.EventHandler(this.txtError_TextChanged);
             // 
             // frmSolDeposito
             // 
@@ -645,6 +645,7 @@
             this.Controls.Add(this.btnDenegar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tcMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolDeposito";
             this.Text = "Solicitud Deposito";
             this.tabPage3.ResumeLayout(false);

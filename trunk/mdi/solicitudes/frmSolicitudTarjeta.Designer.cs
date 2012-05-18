@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolicitudTarjeta));
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtCorreo = new System.Windows.Forms.TextBox();
@@ -307,6 +308,7 @@
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tcMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolicitudTarjeta";
             this.Text = "Solicitud de Tarjeta";
             this.tcMain.ResumeLayout(false);

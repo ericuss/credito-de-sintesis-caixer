@@ -50,12 +50,17 @@ namespace uMdi
                     }
                     else
                     {
-                        MessageBox.Show("Login Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
+                        txtPass.setErrorColor("Pass Erroneo");
                     }
+                }
+                else
+                {
+                    txtUsuario.setErrorColor("Usuario Erroneo");
                 }
             }// error de usuario y/o contraseña mal
 
-            //error de que no has seleccionado la combo
+           
         }
 
         private string getmd5(string input)
