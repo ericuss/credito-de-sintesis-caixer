@@ -13,8 +13,8 @@ namespace uFrmCs
     public partial class frmCs : Form
     {
         public Boolean isAceptar= false;
-        DataTable dt;
-        String idVisible;
+         public DataTable dt;
+        public String idVisible;
         public string id = "";
         public DataGridViewRow dr;
         public frmCs()
@@ -39,7 +39,7 @@ namespace uFrmCs
 
         }
 
-        void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        public void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             dr = dgv.SelectedRows[0];
             id = dr.Cells["id"].Value.ToString();
@@ -47,19 +47,19 @@ namespace uFrmCs
             this.Dispose();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        public void btnAceptar_Click(object sender, EventArgs e)
         {
             isAceptar = true;
             this.Dispose();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        public void btnCancel_Click(object sender, EventArgs e)
         {
            // isAceptar = false;
             this.Dispose();
         }
 
-        private void frmCs_Load(object sender, EventArgs e)
+        public void frmCs_Load(object sender, EventArgs e)
         {
             
             if (dt != null)

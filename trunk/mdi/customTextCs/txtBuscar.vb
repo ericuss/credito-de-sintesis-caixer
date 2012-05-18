@@ -1,4 +1,5 @@
-﻿Imports txtCs
+﻿Imports uFrmCs
+Imports uFrmCsHijos
 Imports System.Data
 Imports System.Windows.Forms
 
@@ -210,8 +211,16 @@ Public Class txtBuscar
         If Not dt Is Nothing Then
 
             If idVisible_ Then
-                Dim frm As New txtCs.frmCs(obtenerDt, "")
+                Dim frm As uFrmCs.frmCs
+                'If zzTabla = "cliente" Then
+                '    frm = New uFrmCsHijos.frmCsCliente(obtenerDt, "")
+                '    frm.ShowDialog()
+                'Else
+                frm = New uFrmCs.frmCs(obtenerDt, "")
                 frm.ShowDialog()
+                'End If
+
+
                 If frm.isAceptar Then
                     Dim dtFrm As DataTable
                     ''dr = frm.dr
@@ -225,12 +234,18 @@ Public Class txtBuscar
                             txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
                         Next
                     End If
-                   
+
 
                 End If
             Else
-                Dim frm As New txtCs.frmCs(obtenerDt, zzCampoId)
+                Dim frm As uFrmCs.frmCs
+                '' If zzTabla = "cliente" Then
+                ''frm = New uFrmCsHijos.frmCsCliente(obtenerDt, "")
+                ''frm.ShowDialog()
+                ''Else
+                frm = New uFrmCs.frmCs(obtenerDt, "")
                 frm.ShowDialog()
+                'End If
                 If frm.isAceptar Then
                     Dim dtFrm As DataTable
                     ''dr = frm.dr
@@ -244,7 +259,7 @@ Public Class txtBuscar
                             txtDesc.Text &= dtFrm.Rows(0)(strCampo.Trim).ToString()
                         Next
                     End If
-                   
+
 
                 End If
             End If

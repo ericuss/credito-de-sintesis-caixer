@@ -25,9 +25,9 @@ namespace cliente
         {
             if (txtBuscar1.zzTxtId != "" && !tieneUsuario())
             {
-                if (existeUsuario())
+                if (!existeUsuario())
                 {
-                    
+                   // String strIdCliente = dameIdClientePorId();
                 }
             }
         }
@@ -36,7 +36,7 @@ namespace cliente
             try
             {
                 String strSQL = " insert into usuario(login, password, idCliente, paginaPreferida, inactivo) " +
-                " values('" + txtUser.Text + "','" + txtPass.Text + "', " + txtBuscar1 +", '/backend/cuenta/cuenta',0";
+                " values('" + txtUser.Text + "','" + txtPass.Text + "', " + "" + ", '/backend/cuenta/cuenta',0";
                 return true;
             }
             catch (Exception)
