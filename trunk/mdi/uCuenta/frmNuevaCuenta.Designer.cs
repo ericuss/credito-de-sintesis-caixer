@@ -28,27 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtBuscar1 = new customTextCs.txtBuscar();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tnAceptar = new System.Windows.Forms.Button();
+            this.csBuscar = new customTextCs.txtBuscar();
             this.SuspendLayout();
-            // 
-            // txtBuscar1
-            // 
-            this.txtBuscar1.Location = new System.Drawing.Point(22, 12);
-            this.txtBuscar1.Name = "txtBuscar1";
-            this.txtBuscar1.Size = new System.Drawing.Size(419, 35);
-            this.txtBuscar1.TabIndex = 0;
-            this.txtBuscar1.zzCampoDesc = null;
-            this.txtBuscar1.zzCampoId = null;
-            this.txtBuscar1.zzEtiqueta = "Cliente:";
-            this.txtBuscar1.zzIdIsNumber = false;
-            this.txtBuscar1.zzIdVisible = false;
-            this.txtBuscar1.zzTabla = null;
-            this.txtBuscar1.zzTxtDesc = "";
-            this.txtBuscar1.zzTxtId = "";
-            this.txtBuscar1.zzWidthDesc = "160";
-            this.txtBuscar1.zzWidthId = "100";
             // 
             // btnCancelar
             // 
@@ -68,6 +51,24 @@
             this.tnAceptar.TabIndex = 2;
             this.tnAceptar.Text = "Aceptar";
             this.tnAceptar.UseVisualStyleBackColor = true;
+            this.tnAceptar.Click += new System.EventHandler(this.tnAceptar_Click);
+            // 
+            // csBuscar
+            // 
+            this.csBuscar.Location = new System.Drawing.Point(22, 12);
+            this.csBuscar.Name = "csBuscar";
+            this.csBuscar.Size = new System.Drawing.Size(419, 35);
+            this.csBuscar.TabIndex = 0;
+            this.csBuscar.zzCampoDesc = "nombre,apellidos";
+            this.csBuscar.zzCampoId = "dni";
+            this.csBuscar.zzEtiqueta = "Cliente:";
+            this.csBuscar.zzIdIsNumber = false;
+            this.csBuscar.zzIdVisible = false;
+            this.csBuscar.zzTabla = "cliente";
+            this.csBuscar.zzTxtDesc = "";
+            this.csBuscar.zzTxtId = "";
+            this.csBuscar.zzWidthDesc = "160";
+            this.csBuscar.zzWidthId = "100";
             // 
             // frmNuevaCuenta
             // 
@@ -76,7 +77,7 @@
             this.ClientSize = new System.Drawing.Size(453, 132);
             this.Controls.Add(this.tnAceptar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtBuscar1);
+            this.Controls.Add(this.csBuscar);
             this.Name = "frmNuevaCuenta";
             this.Text = "frmNuevaCuenta";
             this.ResumeLayout(false);
@@ -85,7 +86,7 @@
 
         #endregion
 
-        private customTextCs.txtBuscar txtBuscar1;
+        private customTextCs.txtBuscar csBuscar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button tnAceptar;
     }

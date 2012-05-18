@@ -240,6 +240,7 @@ namespace cliente
                 return true;
             }
         }
+
         private string getmd5(string input)
         {
             // Create a new instance of the MD5CryptoServiceProvider object.
