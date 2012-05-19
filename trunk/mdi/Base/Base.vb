@@ -4,10 +4,17 @@ Public Class Base
     Protected Friend tablaBBDD As String
     Protected Friend dts As DataSet
     Protected Friend strOpcional As String
+    Protected Friend strQuery As String = ""
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         Dim conn As New AccDatos.OLEDBCON
-        dts = conn.ObtenerTablaVacia(tablaBBDD)
+        If strQuery = "" Then
+            dts = conn.ObtenerTablaVacia(tablaBBDD)
+        Else
+            dts = conn.LanzarQueryT(strQuery + " and 1 = 0")
+        End If
+
         bindearDTS()
         ocultarId()
         KeyPreview = True
@@ -32,14 +39,22 @@ Public Class Base
 
     Private Sub btnUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdate.Click
         Dim conn As New AccDatos.OLEDBCON
-        conn.UpdateDB(dts, "select * from " + tablaBBDD)
+        If strQuery = "" Then
+            conn.UpdateDB(dts, "select * from " + tablaBBDD)
+        Else
+            conn.UpdateDB(dts, strQuery)
+        End If
     End Sub
 
 
 
     Private Sub btnTodos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTodos.Click
         Dim conn As New AccDatos.OLEDBCON
-        dts = conn.ObtenerTabla(tablaBBDD)
+        If strQuery = "" Then
+            dts = conn.ObtenerTabla(tablaBBDD)
+        Else
+            dts = conn.LanzarQueryT(strQuery)
+        End If
         limpiarBinding()
         bindearDTS()
         ocultarId()
@@ -101,5 +116,45 @@ Public Class Base
             filtrarGrid()
         End If
 
+    End Sub
+
+    Public Sub btnLimpiarControles_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarControles.Click
+        Try
+
+            For Each txt In Me.Controls
+
+                If txt.GetType().ToString() = "System.Windows.Forms.GroupBox" Then
+
+                    For Each objTxt In txt.controls
+                        If objTxt.GetType().ToString() = "CustomValidatorTextBox.CustomValidatorTextBox" Or objTxt.GetType().ToString() = "System.Windows.Forms.TextBox" Then
+                            objTxt.text = ""
+                        End If
+
+                        If objTxt.GetType().ToString() = "customTextCs.txtBuscar" Then
+                            objTxt.zzTxtId = ""
+                            objTxt.zzTxtDesc = ""
+                        End If
+
+            Next
+
+                ElseIf txt.GetType().ToString() = "CustomValidatorTextBox.CustomValidatorTextBox" Or txt.GetType().ToString() = "System.Windows.Forms.TextBox" Then
+                    txt.text = ""
+                ElseIf txt.GetType().ToString() = "customTextCs.txtBuscar" Then
+                    txt.zzTxtId = ""
+                    txt.zzTxtDesc = ""
+                    End If
+            Next
+            Dim conn As New AccDatos.OLEDBCON
+            If strQuery = "" Then
+                dts = conn.ObtenerTabla(tablaBBDD)
+            Else
+                dts = conn.LanzarQueryT(strQuery)
+            End If
+            limpiarBinding()
+            bindearDTS()
+            ocultarId()
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

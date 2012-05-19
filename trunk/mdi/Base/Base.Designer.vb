@@ -30,6 +30,7 @@ Partial Class Base
         Me.gbResultado = New System.Windows.Forms.GroupBox()
         Me.gbFiltro = New System.Windows.Forms.GroupBox()
         Me.btnPdf = New System.Windows.Forms.Button()
+        Me.btnLimpiarControles = New System.Windows.Forms.Button()
         CType(Me.dgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbResultado.SuspendLayout()
         Me.SuspendLayout()
@@ -48,36 +49,36 @@ Partial Class Base
         '
         'txtSalir
         '
-        Me.txtSalir.Location = New System.Drawing.Point(388, 78)
+        Me.txtSalir.Location = New System.Drawing.Point(564, 78)
         Me.txtSalir.Name = "txtSalir"
-        Me.txtSalir.Size = New System.Drawing.Size(112, 23)
+        Me.txtSalir.Size = New System.Drawing.Size(98, 23)
         Me.txtSalir.TabIndex = 2
         Me.txtSalir.Text = "Salir"
         Me.txtSalir.UseVisualStyleBackColor = True
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(553, 78)
+        Me.btnUpdate.Location = New System.Drawing.Point(423, 78)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(112, 23)
+        Me.btnUpdate.Size = New System.Drawing.Size(98, 23)
         Me.btnUpdate.TabIndex = 3
         Me.btnUpdate.Text = "Aceptar"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'btnTodos
         '
-        Me.btnTodos.Location = New System.Drawing.Point(40, 78)
+        Me.btnTodos.Location = New System.Drawing.Point(30, 78)
         Me.btnTodos.Name = "btnTodos"
-        Me.btnTodos.Size = New System.Drawing.Size(119, 23)
+        Me.btnTodos.Size = New System.Drawing.Size(98, 23)
         Me.btnTodos.TabIndex = 4
         Me.btnTodos.Text = "Obtener Todos"
         Me.btnTodos.UseVisualStyleBackColor = True
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(186, 78)
+        Me.btnLimpiar.Location = New System.Drawing.Point(134, 78)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(119, 23)
+        Me.btnLimpiar.Size = New System.Drawing.Size(98, 23)
         Me.btnLimpiar.TabIndex = 5
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
@@ -101,7 +102,7 @@ Partial Class Base
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gbFiltro.Location = New System.Drawing.Point(15, 12)
         Me.gbFiltro.Name = "gbFiltro"
-        Me.gbFiltro.Size = New System.Drawing.Size(623, 60)
+        Me.gbFiltro.Size = New System.Drawing.Size(611, 60)
         Me.gbFiltro.TabIndex = 7
         Me.gbFiltro.TabStop = False
         Me.gbFiltro.Text = "Filtros"
@@ -110,11 +111,20 @@ Partial Class Base
         '
         Me.btnPdf.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnPdf.Image = Global.Base.My.Resources.Resources.pdf
-        Me.btnPdf.Location = New System.Drawing.Point(644, 25)
+        Me.btnPdf.Location = New System.Drawing.Point(632, 25)
         Me.btnPdf.Name = "btnPdf"
         Me.btnPdf.Size = New System.Drawing.Size(27, 37)
         Me.btnPdf.TabIndex = 15
         Me.btnPdf.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarControles
+        '
+        Me.btnLimpiarControles.Location = New System.Drawing.Point(238, 78)
+        Me.btnLimpiarControles.Name = "btnLimpiarControles"
+        Me.btnLimpiarControles.Size = New System.Drawing.Size(98, 23)
+        Me.btnLimpiarControles.TabIndex = 16
+        Me.btnLimpiarControles.Text = "Limpiar Controles"
+        Me.btnLimpiarControles.UseVisualStyleBackColor = True
         '
         'Base
         '
@@ -123,6 +133,7 @@ Partial Class Base
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(674, 467)
         Me.Controls.Add(Me.btnPdf)
+        Me.Controls.Add(Me.btnLimpiarControles)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.gbFiltro)
         Me.Controls.Add(Me.txtSalir)
@@ -144,5 +155,6 @@ Partial Class Base
     Public WithEvents gbResultado As System.Windows.Forms.GroupBox
     Public WithEvents gbFiltro As System.Windows.Forms.GroupBox
     Public WithEvents btnPdf As System.Windows.Forms.Button
+    Public WithEvents btnLimpiarControles As System.Windows.Forms.Button
 
 End Class
