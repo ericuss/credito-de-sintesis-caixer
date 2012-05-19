@@ -70,7 +70,9 @@
             this.naviBar2.LayoutStyle = Guifreaks.Navisuite.NaviLayoutStyle.Office2007Silver;
             this.naviBar2.Location = new System.Drawing.Point(0, 0);
             this.naviBar2.Name = "naviBar2";
-            this.naviBar2.Size = new System.Drawing.Size(168, 431);
+            this.naviBar2.PopupHeight = 300;
+            this.naviBar2.PopupMinWidth = 150;
+            this.naviBar2.Size = new System.Drawing.Size(150, 431);
             this.naviBar2.TabIndex = 6;
             this.naviBar2.Text = "naviBar2";
             this.naviBar2.VisibleLargeButtons = 5;

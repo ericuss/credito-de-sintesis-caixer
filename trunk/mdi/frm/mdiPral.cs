@@ -101,7 +101,7 @@ namespace uMdi
                     btnHijo.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drHijo["icoS"].ToString());
                     btnHijo.BackgroundImageLayout=ImageLayout.None;
                     btnHijo.Name = drHijo["id"].ToString() + drHijo["nombreMenu"].ToString();
-                    btnHijo.Width = 165;
+                    btnHijo.Width = 145;
                     btnHijo.Location = new System.Drawing.Point(0, 28 * pos);
                     btnHijo.Visible = true;
                     btnHijo.Parent = this;
