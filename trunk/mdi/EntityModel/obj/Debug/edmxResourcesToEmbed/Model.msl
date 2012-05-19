@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="santanderModelStoreContainer" CdmEntityContainer="santanderEntities1">
+    <EntitySetMapping Name="accion">
+      <EntityTypeMapping TypeName="santanderModel.accion">
+        <MappingFragment StoreEntitySet="accion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="santanderModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="inactivo" ColumnName="inactivo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuenta">
+      <EntityTypeMapping TypeName="santanderModel.cuenta">
+        <MappingFragment StoreEntitySet="cuenta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="codigoEntidad" ColumnName="codigoEntidad" />
+          <ScalarProperty Name="codigoOficina" ColumnName="codigoOficina" />
+          <ScalarProperty Name="codigoControl" ColumnName="codigoControl" />
+          <ScalarProperty Name="codigoCuenta" ColumnName="codigoCuenta" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cuentacliente">
+      <EntityTypeMapping TypeName="santanderModel.cuentacliente">
+        <MappingFragment StoreEntitySet="cuentacliente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deposito">
+      <EntityTypeMapping TypeName="santanderModel.deposito">
+        <MappingFragment StoreEntitySet="deposito">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="plazo" ColumnName="plazo" />
+          <ScalarProperty Name="importeMinimo" ColumnName="importeMinimo" />
+          <ScalarProperty Name="tae" ColumnName="tae" />
+          <ScalarProperty Name="multaCancelacion" ColumnName="multaCancelacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="depositocliente">
+      <EntityTypeMapping TypeName="santanderModel.depositocliente">
+        <MappingFragment StoreEntitySet="depositocliente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="idDeposito" ColumnName="idDeposito" />
+          <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fechaSolicitud" ColumnName="fechaSolicitud" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="fechaActivacion" ColumnName="fechaActivacion" />
+          <ScalarProperty Name="fechaVencimiento" ColumnName="fechaVencimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empresa">
+      <EntityTypeMapping TypeName="santanderModel.empresa">
+        <MappingFragment StoreEntitySet="empresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ticker" ColumnName="ticker" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="accionesDisponibles" ColumnName="accionesDisponibles" />
+          <ScalarProperty Name="max" ColumnName="max" />
+          <ScalarProperty Name="min" ColumnName="min" />
+          <ScalarProperty Name="capital" ColumnName="capital" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadosolicitud">
+      <EntityTypeMapping TypeName="santanderModel.estadosolicitud">
+        <MappingFragment StoreEntitySet="estadosolicitud">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historicoinversion">
+      <EntityTypeMapping TypeName="santanderModel.historicoinversion">
+        <MappingFragment StoreEntitySet="historicoinversion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="compraVenta" ColumnName="compraVenta" />
+          <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+          <ScalarProperty Name="valorVenta" ColumnName="valorVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mdimenu">
+      <EntityTypeMapping TypeName="santanderModel.mdimenu">
+        <MappingFragment StoreEntitySet="mdimenu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
+          <ScalarProperty Name="padre" ColumnName="padre" />
+          <ScalarProperty Name="form" ColumnName="form" />
+          <ScalarProperty Name="dll" ColumnName="dll" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="movimiento">
+      <EntityTypeMapping TypeName="santanderModel.movimiento">
+        <MappingFragment StoreEntitySet="movimiento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="resto" ColumnName="resto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notificacion">
+      <EntityTypeMapping TypeName="santanderModel.notificacion">
+        <MappingFragment StoreEntitySet="notificacion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="leido" ColumnName="leido" />
+          <ScalarProperty Name="asunto" ColumnName="asunto" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oficina">
+      <EntityTypeMapping TypeName="santanderModel.oficina">
+        <MappingFragment StoreEntitySet="oficina">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="codigoOficina" ColumnName="codigoOficina" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="solicitud">
+      <EntityTypeMapping TypeName="santanderModel.solicitud">
+        <MappingFragment StoreEntitySet="solicitud">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idTipoSolicitud" ColumnName="idTipoSolicitud" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idEstadoSolicitud" ColumnName="idEstadoSolicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tarjeta">
+      <EntityTypeMapping TypeName="santanderModel.tarjeta">
+        <MappingFragment StoreEntitySet="tarjeta">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="cvv" ColumnName="cvv" />
+          <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiposolicitud">
+      <EntityTypeMapping TypeName="santanderModel.tiposolicitud">
+        <MappingFragment StoreEntitySet="tiposolicitud">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tag" ColumnName="tag" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transferencia">
+      <EntityTypeMapping TypeName="santanderModel.transferencia">
+        <MappingFragment StoreEntitySet="transferencia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+          <ScalarProperty Name="idCuentaOrigen" ColumnName="idCuentaOrigen" />
+          <ScalarProperty Name="cuentaDestino" ColumnName="cuentaDestino" />
+          <ScalarProperty Name="porCuentaDe" ColumnName="porCuentaDe" />
+          <ScalarProperty Name="referencia" ColumnName="referencia" />
+          <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+          <ScalarProperty Name="conceptoAd" ColumnName="conceptoAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="santanderModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="idioma" ColumnName="idioma" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="paginaPreferida" ColumnName="paginaPreferida" />
+          <ScalarProperty Name="inactivo" ColumnName="inactivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

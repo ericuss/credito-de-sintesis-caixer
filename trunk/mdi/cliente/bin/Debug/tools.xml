@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>tools</name>
+    </assembly>
+    <members>
+        <member name="M:tools.clsTools.compIfFormExistInChildrenAndFocus(System.Windows.Forms.Form,System.Windows.Forms.Form[])">
+            <summary>
+            Comprueba si el formulario ya existe entre los hijos y le da foco
+            </summary>
+            <param name="frm">Formulario tipo</param>
+            <param name="children">Array de formularios hijos</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:tools.clsTools.compIfFormExistInChildren(System.Windows.Forms.Form,System.Windows.Forms.Form[])">
+            <summary>
+            Comprueba si el formulario ya existe entre los hijos
+            </summary>
+            <param name="frm">Formulario tipo</param>
+            <param name="children">Array de formularios hijos</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+    </members>
+</doc>

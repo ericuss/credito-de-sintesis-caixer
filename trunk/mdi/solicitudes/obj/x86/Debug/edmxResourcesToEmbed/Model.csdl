@@ -300,6 +300,7 @@
     <Property Name="idCliente" Type="Int32" Nullable="false" />
     <Property Name="paginaPreferida" Type="String" />
     <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_usuario_fk" FromRole="usuario" ToRole="cliente" />
+    <Property Type="Boolean" Name="inactivo" Nullable="false" />
   </EntityType>
   <Association Name="cliente_accion_fk">
     <End Role="cliente" Type="santanderModel.cliente" Multiplicity="0..1" />

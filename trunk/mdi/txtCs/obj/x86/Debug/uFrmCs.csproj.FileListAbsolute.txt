@@ -1,0 +1,17 @@
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.frmCs.resources
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.Properties.Resources.resources
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\dll\txtCs.dll
+D:\S2J\Sintesi\LanreSuit\dll\txtCs.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.dll
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.csprojResolveAssemblyReference.cache
+C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCs.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCs.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\txtCs\obj\x86\Debug\uFrmCs.frmCs.resources

@@ -1,0 +1,6 @@
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.frmCs.resources
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.Properties.Resources.resources
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\txtCs.txtBuscar.resources
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\txtCs\obj\x86\Debug\GenerateResource.write.1.tlog

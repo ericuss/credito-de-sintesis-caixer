@@ -285,10 +285,11 @@
     </Key>
     <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="login" Type="varchar" Nullable="false" MaxLength="45" />
-    <Property Name="password" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="password" Type="text" Nullable="false" />
     <Property Name="idioma" Type="varchar" MaxLength="2" />
     <Property Name="idCliente" Type="int" Nullable="false" />
     <Property Name="paginaPreferida" Type="varchar" MaxLength="100" />
+    <Property Name="inactivo" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="cliente_accion_fk">
     <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="0..1" />

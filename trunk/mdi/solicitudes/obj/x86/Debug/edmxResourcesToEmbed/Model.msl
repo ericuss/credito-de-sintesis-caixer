@@ -198,6 +198,7 @@
     <EntitySetMapping Name="usuario">
       <EntityTypeMapping TypeName="santanderModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="inactivo" ColumnName="inactivo" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="login" ColumnName="login" />
           <ScalarProperty Name="password" ColumnName="password" />

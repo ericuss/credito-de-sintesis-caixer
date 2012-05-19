@@ -4,6 +4,76 @@
         <name>uMdi</name>
     </assembly>
     <members>
+        <member name="T:uMdi.mdiPral">
+            <summary>
+            MDI Principal.
+             </summary>
+        </member>
+        <member name="F:uMdi.mdiPral.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:uMdi.mdiPral.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:uMdi.mdiPral.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:uMdi.mdiPral.#ctor">
+            <summary>
+            Constructor del MDI Principal
+            </summary>
+        </member>
+        <member name="T:uMdi.frmSplashScreen">
+            <summary>
+            Clase SplashScreen
+            </summary>
+        </member>
+        <member name="M:uMdi.frmSplashScreen.#ctor">
+            <summary>
+            Constructor del SplashScreen
+            </summary>
+        </member>
+        <member name="F:uMdi.frmSplashScreen.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:uMdi.frmSplashScreen.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:uMdi.frmSplashScreen.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:uMdi.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:uMdi.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:uMdi.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
         <member name="T:uMdi.frmLoggin">
             <summary>
             Formulario para Iniciar sesion.
@@ -47,79 +117,9 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="T:uMdi.Properties.Resources">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:uMdi.Properties.Resources.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:uMdi.Properties.Resources.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="M:frm.Program.Main">
+        <member name="M:uMdi.Program.Main">
             <summary>
             The main entry point for the application.
-            </summary>
-        </member>
-        <member name="T:uMdi.frmSplashScreen">
-            <summary>
-            Clase SplashScreen
-            </summary>
-        </member>
-        <member name="F:uMdi.frmSplashScreen.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:uMdi.frmSplashScreen.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:uMdi.frmSplashScreen.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:uMdi.frmSplashScreen.#ctor">
-            <summary>
-            Constructor del SplashScreen
-            </summary>
-        </member>
-        <member name="T:frm.mdiPral">
-            <summary>
-            MDI Principal.
-             </summary>
-        </member>
-        <member name="F:frm.mdiPral.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:frm.mdiPral.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:frm.mdiPral.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:frm.mdiPral.#ctor">
-            <summary>
-            Constructor del MDI Principal
             </summary>
         </member>
     </members>

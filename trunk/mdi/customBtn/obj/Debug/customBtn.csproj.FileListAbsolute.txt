@@ -1,0 +1,12 @@
+D:\S2J\Sintesi\LanreSuit\mdi\customBtn\bin\Debug\customBtn.dll
+D:\S2J\Sintesi\LanreSuit\mdi\customBtn\bin\Debug\customBtn.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\customBtn\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\customBtn\obj\Debug\customBtn.dll
+D:\S2J\Sintesi\LanreSuit\mdi\customBtn\obj\Debug\customBtn.pdb
+D:\S2J\Sintesi\LanreSuit\dll\customBtn.dll
+D:\S2J\Sintesi\LanreSuit\dll\customBtn.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\customBtn.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\customBtn.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\customBtn\obj\Debug\customBtn.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\customBtn\obj\Debug\customBtn.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\customBtn\obj\Debug\customBtn.csprojResolveAssemblyReference.cache

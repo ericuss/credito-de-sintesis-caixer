@@ -15,3 +15,15 @@ D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.pdb
 D:\S2J\Sintesi\LanreSuit\dll\uCuenta.dll
 D:\S2J\Sintesi\LanreSuit\dll\uCuenta.pdb
 D:\S2J\Sintesi\LanreSuit\mdi\uCuenta\obj\Debug\uCuenta.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\dll\uCuenta.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\uCuenta.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.csprojResolveAssemblyReference.cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmConsultaExtracto.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.Properties.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmMantCuenta.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmIngreso.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmNuevaCuenta.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmAnadirTitulares.resources
