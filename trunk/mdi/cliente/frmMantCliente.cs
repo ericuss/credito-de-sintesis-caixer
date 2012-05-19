@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using EntityModel;
 namespace cliente
 {
-    public partial class frmMantCliente : Base.Base
+    public partial class frmMantCliente : Base.Base  
     {
         santanderEntities1 context = new santanderEntities1();
         public frmMantCliente()

@@ -17,14 +17,19 @@ namespace uCuenta
         #region "New"
         public frmConsultaExtracto()
         {
+            strQuery = "select cuenta.codigoEntidad as Entidad,cuenta.codigoOficina as Oficina, cuenta.codigoControl as Control, cuenta.codigoCuenta as Cuenta, movimiento.* from movimiento " +
+                     " join cuenta on cuenta.id = movimiento.idcuenta " +
+                     " join cuentacliente on  cuenta.id = cuentacliente.idCuenta" +
+                     " join cliente on cliente.id = cuentacliente.idcuenta " +
+                    " where 1 = 1 ";  
             InitializeComponent();
+
+            this.btnLimpiarControles.Click += new System.EventHandler(this.btnLimpiarControles_Click);
             tablaBBDD = "movimiento";
-            strOpcional = "cuenta: 2100 - 2000 - 12 - 012345678       Nombre: Hannah42";
-          
+            strOpcional = "";
+    
 
-        }
-
-      
+        }     
 
         #endregion
 
@@ -74,7 +79,7 @@ namespace uCuenta
         }
         public override void filtrarGrid()
         {
-            string strQuery = "select movimiento.* from movimiento "+
+            string strQuery = "select cuenta.codigoEntidad as Entidad,cuenta.codigoOficina as Oficina, cuenta.codigoControl as Control, cuenta.codigoCuenta as Cuenta, movimiento.* from movimiento " +
                                 " join cuenta on cuenta.id = movimiento.idcuenta "+
                                 " join cuentacliente on  cuenta.id = cuentacliente.idCuenta"+
                                 " join cliente on cliente.id = cuentacliente.idcuenta "+
@@ -101,6 +106,22 @@ namespace uCuenta
             if (txtCon.Text != "")
             {
                 strQuery += " and movimiento.concepto like '%" + txtCon.Text + "%' ";
+            }
+            if (txtEntidad.Text != "")
+            {
+                strQuery += " and cuenta.codigoEntidad like '%" + txtEntidad.Text + "%' ";
+            }
+            if (txtOficina.Text != "")
+            {
+                strQuery += " and cuenta.codigoOficina like '%" + txtOficina.Text + "%' ";
+            }
+            if (txtControl.Text != "")
+            {
+                strQuery += " and cuenta.codigoControl like '%" + txtControl.Text + "%' ";
+            }
+            if (txtCuenta.Text != "")
+            {
+                strQuery += " and cuenta.codigoCuenta like '%" + txtCuenta.Text + "%' ";
             }
             if (txtBuscar1.zzTxtId != "")
             {

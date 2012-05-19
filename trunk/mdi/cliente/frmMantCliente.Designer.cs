@@ -54,7 +54,7 @@
             // txtSalir
             // 
             this.txtSalir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSalir.Location = new System.Drawing.Point(563, 124);
+            this.txtSalir.Location = new System.Drawing.Point(553, 124);
             // 
             // btnUpdate
             // 
@@ -77,7 +77,7 @@
             // gbResultado
             // 
             this.gbResultado.Location = new System.Drawing.Point(12, 153);
-            this.gbResultado.Size = new System.Drawing.Size(666, 302);
+            this.gbResultado.Size = new System.Drawing.Size(656, 302);
             // 
             // gbFiltro
             // 
@@ -97,15 +97,20 @@
             this.gbFiltro.Controls.Add(this.label3);
             this.gbFiltro.Controls.Add(this.label2);
             this.gbFiltro.Controls.Add(this.label1);
-            this.gbFiltro.Size = new System.Drawing.Size(627, 106);
+            this.gbFiltro.Size = new System.Drawing.Size(624, 106);
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(648, 12);
+            this.btnPdf.Location = new System.Drawing.Point(645, 24);
+            // 
+            // btnLimpiarControles
+            // 
+            this.btnLimpiarControles.Location = new System.Drawing.Point(82, 124);
+            this.btnLimpiarControles.Size = new System.Drawing.Size(99, 23);
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(148, 124);
+            this.btnNew.Location = new System.Drawing.Point(187, 124);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
             this.btnNew.TabIndex = 16;
@@ -225,6 +230,7 @@
             this.txtNombre.Size = new System.Drawing.Size(77, 20);
             this.txtNombre.TabIndex = 16;
             this.txtNombre.ValidValue = "";
+            this.txtNombre.zzCampoBd = null;
             this.txtNombre.zzValidateIsNumeric = false;
             this.txtNombre.zzValidateLength = false;
             this.txtNombre.zzValidMaxLength = ((short)(0));
@@ -236,6 +242,7 @@
             this.txtApellidos.Size = new System.Drawing.Size(69, 20);
             this.txtApellidos.TabIndex = 17;
             this.txtApellidos.ValidValue = "";
+            this.txtApellidos.zzCampoBd = null;
             this.txtApellidos.zzValidateIsNumeric = false;
             this.txtApellidos.zzValidateLength = false;
             this.txtApellidos.zzValidMaxLength = ((short)(0));
@@ -247,6 +254,7 @@
             this.txtTelefono.Size = new System.Drawing.Size(77, 20);
             this.txtTelefono.TabIndex = 18;
             this.txtTelefono.ValidValue = "";
+            this.txtTelefono.zzCampoBd = null;
             this.txtTelefono.zzValidateIsNumeric = false;
             this.txtTelefono.zzValidateLength = false;
             this.txtTelefono.zzValidMaxLength = ((short)(0));
@@ -258,6 +266,7 @@
             this.txtDireccion.Size = new System.Drawing.Size(77, 20);
             this.txtDireccion.TabIndex = 19;
             this.txtDireccion.ValidValue = "";
+            this.txtDireccion.zzCampoBd = null;
             this.txtDireccion.zzValidateIsNumeric = false;
             this.txtDireccion.zzValidateLength = false;
             this.txtDireccion.zzValidMaxLength = ((short)(0));
@@ -269,6 +278,7 @@
             this.txtPoblacion.Size = new System.Drawing.Size(77, 20);
             this.txtPoblacion.TabIndex = 20;
             this.txtPoblacion.ValidValue = "";
+            this.txtPoblacion.zzCampoBd = null;
             this.txtPoblacion.zzValidateIsNumeric = false;
             this.txtPoblacion.zzValidateLength = false;
             this.txtPoblacion.zzValidMaxLength = ((short)(0));
@@ -280,6 +290,7 @@
             this.txtMail.Size = new System.Drawing.Size(93, 20);
             this.txtMail.TabIndex = 21;
             this.txtMail.ValidValue = "";
+            this.txtMail.zzCampoBd = null;
             this.txtMail.zzValidateIsNumeric = false;
             this.txtMail.zzValidateLength = false;
             this.txtMail.zzValidMaxLength = ((short)(0));
@@ -291,6 +302,7 @@
             this.txtDNI.Size = new System.Drawing.Size(95, 20);
             this.txtDNI.TabIndex = 22;
             this.txtDNI.ValidValue = "";
+            this.txtDNI.zzCampoBd = null;
             this.txtDNI.zzValidateIsNumeric = false;
             this.txtDNI.zzValidateLength = false;
             this.txtDNI.zzValidMaxLength = ((short)(0));
@@ -299,7 +311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 467);
+            this.ClientSize = new System.Drawing.Size(680, 467);
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnNew);
@@ -308,13 +320,14 @@
             this.Name = "frmMantCliente";
             this.Text = "Mantenimiento de Clientes";
             this.Load += new System.EventHandler(this.frmMantCliente_Load);
+            this.Controls.SetChildIndex(this.btnPdf, 0);
             this.Controls.SetChildIndex(this.btnTodos, 0);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.gbResultado, 0);
             this.Controls.SetChildIndex(this.txtSalir, 0);
             this.Controls.SetChildIndex(this.gbFiltro, 0);
             this.Controls.SetChildIndex(this.btnLimpiar, 0);
-            this.Controls.SetChildIndex(this.btnPdf, 0);
+            this.Controls.SetChildIndex(this.btnLimpiarControles, 0);
             this.Controls.SetChildIndex(this.btnNew, 0);
             this.Controls.SetChildIndex(this.btnDel, 0);
             this.Controls.SetChildIndex(this.btnMod, 0);

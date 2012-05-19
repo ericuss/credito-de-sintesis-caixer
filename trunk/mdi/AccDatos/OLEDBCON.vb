@@ -84,7 +84,17 @@ Public Class OLEDBCON
         connection.Close()
         Return dtSet
     End Function
-
+    Public Function LanzarQueryT(ByVal query As String) As DataSet
+        Dim connection As New MySqlConnection(connectionString)
+        Dim dtSet As New DataSet
+        connection.Open()
+        Dim adapter = New MySqlDataAdapter(query, connection)
+        'adapter.FillSchema(dtSet, SchemaType.Source)
+        adapter.Fill(dtSet)
+        adapter.Dispose()
+        connection.Close()
+        Return dtSet
+    End Function
 
     Public Sub UpdateDB(ByVal dataset As DataSet, ByVal query As String)
         Dim connection As New MySqlConnection(connectionString)
