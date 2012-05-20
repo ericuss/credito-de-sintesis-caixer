@@ -151,7 +151,7 @@ Public Class txtBuscar
 
     End Sub
 
-    Private Sub txtid_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtId.LostFocus
+    Public Sub evLostFocus()
         If Not txtId.Text Is Nothing AndAlso Not txtId.Text.Trim = "" Then
             Dim dt As New DataTable
             If zzIdIsNumber Then
@@ -193,6 +193,9 @@ Public Class txtBuscar
             txtId.Text = ""
             txtDesc.Text = ""
         End If
+    End Sub
+    Private Sub txtid_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtId.LostFocus
+        evLostFocus()
     End Sub
 
     Private Function obtenerDt() As DataTable
