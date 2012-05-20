@@ -1,0 +1,38 @@
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\bin\Debug\AccDatos.dll
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\bin\Debug\AccDatos.pdb
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\bin\Debug\AccDatos.xml
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\AccDatos.Resources.resources
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\AccDatos.dll
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\AccDatos.xml
+C:\Users\Rom\Documents\Visual Studio 2010\Projects\AccDatos\AccDatos\obj\Debug\AccDatos.pdb
+C:\Users\Rom\Desktop\CustomText\dll\AccDatos.dll
+C:\Users\Rom\Desktop\CustomText\dll\AccDatos.pdb
+C:\Users\Rom\Desktop\CustomText\dll\AccDatos.xml
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\AccDatos.Resources.resources
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\AccDatos.dll
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\AccDatos.xml
+C:\Users\Rom\Desktop\CustomText\AccDatos\obj\Debug\AccDatos.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\AccDatos.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\AccDatos.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\AccDatos.xml
+C:\Users\Rom\Documents\CreditCaixer\mdi\AccDatos\obj\Debug\AccDatos.Resources.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\AccDatos\obj\Debug\AccDatos.vbproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\AccDatos\obj\Debug\AccDatos.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\AccDatos\obj\Debug\AccDatos.xml
+C:\Users\Rom\Documents\CreditCaixer\mdi\AccDatos\obj\Debug\AccDatos.pdb
+D:\S2J\Sintesi\LanreSuit\dll\AccDatos.dll
+D:\S2J\Sintesi\LanreSuit\dll\AccDatos.pdb
+D:\S2J\Sintesi\LanreSuit\dll\AccDatos.xml
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.Resources.resources
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.dll
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.xml
+D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.pdb

@@ -1,0 +1,1330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="santanderModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="santanderModelStoreContainer">
+          <EntitySet Name="accion" EntityType="santanderModel.Store.accion" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="cliente" EntityType="santanderModel.Store.cliente" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="cuenta" EntityType="santanderModel.Store.cuenta" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="cuentacliente" EntityType="santanderModel.Store.cuentacliente" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="deposito" EntityType="santanderModel.Store.deposito" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="depositocliente" EntityType="santanderModel.Store.depositocliente" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="empresa" EntityType="santanderModel.Store.empresa" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="estadosolicitud" EntityType="santanderModel.Store.estadosolicitud" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="historicoinversion" EntityType="santanderModel.Store.historicoinversion" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="mdimenu" EntityType="santanderModel.Store.mdimenu" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="movimiento" EntityType="santanderModel.Store.movimiento" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="notificacion" EntityType="santanderModel.Store.notificacion" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="oficina" EntityType="santanderModel.Store.oficina" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="solicitud" EntityType="santanderModel.Store.solicitud" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="tarjeta" EntityType="santanderModel.Store.tarjeta" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="tiposolicitud" EntityType="santanderModel.Store.tiposolicitud" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="transferencia" EntityType="santanderModel.Store.transferencia" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="usuario" EntityType="santanderModel.Store.usuario" store:Type="Tables" Schema="santander" />
+          <AssociationSet Name="cliente_accion_fk" Association="santanderModel.Store.cliente_accion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="accion" EntitySet="accion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_cuentaClienta_fk" Association="santanderModel.Store.cliente_cuentaClienta_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_historicoInversion_fk" Association="santanderModel.Store.cliente_historicoInversion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="historicoinversion" EntitySet="historicoinversion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_notificacion_fk" Association="santanderModel.Store.cliente_notificacion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="notificacion" EntitySet="notificacion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_usuario_fk" Association="santanderModel.Store.cliente_usuario_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_cuentaCliente_fj" Association="santanderModel.Store.cuenta_cuentaCliente_fj">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_movimiento_fk" Association="santanderModel.Store.cuenta_movimiento_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="movimiento" EntitySet="movimiento" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.Store.cuenta_transferencia_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="transferencia" EntitySet="transferencia" />
+          </AssociationSet>
+          <AssociationSet Name="cuentacliente_depositoCliente_fk" Association="santanderModel.Store.cuentacliente_depositoCliente_fk">
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="deposito_depositocliente_fk" Association="santanderModel.Store.deposito_depositocliente_fk">
+            <End Role="deposito" EntitySet="deposito" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="empresa_accion_fk" Association="santanderModel.Store.empresa_accion_fk">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="accion" EntitySet="accion" />
+          </AssociationSet>
+          <AssociationSet Name="empresa_historicoInversion_fk" Association="santanderModel.Store.empresa_historicoInversion_fk">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="historicoinversion" EntitySet="historicoinversion" />
+          </AssociationSet>
+          <AssociationSet Name="estadoSolicitud_solicitud_fk" Association="santanderModel.Store.estadoSolicitud_solicitud_fk">
+            <End Role="estadosolicitud" EntitySet="estadosolicitud" />
+            <End Role="solicitud" EntitySet="solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="solicitud_depositoCliente_fk" Association="santanderModel.Store.solicitud_depositoCliente_fk">
+            <End Role="solicitud" EntitySet="solicitud" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="tipoSolicitud_solicitud_fk" Association="santanderModel.Store.tipoSolicitud_solicitud_fk">
+            <End Role="tiposolicitud" EntitySet="tiposolicitud" />
+            <End Role="solicitud" EntitySet="solicitud" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="accion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="idEmpresa" Type="int" />
+          <Property Name="fecha" Type="timestamp" Precision="0" />
+          <Property Name="valorCompra" Type="decimal" Scale="3" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="apellidos" Type="varchar" MaxLength="45" />
+          <Property Name="telefono" Type="varchar" MaxLength="45" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+          <Property Name="poblacion" Type="varchar" MaxLength="45" />
+          <Property Name="mail" Type="varchar" MaxLength="45" />
+          <Property Name="dni" Type="varchar" MaxLength="45" />
+          <Property Name="fechaNacimiento" Type="varchar" MaxLength="45" />
+          <Property Name="inactivo" Type="bit" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigoEntidad" Type="varchar" MaxLength="4" />
+          <Property Name="codigoOficina" Type="varchar" MaxLength="4" />
+          <Property Name="codigoControl" Type="varchar" MaxLength="2" />
+          <Property Name="codigoCuenta" Type="varchar" MaxLength="10" />
+          <Property Name="saldo" Type="decimal" Precision="50" Scale="3" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6035: La relación 'cuentacliente_solicitud_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      advertencia 6035: La relación 'cuentacliente_tarjeta_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      -->
+        <EntityType Name="cuentacliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="idCuenta" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="deposito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="plazo" Type="int" Nullable="false" />
+          <Property Name="importeMinimo" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="tae" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="multaCancelacion" Type="decimal" Nullable="false" Scale="2" />
+        </EntityType>
+        <EntityType Name="depositocliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="idCuenta" Type="int" Nullable="false" />
+          <Property Name="idDeposito" Type="int" Nullable="false" />
+          <Property Name="idSolicitud" Type="int" Nullable="false" />
+          <Property Name="importe" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="fechaSolicitud" Type="timestamp" Precision="0" />
+          <Property Name="activo" Type="bit" Nullable="false" />
+          <Property Name="fechaActivacion" Type="date" />
+          <Property Name="fechaVencimiento" Type="date" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ticker" Type="varchar" MaxLength="5" />
+          <Property Name="nombre" Type="varchar" MaxLength="45" />
+          <Property Name="valor" Type="decimal" Scale="2" />
+          <Property Name="accionesDisponibles" Type="int" />
+          <Property Name="max" Type="decimal" Scale="2" />
+          <Property Name="min" Type="decimal" Scale="2" />
+          <Property Name="capital" Type="int" />
+          <Property Name="hora" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="estadosolicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tag" Type="varchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="historicoinversion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="timestamp" Precision="0" />
+          <Property Name="idEmpresa" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="idCuenta" Type="int" />
+          <Property Name="compraVenta" Type="bit" />
+          <Property Name="valorCompra" Type="decimal" Scale="3" />
+          <Property Name="valorVenta" Type="decimal" Scale="3" />
+        </EntityType>
+        <EntityType Name="mdimenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nombreMenu" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="padre" Type="int" Nullable="false" />
+          <Property Name="form" Type="varchar" MaxLength="45" />
+          <Property Name="dll" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <!--Se encontraron errores durante la generación:
+      advertencia 6035: La relación 'movimiento_historicoInversion_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      advertencia 6035: La relación 'movimiento_transferencia_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
+      -->
+        <EntityType Name="movimiento">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCuenta" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="timestamp" Precision="0" />
+          <Property Name="importe" Type="decimal" Scale="3" />
+          <Property Name="descripcion" Type="text" />
+          <Property Name="concepto" Type="varchar" MaxLength="45" />
+          <Property Name="resto" Type="decimal" Scale="3" />
+        </EntityType>
+        <EntityType Name="notificacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="text" />
+          <Property Name="fecha" Type="timestamp" Precision="0" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="leido" Type="bit" Nullable="false" />
+          <Property Name="asunto" Type="varchar" MaxLength="45" />
+          <Property Name="borrado" Type="bit" />
+        </EntityType>
+        <EntityType Name="oficina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="codigoOficina" Type="varchar" Nullable="false" MaxLength="4" />
+          <Property Name="direccion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="solicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idTipoSolicitud" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="timestamp" Precision="0" />
+          <Property Name="idCuenta" Type="int" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="idEstadoSolicitud" Type="int" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCuenta" Type="int" Nullable="false" />
+          <Property Name="codigo" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="cvv" Type="varchar" MaxLength="3" />
+          <Property Name="fechaCaducidad" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="tiposolicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tag" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="descripcion" Type="text" />
+        </EntityType>
+        <EntityType Name="transferencia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idMovimiento" Type="int" Nullable="false" />
+          <Property Name="idCuentaOrigen" Type="int" Nullable="false" />
+          <Property Name="cuentaDestino" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="porCuentaDe" Type="varchar" MaxLength="100" />
+          <Property Name="referencia" Type="varchar" MaxLength="100" />
+          <Property Name="beneficiario" Type="varchar" MaxLength="100" />
+          <Property Name="conceptoAd" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="password" Type="text" Nullable="false" />
+          <Property Name="idioma" Type="varchar" MaxLength="2" />
+          <Property Name="idCliente" Type="int" Nullable="false" />
+          <Property Name="paginaPreferida" Type="varchar" MaxLength="100" />
+          <Property Name="inactivo" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="cliente_accion_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="0..1" />
+          <End Role="accion" Type="santanderModel.Store.accion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_cuentaClienta_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="1" />
+          <End Role="cuentacliente" Type="santanderModel.Store.cuentacliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuentacliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_historicoInversion_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="0..1" />
+          <End Role="historicoinversion" Type="santanderModel.Store.historicoinversion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="historicoinversion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_notificacion_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="1" />
+          <End Role="notificacion" Type="santanderModel.Store.notificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notificacion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_usuario_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="1" />
+          <End Role="usuario" Type="santanderModel.Store.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_cuentaCliente_fj">
+          <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
+          <End Role="cuentacliente" Type="santanderModel.Store.cuentacliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuentacliente">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_movimiento_fk">
+          <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
+          <End Role="movimiento" Type="santanderModel.Store.movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="movimiento">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_transferencia_fk">
+          <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="1" />
+          <End Role="transferencia" Type="santanderModel.Store.transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transferencia">
+              <PropertyRef Name="idCuentaOrigen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuentacliente_depositoCliente_fk">
+          <End Role="cuentacliente" Type="santanderModel.Store.cuentacliente" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.Store.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuentacliente">
+              <PropertyRef Name="idCliente" />
+              <PropertyRef Name="idCuenta" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idCliente" />
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="deposito_depositocliente_fk">
+          <End Role="deposito" Type="santanderModel.Store.deposito" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.Store.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="deposito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idDeposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="empresa_accion_fk">
+          <End Role="empresa" Type="santanderModel.Store.empresa" Multiplicity="0..1" />
+          <End Role="accion" Type="santanderModel.Store.accion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accion">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="empresa_historicoInversion_fk">
+          <End Role="empresa" Type="santanderModel.Store.empresa" Multiplicity="0..1" />
+          <End Role="historicoinversion" Type="santanderModel.Store.historicoinversion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="historicoinversion">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="estadoSolicitud_solicitud_fk">
+          <End Role="estadosolicitud" Type="santanderModel.Store.estadosolicitud" Multiplicity="0..1" />
+          <End Role="solicitud" Type="santanderModel.Store.solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadosolicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="solicitud">
+              <PropertyRef Name="idEstadoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="solicitud_depositoCliente_fk">
+          <End Role="solicitud" Type="santanderModel.Store.solicitud" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.Store.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="solicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tipoSolicitud_solicitud_fk">
+          <End Role="tiposolicitud" Type="santanderModel.Store.tiposolicitud" Multiplicity="1" />
+          <End Role="solicitud" Type="santanderModel.Store.solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiposolicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="solicitud">
+              <PropertyRef Name="idTipoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="santanderModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="santanderEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accion" EntityType="santanderModel.accion" />
+          <EntitySet Name="cliente" EntityType="santanderModel.cliente" />
+          <EntitySet Name="cuenta" EntityType="santanderModel.cuenta" />
+          <EntitySet Name="cuentacliente" EntityType="santanderModel.cuentacliente" />
+          <EntitySet Name="deposito" EntityType="santanderModel.deposito" />
+          <EntitySet Name="depositocliente" EntityType="santanderModel.depositocliente" />
+          <EntitySet Name="empresa" EntityType="santanderModel.empresa" />
+          <EntitySet Name="estadosolicitud" EntityType="santanderModel.estadosolicitud" />
+          <EntitySet Name="historicoinversion" EntityType="santanderModel.historicoinversion" />
+          <EntitySet Name="mdimenu" EntityType="santanderModel.mdimenu" />
+          <EntitySet Name="movimiento" EntityType="santanderModel.movimiento" />
+          <EntitySet Name="notificacion" EntityType="santanderModel.notificacion" />
+          <EntitySet Name="oficina" EntityType="santanderModel.oficina" />
+          <EntitySet Name="solicitud" EntityType="santanderModel.solicitud" />
+          <EntitySet Name="tarjeta" EntityType="santanderModel.tarjeta" />
+          <EntitySet Name="tiposolicitud" EntityType="santanderModel.tiposolicitud" />
+          <EntitySet Name="transferencia" EntityType="santanderModel.transferencia" />
+          <EntitySet Name="usuario" EntityType="santanderModel.usuario" />
+          <AssociationSet Name="cliente_accion_fk" Association="santanderModel.cliente_accion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="accion" EntitySet="accion" />
+          </AssociationSet>
+          <AssociationSet Name="empresa_accion_fk" Association="santanderModel.empresa_accion_fk">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="accion" EntitySet="accion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_cuentaClienta_fk" Association="santanderModel.cliente_cuentaClienta_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_historicoInversion_fk" Association="santanderModel.cliente_historicoInversion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="historicoinversion" EntitySet="historicoinversion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_notificacion_fk" Association="santanderModel.cliente_notificacion_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="notificacion" EntitySet="notificacion" />
+          </AssociationSet>
+          <AssociationSet Name="cliente_usuario_fk" Association="santanderModel.cliente_usuario_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_cuentaCliente_fj" Association="santanderModel.cuenta_cuentaCliente_fj">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_movimiento_fk" Association="santanderModel.cuenta_movimiento_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="movimiento" EntitySet="movimiento" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.cuenta_transferencia_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="transferencia" EntitySet="transferencia" />
+          </AssociationSet>
+          <AssociationSet Name="cuentacliente_depositoCliente_fk" Association="santanderModel.cuentacliente_depositoCliente_fk">
+            <End Role="cuentacliente" EntitySet="cuentacliente" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="deposito_depositocliente_fk" Association="santanderModel.deposito_depositocliente_fk">
+            <End Role="deposito" EntitySet="deposito" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="solicitud_depositoCliente_fk" Association="santanderModel.solicitud_depositoCliente_fk">
+            <End Role="solicitud" EntitySet="solicitud" />
+            <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="empresa_historicoInversion_fk" Association="santanderModel.empresa_historicoInversion_fk">
+            <End Role="empresa" EntitySet="empresa" />
+            <End Role="historicoinversion" EntitySet="historicoinversion" />
+          </AssociationSet>
+          <AssociationSet Name="estadoSolicitud_solicitud_fk" Association="santanderModel.estadoSolicitud_solicitud_fk">
+            <End Role="estadosolicitud" EntitySet="estadosolicitud" />
+            <End Role="solicitud" EntitySet="solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="tipoSolicitud_solicitud_fk" Association="santanderModel.tipoSolicitud_solicitud_fk">
+            <End Role="tiposolicitud" EntitySet="tiposolicitud" />
+            <End Role="solicitud" EntitySet="solicitud" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="accion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="idEmpresa" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="valorCompra" Type="Decimal" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_accion_fk" FromRole="accion" ToRole="cliente" />
+          <NavigationProperty Name="empresa" Relationship="santanderModel.empresa_accion_fk" FromRole="accion" ToRole="empresa" />
+        </EntityType>
+        <EntityType Name="cliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" />
+          <Property Name="apellidos" Type="String" />
+          <Property Name="telefono" Type="String" />
+          <Property Name="direccion" Type="String" />
+          <Property Name="poblacion" Type="String" />
+          <Property Name="mail" Type="String" />
+          <Property Name="dni" Type="String" />
+          <Property Name="fechaNacimiento" Type="String" />
+          <NavigationProperty Name="accion" Relationship="santanderModel.cliente_accion_fk" FromRole="cliente" ToRole="accion" />
+          <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cliente_cuentaClienta_fk" FromRole="cliente" ToRole="cuentacliente" />
+          <NavigationProperty Name="historicoinversion" Relationship="santanderModel.cliente_historicoInversion_fk" FromRole="cliente" ToRole="historicoinversion" />
+          <NavigationProperty Name="notificacion" Relationship="santanderModel.cliente_notificacion_fk" FromRole="cliente" ToRole="notificacion" />
+          <NavigationProperty Name="usuario" Relationship="santanderModel.cliente_usuario_fk" FromRole="cliente" ToRole="usuario" />
+          <Property Type="Boolean" Name="inactivo" />
+        </EntityType>
+        <EntityType Name="cuenta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoEntidad" Type="String" />
+          <Property Name="codigoOficina" Type="String" />
+          <Property Name="codigoControl" Type="String" />
+          <Property Name="codigoCuenta" Type="String" />
+          <Property Name="saldo" Type="Decimal" />
+          <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cuenta_cuentaCliente_fj" FromRole="cuenta" ToRole="cuentacliente" />
+          <NavigationProperty Name="movimiento" Relationship="santanderModel.cuenta_movimiento_fk" FromRole="cuenta" ToRole="movimiento" />
+          <NavigationProperty Name="transferencia" Relationship="santanderModel.cuenta_transferencia_fk" FromRole="cuenta" ToRole="transferencia" />
+        </EntityType>
+        <EntityType Name="cuentacliente">
+          <Key>
+            <PropertyRef Name="idCliente" />
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idCuenta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_cuentaClienta_fk" FromRole="cuentacliente" ToRole="cliente" />
+          <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_cuentaCliente_fj" FromRole="cuentacliente" ToRole="cuenta" />
+          <NavigationProperty Name="depositocliente" Relationship="santanderModel.cuentacliente_depositoCliente_fk" FromRole="cuentacliente" ToRole="depositocliente" />
+        </EntityType>
+        <EntityType Name="deposito">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="plazo" Type="Int32" Nullable="false" />
+          <Property Name="importeMinimo" Type="Decimal" Nullable="false" />
+          <Property Name="tae" Type="Decimal" Nullable="false" />
+          <Property Name="multaCancelacion" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="depositocliente" Relationship="santanderModel.deposito_depositocliente_fk" FromRole="deposito" ToRole="depositocliente" />
+        </EntityType>
+        <EntityType Name="depositocliente">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="idCuenta" Type="Int32" Nullable="false" />
+          <Property Name="idDeposito" Type="Int32" Nullable="false" />
+          <Property Name="idSolicitud" Type="Int32" Nullable="false" />
+          <Property Name="importe" Type="Decimal" Nullable="false" />
+          <Property Name="fechaSolicitud" Type="DateTime" />
+          <Property Name="activo" Type="Boolean" Nullable="false" />
+          <Property Name="fechaActivacion" Type="DateTime" />
+          <Property Name="fechaVencimiento" Type="DateTime" />
+          <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cuentacliente_depositoCliente_fk" FromRole="depositocliente" ToRole="cuentacliente" />
+          <NavigationProperty Name="deposito" Relationship="santanderModel.deposito_depositocliente_fk" FromRole="depositocliente" ToRole="deposito" />
+          <NavigationProperty Name="solicitud" Relationship="santanderModel.solicitud_depositoCliente_fk" FromRole="depositocliente" ToRole="solicitud" />
+        </EntityType>
+        <EntityType Name="empresa">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ticker" Type="String" />
+          <Property Name="nombre" Type="String" />
+          <Property Name="valor" Type="Decimal" />
+          <Property Name="accionesDisponibles" Type="Int32" />
+          <Property Name="max" Type="Decimal" />
+          <Property Name="min" Type="Decimal" />
+          <Property Name="capital" Type="Int32" />
+          <Property Name="hora" Type="String" />
+          <NavigationProperty Name="accion" Relationship="santanderModel.empresa_accion_fk" FromRole="empresa" ToRole="accion" />
+          <NavigationProperty Name="historicoinversion" Relationship="santanderModel.empresa_historicoInversion_fk" FromRole="empresa" ToRole="historicoinversion" />
+        </EntityType>
+        <EntityType Name="estadosolicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tag" Type="String" Nullable="false" />
+          <NavigationProperty Name="solicitud" Relationship="santanderModel.estadoSolicitud_solicitud_fk" FromRole="estadosolicitud" ToRole="solicitud" />
+        </EntityType>
+        <EntityType Name="historicoinversion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="idEmpresa" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="idCliente" Type="Int32" />
+          <Property Name="idCuenta" Type="Int32" />
+          <Property Name="compraVenta" Type="Boolean" />
+          <Property Name="valorCompra" Type="Decimal" />
+          <Property Name="valorVenta" Type="Decimal" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_historicoInversion_fk" FromRole="historicoinversion" ToRole="cliente" />
+          <NavigationProperty Name="empresa" Relationship="santanderModel.empresa_historicoInversion_fk" FromRole="historicoinversion" ToRole="empresa" />
+        </EntityType>
+        <EntityType Name="mdimenu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreMenu" Type="String" Nullable="false" />
+          <Property Name="padre" Type="Int32" Nullable="false" />
+          <Property Name="form" Type="String" />
+          <Property Name="dll" Type="String" />
+        </EntityType>
+        <EntityType Name="movimiento">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="idCuenta" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCuenta" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="importe" Type="Decimal" />
+          <Property Name="descripcion" Type="String" />
+          <Property Name="concepto" Type="String" />
+          <Property Name="resto" Type="Decimal" />
+          <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_movimiento_fk" FromRole="movimiento" ToRole="cuenta" />
+        </EntityType>
+        <EntityType Name="notificacion">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="text" Type="String" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="leido" Type="Boolean" Nullable="false" />
+          <Property Name="asunto" Type="String" />
+          <Property Name="borrado" Type="Boolean" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_notificacion_fk" FromRole="notificacion" ToRole="cliente" />
+        </EntityType>
+        <EntityType Name="oficina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoOficina" Type="String" Nullable="false" />
+          <Property Name="direccion" Type="String" />
+        </EntityType>
+        <EntityType Name="solicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTipoSolicitud" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="idCuenta" Type="Int32" />
+          <Property Name="idCliente" Type="Int32" />
+          <Property Name="idEstadoSolicitud" Type="Int32" />
+          <NavigationProperty Name="depositocliente" Relationship="santanderModel.solicitud_depositoCliente_fk" FromRole="solicitud" ToRole="depositocliente" />
+          <NavigationProperty Name="estadosolicitud" Relationship="santanderModel.estadoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="estadosolicitud" />
+          <NavigationProperty Name="tiposolicitud" Relationship="santanderModel.tipoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="tiposolicitud" />
+        </EntityType>
+        <EntityType Name="tarjeta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCuenta" Type="Int32" Nullable="false" />
+          <Property Name="codigo" Type="String" Nullable="false" />
+          <Property Name="idCliente" Type="Int32" />
+          <Property Name="cvv" Type="String" />
+          <Property Name="fechaCaducidad" Type="String" />
+        </EntityType>
+        <EntityType Name="tiposolicitud">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tag" Type="String" Nullable="false" />
+          <Property Name="descripcion" Type="String" />
+          <NavigationProperty Name="solicitud" Relationship="santanderModel.tipoSolicitud_solicitud_fk" FromRole="tiposolicitud" ToRole="solicitud" />
+        </EntityType>
+        <EntityType Name="transferencia">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMovimiento" Type="Int32" Nullable="false" />
+          <Property Name="idCuentaOrigen" Type="Int32" Nullable="false" />
+          <Property Name="cuentaDestino" Type="String" Nullable="false" />
+          <Property Name="porCuentaDe" Type="String" />
+          <Property Name="referencia" Type="String" />
+          <Property Name="beneficiario" Type="String" />
+          <Property Name="conceptoAd" Type="String" />
+          <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_transferencia_fk" FromRole="transferencia" ToRole="cuenta" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" Nullable="false" />
+          <Property Name="password" Type="String" Nullable="false" />
+          <Property Name="idioma" Type="String" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="paginaPreferida" Type="String" />
+          <Property Name="inactivo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_usuario_fk" FromRole="usuario" ToRole="cliente" />
+        </EntityType>
+        <Association Name="cliente_accion_fk">
+          <End Role="cliente" Type="santanderModel.cliente" Multiplicity="0..1" />
+          <End Role="accion" Type="santanderModel.accion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="empresa_accion_fk">
+          <End Role="empresa" Type="santanderModel.empresa" Multiplicity="0..1" />
+          <End Role="accion" Type="santanderModel.accion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="accion">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_cuentaClienta_fk">
+          <End Role="cliente" Type="santanderModel.cliente" Multiplicity="1" />
+          <End Role="cuentacliente" Type="santanderModel.cuentacliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuentacliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_historicoInversion_fk">
+          <End Role="cliente" Type="santanderModel.cliente" Multiplicity="0..1" />
+          <End Role="historicoinversion" Type="santanderModel.historicoinversion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="historicoinversion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_notificacion_fk">
+          <End Role="cliente" Type="santanderModel.cliente" Multiplicity="1" />
+          <End Role="notificacion" Type="santanderModel.notificacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notificacion">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cliente_usuario_fk">
+          <End Role="cliente" Type="santanderModel.cliente" Multiplicity="1" />
+          <End Role="usuario" Type="santanderModel.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_cuentaCliente_fj">
+          <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
+          <End Role="cuentacliente" Type="santanderModel.cuentacliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cuentacliente">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_movimiento_fk">
+          <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
+          <End Role="movimiento" Type="santanderModel.movimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="movimiento">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_transferencia_fk">
+          <End Role="cuenta" Type="santanderModel.cuenta" Multiplicity="1" />
+          <End Role="transferencia" Type="santanderModel.transferencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="transferencia">
+              <PropertyRef Name="idCuentaOrigen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuentacliente_depositoCliente_fk">
+          <End Role="cuentacliente" Type="santanderModel.cuentacliente" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuentacliente">
+              <PropertyRef Name="idCliente" />
+              <PropertyRef Name="idCuenta" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idCliente" />
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="deposito_depositocliente_fk">
+          <End Role="deposito" Type="santanderModel.deposito" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="deposito">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idDeposito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="solicitud_depositoCliente_fk">
+          <End Role="solicitud" Type="santanderModel.solicitud" Multiplicity="1" />
+          <End Role="depositocliente" Type="santanderModel.depositocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="solicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="depositocliente">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="empresa_historicoInversion_fk">
+          <End Role="empresa" Type="santanderModel.empresa" Multiplicity="0..1" />
+          <End Role="historicoinversion" Type="santanderModel.historicoinversion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empresa">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="historicoinversion">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="estadoSolicitud_solicitud_fk">
+          <End Role="estadosolicitud" Type="santanderModel.estadosolicitud" Multiplicity="0..1" />
+          <End Role="solicitud" Type="santanderModel.solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadosolicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="solicitud">
+              <PropertyRef Name="idEstadoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tipoSolicitud_solicitud_fk">
+          <End Role="tiposolicitud" Type="santanderModel.tiposolicitud" Multiplicity="1" />
+          <End Role="solicitud" Type="santanderModel.solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tiposolicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="solicitud">
+              <PropertyRef Name="idTipoSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="santanderModelStoreContainer" CdmEntityContainer="santanderEntities1">
+          <EntitySetMapping Name="accion">
+            <EntityTypeMapping TypeName="santanderModel.accion">
+              <MappingFragment StoreEntitySet="accion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="santanderModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="inactivo" ColumnName="inactivo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="poblacion" ColumnName="poblacion" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="dni" ColumnName="dni" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuenta">
+            <EntityTypeMapping TypeName="santanderModel.cuenta">
+              <MappingFragment StoreEntitySet="cuenta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigoEntidad" ColumnName="codigoEntidad" />
+                <ScalarProperty Name="codigoOficina" ColumnName="codigoOficina" />
+                <ScalarProperty Name="codigoControl" ColumnName="codigoControl" />
+                <ScalarProperty Name="codigoCuenta" ColumnName="codigoCuenta" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cuentacliente">
+            <EntityTypeMapping TypeName="santanderModel.cuentacliente">
+              <MappingFragment StoreEntitySet="cuentacliente">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="deposito">
+            <EntityTypeMapping TypeName="santanderModel.deposito">
+              <MappingFragment StoreEntitySet="deposito">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="plazo" ColumnName="plazo" />
+                <ScalarProperty Name="importeMinimo" ColumnName="importeMinimo" />
+                <ScalarProperty Name="tae" ColumnName="tae" />
+                <ScalarProperty Name="multaCancelacion" ColumnName="multaCancelacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="depositocliente">
+            <EntityTypeMapping TypeName="santanderModel.depositocliente">
+              <MappingFragment StoreEntitySet="depositocliente">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="idDeposito" ColumnName="idDeposito" />
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fechaSolicitud" ColumnName="fechaSolicitud" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="fechaActivacion" ColumnName="fechaActivacion" />
+                <ScalarProperty Name="fechaVencimiento" ColumnName="fechaVencimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empresa">
+            <EntityTypeMapping TypeName="santanderModel.empresa">
+              <MappingFragment StoreEntitySet="empresa">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ticker" ColumnName="ticker" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="accionesDisponibles" ColumnName="accionesDisponibles" />
+                <ScalarProperty Name="max" ColumnName="max" />
+                <ScalarProperty Name="min" ColumnName="min" />
+                <ScalarProperty Name="capital" ColumnName="capital" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estadosolicitud">
+            <EntityTypeMapping TypeName="santanderModel.estadosolicitud">
+              <MappingFragment StoreEntitySet="estadosolicitud">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="historicoinversion">
+            <EntityTypeMapping TypeName="santanderModel.historicoinversion">
+              <MappingFragment StoreEntitySet="historicoinversion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="compraVenta" ColumnName="compraVenta" />
+                <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+                <ScalarProperty Name="valorVenta" ColumnName="valorVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mdimenu">
+            <EntityTypeMapping TypeName="santanderModel.mdimenu">
+              <MappingFragment StoreEntitySet="mdimenu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
+                <ScalarProperty Name="padre" ColumnName="padre" />
+                <ScalarProperty Name="form" ColumnName="form" />
+                <ScalarProperty Name="dll" ColumnName="dll" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movimiento">
+            <EntityTypeMapping TypeName="santanderModel.movimiento">
+              <MappingFragment StoreEntitySet="movimiento">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="resto" ColumnName="resto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notificacion">
+            <EntityTypeMapping TypeName="santanderModel.notificacion">
+              <MappingFragment StoreEntitySet="notificacion">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="leido" ColumnName="leido" />
+                <ScalarProperty Name="asunto" ColumnName="asunto" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oficina">
+            <EntityTypeMapping TypeName="santanderModel.oficina">
+              <MappingFragment StoreEntitySet="oficina">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigoOficina" ColumnName="codigoOficina" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="solicitud">
+            <EntityTypeMapping TypeName="santanderModel.solicitud">
+              <MappingFragment StoreEntitySet="solicitud">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idTipoSolicitud" ColumnName="idTipoSolicitud" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idEstadoSolicitud" ColumnName="idEstadoSolicitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tarjeta">
+            <EntityTypeMapping TypeName="santanderModel.tarjeta">
+              <MappingFragment StoreEntitySet="tarjeta">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="cvv" ColumnName="cvv" />
+                <ScalarProperty Name="fechaCaducidad" ColumnName="fechaCaducidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiposolicitud">
+            <EntityTypeMapping TypeName="santanderModel.tiposolicitud">
+              <MappingFragment StoreEntitySet="tiposolicitud">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transferencia">
+            <EntityTypeMapping TypeName="santanderModel.transferencia">
+              <MappingFragment StoreEntitySet="transferencia">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idMovimiento" ColumnName="idMovimiento" />
+                <ScalarProperty Name="idCuentaOrigen" ColumnName="idCuentaOrigen" />
+                <ScalarProperty Name="cuentaDestino" ColumnName="cuentaDestino" />
+                <ScalarProperty Name="porCuentaDe" ColumnName="porCuentaDe" />
+                <ScalarProperty Name="referencia" ColumnName="referencia" />
+                <ScalarProperty Name="beneficiario" ColumnName="beneficiario" />
+                <ScalarProperty Name="conceptoAd" ColumnName="conceptoAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="santanderModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="idioma" ColumnName="idioma" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="paginaPreferida" ColumnName="paginaPreferida" />
+                <ScalarProperty Name="inactivo" ColumnName="inactivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="santanderModel.accion" Width="1.5" PointX="3" PointY="10.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.cliente" Width="1.5" PointX="0.75" PointY="9.75" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.cuenta" Width="1.5" PointX="3.75" PointY="14.25" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.cuentacliente" Width="1.5" PointX="6" PointY="10.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.deposito" Width="1.5" PointX="6" PointY="7.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.depositocliente" Width="1.5" PointX="8.25" PointY="9.875" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.empresa" Width="1.5" PointX="0.75" PointY="5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.estadosolicitud" Width="1.5" PointX="3.75" PointY="3.375" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.historicoinversion" Width="1.5" PointX="3" PointY="6" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.mdimenu" Width="1.5" PointX="0.75" PointY="2" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.movimiento" Width="1.5" PointX="6" PointY="13.625" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.notificacion" Width="1.5" PointX="3" PointY="18.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.oficina" Width="1.5" PointX="8.75" PointY="2" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.solicitud" Width="1.5" PointX="6" PointY="1.625" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.tarjeta" Width="1.5" PointX="8.75" PointY="5" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.tiposolicitud" Width="1.5" PointX="3.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.transferencia" Width="1.5" PointX="6" PointY="16.875" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="santanderModel.usuario" Width="1.5" PointX="3" PointY="22.125" Height="2.5571907552083388" IsExpanded="true" />
+        <AssociationConnector Association="santanderModel.cliente_accion_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.653595377604166" />
+          <ConnectorPoint PointX="3" PointY="11.653595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.empresa_accion_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.2499999999999996" PointY="8.1340950520833317" />
+          <ConnectorPoint PointX="2.625" PointY="8.5090950520833317" />
+          <ConnectorPoint PointX="2.625" PointY="10.983045688802083" />
+          <ConnectorPoint PointX="3" PointY="10.983045688802083" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cliente_cuentaClienta_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="13.227845052083332" />
+          <ConnectorPoint PointX="5.541666666666667" PointY="13.227845052083332" />
+          <ConnectorPoint PointX="5.708333333333333" PointY="13.227845052083332" />
+          <ConnectorPoint PointX="6.75" PointY="13.227845052083332" />
+          <ConnectorPoint PointX="6.75" PointY="12.672587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cliente_historicoInversion_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.81346053846154" />
+          <ConnectorPoint PointX="2.5660744349011204" PointY="9.4973861035604177" />
+          <ConnectorPoint PointX="2.6839255650988791" PointY="9.3795349733626612" />
+          <ConnectorPoint PointX="2.9375" PointY="9.12596053846154" />
+          <ConnectorPoint PointX="2.9375" PointY="9.1977478982371785" />
+          <ConnectorPoint PointX="3.0011528461538459" PointY="9.1340950520833317" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cliente_notificacion_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="13.460999348958332" />
+          <ConnectorPoint PointX="1.5" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="1.8229191666666667" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="1.9895858333333332" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="3" PointY="20.028595377604166" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cliente_usuario_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.9062525" PointY="13.460999348958332" />
+          <ConnectorPoint PointX="1.9062525" PointY="23.403595377604169" />
+          <ConnectorPoint PointX="3" PointY="23.403595377604169" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cuenta_cuentaCliente_fj" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="14.251152846153847" />
+          <ConnectorPoint PointX="5.625" PointY="13.876152846153847" />
+          <ConnectorPoint PointX="5.625" PointY="11.5862939453125" />
+          <ConnectorPoint PointX="6" PointY="11.5862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cuenta_movimiento_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="15.24792430068109" />
+          <ConnectorPoint PointX="6" PointY="15.24792430068109" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cuenta_transferencia_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.90625" PointY="16.9994921875" />
+          <ConnectorPoint PointX="4.90625" PointY="17.84349659375" />
+          <ConnectorPoint PointX="6" PointY="17.84349659375" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cuentacliente_depositoCliente_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="11.5862939453125" />
+          <ConnectorPoint PointX="8.25" PointY="11.5862939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.deposito_depositocliente_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="8.2663378906250014" />
+          <ConnectorPoint PointX="8.2447891666666653" PointY="8.2663378906250014" />
+          <ConnectorPoint PointX="8.4114558333333331" PointY="8.2663378906250014" />
+          <ConnectorPoint PointX="8.46875" PointY="8.2663378906250014" />
+          <ConnectorPoint PointX="8.46875" PointY="9.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.solicitud_depositoCliente_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="4.0163378906250031" />
+          <ConnectorPoint PointX="8.3281225" PointY="4.0163378906250031" />
+          <ConnectorPoint PointX="8.3281225" PointY="9.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.empresa_historicoInversion_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.0357950260416651" />
+          <ConnectorPoint PointX="3" PointY="7.0357950260416651" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.estadoSolicitud_solicitud_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="3.8747460937500016" />
+          <ConnectorPoint PointX="6" PointY="3.8747460937500016" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.tipoSolicitud_solicitud_fk" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="2.0814925130208337" />
+          <ConnectorPoint PointX="6" PointY="2.0814925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
