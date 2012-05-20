@@ -1,0 +1,8 @@
+D:\S2J\Sintesi\LanreSuit\dll\uSimulador.dll
+D:\S2J\Sintesi\LanreSuit\dll\uSimulador.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\uSimulador.frmHipoteca.resources
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\uSimulador.dll
+D:\S2J\Sintesi\LanreSuit\mdi\uSimulador\obj\Debug\uSimulador.pdb

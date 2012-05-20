@@ -1,0 +1,15 @@
+D:\S2J\Sintesi\LanreSuit\dll\deposito.dll
+D:\S2J\Sintesi\LanreSuit\dll\deposito.pdb
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\deposito.frmMantDeposito.resources
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\deposito.dll
+D:\S2J\Sintesi\LanreSuit\mdi\deposito\obj\Debug\deposito.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\deposito.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\deposito.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\deposito\obj\Debug\deposito.csprojResolveAssemblyReference.cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\deposito\obj\Debug\deposito.frmMantDeposito.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\deposito\obj\Debug\deposito.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\deposito\obj\Debug\deposito.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\deposito\obj\Debug\deposito.pdb
