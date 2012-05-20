@@ -20,6 +20,7 @@ namespace uFrmCs
         public string id = "";
         public DataGridViewRow dr;
         public String camposOcultos = "id";
+        public String strSelect = "";
         public String strFrom = "";
         public String strWhere = "";
         #endregion
@@ -121,9 +122,16 @@ namespace uFrmCs
         {
             try
             {
-
-           
-            String strQuery = "Select * from " + strFrom + " where 1=1 " + strWhere + montarWhere();
+                String strQuery = "";
+                if (strSelect == "")
+                {
+                    strQuery = "Select * from " + strFrom + " where 1=1 " + strWhere + montarWhere();
+                }
+                else
+                {
+                    strQuery = "Select " + strSelect + " from " + strFrom + " where 1=1 " + strWhere + montarWhere();
+                }
+             
             AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
             dt=oDatos.LanzarConsultaT(strQuery);
             this.dgv.DataSource = dt;
@@ -152,7 +160,11 @@ namespace uFrmCs
             }
             return strMontarWhere;
         }
-        public void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        public  void dgv_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            drDoubleClick();
+        }
+        public virtual void drDoubleClick()
         {
             dr = dgv.SelectedRows[0];
             id = dr.Cells["id"].Value.ToString();
