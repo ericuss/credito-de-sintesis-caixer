@@ -1,4 +1,0 @@
-C:\Users\Rom\Documents\CreditCaixer\dll\CustomValidatorTextBox.dll
-C:\Users\Rom\Documents\CreditCaixer\dll\CustomValidatorTextBox.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\CustomValidatorTextBox\obj\Debug\CustomValidatorTextBox.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\CustomValidatorTextBox\obj\Debug\CustomValidatorTextBox.pdb
