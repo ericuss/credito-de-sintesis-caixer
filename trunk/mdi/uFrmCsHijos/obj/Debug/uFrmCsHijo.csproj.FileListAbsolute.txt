@@ -1,0 +1,9 @@
+C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCsHijos.dll
+C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCsHijos.pdb
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijo.csprojResolveAssemblyReference.cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.frmCsCliente.resources
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijo.csproj.GenerateResource.Cache
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.dll
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.pdb
+C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCsHijos.XML
+C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.frmCsCuenta.resources
