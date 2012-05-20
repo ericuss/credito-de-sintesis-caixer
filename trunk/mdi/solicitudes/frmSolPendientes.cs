@@ -37,6 +37,12 @@ namespace solicitudes
                 petTarj.MdiParent = this.MdiParent;
                 petTarj.Show();
             }
+            else if (tipoSol == "2" || tipoSol=="4")
+            {
+                Form petTarj = new frmSolPrestamo(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
+                petTarj.MdiParent = this.MdiParent;
+                petTarj.Show();
+            }
         }
 
         private void frmSolPendientes_Load(object sender, EventArgs e)
