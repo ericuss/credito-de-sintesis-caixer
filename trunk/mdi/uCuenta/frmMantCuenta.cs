@@ -59,14 +59,14 @@ namespace uCuenta
         {
             var cuentas = from cue in context.cuenta
                           select new
-                            {
-                                idCuenta = cue.id,
-                                CodigoEntidad = cue.codigoEntidad,
-                                CodigoOficina = cue.codigoOficina,
-                                CodigoControl = cue.codigoControl,
-                                CodigoCuenta = cue.codigoCuenta,
-                                Saldo = cue.saldo
-                            };
+                          {
+                              idCuenta = cue.id,
+                              CodigoEntidad = cue.codigoEntidad,
+                              CodigoOficina = cue.codigoOficina,
+                              CodigoControl = cue.codigoControl,
+                              CodigoCuenta = cue.codigoCuenta,
+                              Saldo = cue.saldo
+                          };
             dgv.DataSource = cuentas;
 
         }
@@ -82,17 +82,6 @@ namespace uCuenta
         {
             int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
 
-            cuentacliente tmpCC = new cuentacliente();
-            var ccu = from cc in context.cuentacliente
-                      where cc.idCuenta == idCuenta
-                      select cc;
-            foreach (var item in ccu)
-            {
-                tmpCC = item;
-            }
-            context.DeleteObject(tmpCC);
-
-
             cuenta tmpCuenta = new cuenta();
             var cun = from cu in context.cuenta
                       where cu.id == idCuenta
@@ -101,9 +90,30 @@ namespace uCuenta
             {
                 tmpCuenta = item;
             }
+
+            cuentacliente tmpCC = new cuentacliente();
+            var ccu = from cc in context.cuentacliente
+                      where cc.idCuenta == idCuenta
+                      select cc;
+            foreach (var item in ccu)
+            {
+                notificarEliminacion(item.idCliente, tmpCuenta);
+                tmpCC = item;
+                context.DeleteObject(tmpCC);
+            }
+
+
             context.DeleteObject(tmpCuenta);
             context.SaveChanges();
             loadCuentas();
+        }
+
+        private void notificarEliminacion(int p, cuenta cuenta)
+        {
+
+            AccDatos.OLEDBCON oldb = new AccDatos.OLEDBCON();
+            oldb.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta eliminada','Se ha eliminado la cuenta " + cuenta.codigoEntidad + " - " + cuenta.codigoOficina + " - " + cuenta.codigoControl + " - " + cuenta.codigoCuenta + "'," + p + ")");
+
         }
 
 
@@ -124,7 +134,7 @@ namespace uCuenta
 
         public override void filtrarGrid()
         {
-       
+
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
             this.dgv.DataSource = conn.LanzarConsultaT("select id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta , saldo from cuenta " + buildWhere());
         }
@@ -145,7 +155,7 @@ namespace uCuenta
             }
             if (txtCuenta.ValidValue != "")
             {
-                where += " and codigocuenta like '%"+txtCuenta.ValidValue+"%'";
+                where += " and codigocuenta like '%" + txtCuenta.ValidValue + "%'";
             }
             return where;
         }
