@@ -47,9 +47,22 @@ namespace uCuenta
                     idCliente = pidCliente,
                     idCuenta = idCuenta
                 };
+
                 context.AddTocuentacliente(cc);
                 context.SaveChanges();
                 loadGrid();
+
+                cuenta tmpCuenta = new cuenta();
+                var cun = from cu in context.cuenta
+                          where cu.id == idCuenta
+                          select cu;
+                foreach (var item in cun)
+                {
+                    tmpCuenta = item;
+                }
+
+                AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+                conn.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta Nueva','Ahora es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + "',"+pidCliente+")");
                
             }
         }
@@ -135,6 +148,19 @@ namespace uCuenta
             context.DeleteObject(tmpcc);
             context.SaveChanges();
             loadGrid();
+
+            cuenta tmpCuenta = new cuenta();
+            var cun = from cu in context.cuenta
+                      where cu.id == idCuenta
+                      select cu;
+            foreach (var item in cun)
+            {
+                tmpCuenta = item;
+            }
+
+            AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+            conn.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta Eliminada','Ya no es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + "'," + idCliente + ")");
+               
         }
     }
 }
