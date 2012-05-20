@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
+
 namespace uFrmCs
 {
     public partial class frmCs : Form
@@ -142,6 +143,11 @@ namespace uFrmCs
                 {
                     strMontarWhere += " and " + ((CustomValidatorTextBox.CustomValidatorTextBox)item).zzCampoBd + " like '%" + ((CustomValidatorTextBox.CustomValidatorTextBox)item).Text + "%' ";
 
+                }
+                else if ( item.GetType().ToString() == "customTextCs.txtBuscar" && ((customTextCs.txtBuscar)item).zzTxtId != "")
+                {
+                    strMontarWhere += " and " + ((customTextCs.txtBuscar)item).zzCampoId + " = '" + ((customTextCs.txtBuscar)item).zzTxtId + "' ";
+ 
                 }
             }
             return strMontarWhere;
