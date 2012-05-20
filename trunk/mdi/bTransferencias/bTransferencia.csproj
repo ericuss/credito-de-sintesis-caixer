@@ -8,8 +8,8 @@
     <ProjectGuid>{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>bTransferencias</RootNamespace>
-    <AssemblyName>bTransferencias</AssemblyName>
+    <RootNamespace>bTransferencia</RootNamespace>
+    <AssemblyName>bTransferencia</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\dll\bTransferencias.XML</DocumentationFile>
+    <DocumentationFile>..\..\dll\bTransferencia.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
