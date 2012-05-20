@@ -75,12 +75,12 @@
             this.txtBuscar1.Name = "txtBuscar1";
             this.txtBuscar1.Size = new System.Drawing.Size(426, 35);
             this.txtBuscar1.TabIndex = 6;
-            this.txtBuscar1.zzCampoDesc = null;
-            this.txtBuscar1.zzCampoId = null;
+            this.txtBuscar1.zzCampoDesc = "nombre, apellidos";
+            this.txtBuscar1.zzCampoId = "dni";
             this.txtBuscar1.zzEtiqueta = "Cliente:";
             this.txtBuscar1.zzIdIsNumber = false;
             this.txtBuscar1.zzIdVisible = false;
-            this.txtBuscar1.zzTabla = null;
+            this.txtBuscar1.zzTabla = "cliente";
             this.txtBuscar1.zzTxtDesc = "";
             this.txtBuscar1.zzTxtId = "";
             this.txtBuscar1.zzWidthDesc = "160";
