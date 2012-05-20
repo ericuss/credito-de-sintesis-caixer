@@ -16,6 +16,12 @@ namespace cliente
         {
             InitializeComponent();
         }
+        public frmNuevoUsuario(String dni)
+        {
+            InitializeComponent();
+            txtBuscar1.zzTxtId = dni;
+            txtBuscar1.evLostFocus();
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
