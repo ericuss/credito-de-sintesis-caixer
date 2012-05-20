@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using AccDatos;
+using System.Security.Cryptography;
 namespace cliente
 {
     public partial class frmNuevoUsuario : Form
@@ -30,8 +31,11 @@ namespace cliente
                 {
                     if (!bCliente.existeUsuario(txtUser.Text))
                     {
-                        String strIdCliente = bCliente.dameIdClienteByDni(txtBuscar1.zzCampoId);
-                        bCliente.insertUsuario(strIdCliente, txtUser.Text, txtPass.Text);
+                        String strIdCliente = bCliente.dameIdClienteByDni(txtBuscar1.zzTxtId);
+                        if (bCliente.insertUsuario(strIdCliente, txtUser.Text, getmd5(txtPass.Text)))
+                        {
+
+                        }
                     }
                 }
             }
@@ -42,7 +46,28 @@ namespace cliente
             }
         }
 
+        private string getmd5(string input)
+        {
+            // Create a new instance of the MD5CryptoServiceProvider object.
+            MD5 md5Hasher = MD5.Create();
 
+            // Convert the input string to a byte array and compute the hash.
+            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));
+
+            // Create a new Stringbuilder to collect the bytes
+            // and create a string.
+            StringBuilder sBuilder = new StringBuilder();
+
+            // Loop through each byte of the hashed data 
+            // and format each one as a hexadecimal string.
+            for (int i = 0; i < data.Length; i++)
+            {
+                sBuilder.Append(data[i].ToString("x2"));
+            }
+
+            // Return the hexadecimal string.
+            return sBuilder.ToString();
+        }
 
 
     }
