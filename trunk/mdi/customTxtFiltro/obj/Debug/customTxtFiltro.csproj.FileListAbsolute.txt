@@ -1,5 +1,0 @@
-D:\S2J\Sintesi\LanreSuit\mdi\customTxtFiltro\bin\Debug\customTxtFiltro.dll
-D:\S2J\Sintesi\LanreSuit\mdi\customTxtFiltro\bin\Debug\customTxtFiltro.pdb
-D:\S2J\Sintesi\LanreSuit\mdi\customTxtFiltro\obj\Debug\ResolveAssemblyReference.cache
-D:\S2J\Sintesi\LanreSuit\mdi\customTxtFiltro\obj\Debug\customTxtFiltro.dll
-D:\S2J\Sintesi\LanreSuit\mdi\customTxtFiltro\obj\Debug\customTxtFiltro.pdb

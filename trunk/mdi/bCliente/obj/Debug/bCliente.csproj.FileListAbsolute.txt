@@ -1,9 +1,0 @@
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\bin\Debug\bCliente.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\bin\Debug\bCliente.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\bin\Debug\AccDatos.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\bin\Debug\AccDatos.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\bin\Debug\AccDatos.xml
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\obj\Debug\bCliente.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\obj\Debug\bCliente.pdb
-C:\Users\Rom\Documents\CreditCaixer\dll\bCliente.dll
-C:\Users\Rom\Documents\CreditCaixer\dll\bCliente.pdb

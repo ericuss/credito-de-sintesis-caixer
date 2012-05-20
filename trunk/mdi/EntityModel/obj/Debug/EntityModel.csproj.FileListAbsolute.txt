@@ -1,6 +1,0 @@
-C:\Users\Rom\Documents\CreditCaixer\dll\EntityModel.dll.config
-C:\Users\Rom\Documents\CreditCaixer\dll\EntityModel.dll
-C:\Users\Rom\Documents\CreditCaixer\dll\EntityModel.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.dll
-C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.pdb
-C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
