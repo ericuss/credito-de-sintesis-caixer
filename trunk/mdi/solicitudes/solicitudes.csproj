@@ -71,6 +71,12 @@
     <Compile Include="frmSolPendientes.Designer.cs">
       <DependentUpon>frmSolPendientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSolPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolPrestamo.designer.cs">
+      <DependentUpon>frmSolPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmSolDeposito.resx">
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSolPendientes.resx">
       <DependentUpon>frmSolPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolPrestamo.resx">
+      <DependentUpon>frmSolPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
