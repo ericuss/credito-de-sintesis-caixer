@@ -8,8 +8,8 @@
     <ProjectGuid>{A0347861-DF4B-4AEE-9EFC-CB3E51D9FB0F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>uTransferencias</RootNamespace>
-    <AssemblyName>uTransferencias</AssemblyName>
+    <RootNamespace>uTransferencia</RootNamespace>
+    <AssemblyName>uTransferencia</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,10 +17,11 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\dll\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\dll\uTransferencia.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,6 +41,14 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="uFrmCs, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dll\uFrmCs.dll</HintPath>
+    </Reference>
+    <Reference Include="uFrmCsHijos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\dll\uFrmCsHijos.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmTransferencia.cs">
@@ -54,6 +63,16 @@
     <EmbeddedResource Include="frmTransferencia.resx">
       <DependentUpon>frmTransferencia.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bTransferencias\bTransferencia.csproj">
+      <Project>{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}</Project>
+      <Name>bTransferencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomValidatorTextBox\CustomValidatorTextBox.csproj">
+      <Project>{8B61828F-A9BB-4573-8FD0-579EB8A40717}</Project>
+      <Name>CustomValidatorTextBox</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
