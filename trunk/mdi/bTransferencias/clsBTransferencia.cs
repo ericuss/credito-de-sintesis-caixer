@@ -130,7 +130,7 @@ namespace bTransferencia
         {
             try
             {
-                DataSet ds = oDatos.LanzarQueryT("Select id from cuenta where cuenta.codigoEntidad = " + strEntidad + "cuenta.codigoOficina = " + strOficina + "cuenta.codigoControl = " + strControl + "cuenta.codigoCuenta = " + strCuenta + " ");
+                DataSet ds = oDatos.LanzarQueryT("Select id from cuenta where cuenta.codigoEntidad = " + strEntidad + " and cuenta.codigoOficina = " + strOficina + " and cuenta.codigoControl = " + strControl + " and cuenta.codigoCuenta = " + strCuenta + " ");
                 if (ds.Tables[0].Rows.Count == 1)
                 {
                     return true;
@@ -147,7 +147,7 @@ namespace bTransferencia
         {
             try
             {
-               DataSet ds = oDatos.LanzarQueryT("Select * from cuenta where cuenta.codigoEntidad = " + strEntidad + "cuenta.codigoOficina = " + strOficina + "cuenta.codigoControl = " + strControl + "cuenta.codigoCuenta = " + strCuenta + " ");
+                DataSet ds = oDatos.LanzarQueryT("Select * from cuenta where cuenta.codigoEntidad = " + strEntidad + " and cuenta.codigoOficina = " + strOficina + " and cuenta.codigoControl = " + strControl + " and cuenta.codigoCuenta = " + strCuenta + " ");
                 if (ds.Tables[0].Rows.Count == 1 )
                 {
                     if ( (Convert.ToInt64( ds.Tables[0].Rows[0]["saldo"]) - Convert.ToInt64(strImporte)) > 0 )
@@ -161,7 +161,7 @@ namespace bTransferencia
                 }
                 return false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

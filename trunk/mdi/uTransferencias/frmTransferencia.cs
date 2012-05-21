@@ -92,10 +92,10 @@ namespace uTransferencia
             frm.ShowDialog();
             if (frm.isAceptar)
             {
-                txtEntidad.Text = frm.strEntidad;
-                txtOficina.Text = frm.strOficina;
-                txtControl.Text = frm.strControl;
-                txtCuenta.Text = frm.strCuenta;
+                txtEntidadDes.Text = frm.strEntidad;
+                txtOficinaDes.Text = frm.strOficina;
+                txtControlDes.Text = frm.strControl;
+                txtCuentaDes.Text = frm.strCuenta;
             }
         }
     }

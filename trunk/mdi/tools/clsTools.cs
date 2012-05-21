@@ -65,7 +65,8 @@ namespace tools
 
         public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamOp)
         {
-
+            try
+            {
             Document document = new Document();
             String strNombreFichero = "";
 
@@ -152,7 +153,11 @@ namespace tools
            
             document.Close();
             System.Diagnostics.Process.Start("AcroRd32.exe", strNombreFichero);
+            }
+            catch (Exception)
+            {
 
+            }
         }
 
         public static Boolean isNumeric(String str)

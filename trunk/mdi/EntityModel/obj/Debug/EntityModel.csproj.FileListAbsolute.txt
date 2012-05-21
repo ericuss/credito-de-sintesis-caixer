@@ -4,3 +4,9 @@ C:\Users\Rom\Documents\CreditCaixer\dll\EntityModel.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\EntityModel\obj\Debug\EntityModel.csprojResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\dll\EntityModel.dll.config
+D:\S2J\Sintesi\NewLanreSuit\dll\EntityModel.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\EntityModel.pdb
+D:\S2J\Sintesi\NewLanreSuit\mdi\EntityModel\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\EntityModel\obj\Debug\EntityModel.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\EntityModel\obj\Debug\EntityModel.pdb

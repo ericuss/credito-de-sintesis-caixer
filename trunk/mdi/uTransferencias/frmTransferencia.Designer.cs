@@ -408,7 +408,7 @@
             this.gbCuentaDestino.Size = new System.Drawing.Size(690, 52);
             this.gbCuentaDestino.TabIndex = 21;
             this.gbCuentaDestino.TabStop = false;
-            this.gbCuentaDestino.Text = "Selecciona una Cuenta de Destino";
+            this.gbCuentaDestino.Text = "Selecciona una cuenta de destino o introducela manualmente";
             // 
             // label17
             // 

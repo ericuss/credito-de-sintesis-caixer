@@ -27,3 +27,16 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmMantCuenta.
 C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmIngreso.resources
 C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmNuevaCuenta.resources
 C:\Users\Rom\Documents\CreditCaixer\mdi\uCuenta\obj\Debug\uCuenta.frmAnadirTitulares.resources
+D:\S2J\Sintesi\NewLanreSuit\dll\uCuenta.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\uCuenta.pdb
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmAnadirTitulares.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmConsultaExtracto.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmIngreso.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmMantCuenta.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.frmNuevaCuenta.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.Properties.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\uCuenta\obj\Debug\uCuenta.pdb

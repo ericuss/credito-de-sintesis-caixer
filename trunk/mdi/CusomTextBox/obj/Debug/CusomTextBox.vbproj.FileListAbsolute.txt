@@ -37,3 +37,13 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\CusomTextBox\obj\Debug\CusomTextBox.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\CusomTextBox\obj\Debug\CusomTextBox.xml
 C:\Users\Rom\Documents\CreditCaixer\mdi\CusomTextBox\obj\Debug\CusomTextBox.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\CusomTextBox\obj\Debug\CusomTextBox.vbprojResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\dll\CusomTextBox.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\CusomTextBox.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\CusomTextBox.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\CusomTextBox.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\CusomTextBox.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\CusomTextBox.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\CusomTextBox\obj\Debug\CusomTextBox.pdb

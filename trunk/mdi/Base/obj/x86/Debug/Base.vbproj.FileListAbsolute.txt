@@ -41,3 +41,14 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\Base\obj\x86\Debug\Base.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\Base\obj\x86\Debug\Base.xml
 C:\Users\Rom\Documents\CreditCaixer\mdi\Base\obj\x86\Debug\Base.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\Base\obj\x86\Debug\Base.vbprojResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\dll\Base.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\Base.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\Base.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\Base.Base.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\Base.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\Base.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\Base.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\Base\obj\x86\Debug\Base.pdb
