@@ -76,7 +76,41 @@ namespace solicitudes
         }
         private void loadResumen()
         {
-        
+
+            var pres = from pr in context.prestamo
+                       join fin in context.finalidadprestamo
+                        on pr.idFinalidad equals fin.id
+                       join cli in context.cliente
+                       on pr.idCliente equals cli.id
+                       join cu in context.cuenta
+                       on pr.idCuenta equals cu.id
+                       join sol in context.solicitud
+                         on pr.idSolicitud equals sol.id
+                       where pr.idCliente == idCliente && pr.idCuenta == idCuenta && pr.idSolicitud == idSolicitud
+                       select new
+                       {
+                           Finalidad = fin.tag,
+                           Importe = pr.importe,
+                           Cuota = pr.cuota,
+                           Plazo = pr.plazo,
+                           Saldo = cu.saldo,
+                           Fecha = sol.fecha
+                       };
+            foreach (var item in pres)
+            {
+                txtFinalidad.Text = item.Finalidad.ToString();
+                txtImporteSol.Text = item.Importe.ToString();
+                txtSaldo.Text = item.Saldo.ToString();
+                if (item.Plazo != null)
+                {
+                    txtPlazo.Text = item.Plazo.ToString();
+                }
+                if (item.Cuota != null)
+                {
+                    txtCuota.Text = item.Cuota.ToString();
+                }
+                txtFechaP.Text = item.Fecha.ToString();
+            }
 
         }
 
@@ -183,5 +217,7 @@ namespace solicitudes
         {
             this.Dispose();
         }
+
+
     }
 }

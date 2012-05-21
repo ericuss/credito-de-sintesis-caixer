@@ -14,11 +14,13 @@
           <EntitySet Name="depositocliente" EntityType="santanderModel.Store.depositocliente" store:Type="Tables" Schema="santander" />
           <EntitySet Name="empresa" EntityType="santanderModel.Store.empresa" store:Type="Tables" Schema="santander" />
           <EntitySet Name="estadosolicitud" EntityType="santanderModel.Store.estadosolicitud" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="finalidadprestamo" EntityType="santanderModel.Store.finalidadprestamo" store:Type="Tables" Schema="santander" />
           <EntitySet Name="historicoinversion" EntityType="santanderModel.Store.historicoinversion" store:Type="Tables" Schema="santander" />
           <EntitySet Name="mdimenu" EntityType="santanderModel.Store.mdimenu" store:Type="Tables" Schema="santander" />
           <EntitySet Name="movimiento" EntityType="santanderModel.Store.movimiento" store:Type="Tables" Schema="santander" />
           <EntitySet Name="notificacion" EntityType="santanderModel.Store.notificacion" store:Type="Tables" Schema="santander" />
           <EntitySet Name="oficina" EntityType="santanderModel.Store.oficina" store:Type="Tables" Schema="santander" />
+          <EntitySet Name="prestamo" EntityType="santanderModel.Store.prestamo" store:Type="Tables" Schema="santander" />
           <EntitySet Name="solicitud" EntityType="santanderModel.Store.solicitud" store:Type="Tables" Schema="santander" />
           <EntitySet Name="tarjeta" EntityType="santanderModel.Store.tarjeta" store:Type="Tables" Schema="santander" />
           <EntitySet Name="tiposolicitud" EntityType="santanderModel.Store.tiposolicitud" store:Type="Tables" Schema="santander" />
@@ -40,6 +42,10 @@
             <End Role="cliente" EntitySet="cliente" />
             <End Role="notificacion" EntitySet="notificacion" />
           </AssociationSet>
+          <AssociationSet Name="cliente_prestamo_fk" Association="santanderModel.Store.cliente_prestamo_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
           <AssociationSet Name="cliente_usuario_fk" Association="santanderModel.Store.cliente_usuario_fk">
             <End Role="cliente" EntitySet="cliente" />
             <End Role="usuario" EntitySet="usuario" />
@@ -51,6 +57,10 @@
           <AssociationSet Name="cuenta_movimiento_fk" Association="santanderModel.Store.cuenta_movimiento_fk">
             <End Role="cuenta" EntitySet="cuenta" />
             <End Role="movimiento" EntitySet="movimiento" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_prestamo_fk" Association="santanderModel.Store.cuenta_prestamo_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="prestamo" EntitySet="prestamo" />
           </AssociationSet>
           <AssociationSet Name="cuenta_transferencia_fk" Association="santanderModel.Store.cuenta_transferencia_fk">
             <End Role="cuenta" EntitySet="cuenta" />
@@ -76,9 +86,17 @@
             <End Role="estadosolicitud" EntitySet="estadosolicitud" />
             <End Role="solicitud" EntitySet="solicitud" />
           </AssociationSet>
+          <AssociationSet Name="finalidadPrestamo_prestamo_fk" Association="santanderModel.Store.finalidadPrestamo_prestamo_fk">
+            <End Role="finalidadprestamo" EntitySet="finalidadprestamo" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
           <AssociationSet Name="solicitud_depositoCliente_fk" Association="santanderModel.Store.solicitud_depositoCliente_fk">
             <End Role="solicitud" EntitySet="solicitud" />
             <End Role="depositocliente" EntitySet="depositocliente" />
+          </AssociationSet>
+          <AssociationSet Name="solicitud_prestamo_fk" Association="santanderModel.Store.solicitud_prestamo_fk">
+            <End Role="solicitud" EntitySet="solicitud" />
+            <End Role="prestamo" EntitySet="prestamo" />
           </AssociationSet>
           <AssociationSet Name="tipoSolicitud_solicitud_fk" Association="santanderModel.Store.tipoSolicitud_solicitud_fk">
             <End Role="tiposolicitud" EntitySet="tiposolicitud" />
@@ -94,7 +112,7 @@
           <Property Name="cantidad" Type="int" />
           <Property Name="idEmpresa" Type="int" />
           <Property Name="fecha" Type="timestamp" Precision="0" />
-          <Property Name="valorCompra" Type="decimal" Scale="3" />
+          <Property Name="valorCompra" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="cliente">
           <Key>
@@ -120,7 +138,7 @@
           <Property Name="codigoOficina" Type="varchar" MaxLength="4" />
           <Property Name="codigoControl" Type="varchar" MaxLength="2" />
           <Property Name="codigoCuenta" Type="varchar" MaxLength="10" />
-          <Property Name="saldo" Type="decimal" Precision="50" Scale="3" />
+          <Property Name="saldo" Type="decimal" Precision="50" Scale="2" />
         </EntityType>
         <!--Se encontraron errores durante la generación:
       advertencia 6035: La relación 'cuentacliente_solicitud_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
@@ -181,6 +199,13 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="tag" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
+        <EntityType Name="finalidadprestamo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tag" Type="text" />
+        </EntityType>
         <EntityType Name="historicoinversion">
           <Key>
             <PropertyRef Name="id" />
@@ -192,8 +217,8 @@
           <Property Name="idCliente" Type="int" />
           <Property Name="idCuenta" Type="int" />
           <Property Name="compraVenta" Type="bit" />
-          <Property Name="valorCompra" Type="decimal" Scale="3" />
-          <Property Name="valorVenta" Type="decimal" Scale="3" />
+          <Property Name="valorCompra" Type="decimal" Scale="2" />
+          <Property Name="valorVenta" Type="decimal" Scale="2" />
         </EntityType>
         <EntityType Name="mdimenu">
           <Key>
@@ -204,6 +229,8 @@
           <Property Name="padre" Type="int" Nullable="false" />
           <Property Name="form" Type="varchar" MaxLength="45" />
           <Property Name="dll" Type="varchar" MaxLength="45" />
+          <Property Name="icoXL" Type="varchar" MaxLength="45" />
+          <Property Name="icoS" Type="varchar" MaxLength="45" />
         </EntityType>
         <!--Se encontraron errores durante la generación:
       advertencia 6035: La relación 'movimiento_historicoInversion_fk' tiene columnas que no son parte de la clave de la tabla en el lado principal de la relación. Se excluyó la relación.
@@ -220,7 +247,7 @@
           <Property Name="importe" Type="decimal" Scale="3" />
           <Property Name="descripcion" Type="text" />
           <Property Name="concepto" Type="varchar" MaxLength="45" />
-          <Property Name="resto" Type="decimal" Scale="3" />
+          <Property Name="resto" Type="decimal" Precision="50" Scale="2" />
         </EntityType>
         <EntityType Name="notificacion">
           <Key>
@@ -241,6 +268,19 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="codigoOficina" Type="varchar" Nullable="false" MaxLength="4" />
           <Property Name="direccion" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="prestamo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idFinalidad" Type="int" />
+          <Property Name="importe" Type="decimal" Scale="2" />
+          <Property Name="cuota" Type="float" />
+          <Property Name="plazo" Type="int" />
+          <Property Name="idCliente" Type="int" />
+          <Property Name="idCuenta" Type="int" />
+          <Property Name="idSolicitud" Type="int" />
         </EntityType>
         <EntityType Name="solicitud">
           <Key>
@@ -345,6 +385,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="cliente_prestamo_fk">
+          <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="0..1" />
+          <End Role="prestamo" Type="santanderModel.Store.prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="cliente_usuario_fk">
           <End Role="cliente" Type="santanderModel.Store.cliente" Multiplicity="1" />
           <End Role="usuario" Type="santanderModel.Store.usuario" Multiplicity="*" />
@@ -377,6 +429,18 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="movimiento">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_prestamo_fk">
+          <End Role="cuenta" Type="santanderModel.Store.cuenta" Multiplicity="0..1" />
+          <End Role="prestamo" Type="santanderModel.Store.prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
               <PropertyRef Name="idCuenta" />
             </Dependent>
           </ReferentialConstraint>
@@ -455,6 +519,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="finalidadPrestamo_prestamo_fk">
+          <End Role="finalidadprestamo" Type="santanderModel.Store.finalidadprestamo" Multiplicity="0..1" />
+          <End Role="prestamo" Type="santanderModel.Store.prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finalidadprestamo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idFinalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="solicitud_depositoCliente_fk">
           <End Role="solicitud" Type="santanderModel.Store.solicitud" Multiplicity="1" />
           <End Role="depositocliente" Type="santanderModel.Store.depositocliente" Multiplicity="*" />
@@ -463,6 +539,18 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="depositocliente">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="solicitud_prestamo_fk">
+          <End Role="solicitud" Type="santanderModel.Store.solicitud" Multiplicity="0..1" />
+          <End Role="prestamo" Type="santanderModel.Store.prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="solicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
               <PropertyRef Name="idSolicitud" />
             </Dependent>
           </ReferentialConstraint>
@@ -562,6 +650,24 @@
             <End Role="tiposolicitud" EntitySet="tiposolicitud" />
             <End Role="solicitud" EntitySet="solicitud" />
           </AssociationSet>
+          <EntitySet Name="finalidadprestamo" EntityType="santanderModel.finalidadprestamo" />
+          <EntitySet Name="prestamo" EntityType="santanderModel.prestamo" />
+          <AssociationSet Name="cliente_prestamo_fk" Association="santanderModel.cliente_prestamo_fk">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="cuenta_prestamo_fk" Association="santanderModel.cuenta_prestamo_fk">
+            <End Role="cuenta" EntitySet="cuenta" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="finalidadPrestamo_prestamo_fk" Association="santanderModel.finalidadPrestamo_prestamo_fk">
+            <End Role="finalidadprestamo" EntitySet="finalidadprestamo" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
+          <AssociationSet Name="solicitud_prestamo_fk" Association="santanderModel.solicitud_prestamo_fk">
+            <End Role="solicitud" EntitySet="solicitud" />
+            <End Role="prestamo" EntitySet="prestamo" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="accion">
           <Key>
@@ -595,6 +701,7 @@
           <NavigationProperty Name="notificacion" Relationship="santanderModel.cliente_notificacion_fk" FromRole="cliente" ToRole="notificacion" />
           <NavigationProperty Name="usuario" Relationship="santanderModel.cliente_usuario_fk" FromRole="cliente" ToRole="usuario" />
           <Property Type="Boolean" Name="inactivo" />
+          <NavigationProperty Name="prestamo" Relationship="santanderModel.cliente_prestamo_fk" FromRole="cliente" ToRole="prestamo" />
         </EntityType>
         <EntityType Name="cuenta">
           <Key>
@@ -609,6 +716,7 @@
           <NavigationProperty Name="cuentacliente" Relationship="santanderModel.cuenta_cuentaCliente_fj" FromRole="cuenta" ToRole="cuentacliente" />
           <NavigationProperty Name="movimiento" Relationship="santanderModel.cuenta_movimiento_fk" FromRole="cuenta" ToRole="movimiento" />
           <NavigationProperty Name="transferencia" Relationship="santanderModel.cuenta_transferencia_fk" FromRole="cuenta" ToRole="transferencia" />
+          <NavigationProperty Name="prestamo" Relationship="santanderModel.cuenta_prestamo_fk" FromRole="cuenta" ToRole="prestamo" />
         </EntityType>
         <EntityType Name="cuentacliente">
           <Key>
@@ -700,6 +808,8 @@
           <Property Name="padre" Type="Int32" Nullable="false" />
           <Property Name="form" Type="String" />
           <Property Name="dll" Type="String" />
+          <Property Type="String" Name="icoXL" />
+          <Property Type="String" Name="icoS" />
         </EntityType>
         <EntityType Name="movimiento">
           <Key>
@@ -749,6 +859,7 @@
           <NavigationProperty Name="depositocliente" Relationship="santanderModel.solicitud_depositoCliente_fk" FromRole="solicitud" ToRole="depositocliente" />
           <NavigationProperty Name="estadosolicitud" Relationship="santanderModel.estadoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="estadosolicitud" />
           <NavigationProperty Name="tiposolicitud" Relationship="santanderModel.tipoSolicitud_solicitud_fk" FromRole="solicitud" ToRole="tiposolicitud" />
+          <NavigationProperty Name="prestamo" Relationship="santanderModel.solicitud_prestamo_fk" FromRole="solicitud" ToRole="prestamo" />
         </EntityType>
         <EntityType Name="tarjeta">
           <Key>
@@ -979,6 +1090,79 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="finalidadprestamo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="tag" />
+          <NavigationProperty Name="prestamo" Relationship="santanderModel.finalidadPrestamo_prestamo_fk" FromRole="finalidadprestamo" ToRole="prestamo" />
+        </EntityType>
+        <EntityType Name="prestamo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="idFinalidad" />
+          <Property Type="Decimal" Name="importe" />
+          <Property Type="Single" Name="cuota" />
+          <Property Type="Int32" Name="plazo" />
+          <Property Type="Int32" Name="idCliente" />
+          <Property Type="Int32" Name="idCuenta" />
+          <Property Type="Int32" Name="idSolicitud" />
+          <NavigationProperty Name="cliente" Relationship="santanderModel.cliente_prestamo_fk" FromRole="prestamo" ToRole="cliente" />
+          <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_prestamo_fk" FromRole="prestamo" ToRole="cuenta" />
+          <NavigationProperty Name="finalidadprestamo" Relationship="santanderModel.finalidadPrestamo_prestamo_fk" FromRole="prestamo" ToRole="finalidadprestamo" />
+          <NavigationProperty Name="solicitud" Relationship="santanderModel.solicitud_prestamo_fk" FromRole="prestamo" ToRole="solicitud" />
+        </EntityType>
+        <Association Name="cliente_prestamo_fk">
+          <End Type="santanderModel.cliente" Role="cliente" Multiplicity="0..1" />
+          <End Type="santanderModel.prestamo" Role="prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="cuenta_prestamo_fk">
+          <End Type="santanderModel.cuenta" Role="cuenta" Multiplicity="0..1" />
+          <End Type="santanderModel.prestamo" Role="prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cuenta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idCuenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="finalidadPrestamo_prestamo_fk">
+          <End Type="santanderModel.finalidadprestamo" Role="finalidadprestamo" Multiplicity="0..1" />
+          <End Type="santanderModel.prestamo" Role="prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="finalidadprestamo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idFinalidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="solicitud_prestamo_fk">
+          <End Type="santanderModel.solicitud" Role="solicitud" Multiplicity="0..1" />
+          <End Type="santanderModel.prestamo" Role="prestamo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="solicitud">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="prestamo">
+              <PropertyRef Name="idSolicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1102,6 +1286,8 @@
           <EntitySetMapping Name="mdimenu">
             <EntityTypeMapping TypeName="santanderModel.mdimenu">
               <MappingFragment StoreEntitySet="mdimenu">
+                <ScalarProperty Name="icoS" ColumnName="icoS" />
+                <ScalarProperty Name="icoXL" ColumnName="icoXL" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombreMenu" ColumnName="nombreMenu" />
                 <ScalarProperty Name="padre" ColumnName="padre" />
@@ -1205,6 +1391,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="finalidadprestamo">
+            <EntityTypeMapping TypeName="santanderModel.finalidadprestamo">
+              <MappingFragment StoreEntitySet="finalidadprestamo">
+                <ScalarProperty Name="tag" ColumnName="tag" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="prestamo">
+            <EntityTypeMapping TypeName="santanderModel.prestamo">
+              <MappingFragment StoreEntitySet="prestamo">
+                <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
+                <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="plazo" ColumnName="plazo" />
+                <ScalarProperty Name="cuota" ColumnName="cuota" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="idFinalidad" ColumnName="idFinalidad" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -1245,8 +1453,8 @@
         <EntityTypeShape EntityType="santanderModel.transferencia" Width="1.5" PointX="6" PointY="16.875" Height="2.7494921875000031" IsExpanded="true" />
         <EntityTypeShape EntityType="santanderModel.usuario" Width="1.5" PointX="3" PointY="22.125" Height="2.5571907552083388" IsExpanded="true" />
         <AssociationConnector Association="santanderModel.cliente_accion_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="11.653595377604166" />
-          <ConnectorPoint PointX="3" PointY="11.653595377604166" />
+          <ConnectorPoint PointX="2.25" PointY="12.020118222005207" />
+          <ConnectorPoint PointX="3" PointY="12.020118222005207" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.empresa_accion_fk" ManuallyRouted="false">
           <ConnectorPoint PointX="2.2499999999999996" PointY="8.1340950520833317" />
@@ -1255,30 +1463,32 @@
           <ConnectorPoint PointX="3" PointY="10.983045688802083" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cliente_cuentaClienta_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="13.227845052083332" />
-          <ConnectorPoint PointX="5.541666666666667" PointY="13.227845052083332" />
-          <ConnectorPoint PointX="5.708333333333333" PointY="13.227845052083332" />
-          <ConnectorPoint PointX="6.75" PointY="13.227845052083332" />
-          <ConnectorPoint PointX="6.75" PointY="12.672587890625" />
+          <ConnectorPoint PointX="2.25" PointY="10.03125" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="10.03125" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="10.03125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="10.03125" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="10.03125" />
+          <ConnectorPoint PointX="6.75" PointY="10.03125" />
+          <ConnectorPoint PointX="6.75" PointY="10.5" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cliente_historicoInversion_fk" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="9.81346053846154" />
           <ConnectorPoint PointX="2.5660744349011204" PointY="9.4973861035604177" />
           <ConnectorPoint PointX="2.6839255650988791" PointY="9.3795349733626612" />
-          <ConnectorPoint PointX="2.9375" PointY="9.12596053846154" />
-          <ConnectorPoint PointX="2.9375" PointY="9.1977478982371785" />
+          <ConnectorPoint PointX="2.8125" PointY="9.25096053846154" />
+          <ConnectorPoint PointX="2.8125" PointY="9.3227478982371785" />
           <ConnectorPoint PointX="3.0011528461538459" PointY="9.1340950520833317" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cliente_notificacion_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="13.460999348958332" />
-          <ConnectorPoint PointX="1.5" PointY="20.028595377604166" />
-          <ConnectorPoint PointX="1.8229191666666667" PointY="20.028595377604166" />
-          <ConnectorPoint PointX="1.9895858333333332" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="1.2851578125" PointY="13.845602213541666" />
+          <ConnectorPoint PointX="1.2851578125" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="1.7154980729166669" PointY="20.028595377604166" />
+          <ConnectorPoint PointX="1.8821647395833334" PointY="20.028595377604166" />
           <ConnectorPoint PointX="3" PointY="20.028595377604166" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cliente_usuario_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.9062525" PointY="13.460999348958332" />
-          <ConnectorPoint PointX="1.9062525" PointY="23.403595377604169" />
+          <ConnectorPoint PointX="1.7988314062500002" PointY="13.845602213541666" />
+          <ConnectorPoint PointX="1.7988314062500002" PointY="23.403595377604169" />
           <ConnectorPoint PointX="3" PointY="23.403595377604169" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cuenta_cuentaCliente_fj" ManuallyRouted="false">
@@ -1292,9 +1502,8 @@
           <ConnectorPoint PointX="6" PointY="15.24792430068109" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cuenta_transferencia_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.90625" PointY="16.9994921875" />
-          <ConnectorPoint PointX="4.90625" PointY="17.84349659375" />
-          <ConnectorPoint PointX="6" PointY="17.84349659375" />
+          <ConnectorPoint PointX="5.25" PointY="17.033396809895834" />
+          <ConnectorPoint PointX="6" PointY="17.033396809895834" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.cuentacliente_depositoCliente_fk" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="11.5862939453125" />
@@ -1308,8 +1517,8 @@
           <ConnectorPoint PointX="8.46875" PointY="9.875" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.solicitud_depositoCliente_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="4.0163378906250031" />
-          <ConnectorPoint PointX="8.3281225" PointY="4.0163378906250031" />
+          <ConnectorPoint PointX="7.5" PointY="4.1124886067708353" />
+          <ConnectorPoint PointX="8.3281225" PointY="4.1124886067708353" />
           <ConnectorPoint PointX="8.3281225" PointY="9.875" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.empresa_historicoInversion_fk" ManuallyRouted="false">
@@ -1317,12 +1526,47 @@
           <ConnectorPoint PointX="3" PointY="7.0357950260416651" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.estadoSolicitud_solicitud_fk" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="3.8747460937500016" />
-          <ConnectorPoint PointX="6" PointY="3.8747460937500016" />
+          <ConnectorPoint PointX="5.25" PointY="3.9708968098958333" />
+          <ConnectorPoint PointX="6" PointY="3.9708968098958333" />
         </AssociationConnector>
         <AssociationConnector Association="santanderModel.tipoSolicitud_solicitud_fk" ManuallyRouted="false">
           <ConnectorPoint PointX="5.25" PointY="2.0814925130208337" />
           <ConnectorPoint PointX="6" PointY="2.0814925130208337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="santanderModel.finalidadprestamo" Width="1.5" PointX="9" PointY="14.625" Height="1.5956835937500049" />
+        <EntityTypeShape EntityType="santanderModel.prestamo" Width="1.5" PointX="11.25" PointY="7.75" Height="3.3263964843750031" />
+        <AssociationConnector Association="santanderModel.cliente_prestamo_fk" >
+          <ConnectorPoint PointX="2.25" PointY="9.78125" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="9.78125" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="9.78125" />
+          <ConnectorPoint PointX="4.822916666666667" PointY="9.78125" />
+          <ConnectorPoint PointX="4.989583333333333" PointY="9.78125" />
+          <ConnectorPoint PointX="8.2447891666666653" PointY="9.7812499999999982" />
+          <ConnectorPoint PointX="8.5520833333333339" PointY="9.78125" />
+          <ConnectorPoint PointX="10.072916666666666" PointY="9.78125" />
+          <ConnectorPoint PointX="10.239583333333334" PointY="9.78125" />
+          <ConnectorPoint PointX="11.25" PointY="9.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.cuenta_prestamo_fk" >
+          <ConnectorPoint PointX="4.90625" PointY="14.25" />
+          <ConnectorPoint PointX="4.90625" PointY="9.5394164453125061" />
+          <ConnectorPoint PointX="8.2447891666666653" PointY="9.5394164453125043" />
+          <ConnectorPoint PointX="8.5520833333333339" PointY="9.5394164453125061" />
+          <ConnectorPoint PointX="10.072916666666666" PointY="9.5394164453125061" />
+          <ConnectorPoint PointX="10.239583333333334" PointY="9.5394164453125061" />
+          <ConnectorPoint PointX="11.25" PointY="9.5394164453125061" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.finalidadPrestamo_prestamo_fk" >
+          <ConnectorPoint PointX="10.15625" PointY="14.625" />
+          <ConnectorPoint PointX="10.15625" PointY="8.6134557226562585" />
+          <ConnectorPoint PointX="11.25" PointY="8.6134557226562585" />
+        </AssociationConnector>
+        <AssociationConnector Association="santanderModel.solicitud_prestamo_fk" >
+          <ConnectorPoint PointX="7.5" PointY="4.3708936132812521" />
+          <ConnectorPoint PointX="8.2447891666666653" PointY="4.3708936132812513" />
+          <ConnectorPoint PointX="8.4114558333333331" PointY="4.3708936132812521" />
+          <ConnectorPoint PointX="12" PointY="4.3708936132812521" />
+          <ConnectorPoint PointX="12" PointY="7.75" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
