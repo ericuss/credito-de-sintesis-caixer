@@ -50,3 +50,17 @@ D:\S2J\Sintesi\LanreSuit\dll\uMdi.xml
 D:\S2J\Sintesi\LanreSuit\mdi\frm\obj\x86\Debug\uMdi.mdiPral.resources
 C:\Users\Rom\Documents\CreditCaixer\mdi\frm\obj\x86\Debug\uMdi.mdiPral.resources
 C:\Users\Rom\Documents\CreditCaixer\dll\uMdi.xml
+D:\S2J\Sintesi\NewLanreSuit\dll\uMdi.exe.config
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.exe
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\uMdi.exe
+D:\S2J\Sintesi\NewLanreSuit\dll\uMdi.pdb
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.frmAbout.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.frmLoggin.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.frmSplashScreen.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.mdiPral.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\uMdi.Properties.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\frm\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\dll\uMdi.xml

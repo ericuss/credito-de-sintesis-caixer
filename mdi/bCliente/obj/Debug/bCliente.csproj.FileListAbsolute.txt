@@ -8,3 +8,8 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\obj\Debug\bCliente.pdb
 C:\Users\Rom\Documents\CreditCaixer\dll\bCliente.dll
 C:\Users\Rom\Documents\CreditCaixer\dll\bCliente.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\bCliente\obj\Debug\bCliente.csprojResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\dll\bCliente.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\bCliente.pdb
+D:\S2J\Sintesi\NewLanreSuit\mdi\bCliente\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\bCliente\obj\Debug\bCliente.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\bCliente\obj\Debug\bCliente.pdb

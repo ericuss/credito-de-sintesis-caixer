@@ -21,3 +21,15 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\customTextCs\obj\Debug\customTextCs.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\customTextCs\obj\Debug\customTextCs.xml
 C:\Users\Rom\Documents\CreditCaixer\mdi\customTextCs\obj\Debug\customTextCs.pdb
 C:\Users\Rom\Documents\CreditCaixer\mdi\customTextCs\obj\Debug\customTextCs.vbprojResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\dll\customTextCs.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\customTextCs.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\customTextCs.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.lrTxt.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.txtBuscar.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\customTextCs\obj\Debug\customTextCs.pdb

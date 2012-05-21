@@ -36,3 +36,13 @@ D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\GenerateResource.write.1.tlog
 D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.dll
 D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.xml
 D:\S2J\Sintesi\LanreSuit\mdi\AccDatos\obj\Debug\AccDatos.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\AccDatos.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\AccDatos.pdb
+D:\S2J\Sintesi\NewLanreSuit\dll\AccDatos.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\AccDatos.Resources.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\AccDatos.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\AccDatos.xml
+D:\S2J\Sintesi\NewLanreSuit\mdi\AccDatos\obj\Debug\AccDatos.pdb

@@ -7,3 +7,13 @@ C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.dll
 C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.pdb
 C:\Users\Rom\Documents\CreditCaixer\dll\uFrmCsHijos.XML
 C:\Users\Rom\Documents\CreditCaixer\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.frmCsCuenta.resources
+D:\S2J\Sintesi\NewLanreSuit\dll\uFrmCsHijos.XML
+D:\S2J\Sintesi\NewLanreSuit\dll\uFrmCsHijos.dll
+D:\S2J\Sintesi\NewLanreSuit\dll\uFrmCsHijos.pdb
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\ResolveAssemblyReference.cache
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.frmCsCliente.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.frmCsCuenta.resources
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\GenerateResource.read.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\GenerateResource.write.1.tlog
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.dll
+D:\S2J\Sintesi\NewLanreSuit\mdi\uFrmCsHijos\obj\Debug\uFrmCsHijos.pdb
