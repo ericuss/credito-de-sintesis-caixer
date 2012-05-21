@@ -34,7 +34,6 @@
             this.txtCodCuenta = new System.Windows.Forms.TextBox();
             this.gbSolicitudes = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.chkTodos = new System.Windows.Forms.CheckBox();
             this.txtApellidos = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -96,7 +95,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.chkTodos);
             this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.txtNombre);
@@ -112,16 +110,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Image = global::solicitudes.Properties.Resources.refresh;
-            this.btnRefresh.Location = new System.Drawing.Point(741, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(25, 23);
-            this.btnRefresh.TabIndex = 9;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // chkTodos
             // 
@@ -219,7 +207,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkTodos;
-        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace uTarjeta
 {
-    public partial class frmNuevaTarjeta : Form
+    public partial class frmNuevaTarjeta :Form
     {
         public frmNuevaTarjeta()
         {

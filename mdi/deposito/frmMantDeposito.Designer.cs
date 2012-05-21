@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMantDeposito));
             this.customTextBox1 = new CusomTextBox.CustomTextBox();
             this.customTextBox2 = new CusomTextBox.CustomTextBox();
             this.customTextBox3 = new CusomTextBox.CustomTextBox();
@@ -42,6 +43,10 @@
             // txtSalir
             // 
             this.txtSalir.Location = new System.Drawing.Point(327, 78);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Visible = false;
             // 
             // gbFiltro
             // 
@@ -174,8 +179,11 @@
             this.Controls.Add(this.customTextBox3);
             this.Controls.Add(this.customTextBox2);
             this.Controls.Add(this.customTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "frmMantDeposito";
-            this.Text = "frmMantDeposito";
+            this.Text = "Mantenimiento de  Deposito";
+            this.Controls.SetChildIndex(this.btnLimpiarControles, 0);
             this.Controls.SetChildIndex(this.btnTodos, 0);
             this.Controls.SetChildIndex(this.btnUpdate, 0);
             this.Controls.SetChildIndex(this.gbResultado, 0);

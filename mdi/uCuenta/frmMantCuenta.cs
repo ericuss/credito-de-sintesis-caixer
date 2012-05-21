@@ -123,8 +123,8 @@ namespace uCuenta
         {
             int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
             Form frmAn = new frmAnadirTitulares(idCuenta);
-            frmAn.MdiParent = this.MdiParent;
-            frmAn.Show();
+          
+            frmAn.ShowDialog();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

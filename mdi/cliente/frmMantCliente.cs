@@ -60,8 +60,7 @@ namespace cliente
         private void btnNew_Click(object sender, EventArgs e)
         {
             Form frmNew = new frmNuevoCliente();
-            frmNew.MdiParent = this.MdiParent;
-            frmNew.Show();
+            frmNew.ShowDialog();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -101,8 +100,7 @@ namespace cliente
             if (dgv.SelectedRows.Count > 0 && dgv.SelectedRows.Count <= 1)
             {
                 Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString()));
-                frmEdit.MdiParent = this.MdiParent;
-                frmEdit.Show();
+                frmEdit.ShowDialog();
             }
         }
 
@@ -155,6 +153,11 @@ namespace cliente
                 where += " and inactivo = 0 ";
             }
             return where;
+        }
+
+        private void btnPdf_Click(object sender, EventArgs e)
+        {
+          dts = (DataSet)dgv.DataSource;
         }
     }
 }
