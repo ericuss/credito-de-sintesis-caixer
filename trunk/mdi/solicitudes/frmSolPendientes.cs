@@ -27,21 +27,18 @@ namespace solicitudes
             if (tipoSol == "1")
             {
                 Form petTarj = new frmSolicitudTarjeta(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
-                petTarj.MdiParent = this.MdiParent;
-                petTarj.Show();
+                petTarj.ShowDialog();
 
             }
             else if (tipoSol == "3")
             {
                 Form petTarj = new frmSolDeposito(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
-                petTarj.MdiParent = this.MdiParent;
-                petTarj.Show();
+                petTarj.ShowDialog();
             }
             else if (tipoSol == "2" || tipoSol=="4")
             {
                 Form petTarj = new frmSolPrestamo(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
-                petTarj.MdiParent = this.MdiParent;
-                petTarj.Show();
+                petTarj.ShowDialog();
             }
         }
 

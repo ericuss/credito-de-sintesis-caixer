@@ -22,6 +22,8 @@ namespace deposito
             dgv.Columns["id"].Visible = false;
         }
 
+      
+
        
     }
 }
