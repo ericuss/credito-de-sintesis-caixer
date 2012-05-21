@@ -102,6 +102,7 @@
             // btnPdf
             // 
             this.btnPdf.Location = new System.Drawing.Point(645, 24);
+            this.btnPdf.Visible = false;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
             // btnLimpiarControles
