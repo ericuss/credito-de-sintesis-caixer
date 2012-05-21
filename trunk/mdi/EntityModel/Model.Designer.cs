@@ -34,6 +34,10 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("santanderModel", "empresa_historicoInversion_fk", "empresa", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.empresa), "historicoinversion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.historicoinversion), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "estadoSolicitud_solicitud_fk", "estadosolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.estadosolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.solicitud), true)]
 [assembly: EdmRelationshipAttribute("santanderModel", "tipoSolicitud_solicitud_fk", "tiposolicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(EntityModel.tiposolicitud), "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.solicitud), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cliente_prestamo_fk", "cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.cliente), "prestamo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.prestamo), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "cuenta_prestamo_fk", "cuenta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.cuenta), "prestamo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.prestamo), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "finalidadPrestamo_prestamo_fk", "finalidadprestamo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.finalidadprestamo), "prestamo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.prestamo), true)]
+[assembly: EdmRelationshipAttribute("santanderModel", "solicitud_prestamo_fk", "solicitud", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(EntityModel.solicitud), "prestamo", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(EntityModel.prestamo), true)]
 
 #endregion
 
@@ -372,6 +376,38 @@ namespace EntityModel
             }
         }
         private ObjectSet<usuario> _usuario;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<finalidadprestamo> finalidadprestamo
+        {
+            get
+            {
+                if ((_finalidadprestamo == null))
+                {
+                    _finalidadprestamo = base.CreateObjectSet<finalidadprestamo>("finalidadprestamo");
+                }
+                return _finalidadprestamo;
+            }
+        }
+        private ObjectSet<finalidadprestamo> _finalidadprestamo;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<prestamo> prestamo
+        {
+            get
+            {
+                if ((_prestamo == null))
+                {
+                    _prestamo = base.CreateObjectSet<prestamo>("prestamo");
+                }
+                return _prestamo;
+            }
+        }
+        private ObjectSet<prestamo> _prestamo;
 
         #endregion
 
@@ -519,6 +555,22 @@ namespace EntityModel
         public void AddTousuario(usuario usuario)
         {
             base.AddObject("usuario", usuario);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet finalidadprestamo. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddTofinalidadprestamo(finalidadprestamo finalidadprestamo)
+        {
+            base.AddObject("finalidadprestamo", finalidadprestamo);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet prestamo. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToprestamo(prestamo prestamo)
+        {
+            base.AddObject("prestamo", prestamo);
         }
 
         #endregion
@@ -1168,6 +1220,28 @@ namespace EntityModel
                 }
             }
         }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cliente_prestamo_fk", "prestamo")]
+        public EntityCollection<prestamo> prestamo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<prestamo>("santanderModel.cliente_prestamo_fk", "prestamo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<prestamo>("santanderModel.cliente_prestamo_fk", "prestamo", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -1412,6 +1486,28 @@ namespace EntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<transferencia>("santanderModel.cuenta_transferencia_fk", "transferencia", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cuenta_prestamo_fk", "prestamo")]
+        public EntityCollection<prestamo> prestamo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<prestamo>("santanderModel.cuenta_prestamo_fk", "prestamo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<prestamo>("santanderModel.cuenta_prestamo_fk", "prestamo", value);
                 }
             }
         }
@@ -2633,6 +2729,113 @@ namespace EntityModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="santanderModel", Name="finalidadprestamo")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class finalidadprestamo : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto finalidadprestamo.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        public static finalidadprestamo Createfinalidadprestamo(global::System.Int32 id)
+        {
+            finalidadprestamo finalidadprestamo = new finalidadprestamo();
+            finalidadprestamo.id = id;
+            return finalidadprestamo;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String tag
+        {
+            get
+            {
+                return _tag;
+            }
+            set
+            {
+                OntagChanging(value);
+                ReportPropertyChanging("tag");
+                _tag = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("tag");
+                OntagChanged();
+            }
+        }
+        private global::System.String _tag;
+        partial void OntagChanging(global::System.String value);
+        partial void OntagChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "finalidadPrestamo_prestamo_fk", "prestamo")]
+        public EntityCollection<prestamo> prestamo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<prestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "prestamo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<prestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "prestamo", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="santanderModel", Name="historicoinversion")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3110,6 +3313,54 @@ namespace EntityModel
         private global::System.String _dll;
         partial void OndllChanging(global::System.String value);
         partial void OndllChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String icoXL
+        {
+            get
+            {
+                return _icoXL;
+            }
+            set
+            {
+                OnicoXLChanging(value);
+                ReportPropertyChanging("icoXL");
+                _icoXL = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("icoXL");
+                OnicoXLChanged();
+            }
+        }
+        private global::System.String _icoXL;
+        partial void OnicoXLChanging(global::System.String value);
+        partial void OnicoXLChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String icoS
+        {
+            get
+            {
+                return _icoS;
+            }
+            set
+            {
+                OnicoSChanging(value);
+                ReportPropertyChanging("icoS");
+                _icoS = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("icoS");
+                OnicoSChanged();
+            }
+        }
+        private global::System.String _icoS;
+        partial void OnicoSChanging(global::System.String value);
+        partial void OnicoSChanged();
 
         #endregion
 
@@ -3721,6 +3972,387 @@ namespace EntityModel
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="santanderModel", Name="prestamo")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class prestamo : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto prestamo.
+        /// </summary>
+        /// <param name="id">Valor inicial de la propiedad id.</param>
+        public static prestamo Createprestamo(global::System.Int32 id)
+        {
+            prestamo prestamo = new prestamo();
+            prestamo.id = id;
+            return prestamo;
+        }
+
+        #endregion
+
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                if (_id != value)
+                {
+                    OnidChanging(value);
+                    ReportPropertyChanging("id");
+                    _id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id");
+                    OnidChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id;
+        partial void OnidChanging(global::System.Int32 value);
+        partial void OnidChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> idFinalidad
+        {
+            get
+            {
+                return _idFinalidad;
+            }
+            set
+            {
+                OnidFinalidadChanging(value);
+                ReportPropertyChanging("idFinalidad");
+                _idFinalidad = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idFinalidad");
+                OnidFinalidadChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _idFinalidad;
+        partial void OnidFinalidadChanging(Nullable<global::System.Int32> value);
+        partial void OnidFinalidadChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> importe
+        {
+            get
+            {
+                return _importe;
+            }
+            set
+            {
+                OnimporteChanging(value);
+                ReportPropertyChanging("importe");
+                _importe = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("importe");
+                OnimporteChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _importe;
+        partial void OnimporteChanging(Nullable<global::System.Decimal> value);
+        partial void OnimporteChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Single> cuota
+        {
+            get
+            {
+                return _cuota;
+            }
+            set
+            {
+                OncuotaChanging(value);
+                ReportPropertyChanging("cuota");
+                _cuota = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("cuota");
+                OncuotaChanged();
+            }
+        }
+        private Nullable<global::System.Single> _cuota;
+        partial void OncuotaChanging(Nullable<global::System.Single> value);
+        partial void OncuotaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> plazo
+        {
+            get
+            {
+                return _plazo;
+            }
+            set
+            {
+                OnplazoChanging(value);
+                ReportPropertyChanging("plazo");
+                _plazo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("plazo");
+                OnplazoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _plazo;
+        partial void OnplazoChanging(Nullable<global::System.Int32> value);
+        partial void OnplazoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> idCliente
+        {
+            get
+            {
+                return _idCliente;
+            }
+            set
+            {
+                OnidClienteChanging(value);
+                ReportPropertyChanging("idCliente");
+                _idCliente = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idCliente");
+                OnidClienteChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _idCliente;
+        partial void OnidClienteChanging(Nullable<global::System.Int32> value);
+        partial void OnidClienteChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> idCuenta
+        {
+            get
+            {
+                return _idCuenta;
+            }
+            set
+            {
+                OnidCuentaChanging(value);
+                ReportPropertyChanging("idCuenta");
+                _idCuenta = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idCuenta");
+                OnidCuentaChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _idCuenta;
+        partial void OnidCuentaChanging(Nullable<global::System.Int32> value);
+        partial void OnidCuentaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> idSolicitud
+        {
+            get
+            {
+                return _idSolicitud;
+            }
+            set
+            {
+                OnidSolicitudChanging(value);
+                ReportPropertyChanging("idSolicitud");
+                _idSolicitud = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("idSolicitud");
+                OnidSolicitudChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _idSolicitud;
+        partial void OnidSolicitudChanging(Nullable<global::System.Int32> value);
+        partial void OnidSolicitudChanged();
+
+        #endregion
+
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cliente_prestamo_fk", "cliente")]
+        public cliente cliente
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cliente>("santanderModel.cliente_prestamo_fk", "cliente").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cliente>("santanderModel.cliente_prestamo_fk", "cliente").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<cliente> clienteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cliente>("santanderModel.cliente_prestamo_fk", "cliente");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<cliente>("santanderModel.cliente_prestamo_fk", "cliente", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "cuenta_prestamo_fk", "cuenta")]
+        public cuenta cuenta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_prestamo_fk", "cuenta").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_prestamo_fk", "cuenta").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<cuenta> cuentaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<cuenta>("santanderModel.cuenta_prestamo_fk", "cuenta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<cuenta>("santanderModel.cuenta_prestamo_fk", "cuenta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "finalidadPrestamo_prestamo_fk", "finalidadprestamo")]
+        public finalidadprestamo finalidadprestamo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<finalidadprestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "finalidadprestamo").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<finalidadprestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "finalidadprestamo").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<finalidadprestamo> finalidadprestamoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<finalidadprestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "finalidadprestamo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<finalidadprestamo>("santanderModel.finalidadPrestamo_prestamo_fk", "finalidadprestamo", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "solicitud_prestamo_fk", "solicitud")]
+        public solicitud solicitud
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<solicitud>("santanderModel.solicitud_prestamo_fk", "solicitud").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<solicitud>("santanderModel.solicitud_prestamo_fk", "solicitud").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<solicitud> solicitudReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<solicitud>("santanderModel.solicitud_prestamo_fk", "solicitud");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<solicitud>("santanderModel.solicitud_prestamo_fk", "solicitud", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="santanderModel", Name="solicitud")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3991,6 +4623,28 @@ namespace EntityModel
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<tiposolicitud>("santanderModel.tipoSolicitud_solicitud_fk", "tiposolicitud", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("santanderModel", "solicitud_prestamo_fk", "prestamo")]
+        public EntityCollection<prestamo> prestamo
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<prestamo>("santanderModel.solicitud_prestamo_fk", "prestamo");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<prestamo>("santanderModel.solicitud_prestamo_fk", "prestamo", value);
                 }
             }
         }

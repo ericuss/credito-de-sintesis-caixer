@@ -278,16 +278,19 @@ namespace solicitudes
                     descripcion = "Aceptacion de la solicitud del deposito de " + txtImporteSol.Text + "€ a " + txtPlazos.Text + " meses."
                 };
 
-                notificacion nott = new notificacion()
-                {
-                    borrado = false,
-                    leido = false,
-                    idCliente = idCliente,
-                    text = "Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".",
-                    asunto = "Solicitud de Deposito Aceptado",
-                    fecha = DateTime.Now
+                //notificacion nott = new notificacion()
+                //{
+                //    borrado = false,
+                //    leido = false,
+                //    idCliente = idCliente,
+                //    text = "Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".",
+                //    asunto = "Solicitud de Deposito Aceptado",
+                //    fecha = DateTime.Now
 
-                };
+                //};
+                AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+                conn.Ejecutar("insert into notificacion (text, asunto, idCliente) values ('Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".','Solicitud de Deposito Aceptado', " + idCliente + ")");
+                
                 context.AddTomovimiento(mov);
                 context.SaveChanges();
 

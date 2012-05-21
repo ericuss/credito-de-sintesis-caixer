@@ -72,6 +72,12 @@
             this.btnMantener = new System.Windows.Forms.Button();
             this.btnDenegar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtFinalidad = new System.Windows.Forms.TextBox();
+            this.txtPlazo = new System.Windows.Forms.TextBox();
+            this.txtCuota = new System.Windows.Forms.TextBox();
             this.tcMain.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -118,6 +124,14 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Controls.Add(this.txtCuota);
+            this.groupBox6.Controls.Add(this.txtPlazo);
+            this.groupBox6.Controls.Add(this.txtFinalidad);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.txtFechaP);
             this.groupBox6.Controls.Add(this.txtSaldo);
             this.groupBox6.Controls.Add(this.txtImporteSol);
@@ -126,14 +140,14 @@
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(515, 90);
+            this.groupBox6.Size = new System.Drawing.Size(483, 189);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Prestamo Contratado";
             // 
             // txtFechaP
             // 
-            this.txtFechaP.Location = new System.Drawing.Point(105, 51);
+            this.txtFechaP.Location = new System.Drawing.Point(105, 138);
             this.txtFechaP.Name = "txtFechaP";
             this.txtFechaP.ReadOnly = true;
             this.txtFechaP.Size = new System.Drawing.Size(144, 20);
@@ -167,7 +181,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(18, 54);
+            this.label9.Location = new System.Drawing.Point(18, 141);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 13);
             this.label9.TabIndex = 1;
@@ -545,6 +559,57 @@
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Finalidad";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 99);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(33, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Plazo";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(195, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Cuota";
+            // 
+            // txtFinalidad
+            // 
+            this.txtFinalidad.Location = new System.Drawing.Point(69, 62);
+            this.txtFinalidad.Name = "txtFinalidad";
+            this.txtFinalidad.ReadOnly = true;
+            this.txtFinalidad.Size = new System.Drawing.Size(110, 20);
+            this.txtFinalidad.TabIndex = 10;
+            // 
+            // txtPlazo
+            // 
+            this.txtPlazo.Location = new System.Drawing.Point(69, 96);
+            this.txtPlazo.Name = "txtPlazo";
+            this.txtPlazo.ReadOnly = true;
+            this.txtPlazo.Size = new System.Drawing.Size(110, 20);
+            this.txtPlazo.TabIndex = 11;
+            // 
+            // txtCuota
+            // 
+            this.txtCuota.Location = new System.Drawing.Point(250, 96);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.ReadOnly = true;
+            this.txtCuota.Size = new System.Drawing.Size(100, 20);
+            this.txtCuota.TabIndex = 12;
+            // 
             // frmSolPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,6 +693,12 @@
         private System.Windows.Forms.Button btnMantener;
         private System.Windows.Forms.Button btnDenegar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCuota;
+        private System.Windows.Forms.TextBox txtPlazo;
+        private System.Windows.Forms.TextBox txtFinalidad;
+        private System.Windows.Forms.Label label13;
 
     }
 }
