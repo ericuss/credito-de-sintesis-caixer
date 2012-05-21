@@ -218,6 +218,13 @@ namespace solicitudes
             this.Dispose();
         }
 
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            //crar movimiento
+            //aceptar solicitud
+            //notificar
+        }
+
 
     }
 }
