@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaCuenta));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.tnAceptar = new System.Windows.Forms.Button();
             this.csBuscar = new customTextCs.txtBuscar();
@@ -78,8 +79,9 @@
             this.Controls.Add(this.tnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.csBuscar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNuevaCuenta";
-            this.Text = "frmNuevaCuenta";
+            this.Text = "Nueva Cuenta";
             this.ResumeLayout(false);
 
         }
