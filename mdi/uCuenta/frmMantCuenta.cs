@@ -74,8 +74,8 @@ namespace uCuenta
         private void button1_Click(object sender, EventArgs e)
         {
             Form frmNueva = new frmNuevaCuenta();
-            frmNueva.MdiParent = this.MdiParent;
-            frmNueva.Show();
+            frmNueva.ShowDialog();
+            loadCuentas();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -150,7 +150,7 @@ namespace uCuenta
                       + "     from cuenta "
                       + "     join cuentacliente on cuenta.id = cuentacliente.idCuenta   "
                       + "     join cliente on cuentacliente.idCliente= cliente.id   "
-                      + "    where cliente.id=61    )";
+                      + "    where cliente.id="+idCliente+"    )";
 
             }
             if (txtCuenta.ValidValue != "")

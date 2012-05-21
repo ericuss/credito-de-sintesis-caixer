@@ -43,7 +43,11 @@ namespace uCuenta
                 idCuenta = tmpCuenta.id
             };
             context.AddTocuentacliente(tmpcc);
+
+            AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+            conn.Ejecutar("insert into notificacion (text, asunto, idCliente) values ('Tienes una nueva Cuenta, numero de cuenta: "+tmpCuenta.codigoEntidad+" - "+tmpCuenta.codigoOficina+" - "+tmpCuenta.codigoControl+" - "+tmpCuenta.codigoCuenta+"','Nueva Cuenta', "+pidCliente+")");
             context.SaveChanges();
+            this.Dispose();
         }
         private String genrandom(int numDigitos, Boolean check)
         {
