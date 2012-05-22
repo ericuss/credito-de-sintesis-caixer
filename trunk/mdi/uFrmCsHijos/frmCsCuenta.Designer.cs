@@ -54,6 +54,7 @@
             this.txtEntidad.Name = "txtEntidad";
             this.txtEntidad.Size = new System.Drawing.Size(71, 20);
             this.txtEntidad.TabIndex = 4;
+            this.txtEntidad.Tag = "filtro";
             this.txtEntidad.ValidValue = "";
             this.txtEntidad.zzCampoBd = "cuenta.codigoEntidad";
             this.txtEntidad.zzValidateIsNumeric = true;
@@ -119,6 +120,7 @@
             this.txtOficina.Name = "txtOficina";
             this.txtOficina.Size = new System.Drawing.Size(71, 20);
             this.txtOficina.TabIndex = 10;
+            this.txtOficina.Tag = "filtro";
             this.txtOficina.ValidValue = "";
             this.txtOficina.zzCampoBd = "cuenta.codigoOficina";
             this.txtOficina.zzValidateIsNumeric = true;
@@ -131,6 +133,7 @@
             this.txtControl.Name = "txtControl";
             this.txtControl.Size = new System.Drawing.Size(40, 20);
             this.txtControl.TabIndex = 11;
+            this.txtControl.Tag = "filtro";
             this.txtControl.ValidValue = "";
             this.txtControl.zzCampoBd = "cuenta.codigoControl";
             this.txtControl.zzValidateIsNumeric = true;
@@ -143,6 +146,7 @@
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(116, 20);
             this.txtCuenta.TabIndex = 12;
+            this.txtCuenta.Tag = "filtro";
             this.txtCuenta.ValidValue = "";
             this.txtCuenta.zzCampoBd = "cuenta.codigoCuenta";
             this.txtCuenta.zzValidateIsNumeric = true;
