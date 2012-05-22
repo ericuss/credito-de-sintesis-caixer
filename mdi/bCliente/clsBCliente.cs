@@ -19,7 +19,7 @@ namespace bCliente
         {
             try
             {
-                String strSQL = " select idCliente " +
+                String strSQL = " select cliente.id " +
                                 " from cuenta " +
                                 " join cuentaCliente on cuenta.id = cuentaCliente.idCuenta  " +
                                 " join cliente on cliente.id = cuentaCliente.idCliente  " +
