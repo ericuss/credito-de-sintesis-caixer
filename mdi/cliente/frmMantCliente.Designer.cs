@@ -48,6 +48,7 @@
             this.txtPoblacion = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtMail = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.gbFiltro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // gbResultado
             // 
             this.gbResultado.Location = new System.Drawing.Point(12, 153);
-            this.gbResultado.Size = new System.Drawing.Size(656, 302);
+            this.gbResultado.Size = new System.Drawing.Size(656, 281);
             // 
             // gbFiltro
             // 
@@ -97,13 +98,13 @@
             this.gbFiltro.Controls.Add(this.label3);
             this.gbFiltro.Controls.Add(this.label2);
             this.gbFiltro.Controls.Add(this.label1);
-            this.gbFiltro.Size = new System.Drawing.Size(624, 106);
+            this.gbFiltro.Size = new System.Drawing.Size(650, 106);
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(645, 24);
+            this.btnPdf.Location = new System.Drawing.Point(662, 24);
+            this.btnPdf.Size = new System.Drawing.Size(10, 37);
             this.btnPdf.Visible = false;
-            this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
             // btnLimpiarControles
             // 
@@ -143,7 +144,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 24);
+            this.label1.Location = new System.Drawing.Point(7, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
@@ -152,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 72);
+            this.label2.Location = new System.Drawing.Point(6, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 1;
@@ -161,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(140, 24);
+            this.label3.Location = new System.Drawing.Point(161, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
@@ -170,7 +171,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(140, 72);
+            this.label4.Location = new System.Drawing.Point(161, 72);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 3;
@@ -179,7 +180,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(278, 24);
+            this.label5.Location = new System.Drawing.Point(307, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 4;
@@ -188,7 +189,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(278, 72);
+            this.label6.Location = new System.Drawing.Point(307, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 13);
             this.label6.TabIndex = 5;
@@ -199,7 +200,7 @@
             this.chkActivos.AutoSize = true;
             this.chkActivos.Checked = true;
             this.chkActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActivos.Location = new System.Drawing.Point(440, 68);
+            this.chkActivos.Location = new System.Drawing.Point(455, 67);
             this.chkActivos.Name = "chkActivos";
             this.chkActivos.Size = new System.Drawing.Size(85, 17);
             this.chkActivos.TabIndex = 6;
@@ -209,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(425, 24);
+            this.label7.Location = new System.Drawing.Point(452, 21);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 7;
@@ -229,7 +230,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(57, 21);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(77, 20);
+            this.txtNombre.Size = new System.Drawing.Size(97, 20);
             this.txtNombre.TabIndex = 16;
             this.txtNombre.ValidValue = "";
             this.txtNombre.zzCampoBd = null;
@@ -239,9 +240,9 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.Location = new System.Drawing.Point(71, 69);
+            this.txtApellidos.Location = new System.Drawing.Point(57, 69);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(69, 20);
+            this.txtApellidos.Size = new System.Drawing.Size(97, 20);
             this.txtApellidos.TabIndex = 17;
             this.txtApellidos.ValidValue = "";
             this.txtApellidos.zzCampoBd = null;
@@ -251,9 +252,9 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(195, 21);
+            this.txtTelefono.Location = new System.Drawing.Point(216, 19);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(77, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(85, 20);
             this.txtTelefono.TabIndex = 18;
             this.txtTelefono.ValidValue = "";
             this.txtTelefono.zzCampoBd = null;
@@ -263,9 +264,9 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(195, 69);
+            this.txtDireccion.Location = new System.Drawing.Point(216, 69);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(77, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(85, 20);
             this.txtDireccion.TabIndex = 19;
             this.txtDireccion.ValidValue = "";
             this.txtDireccion.zzCampoBd = null;
@@ -275,7 +276,7 @@
             // 
             // txtPoblacion
             // 
-            this.txtPoblacion.Location = new System.Drawing.Point(338, 21);
+            this.txtPoblacion.Location = new System.Drawing.Point(367, 18);
             this.txtPoblacion.Name = "txtPoblacion";
             this.txtPoblacion.Size = new System.Drawing.Size(77, 20);
             this.txtPoblacion.TabIndex = 20;
@@ -287,7 +288,7 @@
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(322, 69);
+            this.txtMail.Location = new System.Drawing.Point(339, 69);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(93, 20);
             this.txtMail.TabIndex = 21;
@@ -299,9 +300,9 @@
             // 
             // txtDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(470, 21);
+            this.txtDNI.Location = new System.Drawing.Point(484, 17);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(95, 20);
+            this.txtDNI.Size = new System.Drawing.Size(110, 20);
             this.txtDNI.TabIndex = 22;
             this.txtDNI.ValidValue = "";
             this.txtDNI.zzCampoBd = null;
@@ -309,11 +310,25 @@
             this.txtDNI.zzValidateLength = false;
             this.txtDNI.zzValidMaxLength = ((short)(0));
             // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(15, 440);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(653, 20);
+            this.txtError.TabIndex = 19;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
+            // 
             // frmMantCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 467);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnNew);
@@ -333,9 +348,11 @@
             this.Controls.SetChildIndex(this.btnNew, 0);
             this.Controls.SetChildIndex(this.btnDel, 0);
             this.Controls.SetChildIndex(this.btnMod, 0);
+            this.Controls.SetChildIndex(this.txtError, 0);
             this.gbFiltro.ResumeLayout(false);
             this.gbFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -360,5 +377,6 @@
         private CustomValidatorTextBox.CustomValidatorTextBox txtTelefono;
         private CustomValidatorTextBox.CustomValidatorTextBox txtApellidos;
         private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }

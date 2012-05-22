@@ -38,32 +38,38 @@ namespace uCuenta
 
         private void btnAnadir_Click(object sender, EventArgs e)
         {
-            if (csBuscarCliente.zzTxtId != "")
+            try
             {
-                int pidCliente = Convert.ToInt16(dameIdClienteByDni(csBuscarCliente.zzTxtId));
-
-                cuentacliente cc = new cuentacliente()
+                if (csBuscarCliente.zzTxtId != "")
                 {
-                    idCliente = pidCliente,
-                    idCuenta = idCuenta
-                };
+                    bCliente.clsBCliente bcliente = new bCliente.clsBCliente();
+                    int pidCliente = Convert.ToInt16(bcliente.dameIdClienteByDni(csBuscarCliente.zzTxtId));
 
-                context.AddTocuentacliente(cc);
-                context.SaveChanges();
-                loadGrid();
+                    cuentacliente cc = new cuentacliente()
+                    {
+                        idCliente = pidCliente,
+                        idCuenta = idCuenta
+                    };
 
-                cuenta tmpCuenta = new cuenta();
-                var cun = from cu in context.cuenta
-                          where cu.id == idCuenta
-                          select cu;
-                foreach (var item in cun)
-                {
-                    tmpCuenta = item;
+                    context.AddTocuentacliente(cc);
+                    context.SaveChanges();
+                    loadGrid();
+
+                    cuenta tmpCuenta = new cuenta();
+                    var cun = from cu in context.cuenta
+                              where cu.id == idCuenta
+                              select cu;
+                    foreach (var item in cun)
+                    {
+                        tmpCuenta = item;
+                    }
+
+                    tools.clsTools.addNotificacion("Ahora es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + ".", "Cuenta Nueva", pidCliente);
                 }
-
-                AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-                conn.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta Nueva','Ahora es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + "',"+pidCliente+")");
-               
+            }
+            catch (Exception exx)
+            {
+                txtError.setError("Error Añadiendo Titual");
             }
         }
 
@@ -85,37 +91,32 @@ namespace uCuenta
             dgvTitulares.Columns["idCliente"].Visible = false;
         }
 
-        private string dameIdClienteByDni(String strDni)
-        {
-            AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
-            DataTable dtCliente = oDatos.LanzarConsultaT("Select id from cliente where dni = '" + strDni + "'");
-            if (dtCliente.Rows.Count == 1)
-            {
-                return dtCliente.Rows[0]["id"].ToString();
-            }
-            return null;
-        }
-
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            if (dgvTitulares.SelectedRows.Count > 0)
+            try
             {
-                if (dgvTitulares.Rows.Count == 1)
+                if (dgvTitulares.SelectedRows.Count > 0)
                 {
-                    DialogResult result2 = MessageBox.Show("Se borrara la cuenta, ¿Continuar?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (result2 == DialogResult.Yes)
+                    if (dgvTitulares.Rows.Count == 1)
+                    {
+                        DialogResult result2 = MessageBox.Show("Se borrara la cuenta, ¿Continuar?", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (result2 == DialogResult.Yes)
+                        {
+                            deleteTitular();
+                            deleteAccount();
+                        }
+                    }
+                    else
                     {
                         deleteTitular();
-                        deleteAccount();
                     }
-                }
-                else
-                {
-                    deleteTitular();
-                }
 
+                }
             }
-
+            catch (Exception exx)
+            {
+                txtError.setError("Error Borrando Titular.");
+            }
 
         }
 
@@ -136,31 +137,37 @@ namespace uCuenta
 
         private void deleteTitular()
         {
-            int idCliente = Convert.ToInt16(dgvTitulares.SelectedRows[0].Cells["idCliente"].Value.ToString());
-            cuentacliente tmpcc = new cuentacliente();
-            var cc = from cuc in context.cuentacliente
-                     where cuc.idCliente == idCliente && cuc.idCuenta == idCuenta
-                     select cuc;
-            foreach (var item in cc)
+            try
             {
-                tmpcc = item;
-            }
-            context.DeleteObject(tmpcc);
-            context.SaveChanges();
-            loadGrid();
+                int idCliente = Convert.ToInt16(dgvTitulares.SelectedRows[0].Cells["idCliente"].Value.ToString());
+                cuentacliente tmpcc = new cuentacliente();
+                var cc = from cuc in context.cuentacliente
+                         where cuc.idCliente == idCliente && cuc.idCuenta == idCuenta
+                         select cuc;
+                foreach (var item in cc)
+                {
+                    tmpcc = item;
+                }
+                context.DeleteObject(tmpcc);
+                context.SaveChanges();
+                loadGrid();
 
-            cuenta tmpCuenta = new cuenta();
-            var cun = from cu in context.cuenta
-                      where cu.id == idCuenta
-                      select cu;
-            foreach (var item in cun)
+                cuenta tmpCuenta = new cuenta();
+                var cun = from cu in context.cuenta
+                          where cu.id == idCuenta
+                          select cu;
+                foreach (var item in cun)
+                {
+                    tmpCuenta = item;
+                }
+
+
+                tools.clsTools.addNotificacion("Ya no es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + ".", "Cuenta Eliminada", idCliente);
+            }
+            catch (Exception exx)
             {
-                tmpCuenta = item;
+                txtError.setError("Error Borrando titular");
             }
-
-            AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-            conn.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta Eliminada','Ya no es titular de la cuenta " + tmpCuenta.codigoEntidad + " - " + tmpCuenta.codigoOficina + " - " + tmpCuenta.codigoControl + " - " + tmpCuenta.codigoCuenta + "'," + idCliente + ")");
-               
         }
     }
 }
