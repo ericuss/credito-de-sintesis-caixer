@@ -9,12 +9,33 @@ using System.Windows.Forms;
 
 namespace uFrmCsHijos
 {
+    /// <summary>
+    /// Formulario heredado del frmCs(Formulario de consulta-seleccion) para cuentas
+    /// </summary>
     public partial class frmCsCuenta : uFrmCs.frmCs
     {
+        #region "Propiedades"
+        /// <summary>
+        /// Entidad seleccionada
+        /// </summary>
         public String strEntidad = "";
+        /// <summary>
+        /// Oficina seleccionada
+        /// </summary>
         public String strOficina = "";
+        /// <summary>
+        /// Control seleccionado
+        /// </summary>
         public String strControl = "";
+        /// <summary>
+        /// Cuenta seleccionada
+        /// </summary>
         public String strCuenta = "";
+        #endregion
+        #region "New"
+        /// <summary>
+        /// Constructor vacio
+        /// </summary>
         public frmCsCuenta()
         {
             InitializeComponent();
@@ -26,6 +47,10 @@ namespace uFrmCsHijos
 
             dgv.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgv_RowHeaderMouseDoubleClick);
         }
+        /// <summary>
+        /// Constructor pasandole el From
+        /// </summary>
+        /// <param name="from">From</param>
         public frmCsCuenta(String from)
         {
             InitializeComponent();
@@ -34,6 +59,11 @@ namespace uFrmCsHijos
             dgv.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgv_RowHeaderMouseDoubleClick);
 
         }
+        /// <summary>
+        /// Constructor pasandole el From y el Where complementario
+        /// </summary>
+        /// <param name="from">From</param>
+        /// <param name="where">Where complementario</param>
         public frmCsCuenta(String from, String where)
         {
             InitializeComponent();
@@ -42,6 +72,11 @@ namespace uFrmCsHijos
             this.strWhere = where;
             dgv.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgv_RowHeaderMouseDoubleClick);
         }
+        #endregion
+        #region "Eventos Sobreescritos"
+        /// <summary>
+        /// Metodo sobreescrito del padre para rellenar las propiedades
+        /// </summary>
         public override void drDoubleClick()
         {
             dr = dgv.SelectedRows[0];
@@ -52,5 +87,6 @@ namespace uFrmCsHijos
             isAceptar = true;
             this.Dispose();
         }
+        #endregion
     }
 }
