@@ -75,7 +75,6 @@
             this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.Size = new System.Drawing.Size(742, 332);
             this.dgv.TabIndex = 0;
-            this.dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellContentClick);
             // 
             // btnSalir
             // 
