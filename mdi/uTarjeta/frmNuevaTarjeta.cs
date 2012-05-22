@@ -9,11 +9,19 @@ using System.Windows.Forms;
 
 namespace uTarjeta
 {
+    /// <summary>
+    /// Formulario en construccion para la solicitud de tarjetas
+    /// </summary>
     public partial class frmNuevaTarjeta :Form
     {
+        #region "New"
+        /// <summary>
+        /// Constructor vacio
+        /// </summary>
         public frmNuevaTarjeta()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }
