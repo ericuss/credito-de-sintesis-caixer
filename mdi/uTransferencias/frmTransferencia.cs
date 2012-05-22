@@ -9,18 +9,35 @@ using System.Windows.Forms;
 using bTransferencia;
 namespace uTransferencia
 {
+    /// <summary>
+    /// Formulario de transferencias de una cuenta a otra
+    /// </summary>
     public partial class frmTransferencia : Form
     {
+        #region "New"
+        /// <summary>
+        /// Constructor vacio
+        /// </summary>
         public frmTransferencia()
         {
             InitializeComponent();
         }
-
+        #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Sale del formulario
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-
+        /// <summary>
+        /// Comprueba los datos antes de intentar hacer la transferencia
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (camposObligatorios())
@@ -60,7 +77,56 @@ namespace uTransferencia
                 txtError.setError("Faltan por rellenar campos obligatorios");
             }
         }
-
+        /// <summary>
+        /// Abre un formulario de consulta - seleccion para buscar la cuenta
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void btnBuscarCuenta_Click(object sender, EventArgs e)
+        {
+            uFrmCsHijos.frmCsCuenta frm = new uFrmCsHijos.frmCsCuenta();
+            frm.ShowDialog();
+            if (frm.isAceptar)
+            {
+                txtEntidad.Text = frm.strEntidad;
+                txtOficina.Text = frm.strOficina;
+                txtControl.Text = frm.strControl;
+                txtCuenta.Text = frm.strCuenta;
+                gbDatos.Enabled = true;
+            }
+        }
+       /// <summary>
+       /// Cuando pierde el foco habilita la insercion de la cuenta de destino
+       /// </summary>
+       /// <param name="sender">Parametro del evento</param>
+       /// <param name="e">Parametro del evento</param>
+        private void txtImporte_Leave(object sender, EventArgs e)
+        {
+            gbCuentaDestino.Enabled = true;
+        }
+        /// <summary>
+        /// Abre un formulario de consulta - seleccion para buscar la cuenta
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
+        private void btnBuscarCuentaDes_Click(object sender, EventArgs e)
+        {
+            uFrmCsHijos.frmCsCuenta frm = new uFrmCsHijos.frmCsCuenta();
+            frm.ShowDialog();
+            if (frm.isAceptar)
+            {
+                txtEntidadDes.Text = frm.strEntidad;
+                txtOficinaDes.Text = frm.strOficina;
+                txtControlDes.Text = frm.strControl;
+                txtCuentaDes.Text = frm.strCuenta;
+            }
+        }
+        #endregion
+        #region "Metodos"
+        /// <summary>
+        /// Comprueba los datos obligatorios
+        /// </summary>
+        /// <returns>Devuelve si es correcto</returns>
         private Boolean camposObligatorios()
         {
             try
@@ -84,40 +150,6 @@ namespace uTransferencia
                 return false;
             }
         }
-
-        private void btnBuscarCuenta_Click(object sender, EventArgs e)
-        {
-            uFrmCsHijos.frmCsCuenta frm = new uFrmCsHijos.frmCsCuenta();
-            frm.ShowDialog();
-            if (frm.isAceptar)
-            {
-                txtEntidad.Text = frm.strEntidad;
-                txtOficina.Text = frm.strOficina;
-                txtControl.Text = frm.strControl;
-                txtCuenta.Text = frm.strCuenta;
-                gbDatos.Enabled = true;
-            }
-            
-
-            
-        }
-
-        private void txtImporte_Leave(object sender, EventArgs e)
-        {
-            gbCuentaDestino.Enabled = true;
-        }
-
-        private void btnBuscarCuentaDes_Click(object sender, EventArgs e)
-        {
-            uFrmCsHijos.frmCsCuenta frm = new uFrmCsHijos.frmCsCuenta();
-            frm.ShowDialog();
-            if (frm.isAceptar)
-            {
-                txtEntidadDes.Text = frm.strEntidad;
-                txtOficinaDes.Text = frm.strOficina;
-                txtControlDes.Text = frm.strControl;
-                txtCuentaDes.Text = frm.strCuenta;
-            }
-        }
+        #endregion
     }
 }
