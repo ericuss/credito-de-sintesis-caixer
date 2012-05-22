@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace uMdi
 {
+    /// <summary>
+    /// Formulario AcercaDe
+    /// </summary>
     partial class frmAbout : Form
     {
         #region "New"
@@ -71,7 +74,7 @@ namespace uMdi
             }
         }
         /// <summary>
-        /// 
+        /// Obtiene la informacion del producto
         /// </summary>
         public string AssemblyProduct
         {
@@ -85,7 +88,9 @@ namespace uMdi
                 return ((AssemblyProductAttribute)attributes[0]).Product;
             }
         }
-
+        /// <summary>
+        /// Obtiene el copyrigth de la aplicacion
+        /// </summary>
         public string AssemblyCopyright
         {
             get
@@ -98,7 +103,9 @@ namespace uMdi
                 return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
         }
-
+        /// <summary>
+        /// Obtiene la compañia
+        /// </summary>
         public string AssemblyCompany
         {
             get
@@ -112,10 +119,16 @@ namespace uMdi
             }
         }
         #endregion
-
+        #region "Eventos"
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }
