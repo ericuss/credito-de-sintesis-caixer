@@ -34,7 +34,11 @@ namespace uTransferencia
                                                      txtDescripcion.Text, txtEntidadDes.Text, txtOficinaDes.Text, txtControlDes.Text, txtCuentaDes.Text);
                   if (blnInsert)
                   {
-                      
+
+                  }
+                  else
+                  {
+
                   }
                 }
             }
