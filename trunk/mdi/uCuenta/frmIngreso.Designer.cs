@@ -37,9 +37,9 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.csCliente = new customTextCs.txtBuscar();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtImporte = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtImporte = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             this.SuspendLayout();
@@ -133,13 +133,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Imprte";
             // 
-            // txtImporte
-            // 
-            this.txtImporte.Location = new System.Drawing.Point(80, 286);
-            this.txtImporte.Name = "txtImporte";
-            this.txtImporte.Size = new System.Drawing.Size(208, 20);
-            this.txtImporte.TabIndex = 9;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -162,15 +155,27 @@
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
+            // txtImporte
+            // 
+            this.txtImporte.Location = new System.Drawing.Point(74, 286);
+            this.txtImporte.Name = "txtImporte";
+            this.txtImporte.Size = new System.Drawing.Size(214, 20);
+            this.txtImporte.TabIndex = 12;
+            this.txtImporte.ValidValue = "";
+            this.txtImporte.zzCampoBd = null;
+            this.txtImporte.zzValidateIsNumeric = true;
+            this.txtImporte.zzValidateLength = false;
+            this.txtImporte.zzValidMaxLength = ((short)(0));
+            // 
             // frmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(568, 427);
+            this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnNueva);
@@ -199,8 +204,8 @@
         private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtImporte;
         private System.Windows.Forms.Label label2;
         private CustomValidatorTextBox.CustomValidatorTextBox txtError;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtImporte;
     }
 }

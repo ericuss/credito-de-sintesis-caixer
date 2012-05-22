@@ -47,14 +47,14 @@ namespace cliente
                           };
             foreach (var item in cliente)
             {
-                txtApellido.Text = item.Apellido;
-                txtDireccion.Text = item.Direccion;
-                txtDNI.Text = item.DNI;
-                txtFechaNacimiento.Text = item.FechaNacimiento;
-                txtMail.Text = item.Correo;
-                txtNombre.Text = item.Nombre;
-                txtPoblacion.Text = item.Poblacion;
-                txtTelfono.Text = item.Telefono;
+                txtApellido.ValidValue = item.Apellido;
+                txtDireccion.ValidValue = item.Direccion;
+                txtDNI.ValidValue = item.DNI;
+                txtFechaNacimiento.ValidValue = item.FechaNacimiento;
+                txtMail.ValidValue = item.Correo;
+                txtNombre.ValidValue = item.Nombre;
+                txtPoblacion.ValidValue = item.Poblacion;
+                txtTelfono.ValidValue = item.Telefono;
             }
 
         }
@@ -96,14 +96,14 @@ namespace cliente
             {
                 clientFnal = item;
             }
-            clientFnal.nombre = txtNombre.Text;
-            clientFnal.apellidos = txtApellido.Text;
-            clientFnal.telefono = txtTelfono.Text;
-            clientFnal.direccion = txtDireccion.Text;
-            clientFnal.poblacion = txtPoblacion.Text;
-            clientFnal.mail = txtMail.Text;
-            clientFnal.dni = txtDNI.Text;
-            clientFnal.fechaNacimiento = txtFechaNacimiento.Text;
+            clientFnal.nombre = txtNombre.ValidValue;
+            clientFnal.apellidos = txtApellido.ValidValue;
+            clientFnal.telefono = txtTelfono.ValidValue;
+            clientFnal.direccion = txtDireccion.ValidValue;
+            clientFnal.poblacion = txtPoblacion.ValidValue;
+            clientFnal.mail = txtMail.ValidValue;
+            clientFnal.dni = txtDNI.ValidValue;
+            clientFnal.fechaNacimiento = txtFechaNacimiento.ValidValue;
             context.SaveChanges();
         }
 
@@ -111,14 +111,14 @@ namespace cliente
         {
             EntityModel.cliente tmpCliente = new EntityModel.cliente
             {
-                nombre = txtNombre.Text,
-                apellidos = txtApellido.Text,
-                telefono = txtTelfono.Text,
-                direccion = txtDireccion.Text,
-                poblacion = txtPoblacion.Text,
-                mail = txtMail.Text,
-                dni = txtDNI.Text,
-                fechaNacimiento = txtFechaNacimiento.Text
+                nombre = txtNombre.ValidValue,
+                apellidos = txtApellido.ValidValue,
+                telefono = txtTelfono.ValidValue,
+                direccion = txtDireccion.ValidValue,
+                poblacion = txtPoblacion.ValidValue,
+                mail = txtMail.ValidValue,
+                dni = txtDNI.ValidValue,
+                fechaNacimiento = txtFechaNacimiento.ValidValue
             };
 
 
@@ -145,7 +145,7 @@ namespace cliente
             {
                 usuario tmpUsuario = new usuario
                 {
-                    login = txtNombre.Text + txtApellido.Text.Substring(0, 2) + genrandom(2, false),
+                    login = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false),
                     password = getmd5("12345"),
                     idioma = "es",
                     paginaPreferida = "/backend/cuenta/cuenta",
@@ -160,35 +160,35 @@ namespace cliente
 
         private bool checkCampos()
         {
-            if (txtApellido.Text == "")
+            if (txtApellido.ValidValue == "")
             {
                 return false;
             }
-            else if (txtDireccion.Text == "")
+            else if (txtDireccion.ValidValue == "")
             {
                 return false;
             }
-            else if (txtDNI.Text == "")
+            else if (txtDNI.ValidValue == "")
             {
                 return false;
             }
-            else if (txtFechaNacimiento.Text == "")
+            else if (txtFechaNacimiento.ValidValue == "")
             {
                 return false;
             }
-            else if (txtMail.Text == "")
+            else if (txtMail.ValidValue == "")
             {
                 return false;
             }
-            else if (txtNombre.Text == "")
+            else if (txtNombre.ValidValue == "")
             {
                 return false;
             }
-            else if (txtPoblacion.Text == "")
+            else if (txtPoblacion.ValidValue == "")
             {
                 return false;
             }
-            else if (txtTelfono.Text == "")
+            else if (txtTelfono.ValidValue == "")
             {
                 return false;
             }

@@ -33,13 +33,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.chkCrearUser = new System.Windows.Forms.CheckBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtMail = new System.Windows.Forms.TextBox();
-            this.txtPoblacion = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtTelfono = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,7 +42,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.txtNombre = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtApellido = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtTelfono = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtDireccion = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtPoblacion = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtMail = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtFechaNacimiento = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +59,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.chkCrearUser);
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtMail);
             this.groupBox1.Controls.Add(this.txtPoblacion);
@@ -69,6 +66,9 @@
             this.groupBox1.Controls.Add(this.txtTelfono);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.chkCrearUser);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -117,69 +117,6 @@
             this.chkCrearUser.TabIndex = 16;
             this.chkCrearUser.Text = "Crear Usuario Web";
             this.chkCrearUser.UseVisualStyleBackColor = true;
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDNI.Location = new System.Drawing.Point(130, 200);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(157, 20);
-            this.txtDNI.TabIndex = 14;
-            // 
-            // txtMail
-            // 
-            this.txtMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMail.Location = new System.Drawing.Point(130, 171);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(157, 20);
-            this.txtMail.TabIndex = 13;
-            // 
-            // txtPoblacion
-            // 
-            this.txtPoblacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPoblacion.Location = new System.Drawing.Point(130, 142);
-            this.txtPoblacion.Name = "txtPoblacion";
-            this.txtPoblacion.Size = new System.Drawing.Size(157, 20);
-            this.txtPoblacion.TabIndex = 12;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDireccion.Location = new System.Drawing.Point(130, 113);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(157, 20);
-            this.txtDireccion.TabIndex = 11;
-            // 
-            // txtTelfono
-            // 
-            this.txtTelfono.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTelfono.Location = new System.Drawing.Point(130, 84);
-            this.txtTelfono.Name = "txtTelfono";
-            this.txtTelfono.Size = new System.Drawing.Size(157, 20);
-            this.txtTelfono.TabIndex = 10;
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtApellido.Location = new System.Drawing.Point(130, 55);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(157, 20);
-            this.txtApellido.TabIndex = 9;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombre.Location = new System.Drawing.Point(130, 26);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(157, 20);
-            this.txtNombre.TabIndex = 8;
             // 
             // label8
             // 
@@ -260,18 +197,106 @@
             this.txtError.Size = new System.Drawing.Size(293, 20);
             this.txtError.TabIndex = 1;
             this.txtError.ValidValue = "";
+            this.txtError.zzCampoBd = null;
             this.txtError.zzValidateIsNumeric = false;
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(130, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(157, 20);
+            this.txtNombre.TabIndex = 20;
+            this.txtNombre.ValidValue = "";
+            this.txtNombre.zzCampoBd = null;
+            this.txtNombre.zzValidateIsNumeric = false;
+            this.txtNombre.zzValidateLength = false;
+            this.txtNombre.zzValidMaxLength = ((short)(0));
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(130, 55);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(157, 20);
+            this.txtApellido.TabIndex = 21;
+            this.txtApellido.ValidValue = "";
+            this.txtApellido.zzCampoBd = null;
+            this.txtApellido.zzValidateIsNumeric = false;
+            this.txtApellido.zzValidateLength = false;
+            this.txtApellido.zzValidMaxLength = ((short)(0));
+            // 
+            // txtTelfono
+            // 
+            this.txtTelfono.Location = new System.Drawing.Point(130, 84);
+            this.txtTelfono.Name = "txtTelfono";
+            this.txtTelfono.Size = new System.Drawing.Size(157, 20);
+            this.txtTelfono.TabIndex = 22;
+            this.txtTelfono.ValidValue = "";
+            this.txtTelfono.zzCampoBd = null;
+            this.txtTelfono.zzValidateIsNumeric = false;
+            this.txtTelfono.zzValidateLength = false;
+            this.txtTelfono.zzValidMaxLength = ((short)(0));
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(130, 113);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(157, 20);
+            this.txtDireccion.TabIndex = 23;
+            this.txtDireccion.ValidValue = "";
+            this.txtDireccion.zzCampoBd = null;
+            this.txtDireccion.zzValidateIsNumeric = false;
+            this.txtDireccion.zzValidateLength = false;
+            this.txtDireccion.zzValidMaxLength = ((short)(0));
+            // 
+            // txtPoblacion
+            // 
+            this.txtPoblacion.Location = new System.Drawing.Point(130, 142);
+            this.txtPoblacion.Name = "txtPoblacion";
+            this.txtPoblacion.Size = new System.Drawing.Size(157, 20);
+            this.txtPoblacion.TabIndex = 24;
+            this.txtPoblacion.ValidValue = "";
+            this.txtPoblacion.zzCampoBd = null;
+            this.txtPoblacion.zzValidateIsNumeric = false;
+            this.txtPoblacion.zzValidateLength = false;
+            this.txtPoblacion.zzValidMaxLength = ((short)(0));
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(130, 171);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(157, 20);
+            this.txtMail.TabIndex = 25;
+            this.txtMail.ValidValue = "";
+            this.txtMail.zzCampoBd = null;
+            this.txtMail.zzValidateIsNumeric = false;
+            this.txtMail.zzValidateLength = false;
+            this.txtMail.zzValidMaxLength = ((short)(0));
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(130, 200);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(157, 20);
+            this.txtDNI.TabIndex = 26;
+            this.txtDNI.ValidValue = "";
+            this.txtDNI.zzCampoBd = null;
+            this.txtDNI.zzValidateIsNumeric = false;
+            this.txtDNI.zzValidateLength = false;
+            this.txtDNI.zzValidMaxLength = ((short)(0));
+            // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(157, 20);
-            this.txtFechaNacimiento.TabIndex = 19;
+            this.txtFechaNacimiento.TabIndex = 27;
+            this.txtFechaNacimiento.ValidValue = "";
+            this.txtFechaNacimiento.zzCampoBd = null;
+            this.txtFechaNacimiento.zzValidateIsNumeric = false;
+            this.txtFechaNacimiento.zzValidateLength = false;
+            this.txtFechaNacimiento.zzValidMaxLength = ((short)(0));
             // 
             // frmNuevoCliente
             // 
@@ -294,13 +319,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtPoblacion;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtTelfono;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -313,6 +331,13 @@
         private System.Windows.Forms.CheckBox chkCrearUser;
         private System.Windows.Forms.Button btnCancelar;
         private CustomValidatorTextBox.CustomValidatorTextBox txtError;
-        private System.Windows.Forms.TextBox txtFechaNacimiento;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtFechaNacimiento;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtDNI;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtMail;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtPoblacion;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtDireccion;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtTelfono;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtApellido;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
     }
 }
