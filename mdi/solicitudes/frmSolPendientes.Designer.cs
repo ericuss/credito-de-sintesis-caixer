@@ -31,16 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSolPendientes));
             this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCodCuenta = new System.Windows.Forms.TextBox();
             this.gbSolicitudes = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkTodos = new System.Windows.Forms.CheckBox();
-            this.txtApellidos = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigoOficina = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtCodCuenta = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtCodigoOficina = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtNombre = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtApellidos = new CustomValidatorTextBox.CustomValidatorTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
             this.gbSolicitudes.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,14 +72,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Codigo Cuenta";
             // 
-            // txtCodCuenta
-            // 
-            this.txtCodCuenta.Location = new System.Drawing.Point(102, 19);
-            this.txtCodCuenta.Name = "txtCodCuenta";
-            this.txtCodCuenta.Size = new System.Drawing.Size(131, 20);
-            this.txtCodCuenta.TabIndex = 2;
-            this.txtCodCuenta.TextChanged += new System.EventHandler(this.txtCodCuenta_TextChanged);
-            // 
             // gbSolicitudes
             // 
             this.gbSolicitudes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -95,14 +87,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.chkTodos);
             this.groupBox1.Controls.Add(this.txtApellidos);
             this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtCodigoOficina);
+            this.groupBox1.Controls.Add(this.txtCodCuenta);
+            this.groupBox1.Controls.Add(this.chkTodos);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txtCodigoOficina);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtCodCuenta);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(18, 12);
             this.groupBox1.Name = "groupBox1";
@@ -122,22 +114,6 @@
             this.chkTodos.UseVisualStyleBackColor = true;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
             // 
-            // txtApellidos
-            // 
-            this.txtApellidos.Location = new System.Drawing.Point(346, 45);
-            this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(111, 20);
-            this.txtApellidos.TabIndex = 8;
-            this.txtApellidos.TextChanged += new System.EventHandler(this.txtApellidos_TextChanged);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(346, 19);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(111, 20);
-            this.txtNombre.TabIndex = 7;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -156,14 +132,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Nombre";
             // 
-            // txtCodigoOficina
-            // 
-            this.txtCodigoOficina.Location = new System.Drawing.Point(102, 48);
-            this.txtCodigoOficina.Name = "txtCodigoOficina";
-            this.txtCodigoOficina.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigoOficina.TabIndex = 4;
-            this.txtCodigoOficina.TextChanged += new System.EventHandler(this.txtCodigoOficina_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -172,6 +140,54 @@
             this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Codigo Oficina";
+            // 
+            // txtCodCuenta
+            // 
+            this.txtCodCuenta.Location = new System.Drawing.Point(102, 19);
+            this.txtCodCuenta.Name = "txtCodCuenta";
+            this.txtCodCuenta.Size = new System.Drawing.Size(160, 20);
+            this.txtCodCuenta.TabIndex = 9;
+            this.txtCodCuenta.ValidValue = "";
+            this.txtCodCuenta.zzCampoBd = null;
+            this.txtCodCuenta.zzValidateIsNumeric = false;
+            this.txtCodCuenta.zzValidateLength = false;
+            this.txtCodCuenta.zzValidMaxLength = ((short)(0));
+            // 
+            // txtCodigoOficina
+            // 
+            this.txtCodigoOficina.Location = new System.Drawing.Point(102, 45);
+            this.txtCodigoOficina.Name = "txtCodigoOficina";
+            this.txtCodigoOficina.Size = new System.Drawing.Size(160, 20);
+            this.txtCodigoOficina.TabIndex = 10;
+            this.txtCodigoOficina.ValidValue = "";
+            this.txtCodigoOficina.zzCampoBd = null;
+            this.txtCodigoOficina.zzValidateIsNumeric = false;
+            this.txtCodigoOficina.zzValidateLength = false;
+            this.txtCodigoOficina.zzValidMaxLength = ((short)(0));
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(346, 19);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(156, 20);
+            this.txtNombre.TabIndex = 11;
+            this.txtNombre.ValidValue = "";
+            this.txtNombre.zzCampoBd = null;
+            this.txtNombre.zzValidateIsNumeric = false;
+            this.txtNombre.zzValidateLength = false;
+            this.txtNombre.zzValidMaxLength = ((short)(0));
+            // 
+            // txtApellidos
+            // 
+            this.txtApellidos.Location = new System.Drawing.Point(346, 45);
+            this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.Size = new System.Drawing.Size(156, 20);
+            this.txtApellidos.TabIndex = 12;
+            this.txtApellidos.ValidValue = "";
+            this.txtApellidos.zzCampoBd = null;
+            this.txtApellidos.zzValidateIsNumeric = false;
+            this.txtApellidos.zzValidateLength = false;
+            this.txtApellidos.zzValidMaxLength = ((short)(0));
             // 
             // frmSolPendientes
             // 
@@ -197,16 +213,16 @@
 
         private System.Windows.Forms.DataGridView dgvSolicitudes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCodCuenta;
         private System.Windows.Forms.GroupBox gbSolicitudes;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCodigoOficina;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellidos;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox chkTodos;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtCodCuenta;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtCodigoOficina;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtApellidos;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
     }
 }
 

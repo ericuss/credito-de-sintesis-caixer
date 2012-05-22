@@ -32,6 +32,12 @@
             this.tcMain = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtCuota = new System.Windows.Forms.TextBox();
+            this.txtPlazo = new System.Windows.Forms.TextBox();
+            this.txtFinalidad = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtFechaP = new System.Windows.Forms.TextBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.txtImporteSol = new System.Windows.Forms.TextBox();
@@ -72,12 +78,7 @@
             this.btnMantener = new System.Windows.Forms.Button();
             this.btnDenegar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtFinalidad = new System.Windows.Forms.TextBox();
-            this.txtPlazo = new System.Windows.Forms.TextBox();
-            this.txtCuota = new System.Windows.Forms.TextBox();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.tcMain.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -105,7 +106,7 @@
             this.tcMain.Controls.Add(this.tabPage4);
             this.tcMain.Controls.Add(this.tabPage3);
             this.tcMain.Controls.Add(this.tabPage2);
-            this.tcMain.Location = new System.Drawing.Point(12, 12);
+            this.tcMain.Location = new System.Drawing.Point(12, 18);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(503, 356);
@@ -144,6 +145,57 @@
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Prestamo Contratado";
+            // 
+            // txtCuota
+            // 
+            this.txtCuota.Location = new System.Drawing.Point(250, 96);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.ReadOnly = true;
+            this.txtCuota.Size = new System.Drawing.Size(100, 20);
+            this.txtCuota.TabIndex = 12;
+            // 
+            // txtPlazo
+            // 
+            this.txtPlazo.Location = new System.Drawing.Point(69, 96);
+            this.txtPlazo.Name = "txtPlazo";
+            this.txtPlazo.ReadOnly = true;
+            this.txtPlazo.Size = new System.Drawing.Size(110, 20);
+            this.txtPlazo.TabIndex = 11;
+            // 
+            // txtFinalidad
+            // 
+            this.txtFinalidad.Location = new System.Drawing.Point(69, 62);
+            this.txtFinalidad.Name = "txtFinalidad";
+            this.txtFinalidad.ReadOnly = true;
+            this.txtFinalidad.Size = new System.Drawing.Size(110, 20);
+            this.txtFinalidad.TabIndex = 10;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(195, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 9;
+            this.label13.Text = "Cuota";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(18, 99);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(33, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Plazo";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Finalidad";
             // 
             // txtFechaP
             // 
@@ -525,7 +577,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 381);
+            this.label1.Location = new System.Drawing.Point(9, 377);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 9;
@@ -533,7 +585,7 @@
             // 
             // btnMantener
             // 
-            this.btnMantener.Location = new System.Drawing.Point(413, 412);
+            this.btnMantener.Location = new System.Drawing.Point(411, 400);
             this.btnMantener.Name = "btnMantener";
             this.btnMantener.Size = new System.Drawing.Size(75, 23);
             this.btnMantener.TabIndex = 8;
@@ -543,7 +595,7 @@
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(196, 412);
+            this.btnDenegar.Location = new System.Drawing.Point(194, 400);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.Size = new System.Drawing.Size(75, 23);
             this.btnDenegar.TabIndex = 7;
@@ -552,7 +604,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(22, 412);
+            this.btnAceptar.Location = new System.Drawing.Point(20, 400);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -560,62 +612,25 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // label10
+            // txtError
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Finalidad";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(18, 99);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(33, 13);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Plazo";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(195, 99);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 13);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "Cuota";
-            // 
-            // txtFinalidad
-            // 
-            this.txtFinalidad.Location = new System.Drawing.Point(69, 62);
-            this.txtFinalidad.Name = "txtFinalidad";
-            this.txtFinalidad.ReadOnly = true;
-            this.txtFinalidad.Size = new System.Drawing.Size(110, 20);
-            this.txtFinalidad.TabIndex = 10;
-            // 
-            // txtPlazo
-            // 
-            this.txtPlazo.Location = new System.Drawing.Point(69, 96);
-            this.txtPlazo.Name = "txtPlazo";
-            this.txtPlazo.ReadOnly = true;
-            this.txtPlazo.Size = new System.Drawing.Size(110, 20);
-            this.txtPlazo.TabIndex = 11;
-            // 
-            // txtCuota
-            // 
-            this.txtCuota.Location = new System.Drawing.Point(250, 96);
-            this.txtCuota.Name = "txtCuota";
-            this.txtCuota.ReadOnly = true;
-            this.txtCuota.Size = new System.Drawing.Size(100, 20);
-            this.txtCuota.TabIndex = 12;
+            this.txtError.Location = new System.Drawing.Point(12, 440);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(503, 20);
+            this.txtError.TabIndex = 10;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
             // 
             // frmSolPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 461);
+            this.ClientSize = new System.Drawing.Size(527, 472);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMantener);
             this.Controls.Add(this.btnDenegar);
@@ -700,6 +715,7 @@
         private System.Windows.Forms.TextBox txtPlazo;
         private System.Windows.Forms.TextBox txtFinalidad;
         private System.Windows.Forms.Label label13;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
 
     }
 }

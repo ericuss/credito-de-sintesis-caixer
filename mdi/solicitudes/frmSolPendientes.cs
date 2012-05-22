@@ -104,21 +104,21 @@ namespace solicitudes
         private String buildWhere()
         {
             String where = "";
-            if (txtApellidos.Text != "")
+            if (txtApellidos.ValidValue != "")
             {
-                where += " and cliente.apellidos like '%" + txtApellidos.Text + "%'";
+                where += " and cliente.apellidos like '%" + txtApellidos.ValidValue + "%'";
             }
-            if (txtCodCuenta.Text != "")
+            if (txtCodCuenta.ValidValue != "")
             {
-                where += " and cuenta.codigoCuenta like '%" + txtCodCuenta.Text + "%'";
+                where += " and cuenta.codigoCuenta like '%" + txtCodCuenta.ValidValue + "%'";
             }
-            if (txtCodigoOficina.Text != "")
+            if (txtCodigoOficina.ValidValue != "")
             {
-                where += " and cuenta.codigoOficina like '%" + txtCodigoOficina.Text + "%'";
+                where += " and cuenta.codigoOficina like '%" + txtCodigoOficina.ValidValue + "%'";
             }
-            if (txtNombre.Text != "")
+            if (txtNombre.ValidValue != "")
             {
-                where += " and cliente.nombre like '%" + txtNombre.Text + "%'";
+                where += " and cliente.nombre like '%" + txtNombre.ValidValue + "%'";
             }
             if (chkTodos.Checked == false)
             {

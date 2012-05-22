@@ -220,9 +220,44 @@ namespace solicitudes
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            //crar movimiento
-            //aceptar solicitud
-            //notificar
+            try
+            {
+                //crar movimiento
+                int imp = Convert.ToInt16(txtImporteSol.Text);
+                movimiento mov = new movimiento()
+                   {
+                       idCuenta = idCuenta,
+                       fecha = DateTime.Now,
+                       importe = imp,
+                       concepto = "Prestamo",
+                       descripcion = ""
+                   };
+
+                //aceptar solicitud
+                solicitud sol = new solicitud();
+                var tmpsol = from ss in context.solicitud
+                             where ss.id == idSolicitud
+                             select ss;
+                foreach (var item in tmpsol)
+                {
+                    sol = item;
+                }
+                sol.idEstadoSolicitud = 2;
+                context.AddTosolicitud(sol);
+                context.AddTomovimiento(mov);
+                context.SaveChanges();
+
+                //notificar
+                Boolean a = tools.clsTools.addNotificacion("s", "s", 1);
+                if (!a)
+                {
+                    txtError.setError("No se ha podido notificar al usuario");
+                }
+            }
+            catch (Exception exx)
+            {
+                txtError.setError(exx.ToString());
+            }
         }
 
 
