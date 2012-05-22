@@ -45,9 +45,10 @@
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aliniarIconosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarTodasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarTodasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stripLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,8 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel,
-            this.menuLog});
+            this.menuLog,
+            this.stripLabel});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(632, 22);
@@ -65,9 +67,10 @@
             // 
             // toolStripStatusLabel
             // 
+            this.toolStripStatusLabel.BackColor = System.Drawing.Color.Transparent;
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
-            this.toolStripStatusLabel.Text = "Status";
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(50, 17);
+            this.toolStripStatusLabel.Text = "Usuario:";
             // 
             // menuLog
             // 
@@ -99,7 +102,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(632, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
-          //  this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // archivoToolStripMenuItem
             // 
@@ -158,6 +160,13 @@
             this.aliniarIconosToolStripMenuItem.Text = "Aliniar Iconos";
             this.aliniarIconosToolStripMenuItem.Click += new System.EventHandler(this.aliniarIconosToolStripMenuItem_Click);
             // 
+            // cerrarTodasToolStripMenuItem
+            // 
+            this.cerrarTodasToolStripMenuItem.Name = "cerrarTodasToolStripMenuItem";
+            this.cerrarTodasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.cerrarTodasToolStripMenuItem.Text = "Cerrar Todas";
+            this.cerrarTodasToolStripMenuItem.Click += new System.EventHandler(this.cerrarTodasToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -173,12 +182,10 @@
             this.aboutToolStripMenuItem.Text = "About..";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // cerrarTodasToolStripMenuItem
+            // stripLabel
             // 
-            this.cerrarTodasToolStripMenuItem.Name = "cerrarTodasToolStripMenuItem";
-            this.cerrarTodasToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.cerrarTodasToolStripMenuItem.Text = "Cerrar Todas";
-            this.cerrarTodasToolStripMenuItem.Click += new System.EventHandler(this.cerrarTodasToolStripMenuItem_Click);
+            this.stripLabel.Name = "stripLabel";
+            this.stripLabel.Size = new System.Drawing.Size(0, 17);
             // 
             // mdiPral
             // 
@@ -225,6 +232,7 @@
         private System.Windows.Forms.ToolStripMenuItem tileHorizontalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aliniarIconosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarTodasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel stripLabel;
     }
 }
 
