@@ -52,7 +52,17 @@ namespace bCliente
             {
                return dtCliente.Rows[0]["id"].ToString();
             }
-            return null;
+            return "";
+        }
+        public Boolean existeIdClienteByDni(String strDni)
+        {
+            DataTable dtCliente;
+            dtCliente = oDatos.LanzarConsultaT("Select id from cliente where dni = '" + strDni + "'");
+            if (dtCliente.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
         public Boolean insertUsuario(String strIdCliente, String strUsuario, String strPass)
         {
