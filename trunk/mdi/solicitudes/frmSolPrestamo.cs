@@ -223,14 +223,14 @@ namespace solicitudes
             try
             {
                 //crar movimiento
-                int imp = Convert.ToInt16(txtImporteSol.Text);
+                Decimal imp = Convert.ToDecimal(txtImporteSol.Text);
                 movimiento mov = new movimiento()
                    {
                        idCuenta = idCuenta,
                        fecha = DateTime.Now,
                        importe = imp,
                        concepto = "Prestamo",
-                       descripcion = ""
+                       descripcion = "Prestamo de "+imp +"€"
                    };
 
                 //aceptar solicitud
@@ -243,20 +243,48 @@ namespace solicitudes
                     sol = item;
                 }
                 sol.idEstadoSolicitud = 2;
-                context.AddTosolicitud(sol);
+                //context.AddTosolicitud(sol);
                 context.AddTomovimiento(mov);
                 context.SaveChanges();
 
                 //notificar
-                Boolean a = tools.clsTools.addNotificacion("s", "s", 1);
+                Boolean a = tools.clsTools.addNotificacion("Se ha aceptado la solicitud del prestamo con un importe de "+imp, "Prestamo Aceptado", idCliente);
                 if (!a)
                 {
                     txtError.setError("No se ha podido notificar al usuario");
                 }
+                else
+                {
+                    this.Dispose();
+                }
+
+
             }
             catch (Exception exx)
             {
                 txtError.setError(exx.ToString());
+            }
+        }
+
+        private void btnDenegar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                solicitud sol = new solicitud();
+                var tmpSol = from ss in context.solicitud
+                             where ss.id == idSolicitud
+                             select ss;
+                foreach (var item in tmpSol)
+                {
+                    sol = item;
+                }
+                sol.idEstadoSolicitud = 4;
+                context.SaveChanges();
+                this.Dispose();
+            }
+            catch(Exception exx)
+            {
+                txtError.setError("Error al denegar Prestamo");
             }
         }
 

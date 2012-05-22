@@ -601,6 +601,7 @@
             this.btnDenegar.TabIndex = 7;
             this.btnDenegar.Text = "Denegar";
             this.btnDenegar.UseVisualStyleBackColor = true;
+            this.btnDenegar.Click += new System.EventHandler(this.btnDenegar_Click);
             // 
             // btnAceptar
             // 
