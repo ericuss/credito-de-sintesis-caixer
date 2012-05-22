@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using uMdi;
+using System.IO;
 
 namespace uMdi
 {
@@ -32,6 +33,8 @@ namespace uMdi
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             submit();
+
+
         }
 
         private void submit()
@@ -45,12 +48,12 @@ namespace uMdi
                 {
                     if (getmd5(txtPass.ValidValue) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
                     {
-
+                        crearTXT();
                         this.Dispose();
                     }
                     else
                     {
-                        
+
                         txtPass.setErrorColor("Pass Erroneo");
                     }
                 }
@@ -60,9 +63,32 @@ namespace uMdi
                 }
             }// error de usuario y/o contraseña mal
 
-           
+
         }
 
+        private void crearTXT()
+        {
+            try
+            {
+
+                //Pass the filepath and filename to the StreamWriter Constructor
+                StreamWriter sw = new StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
+
+                //Write a line of text
+                sw.WriteLine(txtUsuario.Text);
+
+                //Close the file
+                sw.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+                this.Close();
+            }
+          
+        }
+
+      
         private string getmd5(string input)
         {
             // Create a new instance of the MD5CryptoServiceProvider object.
