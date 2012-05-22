@@ -9,62 +9,57 @@ using System.Windows.Forms;
 using EntityModel;
 namespace cliente
 {
-    public partial class frmMantCliente : Base.Base  
+    /// <summary>
+    /// Formulario para el Mantenimiento de Clientes
+    /// </summary>
+    public partial class frmMantCliente : Base.Base
     {
+        #region "Propiedades"
         santanderEntities1 context = new santanderEntities1();
+        #endregion
+
+        #region "Constructores"
+
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
         public frmMantCliente()
         {
             InitializeComponent();
 
             this.strTitulo = "Consulta de Clientes";
         }
+        #endregion
 
+        #region "Eventos"
+
+        /// <summary>
+        /// Evento que se inicia cuando el formulario se muestra
+        /// </summary>
+        /// <param name="sender">Objeto del evento</param>
+        /// <param name="e">Objeto del evento</param>
         private void frmMantCliente_Load(object sender, EventArgs e)
         {
             dgv.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
             loadAllClients();
         }
 
-
-        private void loadAllClients()
-        {
-            var clientes = from cli in context.cliente
-                           where cli.inactivo == false
-                           select new
-                            {
-                                idCliente = cli.id,
-                                Cliente = cli.nombre + " " + cli.apellidos,
-                                Telefono = cli.telefono,
-                                Direccion = cli.direccion,
-                                Correo = cli.mail,
-                                DNI = cli.dni,
-                                FechaNacimiento = cli.fechaNacimiento,
-                                Activo = (cli.inactivo == true) ? "NO" : "SI"
-
-                            };
-            this.dgv.DataSource = clientes;
-            ocultarId();
-
-        }
-
-        public override void ocultarId()
-        {
-            if (dgv.Columns.Contains("id"))
-            {
-               dgv.Columns["id"].Visible = false;
-            }
-            else if (dgv.Columns.Contains("idCliente"))
-            {
-                dgv.Columns["idCliente"].Visible = false;
-            }
-        }
-
+        /// <summary>
+        /// Evento que lanza el formulario para crear un nuevo Cliente
+        /// </summary>
+        /// <param name="sender">Objeto del evento</param>
+        /// <param name="e">Objeto del evento</param>
         private void btnNew_Click(object sender, EventArgs e)
         {
             Form frmNew = new frmNuevoCliente();
             frmNew.ShowDialog();
         }
 
+        /// <summary>
+        /// Evento que lanza el borrado de clientes. Recoje el cliente seleccionado en la DataGridiew y lo elimina de la BBDD mediante LINQ
+        /// </summary>
+        /// <param name="sender">Objeto del evento</param>
+        /// <param name="e">Objeto del evento</param>
         private void btnDel_Click(object sender, EventArgs e)
         {
             try
@@ -106,6 +101,11 @@ namespace cliente
             }
         }
 
+        /// <summary>
+        /// Evento que recoje el cliente seleccionado y lo envia al formulario de Nuevo Cliente para modificarlo
+        /// </summary>
+        /// <param name="sender">Objeto del evento</param>
+        /// <param name="e">Objeto del evento</param>
         private void btnMod_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count > 0 && dgv.SelectedRows.Count <= 1)
@@ -115,11 +115,65 @@ namespace cliente
             }
         }
 
+        /// <summary>
+        /// Evento que llama al metodo que  filtra los resultados de la DataGridView
+        /// </summary>
+        /// <param name="sender">Objeto del evento</param>
+        /// <param name="e">Objeto del evento</param>
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             filtrarGrid();
         }
 
+        #endregion
+
+        #region "Metodos"
+
+        /// <summary>
+        /// Metodo que carga en la DataGridView todos los Clientes.
+        /// </summary>
+        private void loadAllClients()
+        {
+            var clientes = from cli in context.cliente
+                           where cli.inactivo == false
+                           select new
+                            {
+                                idCliente = cli.id,
+                                Cliente = cli.nombre + " " + cli.apellidos,
+                                Telefono = cli.telefono,
+                                Direccion = cli.direccion,
+                                Correo = cli.mail,
+                                DNI = cli.dni,
+                                FechaNacimiento = cli.fechaNacimiento,
+                                Activo = (cli.inactivo == true) ? "NO" : "SI"
+
+                            };
+            this.dgv.DataSource = clientes;
+            ocultarId();
+
+        }
+
+
+        /// <summary>
+        /// Metodo sobreescrito que oculta los IDs de la DataGridView
+        /// </summary>
+        public override void ocultarId()
+        {
+            if (dgv.Columns.Contains("id"))
+            {
+                dgv.Columns["id"].Visible = false;
+            }
+            else if (dgv.Columns.Contains("idCliente"))
+            {
+                dgv.Columns["idCliente"].Visible = false;
+            }
+        }
+
+
+        /// <summary>
+        /// Metodo que filtra los datos de le DataGridView mediante SQL y el Objeto AccDatos.OLEDBCON
+        /// Para construir las condiciones de la consulta utiliza el metodo buildWhere()
+        /// </summary>
         public override void filtrarGrid()
         {
 
@@ -128,6 +182,10 @@ namespace cliente
             ocultarId();
         }
 
+        /// <summary>
+        /// Metodo que construye las condiciones de filtro a partir de los filtros. 
+        /// </summary>
+        /// <returns>String con las condiciones hechas</returns>
         private String buildWhere()
         {
             String where = " ";
@@ -166,6 +224,6 @@ namespace cliente
             return where;
         }
 
-       
+        #endregion
     }
 }
