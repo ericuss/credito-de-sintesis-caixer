@@ -16,6 +16,7 @@ namespace uCuenta
         public frmMantCuenta()
         {
             InitializeComponent();
+           this.strTitulo = "Consulta de cuentas";
 
         }
 

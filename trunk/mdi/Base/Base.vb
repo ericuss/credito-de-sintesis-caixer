@@ -3,6 +3,7 @@ Public Class Base
 
     Protected Friend tablaBBDD As String
     Protected Friend dts As DataSet
+    Public strTitulo As String = ""
     Protected Friend strOpcional As String
     Protected Friend strQuery As String = ""
 
@@ -108,7 +109,7 @@ Public Class Base
 
     Private Sub btnPdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPdf.Click
 
-        tools.clsTools.imprimirDataTableEnPdf(dts, strOpcional)
+        tools.clsTools.imprimirDataTableEnPdf(dts, strTitulo, strOpcional)
     End Sub
 
     Private Sub Base_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
