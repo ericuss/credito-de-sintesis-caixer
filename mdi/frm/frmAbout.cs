@@ -10,6 +10,10 @@ namespace uMdi
 {
     partial class frmAbout : Form
     {
+        #region "New"
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
         public frmAbout()
         {
             InitializeComponent();
@@ -20,9 +24,11 @@ namespace uMdi
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
         }
-
-        #region Assembly Attribute Accessors
-
+        #endregion
+        #region "Assembly Attribute Accessors"
+        /// <summary>
+        /// Obtiene el titulo de la aplicacion
+        /// </summary>
         public string AssemblyTitle
         {
             get
@@ -39,7 +45,9 @@ namespace uMdi
                 return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
             }
         }
-
+        /// <summary>
+        /// Obtiene la version de la aplicacion
+        /// </summary>
         public string AssemblyVersion
         {
             get
@@ -47,7 +55,9 @@ namespace uMdi
                 return Assembly.GetExecutingAssembly().GetName().Version.ToString();
             }
         }
-
+        /// <summary>
+        /// Obtiene la descripcion de la aplicacion
+        /// </summary>
         public string AssemblyDescription
         {
             get
@@ -60,7 +70,9 @@ namespace uMdi
                 return ((AssemblyDescriptionAttribute)attributes[0]).Description;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public string AssemblyProduct
         {
             get
