@@ -11,16 +11,40 @@ using System.Security.Cryptography;
 
 namespace cliente
 {
+    /// <summary>
+    /// Formulario para crear o modificar un Cliente
+    /// </summary>
     public partial class frmNuevoCliente : Form
     {
+        #region Propiedades
+
+        /// <summary>
+        /// ID del Cliente que se va ha editar
+        /// </summary>
         private int idCliente;
+
+        /// <summary>
+        /// Objeto usado para acceder a la base de datos mediante Entity Framework
+        /// </summary>
         santanderEntities1 context = new santanderEntities1();
+
+        #endregion
+
+        #region "Constructores"
+
+        /// <summary>
+        /// Constructor de la clase. Se llama cuando se inicia el proceso de creacion de un nuevo Cliente
+        /// </summary>
         public frmNuevoCliente()
         {
             InitializeComponent();
             idCliente = -1;
         }
 
+        /// <summary>
+        /// Constructor de la clase. Se llama cuando se inicia el proceso de Edicion de un Cliente.
+        /// </summary>
+        /// <param name="idc">ID del Cliente a modificar</param>
         public frmNuevoCliente(int idc)
         {
             InitializeComponent();
@@ -28,46 +52,30 @@ namespace cliente
             setData(idc);
         }
 
-        private void setData(int idc)
-        {
-            var cliente = from cli in context.cliente
-                          where cli.id == idc
-                          select new
-                          {
-                              idCliente = cli.id,
-                              Nombre = cli.nombre,
-                              Apellido = cli.apellidos,
-                              Telefono = cli.telefono,
-                              Direccion = cli.direccion,
-                              Poblacion = cli.poblacion,
-                              Correo = cli.mail,
-                              DNI = cli.dni,
-                              FechaNacimiento = cli.fechaNacimiento
+        #endregion
 
-                          };
-            foreach (var item in cliente)
-            {
-                txtApellido.ValidValue = item.Apellido;
-                txtDireccion.ValidValue = item.Direccion;
-                txtDNI.ValidValue = item.DNI;
-                txtFechaNacimiento.ValidValue = item.FechaNacimiento;
-                txtMail.ValidValue = item.Correo;
-                txtNombre.ValidValue = item.Nombre;
-                txtPoblacion.ValidValue = item.Poblacion;
-                txtTelfono.ValidValue = item.Telefono;
-            }
+        #region "Eventos"
 
-        }
-
+        /// <summary>
+        /// Evento que cierra el formulario
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
+        /// <summary>
+        /// Evento que guarda los cambios. Si se trata de una edicion, redirije el flujo de la aplicacion hacia el metodo de updatear.
+        /// Si se trata de una alta redirije el flujo de la aplicacion hacia el insert.
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!checkCampos())
-            {                             
+            {
                 txtError.setError("Error! Faltan datos.");
             }
             else
@@ -92,6 +100,14 @@ namespace cliente
             }
         }
 
+        #endregion
+
+        #region "Metodos"
+
+        /// <summary>
+        /// Metodo que Updatea el Cliente pasado al constructor. Recoje su id de la propiedad de la calse.
+        /// Utiliza LINQ para modificar el cliente en la BBDD.
+        /// </summary>
         private void updateCliente()
         {
             EntityModel.cliente clientFnal = new EntityModel.cliente();
@@ -114,6 +130,10 @@ namespace cliente
             this.Dispose();
         }
 
+        /// <summary>
+        /// Metodo que inserta los datos del nuevo cliente en la BBDD. 
+        /// Utiliza LINQ para enviar los datos.
+        /// </summary>
         private void crearCliente()
         {
             EntityModel.cliente tmpCliente = new EntityModel.cliente
@@ -153,7 +173,7 @@ namespace cliente
                 usuario tmpUsuario = new usuario
                 {
                     login = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false),
-                    password = getmd5("12345"),
+                    password = tools.clsTools.getMD5("12345"),
                     idioma = "es",
                     paginaPreferida = "/backend/cuenta/cuenta",
                     inactivo = false
@@ -166,6 +186,46 @@ namespace cliente
             this.Dispose();
         }
 
+
+        /// <summary>
+        /// Metodo que se llama al principo de cargar la aplicacion, en modo Edicion, para rellenar los datos del formulario.
+        /// </summary>
+        /// <param name="idc">ID del Cliente</param>
+        private void setData(int idc)
+        {
+            var cliente = from cli in context.cliente
+                          where cli.id == idc
+                          select new
+                          {
+                              idCliente = cli.id,
+                              Nombre = cli.nombre,
+                              Apellido = cli.apellidos,
+                              Telefono = cli.telefono,
+                              Direccion = cli.direccion,
+                              Poblacion = cli.poblacion,
+                              Correo = cli.mail,
+                              DNI = cli.dni,
+                              FechaNacimiento = cli.fechaNacimiento
+
+                          };
+            foreach (var item in cliente)
+            {
+                txtApellido.ValidValue = item.Apellido;
+                txtDireccion.ValidValue = item.Direccion;
+                txtDNI.ValidValue = item.DNI;
+                txtFechaNacimiento.ValidValue = item.FechaNacimiento;
+                txtMail.ValidValue = item.Correo;
+                txtNombre.ValidValue = item.Nombre;
+                txtPoblacion.ValidValue = item.Poblacion;
+                txtTelfono.ValidValue = item.Telefono;
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que comprueba que los datos esten todos introducidos.
+        /// </summary>
+        /// <returns>Devuelve true o false segun esten llenos o no.</returns>
         private bool checkCampos()
         {
             if (txtApellido.ValidValue == "")
@@ -206,7 +266,12 @@ namespace cliente
             }
         }
 
-
+        /// <summary>
+        /// Metodo que genera N numeros aleatorios y median al funcion validate, en el caso de pasarle un true como segundo parametro, comprobara si esta repetido en la BBDD.
+        /// </summary>
+        /// <param name="numDigitos">Longitud del Numero Aleatorio a Generar</param>
+        /// <param name="check">Indica si se ha de comprobar que no exista en la BBDD</param>
+        /// <returns>Devuelve un String con el numero Generado</returns>
         private String genrandom(int numDigitos, Boolean check)
         {
             Random r = new Random(DateTime.Now.Millisecond);
@@ -234,6 +299,12 @@ namespace cliente
             }
         }
 
+
+        /// <summary>
+        /// Metodo que valida que el nuemro que se le envia por parametro no este repetido en la BBDD
+        /// </summary>
+        /// <param name="ret">Cadena a Comprobar</param>
+        /// <returns>Devuelve true o false segun exista o no</returns>
         private Boolean Validate(string ret)
         {
             var count = (from cuents in context.cuenta
@@ -248,31 +319,7 @@ namespace cliente
                 return true;
             }
         }
-
-        private string getmd5(string input)
-        {
-            // Create a new instance of the MD5CryptoServiceProvider object.
-            MD5 md5Hasher = MD5.Create();
-
-            // Convert the input string to a byte array and compute the hash.
-            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));
-
-            // Create a new Stringbuilder to collect the bytes
-            // and create a string.
-            StringBuilder sBuilder = new StringBuilder();
-
-            // Loop through each byte of the hashed data 
-            // and format each one as a hexadecimal string.
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-
-            // Return the hexadecimal string.
-            return sBuilder.ToString();
-        }
-
-
+        #endregion
     }
 }
 
