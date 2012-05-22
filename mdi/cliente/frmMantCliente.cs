@@ -15,6 +15,8 @@ namespace cliente
         public frmMantCliente()
         {
             InitializeComponent();
+
+            this.strTitulo = "Consulta de Clientes";
         }
 
         private void frmMantCliente_Load(object sender, EventArgs e)

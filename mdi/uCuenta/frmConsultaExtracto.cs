@@ -27,7 +27,8 @@ namespace uCuenta
             this.btnLimpiarControles.Click += new System.EventHandler(this.btnLimpiarControles_Click);
             tablaBBDD = "movimiento";
             strOpcional = "";
-    
+
+            this.strTitulo = "Consulta de Extracto";
 
         }     
 

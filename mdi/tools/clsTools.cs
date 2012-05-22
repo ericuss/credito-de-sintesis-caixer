@@ -75,7 +75,7 @@ namespace tools
         }
 
 
-        public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamOp)
+        public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamTitulo,String strParamOp)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace tools
 
                 document.Add(jpg);
 
-                document.Add(new Paragraph("Consulta de Saldo", FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE)));
+                document.Add(new Paragraph(strParamTitulo, FontFactory.GetFont("ARIAL", 12, iTextSharp.text.Font.UNDERLINE)));
                 document.Add(new Paragraph(" "));
                 document.Add(new Paragraph(strParamOp));
                 document.Add(new Paragraph(" "));

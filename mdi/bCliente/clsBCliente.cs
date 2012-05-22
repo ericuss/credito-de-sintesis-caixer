@@ -7,14 +7,31 @@ using System.Data;
 
 namespace bCliente
 {
+    /// <summary>
+    /// Funciones para comprobar, obtener y/o comprobar clientes
+    /// </summary>
     public class clsBCliente
     {
+        #region "Propiedades"
+        /// <summary>
+        /// Objeto que enlaza con el proyecto que obtiene los datos
+        /// </summary>
+        AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
+        #endregion
+        /// <summary>
+        /// Contructor vacio
+        /// </summary>
         public clsBCliente()
         {
-
         }
-        AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strEntidad"></param>
+        /// <param name="strOficina"></param>
+        /// <param name="strControl"></param>
+        /// <param name="strCuenta"></param>
+        /// <returns></returns>
         public String dameIdClienteByCuenta(String strEntidad, String strOficina, String strControl, String strCuenta)
         {
             try
