@@ -59,11 +59,11 @@ namespace bCliente
             try
             {
                 String strSQL = " insert into usuario(login, password, idCliente,idioma, paginaPreferida, inactivo) " +
-                " values('" + strUsuario + "','" + strPass + "', " + strIdCliente + ",'es', '/backend/cuenta/cuenta',0);";
+                " values('" + strUsuario + "','" + strPass + "', " + strIdCliente + ",'es', '//backend//cuenta//cuenta',0);";
                 oDatos.Ejecutar(strSQL);
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

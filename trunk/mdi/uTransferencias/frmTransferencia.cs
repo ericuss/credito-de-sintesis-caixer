@@ -26,21 +26,38 @@ namespace uTransferencia
             if (camposObligatorios())
             {
                 bTransferencia.clsBTransferencia btrans = new bTransferencia.clsBTransferencia();
-                
-                if (btrans.hayDinero(txtEntidad.Text,txtOficina.Text,txtControl.Text,txtCuenta.Text,txtImporte.Text))
+                if (txtEntidad.Text != txtEntidadDes.Text && txtOficina.Text != txtOficinaDes.Text
+                    && txtControl.Text != txtControlDes.Text && txtCuenta.Text != txtCuentaDes.Text)
                 {
-                  Boolean blnInsert =  btrans.insertTransferenciaOrigen(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text,
-                                                     txtPorCuentaDe.Text, txtConcepto.Text, txtReferencia.Text, txtConceptoAd.Text, txtBeneficiario.Text,
-                                                     txtDescripcion.Text, txtEntidadDes.Text, txtOficinaDes.Text, txtControlDes.Text, txtCuentaDes.Text);
-                  if (blnInsert)
-                  {
 
-                  }
-                  else
-                  {
+                    if (btrans.hayDinero(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text))
+                    {
+                        Boolean blnInsert = btrans.insertTransferenciaOrigen(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text,
+                                                           txtPorCuentaDe.Text, txtConcepto.Text, txtReferencia.Text, txtConceptoAd.Text, txtBeneficiario.Text,
+                                                           txtDescripcion.Text, txtEntidadDes.Text, txtOficinaDes.Text, txtControlDes.Text, txtCuentaDes.Text);
+                        if (blnInsert)
+                        {
+                            txtError.setOK("Transferencia efectuada correctamente");
+                        }
+                        else
+                        {
+                            txtError.setError("Ha ocurrido un error haciendo la transferencia");
+                        }
+                    }
+                    else
+                    {
+                        txtError.setError("No hay suficiente dinero");
+                    }
 
-                  }
                 }
+                else
+                {
+                    txtError.setError("La cuenta de Destino y la cuenta de origen son las mismas");
+                }
+            }
+            else
+            {
+                txtError.setError("Faltan por rellenar campos obligatorios");
             }
         }
 

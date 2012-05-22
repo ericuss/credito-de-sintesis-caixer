@@ -69,6 +69,7 @@
             this.btnBuscarCuentaDes = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.gbCuentaOrigen.SuspendLayout();
             this.gbDatos.SuspendLayout();
             this.gbCuentaDestino.SuspendLayout();
@@ -534,12 +535,26 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(12, 232);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(299, 20);
+            this.txtError.TabIndex = 23;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
+            // 
             // frmTransferencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(723, 281);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.gbCuentaDestino);
@@ -555,6 +570,7 @@
             this.gbCuentaDestino.ResumeLayout(false);
             this.gbCuentaDestino.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -600,5 +616,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }

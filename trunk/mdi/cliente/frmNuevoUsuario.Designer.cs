@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoUsuario));
             this.txtBuscar1 = new customTextCs.txtBuscar();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtPass = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtUser = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.SuspendLayout();
             // 
             // txtBuscar1
@@ -58,20 +58,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 50);
+            this.label1.Location = new System.Drawing.Point(36, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password:";
             // 
             // btnCancelar
             // 
@@ -93,25 +84,41 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(106, 71);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(101, 20);
-            this.txtPass.TabIndex = 4;
-            this.txtPass.ValidValue = "";
-            this.txtPass.zzValidateLength = false;
-            this.txtPass.zzValidMaxLength = ((short)(0));
-            // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(106, 47);
+            this.txtUser.Enabled = false;
+            this.txtUser.Location = new System.Drawing.Point(106, 52);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(101, 20);
             this.txtUser.TabIndex = 3;
             this.txtUser.ValidValue = "";
+            this.txtUser.zzCampoBd = null;
+            this.txtUser.zzValidateIsNumeric = false;
             this.txtUser.zzValidateLength = false;
             this.txtUser.zzValidMaxLength = ((short)(0));
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Location = new System.Drawing.Point(224, 50);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(102, 23);
+            this.btnGenerar.TabIndex = 7;
+            this.btnGenerar.Text = "Generar Usuario";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(30, 105);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(177, 20);
+            this.txtError.TabIndex = 8;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
             // 
             // frmNuevoUsuario
             // 
@@ -119,11 +126,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(419, 176);
+            this.Controls.Add(this.txtError);
+            this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -138,10 +145,10 @@
 
         private customTextCs.txtBuscar txtBuscar1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private CustomValidatorTextBox.CustomValidatorTextBox txtUser;
-        private CustomValidatorTextBox.CustomValidatorTextBox txtPass;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnGenerar;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }
