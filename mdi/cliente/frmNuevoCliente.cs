@@ -67,22 +67,28 @@ namespace cliente
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!checkCampos())
-            {
-
-                txtError.setError("Error! Faltan Datos.");
-
+            {                             
+                txtError.setError("Error! Faltan datos.");
             }
             else
             {
-                if (idCliente == -1)
+                bCliente.clsBCliente bCliente = new bCliente.clsBCliente();
+                if (!bCliente.existeIdClienteByDni(txtDNI.Text))
                 {
-                    crearCliente();
+
+                    if (idCliente == -1)
+                    {
+                        crearCliente();
+                    }
+                    else
+                    {
+                        updateCliente();
+                    }
                 }
                 else
                 {
-                    updateCliente();
+                    txtError.setError("Error! Ya existe el Dni.");
                 }
-
             }
         }
 
