@@ -288,9 +288,8 @@ namespace solicitudes
                 //    fecha = DateTime.Now
 
                 //};
-                AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-                conn.Ejecutar("insert into notificacion (text, asunto, idCliente) values ('Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".','Solicitud de Deposito Aceptado', " + idCliente + ")");
-                
+                tools.clsTools.addNotificacion("Se ha aceptado la solicitud del deposito con el importe de " + txtImporteSol.Text + " con un TAE de " + txtTAE.Text + ".", "Solicitud de Deposito Aceptado", idCliente);
+              
                 context.AddTomovimiento(mov);
                 context.SaveChanges();
 
