@@ -38,11 +38,30 @@ namespace cliente
                     if (!bCliente.existeUsuario(txtUser.Text))
                     {
                         String strIdCliente = bCliente.dameIdClienteByDni(txtBuscar1.zzTxtId);
-                        if (bCliente.insertUsuario(strIdCliente, txtUser.Text, getmd5(txtPass.Text)))
+                        if (strIdCliente.Trim() != "")
                         {
-
+                            if (bCliente.insertUsuario(strIdCliente, txtUser.Text, getmd5("12345")))
+                            {
+                                txtError.setOK(" Se ha generado correctamente, recuerda que la contraseña es 12345");
+                            }
+                            else
+                            {
+                                txtError.setError(" No se ha guardado correctamente");
+                            }
                         }
+                        else
+                        {
+                            txtError.setError(" No se ha encontrado el cliente ");
+                        }  
                     }
+                    else
+                    {
+                        txtError.setError(" Ya existe un usuario con ese usuario");
+                    }
+                }
+                else
+                {
+                    txtError.setError(" La cuenta ya tiene un usuario");
                 }
             }
             catch (Exception)
@@ -74,6 +93,36 @@ namespace cliente
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try 
+	        {	   
+                if (txtBuscar1.zzTxtId.Trim() != "")
+	            {
+                    txtUser.Text = txtBuscar1.zzTxtDesc.Split(Convert.ToChar(" "))[0].Substring(0, 2) + txtBuscar1.zzTxtDesc.Split(Convert.ToChar(" "))[1].Substring(0, 2) + genrandom(2, false);
+	            }	
+            }
+	        catch (Exception)
+	        {
+                txtError.setError("No se puede generar el usuario");
+	        }
+        }
+        private String genrandom(int numDigitos, Boolean check)
+        {
+            Random r = new Random(DateTime.Now.Millisecond);
+            String ret = "";
+
+            for (int i = 0; i < numDigitos; i++)
+            {
+                ret += r.Next(0, 9).ToString();
+            }
+         
+                return ret;
+            
+        }
+
+
 
 
     }
