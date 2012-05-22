@@ -176,16 +176,20 @@ namespace uMdi
                 StreamReader sr = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
                 //Read the first line of text
                 line = sr.ReadLine();
-                //Read the next line
-                line = sr.ReadLine();
+       
                 //close the file
                 sr.Close();
+
+                System.IO.File.Delete(@System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
+
 
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
             }
-            statusStrip.Text = line;
+            stripLabel.BackColor = System.Drawing.Color.Transparent;
+            stripLabel.Text = line;
         }
 
 

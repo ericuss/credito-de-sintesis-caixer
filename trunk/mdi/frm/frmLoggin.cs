@@ -43,7 +43,7 @@ namespace uMdi
             if (txtUsuario.Text.Trim() != "" && txtPass.Text.Trim() != "")
             {
                 AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-                DataSet loginDS = conn.LanzarConsulta("Select * from usuario where login= '" + txtUsuario.ValidValue + "'");
+                DataSet loginDS = conn.LanzarConsulta("Select * from trabajadores where login= '" + txtUsuario.ValidValue + "'");
                 if (loginDS.Tables[0].Rows.Count != 0)
                 {
                     if (getmd5(txtPass.ValidValue) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
