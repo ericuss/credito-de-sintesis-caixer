@@ -1,5 +1,8 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
+''' <summary>
+''' '
+''' </summary>
 
 Public Class OLEDBCON
     Private connectionString As String = loadConnectionString()
