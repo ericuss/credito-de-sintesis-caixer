@@ -35,14 +35,20 @@ namespace solicitudes
                 Form petTarj = new frmSolDeposito(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
                 petTarj.ShowDialog();
             }
-            else if (tipoSol == "2" || tipoSol=="4")
+            else if (tipoSol == "2" || tipoSol == "4")
             {
                 Form petTarj = new frmSolPrestamo(dgvSolicitudes.SelectedRows[0].Cells["idCliente"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idCuenta"].Value.ToString(), dgvSolicitudes.SelectedRows[0].Cells["idSol"].Value.ToString());
                 petTarj.ShowDialog();
             }
+            loadSolicitudesList();
         }
 
         private void frmSolPendientes_Load(object sender, EventArgs e)
+        {
+            loadSolicitudesList();
+        }
+
+        private void loadSolicitudesList()
         {
             santanderEntities1 context = new santanderEntities1();
             var datasource = from sol in context.solicitud
@@ -66,7 +72,7 @@ namespace solicitudes
                                  idTipoSol = tsol.id,
                                  idCliente = cli.id,
                                  idCuenta = cue.id,
-                                 idSol=sol.id
+                                 idSol = sol.id
                              };
             dgvSolicitudes.DataSource = datasource;
             this.dgvSolicitudes.Columns["idSol"].Visible = false;
