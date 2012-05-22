@@ -33,9 +33,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCuenta = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvTitulares = new System.Windows.Forms.DataGridView();
             this.btnAnadir = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.dgvTitulares = new System.Windows.Forms.DataGridView();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTitulares)).BeginInit();
             this.SuspendLayout();
@@ -79,10 +80,23 @@
             this.groupBox1.Controls.Add(this.dgvTitulares);
             this.groupBox1.Location = new System.Drawing.Point(12, 135);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(459, 186);
+            this.groupBox1.Size = new System.Drawing.Size(459, 160);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Titulares";
+            // 
+            // dgvTitulares
+            // 
+            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTitulares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTitulares.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTitulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTitulares.Location = new System.Drawing.Point(10, 16);
+            this.dgvTitulares.Name = "dgvTitulares";
+            this.dgvTitulares.Size = new System.Drawing.Size(443, 136);
+            this.dgvTitulares.TabIndex = 0;
             // 
             // btnAnadir
             // 
@@ -104,15 +118,17 @@
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // dgvTitulares
+            // txtError
             // 
-            this.dgvTitulares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTitulares.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTitulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTitulares.Location = new System.Drawing.Point(10, 16);
-            this.dgvTitulares.Name = "dgvTitulares";
-            this.dgvTitulares.Size = new System.Drawing.Size(443, 158);
-            this.dgvTitulares.TabIndex = 0;
+            this.txtError.Location = new System.Drawing.Point(12, 301);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(459, 20);
+            this.txtError.TabIndex = 6;
+            this.txtError.ValidValue = "";
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
             // 
             // frmAnadirTitulares
             // 
@@ -120,6 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(483, 333);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAnadir);
             this.Controls.Add(this.groupBox1);
@@ -145,5 +162,6 @@
         private System.Windows.Forms.DataGridView dgvTitulares;
         private System.Windows.Forms.Button btnAnadir;
         private System.Windows.Forms.Button btnBorrar;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }

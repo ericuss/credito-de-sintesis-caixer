@@ -105,6 +105,7 @@ namespace cliente
             clientFnal.dni = txtDNI.ValidValue;
             clientFnal.fechaNacimiento = txtFechaNacimiento.ValidValue;
             context.SaveChanges();
+            this.Dispose();
         }
 
         private void crearCliente()
@@ -156,6 +157,7 @@ namespace cliente
 
 
             context.SaveChanges();
+            this.Dispose();
         }
 
         private bool checkCampos()

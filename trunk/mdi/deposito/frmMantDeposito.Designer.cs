@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.SuspendLayout();
             // 
             // txtSalir
@@ -47,6 +48,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Visible = false;
+            // 
+            // gbResultado
+            // 
+            this.gbResultado.Size = new System.Drawing.Size(650, 322);
             // 
             // gbFiltro
             // 
@@ -165,11 +170,25 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "Multa Cancelacion";
             // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(12, 435);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(650, 20);
+            this.txtError.TabIndex = 25;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
+            // 
             // frmMantDeposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(674, 467);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -200,6 +219,7 @@
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.txtError, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +236,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }

@@ -65,33 +65,42 @@ namespace cliente
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (dgv.SelectedRows.Count != 0)
+            try
             {
-                int idCliente = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString());
-                EntityModel.cliente tmpC = new EntityModel.cliente();
-                var cliente = from cli in context.cliente
-                              where cli.id == idCliente
-                              select cli;
-                foreach (var v in cliente)
+                if (dgv.SelectedRows.Count != 0)
                 {
-                    tmpC = v;
+                    int idCliente = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString());
+                    EntityModel.cliente tmpC = new EntityModel.cliente();
+                    var cliente = from cli in context.cliente
+                                  where cli.id == idCliente
+                                  select cli;
+                    foreach (var v in cliente)
+                    {
+                        tmpC = v;
+                    }
+
+                    tmpC.inactivo = true;
+
+
+                    EntityModel.usuario tmpU = new EntityModel.usuario();
+
+                    var user = from us in context.usuario
+                               where us.id == idCliente
+                               select us;
+                    foreach (var val in user)
+                    {
+                        tmpU = val;
+                    }
+
+                    tmpU.inactivo = true;
+                    context.SaveChanges();
+                    txtError.setOK("Cliente Borrado correctamente.");
+                    loadAllClients();
                 }
-
-                tmpC.inactivo = true;
-
-
-                EntityModel.usuario tmpU = new EntityModel.usuario();
-
-                var user = from us in context.usuario
-                           where us.id == idCliente
-                           select us;
-                foreach (var val in user)
-                {
-                    tmpU = val;
-                }
-
-                tmpU.inactivo = true;
-                context.SaveChanges();
+            }
+            catch (Exception exx)
+            {
+                txtError.setError("Error Borrando Cliente.");
             }
         }
 
@@ -155,9 +164,6 @@ namespace cliente
             return where;
         }
 
-        private void btnPdf_Click(object sender, EventArgs e)
-        {
-          dts = (DataSet)dgv.DataSource;
-        }
+       
     }
 }
