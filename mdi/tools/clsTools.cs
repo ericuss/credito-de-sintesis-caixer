@@ -64,7 +64,7 @@ namespace tools
             try
             {
                 AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-                conn.Ejecutar(" insert into notificacion (text, asunto, idCliente) "+
+                conn.Ejecutar(" insert into notificacion (text, asunto, idCliente) " +
                               " values ('" + strText + "' ,'" + strAsunto + "', " + intIdCliente + ");");
                 return true;
             }

@@ -11,12 +11,14 @@ using uMdi;
 using CustomTreeViewNode;
 using customBtn;
 using Microsoft.VisualBasic;
+using System.IO;
 
 
 namespace uMdi
 {
     public partial class mdiPral : Form
     {
+        private String loggedUser;
         #region "Variables Privadas"
         private int childFormNumber = 0;
         #endregion
@@ -46,7 +48,7 @@ namespace uMdi
         #region "Load"
         private void mdiPral_Load(object sender, EventArgs e)
         {
-           // tvMenu.MouseDoubleClick += new MouseEventHandler(tvMenu_MouseDoubleClick);
+
             Thread th = new Thread(new ThreadStart(DoSplash));
             th.Start();
             Thread.Sleep(2800);
@@ -55,21 +57,9 @@ namespace uMdi
             doLogin();
 
             loadMenuLateral();
-            loadMenu();
+
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.White;
-            //Guifreaks.Navisuite.NaviBand temp = new Guifreaks.Navisuite.NaviBand();
-            //customBtn.btnLink jj = new customBtn.btnLink();
-            //jj.dll = "hh.dll";
-            //jj.formulario = "uoo";
-            //temp.Text = "esto es editado";
-
-            //// btn = new Button();
-            ////btn.Text = "butun";
-            //temp.ClientArea.Controls.Add(jj);
-            //naviBar2.Bands.Add(temp);
-
-            //naviBar2.VisibleLargeButtons = naviBar2.Bands.Count;
 
 
         }
@@ -88,18 +78,18 @@ namespace uMdi
                 arrDrHijo = dsMenu.Tables[1].Select("padre = " + drTronco["id"].ToString());
                 btnTronco.LargeImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drTronco["icoXL"].ToString());
                 btnTronco.SmallImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drTronco["icoXL"].ToString());
-                
+
                 int pos = 1;
                 foreach (DataRow drHijo in arrDrHijo)
                 {
-                    customBtn.btnLink btnHijo =new customBtn.btnLink();
+                    customBtn.btnLink btnHijo = new customBtn.btnLink();
                     btnHijo.id = drHijo["id"].ToString();
                     btnHijo.dll = drHijo["dll"].ToString();
                     btnHijo.Text = drHijo["nombreMenu"].ToString();
                     btnHijo.formulario = drHijo["form"].ToString();
 
                     btnHijo.BackgroundImage = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + "images/" + drHijo["icoS"].ToString());
-                    btnHijo.BackgroundImageLayout=ImageLayout.None;
+                    btnHijo.BackgroundImageLayout = ImageLayout.None;
                     btnHijo.Name = drHijo["id"].ToString() + drHijo["nombreMenu"].ToString();
                     btnHijo.Width = 145;
                     btnHijo.Location = new System.Drawing.Point(0, 28 * pos);
@@ -112,50 +102,18 @@ namespace uMdi
                 naviBar2.Bands.Add(btnTronco);
             }
 
-           
-        }
-        private void loadMenu()
-        {
-            //DataSet ArbolDataSet = new DataSet();
-            //AccDatos.OLEDBCON CON = new AccDatos.OLEDBCON();
-            //ArbolDataSet = CON.LanzarConsulta("select * from MDImenu");
 
-
-            //String NombreNodo = "nombreMenu";
-            //String TextoNodo = "nombreMenu";
-            //String identificadorNodo = "id";
-            //String form = "form";
-            //String dll = "dll";
-            //DataView datavie = new DataView();
-            //datavie.Table = ArbolDataSet.Tables[0];
-            //datavie.RowFilter = string.Format("padre = 0");
-            //for (int i = 0; i <= datavie.Count - 1; i++)
-            //{
-            //    CustomTreeViewNode.CustomTreeViewNode Nod = new CustomTreeViewNode.CustomTreeViewNode();
-            //    Nod.Text = datavie[i][TextoNodo].ToString();
-            //    Nod.Name = datavie[i][NombreNodo].ToString();
-            //    Nod.Tag = -1;
-            //    tvMenu.Nodes.Add(Nod);
-            //    datavie.RowFilter = string.Format("padre = " + datavie[i]["id"]);
-            //    for (int k = 0; k <= datavie.Count - 1; k++)
-            //    {
-            //        CustomTreeViewNode.CustomTreeViewNode Nodd = new CustomTreeViewNode.CustomTreeViewNode();
-            //        Nodd.Text = datavie[k][TextoNodo].ToString();
-            //        Nodd.Name = datavie[k][NombreNodo].ToString();
-            //        Nodd.Tag = datavie[k][identificadorNodo];
-            //        Nodd.dll = datavie[k][dll].ToString();
-            //        Nodd.Form = datavie[k][form].ToString();
-            //        tvMenu.Nodes[i].Nodes.Add(Nodd);
-            //    }
-            //    datavie.RowFilter = string.Format("padre = 0");
-            //}
         }
+
 
         private void doLogin()
         {
             uMdi.frmLoggin login = new uMdi.frmLoggin();
             login.ShowDialog();
+            loadStrip();
         }
+
+
         void DoSplash()
         {
             uMdi.frmSplashScreen sp = new uMdi.frmSplashScreen();
@@ -167,35 +125,67 @@ namespace uMdi
 
         #endregion
 
-        void tvMenu_MouseDoubleClick(object sender, MouseEventArgs e)
+
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (tvMenu.SelectedNode.Tag.ToString() != "-1")
-            //    {
-            //        String dll = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).dll;
-            //        String form = ((CustomTreeViewNode.CustomTreeViewNode)tvMenu.SelectedNode).Form;
-
-            //        System.Reflection.Assembly extAssembly = System.Reflection.Assembly.LoadFrom(dll + ".dll");
-            //        Form extForm = ((Form)extAssembly.CreateInstance(dll + "." + form, true));
-
-            //        if (tools.clsTools.compIfFormExistInChildrenAndFocus(extForm, this.MdiChildren))
-            //        {
-            //            extForm.MdiParent = this;
-            //            extForm.Show();
-            //        }
-            //    }
-            //}
-            //catch (Exception exx)
-            //{
-
-            //}
-
+            Form about = new frmAbout();
+            about.ShowDialog();
         }
 
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
 
+        private void minimizarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void aliniarIconosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.ArrangeIcons);
+        }
+
+        private void cerrarTodasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+
+        private void loadStrip()
+        {
+            String line = "";
+            try
+            {
+                //Pass the file path and file name to the StreamReader constructor
+                StreamReader sr = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
+                //Read the first line of text
+                line = sr.ReadLine();
+                //Read the next line
+                line = sr.ReadLine();
+                //close the file
+                sr.Close();
+
+            }
+            catch (Exception e)
+            {
+            }
+            statusStrip.Text = line;
         }
 
 

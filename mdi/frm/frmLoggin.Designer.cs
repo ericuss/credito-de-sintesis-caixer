@@ -103,6 +103,10 @@
             this.txtUsuario.TabIndex = 6;
             this.txtUsuario.Text = "nick2";
             this.txtUsuario.ValidValue = "nick2";
+            this.txtUsuario.zzCampoBd = null;
+            this.txtUsuario.zzValidateIsNumeric = false;
+            this.txtUsuario.zzValidateLength = false;
+            this.txtUsuario.zzValidMaxLength = ((short)(0));
             // 
             // txtPass
             // 
@@ -113,6 +117,10 @@
             this.txtPass.TabIndex = 7;
             this.txtPass.Text = "12345";
             this.txtPass.ValidValue = "12345";
+            this.txtPass.zzCampoBd = null;
+            this.txtPass.zzValidateIsNumeric = false;
+            this.txtPass.zzValidateLength = false;
+            this.txtPass.zzValidMaxLength = ((short)(0));
             // 
             // frmLoggin
             // 
@@ -146,7 +154,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAceptar;
-        private CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
         private CustomValidatorTextBox.CustomValidatorTextBox txtPass;
+        public CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
     }
 }
