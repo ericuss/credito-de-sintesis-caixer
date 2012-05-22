@@ -15,6 +15,7 @@ namespace deposito
         {
             InitializeComponent();
             tablaBBDD = "deposito";
+            this.strTitulo = "Depositos";
         }
 
         public override void ocultarId()
