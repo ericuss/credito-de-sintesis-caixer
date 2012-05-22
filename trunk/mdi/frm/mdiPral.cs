@@ -16,10 +16,19 @@ using System.IO;
 
 namespace uMdi
 {
+    /// <summary>
+    /// Formulario MDI
+    /// </summary>
     public partial class mdiPral : Form
     {
-        private String loggedUser;
         #region "Variables Privadas"
+        /// <summary>
+        /// Usuario autenticado
+        /// </summary>
+        private String loggedUser;
+        /// <summary>
+        /// Propiedad por defecto del MDI
+        /// </summary>
         private int childFormNumber = 0;
         #endregion
         #region "New"
@@ -32,37 +41,97 @@ namespace uMdi
         }
         #endregion
         #region "Metodos por Defecto del Mdi"
-        private void ShowNewForm(object sender, EventArgs e)
+        /// <summary>
+        /// Muestra el formulario que muestra el acercaDe
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
-            childForm.Show();
+            Form about = new frmAbout();
+            about.ShowDialog();
         }
-
-
-
+        /// <summary>
+        /// Sale de la aplicacion
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+        /// <summary>
+        /// Minimiza los formularios
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void minimizarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+        /// <summary>
+        /// Ordena los formularios verticalmente
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+        /// <summary>
+        /// Ordena los formularios horizontalmente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+        /// <summary>
+        /// Alinia los iconos
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void aliniarIconosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.ArrangeIcons);
+        }
+        /// <summary>
+        /// Cierra todos los formularios
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void cerrarTodasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
         #endregion
-
-
         #region "Load"
+        /// <summary>
+        /// Evento de carga del mdi, carga el splashScreen, el login y la barra de herramientas
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void mdiPral_Load(object sender, EventArgs e)
         {
-
             Thread th = new Thread(new ThreadStart(DoSplash));
             th.Start();
             Thread.Sleep(2800);
             th.Abort();
             Thread.Sleep(2800);
             doLogin();
-
             loadMenuLateral();
-
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.White;
-
-
         }
+        #endregion
+        #region "Metodos"
+        /// <summary>
+        /// Carga el menu lateral
+        /// </summary>
         private void loadMenuLateral()
         {
             DataSet dsMenu = new DataSet();
@@ -104,69 +173,26 @@ namespace uMdi
 
 
         }
-
-
+        /// <summary>
+        /// Carga el formulario del login
+        /// </summary>
         private void doLogin()
         {
             uMdi.frmLoggin login = new uMdi.frmLoggin();
             login.ShowDialog();
             loadStrip();
         }
-
-
+        /// <summary>
+        /// Carga el formulario del SplashScreen
+        /// </summary>
         void DoSplash()
         {
             uMdi.frmSplashScreen sp = new uMdi.frmSplashScreen();
             sp.ShowDialog();
         }
-        #endregion
-        #region "Metodos"
-
-
-        #endregion
-
-
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form about = new frmAbout();
-            about.ShowDialog();
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void minimizarTodoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.Cascade);
-        }
-
-        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileVertical);
-        }
-
-        private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.TileHorizontal);
-        }
-
-        private void aliniarIconosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LayoutMdi(MdiLayout.ArrangeIcons);
-        }
-
-        private void cerrarTodasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form childForm in MdiChildren)
-            {
-                childForm.Close();
-            }
-        }
-
-
+        /// <summary>
+        /// Carga el usuario
+        /// </summary>
         private void loadStrip()
         {
             String line = "";
@@ -176,7 +202,7 @@ namespace uMdi
                 StreamReader sr = new StreamReader(System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
                 //Read the first line of text
                 line = sr.ReadLine();
-       
+
                 //close the file
                 sr.Close();
 
@@ -191,8 +217,6 @@ namespace uMdi
             stripLabel.BackColor = System.Drawing.Color.Transparent;
             stripLabel.Text = line;
         }
-
-
-
+        #endregion
     }
 }

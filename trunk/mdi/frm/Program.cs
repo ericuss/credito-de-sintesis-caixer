@@ -9,17 +9,13 @@ namespace uMdi
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// Punto de entrada de la aplicacion
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
-            
-           //Application.Run(frm);
-           //Application.SetCompatibleTextRenderingDefault(false);
              Application.Run(new mdiPral());
-             //Application.Run(new uMdi.frmLoggin());
         
         }
 

@@ -12,8 +12,12 @@ using System.IO;
 
 namespace uMdi
 {
+    /// <summary>
+    /// Formulario de autenticacion
+    /// </summary>
     public partial class frmLoggin : Form
     {
+        #region "New"
         /// <summary>
         /// Constructor del Login
         /// </summary>
@@ -22,21 +26,53 @@ namespace uMdi
             InitializeComponent();
 
         }
-
-
-
+        #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Cierra la aplicacion
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        /// <summary>
+        /// Llama a la funcion submit
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             submit();
-
-
         }
-
+        /// <summary>
+        /// Comprueba si existe el usuario y si la contraseña es correcta
+        /// </summary>
+        /// <summary>
+        /// Carga la posiblidad del enter para aceptar
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void frmLoggin_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
+        }
+        /// <summary>
+        /// Mira si la tecla pulsada es un retorno de carro
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        void frmLoggin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                submit();
+            }
+        }
+        #endregion 
+        #region "Metodos"
         private void submit()
         {
 
@@ -65,7 +101,9 @@ namespace uMdi
 
 
         }
-
+        /// <summary>
+        /// Genera un fichero de control
+        /// </summary>
         private void crearTXT()
         {
             try
@@ -85,10 +123,13 @@ namespace uMdi
                 Console.WriteLine("Exception: " + e.Message);
                 this.Close();
             }
-          
-        }
 
-      
+        }
+        /// <summary>
+        /// Codifica la contraseña para poder comprobarla
+        /// </summary>
+        /// <param name="input">Contraseña</param>
+        /// <returns>Devuelve el texto en MD5</returns>
         private string getmd5(string input)
         {
             // Create a new instance of the MD5CryptoServiceProvider object.
@@ -111,24 +152,6 @@ namespace uMdi
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
-
-        private void frmLoggin_Load(object sender, EventArgs e)
-        {
-            this.KeyPreview = true;
-            this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
-
-        }
-
-        void frmLoggin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                submit();
-            }
-        }
-
-
-
-
+        #endregion
     }
 }
