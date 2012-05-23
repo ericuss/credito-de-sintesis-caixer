@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "uTarjeta", "uTarjeta\uTarje
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bTransferencia", "bTransferencias\bTransferencia.csproj", "{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Lanre Suit", "Lanre Suit\Lanre Suit.vdproj", "{634A0E4B-3A34-4E97-8592-9D30361DD60D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -246,6 +248,12 @@ Global
 		{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{33BEF93E-A4C5-4E5E-99AF-E6E31921519B}.Release|x86.ActiveCfg = Release|Any CPU
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Debug|Any CPU.ActiveCfg = Debug
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Debug|x86.ActiveCfg = Debug
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Release|Any CPU.ActiveCfg = Release
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Release|Mixed Platforms.ActiveCfg = Release
+		{634A0E4B-3A34-4E97-8592-9D30361DD60D}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
