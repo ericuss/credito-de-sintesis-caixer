@@ -13,17 +13,18 @@ using System.Security.Cryptography;
 
 namespace tools
 {
+    /// <summary>
+    /// Funciones utiles
+    /// </summary>
     public static class clsTools
     {
-
-
+        #region "Comprobaciones"
         /// <summary>
         /// Comprueba si el formulario ya existe entre los hijos y le da foco
         /// </summary>
         /// <param name="frm">Formulario tipo</param>
         /// <param name="children">Array de formularios hijos</param>
-        /// <returns></returns>
-        /// <remarks></remarks>
+        /// <returns>Devuelve si existe</returns>
         public static Boolean compIfFormExistInChildrenAndFocus(Form frm, Form[] children)
         {
             Boolean res = true;
@@ -37,16 +38,12 @@ namespace tools
             }
             return res;
         }
-
-
-
         /// <summary>
         /// Comprueba si el formulario ya existe entre los hijos
         /// </summary>
         /// <param name="frm">Formulario tipo</param>
         /// <param name="children">Array de formularios hijos</param>
-        /// <returns></returns>
-        /// <remarks></remarks>
+        /// <returns>Devuelve si el formulario existe</returns>
         public static Boolean compIfFormExistInChildren(Form frm, Form[] children)
         {
             Boolean res = true;
@@ -60,6 +57,33 @@ namespace tools
             }
             return res;
         }
+        /// <summary>
+        /// Comprueba si un numero es numerico
+        /// </summary>
+        /// <param name="str">String con el campo para comprobar</param>
+        /// <returns>Devuelve si es numerico</returns>
+        public static Boolean isNumeric(String str)
+        {
+            try
+            {
+                Double i;
+                i = Convert.ToDouble(str);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
+        #region "Inserts"
+        /// <summary>
+        /// Inserta una notificacion con los datos que le transmitas
+        /// </summary>
+        /// <param name="strText">Texto de la notificacion</param>
+        /// <param name="strAsunto">Asunto de la notificacion</param>
+        /// <param name="intIdCliente">Id del cliente</param>
+        /// <returns>Devuelve si ha ido bien la operacion</returns>
         public static Boolean addNotificacion(String strText, String strAsunto, int intIdCliente)
         {
             try
@@ -74,9 +98,13 @@ namespace tools
                 return false;
             }
         }
-
-
-        public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamTitulo,String strParamOp)
+        /// <summary>
+        /// Imprime en pdf la primera tabla del DataSet que le transfieras
+        /// </summary>
+        /// <param name="dsOriginal">DataSet con la tabla para imprimir</param>
+        /// <param name="strParamTitulo">Si le quieres poner un Tilo al PDF</param>
+        /// <param name="strParamOp">Si le quieres poner datos adicionales</param>
+        public static void imprimirDataTableEnPdf(DataSet dsOriginal, String strParamTitulo, String strParamOp)
         {
             try
             {
@@ -172,44 +200,13 @@ namespace tools
 
             }
         }
-
-        public static Boolean isNumeric(String str)
-        {
-            try
-            {
-                Double i;
-                i = Convert.ToDouble(str);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-
-
-        public static void msg(String strId)
-        {
-            try
-            {
-                DataSet ds = new DataSet();
-                ds.ReadXml(System.AppDomain.CurrentDomain.BaseDirectory + "msg.xml");
-                foreach (DataRow drTemp in ds.Tables["msg"].Rows)
-                {
-                    if (drTemp["id"] == strId)
-                    {
-
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
+        #endregion
+        #region "Otros"
+        /// <summary>
+        /// Codifica el String en MD5
+        /// </summary>
+        /// <param name="input">String a codificar</param>
+        /// <returns>String codificado en MD5</returns>
         public static String getMD5(String input)
         {
             // Create a new instance of the MD5CryptoServiceProvider object.
@@ -232,5 +229,6 @@ namespace tools
             // Return the hexadecimal string.
             return sBuilder.ToString();
         }
+        #endregion
     }
 }
