@@ -174,6 +174,7 @@ namespace bCliente
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error: " + ex.ToString());
                 return false;
             }
 
