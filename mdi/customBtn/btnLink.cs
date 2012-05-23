@@ -58,7 +58,7 @@ namespace customBtn
             }
             catch (Exception exx)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("Error:"+exx.ToString());
             }
         }
         #endregion
