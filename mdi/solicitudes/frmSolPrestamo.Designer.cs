@@ -67,13 +67,6 @@
             this.dgvHistAcciones = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvAcciones = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rbPresContratados = new System.Windows.Forms.RadioButton();
-            this.rbDepContratados = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvInfo = new System.Windows.Forms.DataGridView();
-            this.txtPresCon = new System.Windows.Forms.TextBox();
-            this.txtDepCon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMantener = new System.Windows.Forms.Button();
             this.btnDenegar = new System.Windows.Forms.Button();
@@ -93,9 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistAcciones)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcciones)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // tcMain
@@ -105,7 +95,6 @@
             this.tcMain.Controls.Add(this.tabPage1);
             this.tcMain.Controls.Add(this.tabPage4);
             this.tcMain.Controls.Add(this.tabPage3);
-            this.tcMain.Controls.Add(this.tabPage2);
             this.tcMain.Location = new System.Drawing.Point(12, 18);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
@@ -498,82 +487,6 @@
             this.dgvAcciones.Size = new System.Drawing.Size(471, 88);
             this.dgvAcciones.TabIndex = 0;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.rbPresContratados);
-            this.tabPage2.Controls.Add(this.rbDepContratados);
-            this.tabPage2.Controls.Add(this.groupBox5);
-            this.tabPage2.Controls.Add(this.txtPresCon);
-            this.tabPage2.Controls.Add(this.txtDepCon);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(495, 330);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Otros";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // rbPresContratados
-            // 
-            this.rbPresContratados.AutoSize = true;
-            this.rbPresContratados.Location = new System.Drawing.Point(25, 45);
-            this.rbPresContratados.Name = "rbPresContratados";
-            this.rbPresContratados.Size = new System.Drawing.Size(199, 17);
-            this.rbPresContratados.TabIndex = 6;
-            this.rbPresContratados.TabStop = true;
-            this.rbPresContratados.Text = "Prestamos Contratados Actualmente:";
-            this.rbPresContratados.UseVisualStyleBackColor = true;
-            // 
-            // rbDepContratados
-            // 
-            this.rbDepContratados.AutoSize = true;
-            this.rbDepContratados.Location = new System.Drawing.Point(25, 16);
-            this.rbDepContratados.Name = "rbDepContratados";
-            this.rbDepContratados.Size = new System.Drawing.Size(197, 17);
-            this.rbDepContratados.TabIndex = 5;
-            this.rbDepContratados.TabStop = true;
-            this.rbDepContratados.Text = "Depositos Contratados Actualmente:";
-            this.rbDepContratados.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dgvInfo);
-            this.groupBox5.Location = new System.Drawing.Point(19, 85);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(459, 228);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Info";
-            // 
-            // dgvInfo
-            // 
-            this.dgvInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfo.Location = new System.Drawing.Point(6, 19);
-            this.dgvInfo.Name = "dgvInfo";
-            this.dgvInfo.Size = new System.Drawing.Size(446, 203);
-            this.dgvInfo.TabIndex = 0;
-            // 
-            // txtPresCon
-            // 
-            this.txtPresCon.Location = new System.Drawing.Point(228, 44);
-            this.txtPresCon.Name = "txtPresCon";
-            this.txtPresCon.ReadOnly = true;
-            this.txtPresCon.Size = new System.Drawing.Size(28, 20);
-            this.txtPresCon.TabIndex = 3;
-            // 
-            // txtDepCon
-            // 
-            this.txtDepCon.Location = new System.Drawing.Point(228, 15);
-            this.txtDepCon.Name = "txtDepCon";
-            this.txtDepCon.ReadOnly = true;
-            this.txtDepCon.Size = new System.Drawing.Size(28, 20);
-            this.txtDepCon.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -656,10 +569,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistAcciones)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAcciones)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,13 +608,6 @@
         private System.Windows.Forms.DataGridView dgvHistAcciones;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvAcciones;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.RadioButton rbPresContratados;
-        private System.Windows.Forms.RadioButton rbDepContratados;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dgvInfo;
-        private System.Windows.Forms.TextBox txtPresCon;
-        private System.Windows.Forms.TextBox txtDepCon;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnMantener;
         private System.Windows.Forms.Button btnDenegar;

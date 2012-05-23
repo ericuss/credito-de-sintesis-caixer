@@ -10,17 +10,55 @@ using EntityModel;
 
 namespace solicitudes
 {
+    /// <summary>
+    /// Formulario que nos permite gestionar las solicitudes pendientes.
+    /// </summary>
     public partial class frmSolPendientes : Form
     {
-        AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+        #region "Variables Privadas"
+
+        private AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
+
+        #endregion
+
+        #region "Constructores"
+
+        /// <summary>
+        /// Constructor del Formulario. Añade un nuevo handler al evento DoubleClick de la cabecera de las filas de la DataGridView.
+        /// </summary>
         public frmSolPendientes()
         {
             InitializeComponent();
             dgvSolicitudes.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(dgvSolicitudes_RowHeaderMouseDoubleClick);
             dgvSolicitudes.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+            
+        }
+  
+        #endregion
+
+        #region "Eventos"
+
+        /// <summary>
+        /// Evento que se ejecuta al pulsar la tecla F3. 
+        /// Llama a la funcion de Filtrado de la DataGridView
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
+        void frmSolPendientes_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F3)
+            {
+                filtrar();
+            }
         }
 
-        void dgvSolicitudes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        /// <summary>
+        /// Eveto que se ejecuta al hacer DobleClick sobre la cabecera de las filas de la DataGridView. 
+        /// Recoje el tipo de solicitud seleccionada y abre su formulario correspondiente
+        /// </summary>
+        /// <param name="sender">Parametro del Eento</param>
+        /// <param name="e">Parametro del Eento</param>
+        private void dgvSolicitudes_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
             String tipoSol = dgvSolicitudes.SelectedRows[0].Cells["idTipoSol"].Value.ToString();
@@ -43,11 +81,37 @@ namespace solicitudes
             loadSolicitudesList();
         }
 
+        /// <summary>
+        /// Evento que se ejecuta al cargar el formulario. 
+        /// Se encarga de ejecutar la carga de todas las solicitudes a la DataGridView.
+        /// </summary>
+        /// <param name="sender">Parametro del Eento</param>
+        /// <param name="e">Parametro del Eento</param>
         private void frmSolPendientes_Load(object sender, EventArgs e)
         {
             loadSolicitudesList();
+            this.KeyPreview = true;
+            this.KeyUp += new KeyEventHandler(frmSolPendientes_KeyUp);
+        }
+       
+        /// <summary>
+        /// Evento que se ejecuta cambiar el estado del chkTodos, de seleccionado a deseleccionado o a la inversa.
+        /// Se encarga de llamar a la funcion Filtrar.
+        /// </summary>
+        /// <param name="sender">Parametro del Eento</param>
+        /// <param name="e">Parametro del Eento</param>
+        private void chkTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            filtrar();
         }
 
+        #endregion
+
+        #region "Metodos"
+
+        /// <summary>
+        /// Metodo encargado de cargar la DataridView con la listade Solicitudes utilizando LINQ
+        /// </summary>
         private void loadSolicitudesList()
         {
             santanderEntities1 context = new santanderEntities1();
@@ -81,32 +145,29 @@ namespace solicitudes
             this.dgvSolicitudes.Columns["idCuenta"].Visible = false;
         }
 
-
-        private void txtCodCuenta_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Metodo encargado de Filtrar los resultados de la DataGridView. 
+        /// Utilizando el objeto OLDBCON y el metodo BuildWhere lanza una consulta a la BBDD que luego asignara  la DataGridView.
+        /// </summary>
+        public void filtrar()
         {
-            filtrar();
+            String sql = "select concat(cuenta.codigoEntidad ,' - ' , concat(cuenta.codigoOficina ,' - ' , concat(cuenta.codigoControl,' - ' , cuenta.codigoCuenta))) as Cuenta, "
+                             + " date_format(solicitud.fecha,'%d/%m/%Y')  as Fecha, concat(cliente.nombre,' ', cliente.apellidos) as Ciente, "
+                             + " cliente.dni as DNI, replace(tiposolicitud.tag, 'solicitud','')as Tipo, estadosolicitud.tag as Estado, "
+                             + " tiposolicitud.id as idTipoSol, cliente.id as idCliente, cuenta.id as idCuenta, solicitud.id as idSol "
+                             + " from cuenta, solicitud, cliente, estadosolicitud, tiposolicitud "
+                             + " where cuenta.id = solicitud.idCuenta and solicitud.idCliente= cliente.id and  "
+                             + " solicitud.idTipoSolicitud = tiposolicitud.id and solicitud.idEstadoSolicitud= estadosolicitud.id " + buildWhere();
+
+            DataTable ds = conn.LanzarConsultaT(sql);
+            dgvSolicitudes.DataSource = ds;
         }
 
-        private void txtCodigoOficina_TextChanged(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
-        private void txtApellidos_TextChanged(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
-        private void chkTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
+        /// <summary>
+        /// Metodo que construye los condicionales de la consulta SQL para filtrar. 
+        /// Segun esten informados o no los Filtros.
+        /// </summary>
+        /// <returns>Retorna el condicional de la consulta en forma de String.</returns>
         private String buildWhere()
         {
             String where = "";
@@ -130,36 +191,9 @@ namespace solicitudes
             {
                 where += " and estadosolicitud.tag = 'pendiente'";
             }
-
-
-
             return where;
         }
-        public void filtrar()
-        {
-            String jaja = "select concat(cuenta.codigoEntidad ,' - ' , concat(cuenta.codigoOficina ,' - ' , concat(cuenta.codigoControl,' - ' , cuenta.codigoCuenta))) as Cuenta, "
-                             + " date_format(solicitud.fecha,'%d/%m/%Y')  as Fecha, concat(cliente.nombre,' ', cliente.apellidos) as Ciente, "
-                             + " cliente.dni as DNI, replace(tiposolicitud.tag, 'solicitud','')as Tipo, estadosolicitud.tag as Estado, "
-                             + " tiposolicitud.id as idTipoSol, cliente.id as idCliente, cuenta.id as idCuenta, solicitud.id as idSol "
-                             + " from cuenta, solicitud, cliente, estadosolicitud, tiposolicitud "
-                             + " where cuenta.id = solicitud.idCuenta and solicitud.idCliente= cliente.id and  "
-                             + " solicitud.idTipoSolicitud = tiposolicitud.id and solicitud.idEstadoSolicitud= estadosolicitud.id " + buildWhere();
 
-            DataTable ds = conn.LanzarConsultaT(jaja);
-            dgvSolicitudes.DataSource = ds;
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            filtrar();
-        }
-
-
-
-
-
-
-
-
+        #endregion
     }
 }

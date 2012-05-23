@@ -10,17 +10,37 @@ using EntityModel;
 
 namespace solicitudes
 {
+    /// <summary>
+    /// Formulario que nos permite Aceptar o denegar las Solicitudes de Prestmos
+    /// </summary>
     public partial class frmSolPrestamo : Form
     {
+        #region "Variables Privadas"
+        private int idFinalidad;
         private int idCuenta;
         private int idCliente;
         private int idSolicitud;
         private santanderEntities1 context = new santanderEntities1();
+
+        #endregion
+
+        #region "Constructores"
+
+        /// <summary>
+        /// Constructor vacio del Formulario
+        /// </summary>
         public frmSolPrestamo()
         {
             InitializeComponent();
             this.Load += new EventHandler(frmSolPrestamo_Load);
         }
+
+        /// <summary>
+        /// Constrctor que inicializa idCliente, idCuenta, e idSol
+        /// </summary>
+        /// <param name="idCLiente">Id del Cliente</param>
+        /// <param name="idCuenta">Id de la Cuenta</param>
+        /// <param name="idSol">Id de la Solicitud</param>
         public frmSolPrestamo(String idCLiente, String idCuenta, String idSol)
         {
             InitializeComponent();
@@ -33,6 +53,16 @@ namespace solicitudes
             disableIfNecessary();
         }
 
+        #endregion
+
+        #region "Eventos"
+
+        /// <summary>
+        /// Evento que es ejecutado cuando se muestra el Formularo. 
+        /// Rellena todos los campos del Formulario a traves de las funciones.
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
         void frmSolPrestamo_Load(object sender, EventArgs e)
         {
             loadResumen();
@@ -40,9 +70,152 @@ namespace solicitudes
             loadCuentas();
             loadAcciones();
             loadHistoricoAcciones();
-            setInfoDatasourceDep(false);
         }
 
+        /// <summary>
+        /// Evento que es ejecutado al hacer DobleClick sobre la cabecera de cada linia.
+        /// Al hacer DobleClick carga en la otra grid los movimientos de la cuenta seleccionada
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
+        private void dgvCuentas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int idCuenta = Convert.ToUInt16(dgvCuentas.SelectedRows[0].Cells["IDCU"].Value.ToString());
+            var movs = from mv in context.movimiento
+                       where mv.idCuenta == idCuenta
+                       orderby mv.fecha descending
+                       select new
+                       {
+                           Fecha = mv.fecha,
+                           Importe = mv.importe,
+                           Descripcion = mv.descripcion,
+                           Resto = mv.resto
+                       };
+            this.dgvMovimientos.DataSource = movs;
+        }
+
+        /// <summary>
+        /// Evento que se lanza al pulsar el boton Mantener.
+        /// Cierra el Formulario sin hacer cambios
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
+        private void btnMantener_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        /// <summary>
+        /// Evento que se ejecuta al hacer click sobre el boton "Aceptar".
+        /// El objetivo es aceptar la solicitud del Prestamo. 
+        /// Mediante LINQ cambia el estado de la solicitud, añade el registro correspondiente en la tabla movimientos y notifica al usuario.
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //crar movimiento
+                Decimal imp = Convert.ToDecimal(txtImporteSol.Text);
+                movimiento mov = new movimiento()
+                {
+                    idCuenta = idCuenta,
+                    fecha = DateTime.Now,
+                    importe = imp,
+                    concepto = "Prestamo",
+                    descripcion = "Prestamo de " + imp + "€"
+                };
+
+                //aceptar solicitud
+                solicitud sol = new solicitud();
+                var tmpsol = from ss in context.solicitud
+                             where ss.id == idSolicitud
+                             select ss;
+                foreach (var item in tmpsol)
+                {
+                    sol = item;
+                }
+                sol.idEstadoSolicitud = 2;
+               
+                context.AddTomovimiento(mov);
+              
+                prestamo pres;
+                if (txtCuota.Text != "")
+                {
+                    pres = new prestamo
+                   {
+                       idFinalidad = idFinalidad,
+                       importe = Convert.ToDecimal(txtImporteSol.Text),
+                       cuota = Convert.ToSingle(txtCuota.Text),
+                       idCliente = idCliente,
+                       idCuenta = idCuenta,
+                       idSolicitud = idSolicitud
+
+                   };
+                }
+                else
+                {
+                    pres = new prestamo
+                    {
+                        idFinalidad = idFinalidad,
+                        importe = Convert.ToDecimal(txtImporteSol.Text),
+                        plazo = Convert.ToInt16(txtPlazo.Text),
+                        idCliente = idCliente,
+                        idCuenta = idCuenta,
+                        idSolicitud = idSolicitud
+
+                    };
+                }
+                context.AddToprestamo(pres);
+                context.SaveChanges();
+                //notificar
+                tools.clsTools.addNotificacion("Se ha aceptado la solicitud del prestamo con un importe de " + imp, "Prestamo Aceptado", idCliente);
+                this.Dispose();
+            }
+            catch (Exception exx)
+            {
+                txtError.setError(exx.ToString());
+            }
+        }
+
+        /// <summary>
+        /// Evento que se ejecuta al hacer click cobre el boton "Denegar".
+        /// El objetivo es denegar la solicitud de Prestamo. 
+        /// Mediante LINQ cambia el estad de la solicitud y crea la notificacion para el usuario.
+        /// </summary>
+        /// <param name="sender">Parametro del Evento</param>
+        /// <param name="e">Parametro del Evento</param>
+        private void btnDenegar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                solicitud sol = new solicitud();
+                var tmpSol = from ss in context.solicitud
+                             where ss.id == idSolicitud
+                             select ss;
+                foreach (var item in tmpSol)
+                {
+                    sol = item;
+                }
+                sol.idEstadoSolicitud = 4;
+                context.SaveChanges();
+                this.Dispose();
+            }
+            catch (Exception exx)
+            {
+                txtError.setError("Error al denegar Prestamo");
+            }
+        }
+
+        #endregion
+
+        #region "Metodos"
+
+        /// <summary>
+        /// Metodo que deshabilita los botones "Aceptar" y "Denegar" en el caso de que no sean necesarios
+        /// porque la solicitud ya este aceptada o denegada.
+        /// </summary>
         private void disableIfNecessary()
         {
             var sol = from ss in context.solicitud
@@ -59,21 +232,11 @@ namespace solicitudes
             }
         }
 
-        void dgvCuentas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int idCuenta = Convert.ToUInt16(dgvCuentas.SelectedRows[0].Cells["IDCU"].Value.ToString());
-            var movs = from mv in context.movimiento
-                       where mv.idCuenta == idCuenta
-                       orderby mv.fecha descending
-                       select new
-                       {
-                           Fecha = mv.fecha,
-                           Importe = mv.importe,
-                           Descripcion = mv.descripcion,
-                           Resto = mv.resto
-                       };
-            this.dgvMovimientos.DataSource = movs;
-        }
+        /// <summary>
+        /// Metodo que rellena los datos de la pestaña de "Resumen".
+        /// Carga los datos del prestamo solicitado y los del cliente que lo solicitó.
+        /// Lo realiza a traves de LINQ
+        /// </summary>
         private void loadResumen()
         {
 
@@ -90,6 +253,7 @@ namespace solicitudes
                        select new
                        {
                            Finalidad = fin.tag,
+                           idFin = fin.id,
                            Importe = pr.importe,
                            Cuota = pr.cuota,
                            Plazo = pr.plazo,
@@ -99,6 +263,7 @@ namespace solicitudes
             foreach (var item in pres)
             {
                 txtFinalidad.Text = item.Finalidad.ToString();
+                idFinalidad = item.idFin;
                 txtImporteSol.Text = item.Importe.ToString();
                 txtSaldo.Text = item.Saldo.ToString();
                 if (item.Plazo != null)
@@ -114,6 +279,10 @@ namespace solicitudes
 
         }
 
+        /// <summary>
+        /// Metodo que carga el Historico de acciones de la pestaña "Acciones".
+        /// Lo hace a traves de LINQ
+        /// </summary>
         private void loadHistoricoAcciones()
         {
             var his = from hist in context.historicoinversion
@@ -132,6 +301,10 @@ namespace solicitudes
             this.dgvHistAcciones.DataSource = his;
         }
 
+        /// <summary>
+        /// Carga la informacion de Acciones de la pestaña "Acciones"
+        /// Lo hace a traves de LINQ
+        /// </summary>
         private void loadAcciones()
         {
             var acc = from ac in context.accion
@@ -149,6 +322,10 @@ namespace solicitudes
             this.dgvAcciones.DataSource = acc;
         }
 
+        /// <summary>
+        /// Metodo que carga las cuentas del Usuario.
+        /// Lo hce a traves de LINQ
+        /// </summary>
         private void loadCuentas()
         {
             var cuentas = from cue in context.cuenta
@@ -166,6 +343,10 @@ namespace solicitudes
             this.dgvCuentas.Columns["IDCU"].Visible = false;
         }
 
+        /// <summary>
+        /// Metodo que carga los datos personales del Cliente. 
+        /// Lo hace a traves de LINQ
+        /// </summary>
         private void loadPersonalData()
         {
 
@@ -192,102 +373,8 @@ namespace solicitudes
                 txtCorreo.Text = item.Correo;
             }
         }
-        private void setInfoDatasourceDep(Boolean doit)
-        {
-            var deps = from dep in context.depositocliente
-                       join infd in context.deposito
-                         on dep.idDeposito equals infd.id
-                       where dep.idCliente == idCliente && dep.activo == true
-                       select new
-                       {
-                           Importe = dep.importe,
-                           TAE = infd.tae,
-                           FechaActivacion = dep.fechaActivacion,
-                           FechaVencimiento = dep.fechaVencimiento,
-                           Plazos = infd.plazo
-                       };
-            txtDepCon.Text = Convert.ToString(deps.Count());
-            if (doit)
-            {
-                this.dgvInfo.DataSource = deps;
-            }
-        }
 
-        private void btnMantener_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //crar movimiento
-                Decimal imp = Convert.ToDecimal(txtImporteSol.Text);
-                movimiento mov = new movimiento()
-                   {
-                       idCuenta = idCuenta,
-                       fecha = DateTime.Now,
-                       importe = imp,
-                       concepto = "Prestamo",
-                       descripcion = "Prestamo de "+imp +"€"
-                   };
-
-                //aceptar solicitud
-                solicitud sol = new solicitud();
-                var tmpsol = from ss in context.solicitud
-                             where ss.id == idSolicitud
-                             select ss;
-                foreach (var item in tmpsol)
-                {
-                    sol = item;
-                }
-                sol.idEstadoSolicitud = 2;
-                //context.AddTosolicitud(sol);
-                context.AddTomovimiento(mov);
-                context.SaveChanges();
-
-                //notificar
-                Boolean a = tools.clsTools.addNotificacion("Se ha aceptado la solicitud del prestamo con un importe de "+imp, "Prestamo Aceptado", idCliente);
-                if (!a)
-                {
-                    txtError.setError("No se ha podido notificar al usuario");
-                }
-                else
-                {
-                    this.Dispose();
-                }
-
-
-            }
-            catch (Exception exx)
-            {
-                txtError.setError(exx.ToString());
-            }
-        }
-
-        private void btnDenegar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                solicitud sol = new solicitud();
-                var tmpSol = from ss in context.solicitud
-                             where ss.id == idSolicitud
-                             select ss;
-                foreach (var item in tmpSol)
-                {
-                    sol = item;
-                }
-                sol.idEstadoSolicitud = 4;
-                context.SaveChanges();
-                this.Dispose();
-            }
-            catch(Exception exx)
-            {
-                txtError.setError("Error al denegar Prestamo");
-            }
-        }
-
+        #endregion
 
     }
 }

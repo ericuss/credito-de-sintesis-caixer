@@ -56,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tcMain = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.txtTAE = new System.Windows.Forms.TextBox();
@@ -72,14 +71,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rbPresContratados = new System.Windows.Forms.RadioButton();
-            this.rbDepContratados = new System.Windows.Forms.RadioButton();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgvInfo = new System.Windows.Forms.DataGridView();
-            this.txtPresCon = new System.Windows.Forms.TextBox();
-            this.txtDepCon = new System.Windows.Forms.TextBox();
-            this.txtError = new System.Windows.Forms.TextBox();
+            this.tcMain = new System.Windows.Forms.TabControl();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistAcciones)).BeginInit();
@@ -91,13 +84,10 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             this.tabPage1.SuspendLayout();
-            this.tcMain.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).BeginInit();
+            this.tcMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -128,6 +118,7 @@
             this.btnMantener.TabIndex = 4;
             this.btnMantener.Text = "Mantener";
             this.btnMantener.UseVisualStyleBackColor = true;
+            this.btnMantener.Click += new System.EventHandler(this.btnMantener_Click);
             // 
             // label1
             // 
@@ -388,22 +379,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Dni:";
             // 
-            // tcMain
-            // 
-            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tcMain.Controls.Add(this.tabPage5);
-            this.tcMain.Controls.Add(this.tabPage1);
-            this.tcMain.Controls.Add(this.tabPage4);
-            this.tcMain.Controls.Add(this.tabPage3);
-            this.tcMain.Controls.Add(this.tabPage2);
-            this.tcMain.Location = new System.Drawing.Point(5, 12);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(535, 345);
-            this.tcMain.TabIndex = 1;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox7);
@@ -548,91 +523,33 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Importe:";
             // 
-            // tabPage2
+            // tcMain
             // 
-            this.tabPage2.Controls.Add(this.rbPresContratados);
-            this.tabPage2.Controls.Add(this.rbDepContratados);
-            this.tabPage2.Controls.Add(this.groupBox5);
-            this.tabPage2.Controls.Add(this.txtPresCon);
-            this.tabPage2.Controls.Add(this.txtDepCon);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(527, 319);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Otros";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // rbPresContratados
-            // 
-            this.rbPresContratados.AutoSize = true;
-            this.rbPresContratados.Location = new System.Drawing.Point(25, 45);
-            this.rbPresContratados.Name = "rbPresContratados";
-            this.rbPresContratados.Size = new System.Drawing.Size(199, 17);
-            this.rbPresContratados.TabIndex = 6;
-            this.rbPresContratados.TabStop = true;
-            this.rbPresContratados.Text = "Prestamos Contratados Actualmente:";
-            this.rbPresContratados.UseVisualStyleBackColor = true;
-            // 
-            // rbDepContratados
-            // 
-            this.rbDepContratados.AutoSize = true;
-            this.rbDepContratados.Location = new System.Drawing.Point(25, 16);
-            this.rbDepContratados.Name = "rbDepContratados";
-            this.rbDepContratados.Size = new System.Drawing.Size(197, 17);
-            this.rbDepContratados.TabIndex = 5;
-            this.rbDepContratados.TabStop = true;
-            this.rbDepContratados.Text = "Depositos Contratados Actualmente:";
-            this.rbDepContratados.UseVisualStyleBackColor = true;
-            this.rbDepContratados.CheckedChanged += new System.EventHandler(this.rbDepContratados_CheckedChanged);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dgvInfo);
-            this.groupBox5.Location = new System.Drawing.Point(19, 85);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(491, 228);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Info";
-            // 
-            // dgvInfo
-            // 
-            this.dgvInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInfo.Location = new System.Drawing.Point(6, 19);
-            this.dgvInfo.Name = "dgvInfo";
-            this.dgvInfo.Size = new System.Drawing.Size(478, 203);
-            this.dgvInfo.TabIndex = 0;
-            // 
-            // txtPresCon
-            // 
-            this.txtPresCon.Location = new System.Drawing.Point(228, 44);
-            this.txtPresCon.Name = "txtPresCon";
-            this.txtPresCon.ReadOnly = true;
-            this.txtPresCon.Size = new System.Drawing.Size(28, 20);
-            this.txtPresCon.TabIndex = 3;
-            // 
-            // txtDepCon
-            // 
-            this.txtDepCon.Location = new System.Drawing.Point(228, 15);
-            this.txtDepCon.Name = "txtDepCon";
-            this.txtDepCon.ReadOnly = true;
-            this.txtDepCon.Size = new System.Drawing.Size(28, 20);
-            this.txtDepCon.TabIndex = 2;
+            this.tcMain.Controls.Add(this.tabPage5);
+            this.tcMain.Controls.Add(this.tabPage1);
+            this.tcMain.Controls.Add(this.tabPage4);
+            this.tcMain.Controls.Add(this.tabPage3);
+            this.tcMain.Location = new System.Drawing.Point(5, 12);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(535, 345);
+            this.tcMain.TabIndex = 1;
             // 
             // txtError
             // 
             this.txtError.Location = new System.Drawing.Point(9, 431);
             this.txtError.Name = "txtError";
-            this.txtError.ReadOnly = true;
             this.txtError.Size = new System.Drawing.Size(531, 20);
             this.txtError.TabIndex = 6;
+            this.txtError.ValidValue = "";
             this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
             // 
             // frmSolDeposito
             // 
@@ -660,16 +577,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tcMain.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInfo)).EndInit();
+            this.tcMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,6 +595,10 @@
         private System.Windows.Forms.Button btnMantener;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dgvHistAcciones;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dgvAcciones;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvMovimientos;
@@ -700,27 +617,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TabControl tcMain;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dgvHistAcciones;
-        private System.Windows.Forms.DataGridView dgvAcciones;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dgvInfo;
-        private System.Windows.Forms.TextBox txtPresCon;
-        private System.Windows.Forms.TextBox txtDepCon;
-        private System.Windows.Forms.RadioButton rbPresContratados;
-        private System.Windows.Forms.RadioButton rbDepContratados;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtFechaP;
-        private System.Windows.Forms.TextBox txtSaldo;
-        private System.Windows.Forms.TextBox txtImporteSol;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtError;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox txtTAE;
         private System.Windows.Forms.TextBox txtImporteMin;
@@ -728,5 +625,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtFechaP;
+        private System.Windows.Forms.TextBox txtSaldo;
+        private System.Windows.Forms.TextBox txtImporteSol;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabControl tcMain;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }
