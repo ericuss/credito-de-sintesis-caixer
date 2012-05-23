@@ -75,7 +75,9 @@
     <Compile Include="frmAnadirTitulares.Designer.cs">
       <DependentUpon>frmAnadirTitulares.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaExtracto.cs" />
+    <Compile Include="frmConsultaExtracto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConsultaExtracto.Designer.cs">
       <DependentUpon>frmConsultaExtracto.cs</DependentUpon>
     </Compile>
@@ -85,7 +87,9 @@
     <Compile Include="frmIngreso.Designer.cs">
       <DependentUpon>frmIngreso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMantCuenta.cs" />
+    <Compile Include="frmMantCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMantCuenta.Designer.cs">
       <DependentUpon>frmMantCuenta.cs</DependentUpon>
     </Compile>

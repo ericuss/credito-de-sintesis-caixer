@@ -58,7 +58,9 @@
     <Compile Include="frmNuevoUsuario.Designer.cs">
       <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMantCliente.cs" />
+    <Compile Include="frmMantCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMantCliente.Designer.cs">
       <DependentUpon>frmMantCliente.cs</DependentUpon>
     </Compile>

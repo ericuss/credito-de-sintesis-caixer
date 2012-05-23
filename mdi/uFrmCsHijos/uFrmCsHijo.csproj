@@ -52,11 +52,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCsCliente.cs" />
+    <Compile Include="frmCsCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCsCliente.Designer.cs">
       <DependentUpon>frmCsCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCsCuenta.cs" />
+    <Compile Include="frmCsCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmCsCuenta.Designer.cs">
       <DependentUpon>frmCsCuenta.cs</DependentUpon>
     </Compile>
