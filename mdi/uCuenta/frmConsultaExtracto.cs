@@ -36,6 +36,9 @@ namespace uCuenta
         }     
         #endregion
         #region "Filtrar"
+        /// <summary>
+        /// Sobreescribe el metodo del base para filtrar
+        /// </summary>
         public override void filtrarGrid()
         {
             string strQuery = "select cuenta.codigoEntidad as Entidad,cuenta.codigoOficina as Oficina, cuenta.codigoControl as Control, cuenta.codigoCuenta as Cuenta, movimiento.* from movimiento " +

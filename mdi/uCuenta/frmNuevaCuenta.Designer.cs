@@ -1,5 +1,8 @@
 ﻿namespace uCuenta
 {
+    /// <summary>
+    /// Crea una nueva cuenta
+    /// </summary>
     partial class frmNuevaCuenta
     {
         /// <summary>

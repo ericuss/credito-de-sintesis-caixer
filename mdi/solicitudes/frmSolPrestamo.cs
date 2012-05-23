@@ -204,6 +204,7 @@ namespace solicitudes
             }
             catch (Exception exx)
             {
+                Console.WriteLine(exx.Message);
                 txtError.setError("Error al denegar Prestamo");
             }
         }
