@@ -43,7 +43,11 @@
             // 
             // txtSalir
             // 
-            this.txtSalir.Location = new System.Drawing.Point(327, 78);
+            this.txtSalir.Location = new System.Drawing.Point(423, 78);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(527, 78);
             // 
             // btnLimpiar
             // 
@@ -62,6 +66,10 @@
             // btnPdf
             // 
             this.btnPdf.Location = new System.Drawing.Point(540, 15);
+            // 
+            // btnLimpiarControles
+            // 
+            this.btnLimpiarControles.Location = new System.Drawing.Point(266, 78);
             // 
             // customTextBox1
             // 
