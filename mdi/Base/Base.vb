@@ -31,7 +31,7 @@ Public Class Base
     Protected Friend strQuery As String = ""
 #End Region
 
-#Region "Eventes"
+#Region "Eventos"
 
     ''' <summary>
     ''' Evento que carga cuando se muestra el Formulario, qui cargamos la DataGridView vacia.
