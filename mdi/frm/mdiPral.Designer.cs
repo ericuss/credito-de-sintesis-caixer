@@ -217,8 +217,6 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
-        private Guifreaks.Navisuite.NaviBar naviBar1;
-        private Guifreaks.Navisuite.NaviBand naviBand1;
         private Guifreaks.Navisuite.NaviBar naviBar2;
         private System.Windows.Forms.ToolStripStatusLabel menuLog;
         private System.Windows.Forms.MenuStrip menuStrip1;
