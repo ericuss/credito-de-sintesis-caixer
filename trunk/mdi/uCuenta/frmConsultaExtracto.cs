@@ -35,56 +35,13 @@ namespace uCuenta
 
         }     
         #endregion
-
-
-        private void dtpIni_ValueChanged(object sender, EventArgs e)
-        {
-            filtrarGrid();
-        }
-
-
-
         #region "Filtrar"
-        private void txtImporteIni_Leave(object sender, EventArgs e)
-        {
-            if (tools.clsTools.isNumeric(txtImporteIni.Text))
-            {
-                filtrarGrid();
-            }
-            else
-            {
-                txtImporteIni.Text = "";
-            }
-        }
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            filtrarGrid();
-        }
-        private void txtImporteFin_Leave(object sender, EventArgs e)
-        {
-            if (tools.clsTools.isNumeric(txtImporteFin.Text))
-            {
-                filtrarGrid();
-            }
-            else
-            {
-                txtImporteFin.Text = "";
-            }
-        }
-        private void txtDescrip_Leave(object sender, EventArgs e)
-        {
-            filtrarGrid();
-        }
-        private void txtCon_Leave(object sender, EventArgs e)
-        {
-            filtrarGrid();
-        }
         public override void filtrarGrid()
         {
             string strQuery = "select cuenta.codigoEntidad as Entidad,cuenta.codigoOficina as Oficina, cuenta.codigoControl as Control, cuenta.codigoCuenta as Cuenta, movimiento.* from movimiento " +
-                                " join cuenta on cuenta.id = movimiento.idcuenta "+
-                                " join cuentacliente on  cuenta.id = cuentacliente.idCuenta"+
-                                " join cliente on cliente.id = cuentacliente.idcuenta "+
+                                " join cuenta on cuenta.id = movimiento.idcuenta " +
+                                " join cuentacliente on  cuenta.id = cuentacliente.idCuenta" +
+                                " join cliente on cliente.id = cuentacliente.idcuenta " +
                                " where 1 = 1 ";
 
             if (chkIncluirFechas.Checked)
@@ -138,10 +95,23 @@ namespace uCuenta
             dts.Tables.Add(dtTemp);
 
             ocultarId();
-
-
         }
-
+          #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Boton de buscar, filtrara la grid con los datos
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            filtrarGrid();
+        }
+        /// <summary>
+        /// Limpia los controles, sustituido por funcion del Base
+        /// </summary>
+        /// <param name="sender">Parametro de evento</param>
+        /// <param name="e">Parametro de evento</param>
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtImporteIni.Text = "";
@@ -151,6 +121,11 @@ namespace uCuenta
             txtCon.Text = "";
             chkIncluirFechas.Checked = false;
         }
+        /// <summary>
+        /// Obtiene todos los registros
+        /// </summary>
+        /// <param name="sender">Parametro de evento</param>
+        /// <param name="e">Parametro de evento</param>
         private void btnTodos_Click(object sender, EventArgs e)
         {
             txtImporteIni.Text = "";
@@ -178,6 +153,5 @@ namespace uCuenta
             }
         }
         #endregion
-
     }
 }
