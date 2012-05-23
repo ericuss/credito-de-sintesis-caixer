@@ -91,10 +91,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\dll\AccDatos.dll</HintPath>
     </Reference>
-    <Reference Include="CustomTreeViewNode, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\dll\CustomTreeViewNode.dll</HintPath>
-    </Reference>
     <Reference Include="Guifreaks.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b9e40ae01dee0076, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Guifreaks\NaviSuite2.0\Guifreaks.Common.dll</HintPath>
