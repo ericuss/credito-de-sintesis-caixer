@@ -97,6 +97,7 @@ namespace cliente
             }
             catch (Exception exx)
             {
+                Console.WriteLine(exx.Message);
                 txtError.setError("Error Borrando Cliente.");
             }
         }
