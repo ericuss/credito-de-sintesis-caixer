@@ -22,14 +22,6 @@ namespace uMdi
     public partial class mdiPral : Form
     {
         #region "Variables Privadas"
-        /// <summary>
-        /// Usuario autenticado
-        /// </summary>
-        private String loggedUser;
-        /// <summary>
-        /// Propiedad por defecto del MDI
-        /// </summary>
-        private int childFormNumber = 0;
         #endregion
         #region "New"
         /// <summary>

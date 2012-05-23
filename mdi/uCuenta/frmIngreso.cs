@@ -74,6 +74,7 @@ namespace uCuenta
                 }
                 catch (Exception exx)
                 {
+                    Console.WriteLine(exx.Message);
                     txtError.setError("Error Cuenta Erronia");
                 }
             } 
