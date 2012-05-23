@@ -18,16 +18,19 @@ namespace uMdi
     public partial class frmLoggin : Form
     {
         #region "New"
+
         /// <summary>
         /// Constructor del Login
         /// </summary>
         public frmLoggin()
         {
             InitializeComponent();
-
         }
+
         #endregion
+
         #region "Eventos"
+
         /// <summary>
         /// Cierra la aplicacion
         /// </summary>
@@ -37,6 +40,7 @@ namespace uMdi
         {
             Application.Exit();
         }
+
         /// <summary>
         /// Llama a la funcion submit
         /// </summary>
@@ -46,6 +50,7 @@ namespace uMdi
         {
             submit();
         }
+
         /// <summary>
         /// Comprueba si existe el usuario y si la contraseña es correcta
         /// </summary>
@@ -59,6 +64,7 @@ namespace uMdi
             this.KeyPreview = true;
             this.KeyPress += new KeyPressEventHandler(frmLoggin_KeyPress);
         }
+
         /// <summary>
         /// Mira si la tecla pulsada es un retorno de carro
         /// </summary>
@@ -71,25 +77,29 @@ namespace uMdi
                 submit();
             }
         }
-        #endregion 
+        #endregion
+
         #region "Metodos"
+
+        /// <summary>
+        /// Funcion que se encarga de comprobar con la BBDD que el usuario y contraseña sean correctos. 
+        /// En caso afirmativo cierra este formulario y abre el mdiPrincipal. De lo contrario marca el error.
+        /// </summary>
         private void submit()
         {
-
             if (txtUsuario.Text.Trim() != "" && txtPass.Text.Trim() != "")
             {
                 AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
                 DataSet loginDS = conn.LanzarConsulta("Select * from trabajador where login= '" + txtUsuario.ValidValue + "'");
                 if (loginDS.Tables[0].Rows.Count != 0)
                 {
-                    if (getmd5(txtPass.ValidValue) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
+                    if (tools.clsTools.getMD5(txtPass.ValidValue) == (loginDS.Tables[0].Rows[0]["password"].ToString()))
                     {
                         crearTXT();
                         this.Dispose();
                     }
                     else
                     {
-
                         txtPass.setErrorColor("Pass Erroneo");
                     }
                 }
@@ -97,10 +107,9 @@ namespace uMdi
                 {
                     txtUsuario.setErrorColor("Usuario Erroneo");
                 }
-            }// error de usuario y/o contraseña mal
-
-
+            }
         }
+
         /// <summary>
         /// Genera un fichero de control
         /// </summary>
@@ -108,13 +117,10 @@ namespace uMdi
         {
             try
             {
-
                 //Pass the filepath and filename to the StreamWriter Constructor
                 StreamWriter sw = new StreamWriter(System.AppDomain.CurrentDomain.BaseDirectory + "user.ogt");
-
                 //Write a line of text
                 sw.WriteLine(txtUsuario.Text);
-
                 //Close the file
                 sw.Close();
             }
@@ -123,35 +129,8 @@ namespace uMdi
                 Console.WriteLine("Exception: " + e.Message);
                 this.Close();
             }
-
         }
-        /// <summary>
-        /// Codifica la contraseña para poder comprobarla
-        /// </summary>
-        /// <param name="input">Contraseña</param>
-        /// <returns>Devuelve el texto en MD5</returns>
-        private string getmd5(string input)
-        {
-            // Create a new instance of the MD5CryptoServiceProvider object.
-            MD5 md5Hasher = MD5.Create();
 
-            // Convert the input string to a byte array and compute the hash.
-            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));
-
-            // Create a new Stringbuilder to collect the bytes
-            // and create a string.
-            StringBuilder sBuilder = new StringBuilder();
-
-            // Loop through each byte of the hashed data 
-            // and format each one as a hexadecimal string.
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-
-            // Return the hexadecimal string.
-            return sBuilder.ToString();
-        }
         #endregion
     }
 }
