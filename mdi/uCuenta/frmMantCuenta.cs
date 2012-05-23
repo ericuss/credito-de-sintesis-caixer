@@ -10,16 +10,34 @@ using EntityModel;
 
 namespace uCuenta
 {
+    /// <summary>
+    /// Mantenimiento de cuentas
+    /// </summary>
     public partial class frmMantCuenta : Base.Base
     {
+        #region "Propiedades"
+        /// <summary>
+        /// Entities del formulario
+        /// </summary>
         santanderEntities1 context = new santanderEntities1();
+        #endregion
+        #region "New"
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public frmMantCuenta()
         {
             InitializeComponent();
-           this.strTitulo = "Consulta de cuentas";
+            this.strTitulo = "Consulta de cuentas";
 
         }
-
+        #endregion
+        #region "Load"
+        /// <summary>
+        /// Load
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         private void frmMantCuenta_Load(object sender, EventArgs e)
         {
             loadCuentas();
@@ -27,7 +45,13 @@ namespace uCuenta
             dgv.RowHeaderMouseClick += new DataGridViewCellMouseEventHandler(dgv_RowHeaderMouseClick);
             ocultarId();
         }
-
+        #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Cuando clickas en la row de la DataGrid de cuentas, filtra la Datagrid de titulares
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         void dgv_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
@@ -45,40 +69,22 @@ namespace uCuenta
             this.dgvCliente.DataSource = clientes;
             dgvCliente.Columns["idCliente"].Visible = false;
         }
-
-
-        public override void ocultarId()
-        {
-            if (dgv.Columns.Contains("idCuenta"))
-            {
-                this.dgv.Columns["idCuenta"].Visible = false;
-            }
-
-        }
-
-        private void loadCuentas()
-        {
-            var cuentas = from cue in context.cuenta
-                          select new
-                          {
-                              idCuenta = cue.id,
-                              CodigoEntidad = cue.codigoEntidad,
-                              CodigoOficina = cue.codigoOficina,
-                              CodigoControl = cue.codigoControl,
-                              CodigoCuenta = cue.codigoCuenta,
-                              Saldo = cue.saldo
-                          };
-            dgv.DataSource = cuentas;
-
-        }
-
+        /// <summary>
+        /// Abre el formulario de nueva cuenta
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void button1_Click(object sender, EventArgs e)
         {
             Form frmNueva = new frmNuevaCuenta();
             frmNueva.ShowDialog();
             loadCuentas();
         }
-
+        /// <summary>
+        /// Borra la cuenta seleccionada
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
@@ -108,7 +114,64 @@ namespace uCuenta
             context.SaveChanges();
             loadCuentas();
         }
+        /// <summary>
+        /// Abre el formulario de añadir titulares
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+            Form frmAn = new frmAnadirTitulares(idCuenta);
 
+            frmAn.ShowDialog();
+        }
+        /// <summary>
+        /// Llama al afuncion que filtra la DataGrid
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            filtrarGrid();
+        }
+
+        #endregion
+        #region "Metodos"
+        /// <summary>
+        /// Metodo que sobreescribe al base para ocultar los id's
+        /// </summary>
+        public override void ocultarId()
+        {
+            if (dgv.Columns.Contains("idCuenta"))
+            {
+                this.dgv.Columns["idCuenta"].Visible = false;
+            }
+
+        }
+        /// <summary>
+        /// Carga las cuentas
+        /// </summary>
+        private void loadCuentas()
+        {
+            var cuentas = from cue in context.cuenta
+                          select new
+                          {
+                              idCuenta = cue.id,
+                              CodigoEntidad = cue.codigoEntidad,
+                              CodigoOficina = cue.codigoOficina,
+                              CodigoControl = cue.codigoControl,
+                              CodigoCuenta = cue.codigoCuenta,
+                              Saldo = cue.saldo
+                          };
+            dgv.DataSource = cuentas;
+
+        }
+        /// <summary>
+        /// Notifica la eliminacion de la cuenta
+        /// </summary>
+        /// <param name="p">Parametro del evento</param>
+        /// <param name="cuenta">Parametro del evento</param>
         private void notificarEliminacion(int p, cuenta cuenta)
         {
 
@@ -116,30 +179,19 @@ namespace uCuenta
             oldb.Ejecutar("insert into notificacion (asunto, text, idCliente) values ('Cuenta eliminada','Se ha eliminado la cuenta " + cuenta.codigoEntidad + " - " + cuenta.codigoOficina + " - " + cuenta.codigoControl + " - " + cuenta.codigoCuenta + "'," + p + ")");
 
         }
-
-
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
-            Form frmAn = new frmAnadirTitulares(idCuenta);
-          
-            frmAn.ShowDialog();
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            filtrarGrid();
-        }
-
+        /// <summary>
+        /// Sobreescribe el metodo del base para  filtrar la DataGrid
+        /// </summary>
         public override void filtrarGrid()
         {
 
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
             this.dgv.DataSource = conn.LanzarConsultaT("select id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta , saldo from cuenta " + buildWhere());
         }
-
+        /// <summary>
+        /// Construye el where del filtro
+        /// </summary>
+        /// <returns>Devuelve un String con el filtro</returns>
         private String buildWhere()
         {
             String where = " where 1=1 ";
@@ -151,7 +203,7 @@ namespace uCuenta
                       + "     from cuenta "
                       + "     join cuentacliente on cuenta.id = cuentacliente.idCuenta   "
                       + "     join cliente on cuentacliente.idCliente= cliente.id   "
-                      + "    where cliente.id="+idCliente+"    )";
+                      + "    where cliente.id=" + idCliente + "    )";
 
             }
             if (txtCuenta.ValidValue != "")
@@ -160,6 +212,11 @@ namespace uCuenta
             }
             return where;
         }
+        /// <summary>
+        /// Devuelve el id del cliente, a partir del Dni
+        /// </summary>
+        /// <param name="strDni">Dni del cliente</param>
+        /// <returns>Devuelve el id del cliente</returns>
         private string dameIdClienteByDni(String strDni)
         {
             AccDatos.OLEDBCON oDatos = new AccDatos.OLEDBCON();
@@ -170,5 +227,6 @@ namespace uCuenta
             }
             return null;
         }
+        #endregion
     }
 }
