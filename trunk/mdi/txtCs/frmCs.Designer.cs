@@ -131,10 +131,21 @@
         }
 
         #endregion
-
+        /// <summary>
+        /// DataGrid con los datos
+        /// </summary>
         public System.Windows.Forms.DataGridView dgv;
+        /// <summary>
+        /// Boton que sale del formulario
+        /// </summary>
         public System.Windows.Forms.Button btnSalir;
+        /// <summary>
+        /// Llama a la funcion de filtro
+        /// </summary>
         public System.Windows.Forms.Button btnBuscar;
+        /// <summary>
+        /// GroupBox con la DataGrid que contiene los datos
+        /// </summary>
         public System.Windows.Forms.GroupBox gbDatos;
 
     }
