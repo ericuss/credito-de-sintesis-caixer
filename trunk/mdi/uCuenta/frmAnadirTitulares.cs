@@ -69,6 +69,7 @@ namespace uCuenta
             }
             catch (Exception exx)
             {
+                Console.WriteLine(exx.Message);
                 txtError.setError("Error Añadiendo Titual");
             }
         }
@@ -115,6 +116,7 @@ namespace uCuenta
             }
             catch (Exception exx)
             {
+                Console.WriteLine(exx.Message);
                 txtError.setError("Error Borrando Titular.");
             }
 
@@ -166,6 +168,7 @@ namespace uCuenta
             }
             catch (Exception exx)
             {
+                Console.WriteLine(exx.Message);
                 txtError.setError("Error Borrando titular");
             }
         }
