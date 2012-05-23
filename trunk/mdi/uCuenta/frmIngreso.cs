@@ -9,54 +9,69 @@ using System.Windows.Forms;
 
 namespace uCuenta
 {
+    /// <summary>
+    /// Ingresa dinero en una cuenta
+    /// </summary>
     public partial class frmIngreso : Form
     {
+        #region "Propiedades"
+        /// <summary>
+        /// Objeto que Consulta/Modifica/Borra/inserta querys
+        /// </summary>
         AccDatos.OLEDBCON conn;
+        #endregion
+        #region "Contructor"
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public frmIngreso()
         {
             InitializeComponent();
             conn = new AccDatos.OLEDBCON();
         }
-
+        #endregion
+        #region "Load"
+        /// <summary>
+        /// Load
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void frmIngreso_Load(object sender, EventArgs e)
         {
             this.KeyPreview = true;
             this.KeyUp += new KeyEventHandler(frmIngreso_KeyUp);
         }
-
+        #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Si pulsas F3 filtra los datos
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         void frmIngreso_KeyUp(object sender, KeyEventArgs e)
         {
-
             if (csCliente.zzTxtId != "")
             {
-
                 if (e.KeyValue.ToString() == "114")
                 {
                     Buscar();
                 }
             }
         }
-
+        /// <summary>
+        /// Filtra los datos de la DataGrid
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         private void txtBuscar_Click(object sender, EventArgs e)
         {
             Buscar();
         }
-
-        private void Buscar()
-        {
-
-            String id = csCliente.zzTxtId;
-
-            this.dgvCuentas.DataSource = conn.LanzarConsultaT("select cuenta.id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta, saldo"
-                                                            + "  from cuenta "
-                                                            + "  join cuentacliente  "
-                                                            + "    on cuenta.id = cuentacliente.idCuenta"
-                                                            + "  join cliente "
-                                                            + "    on cuentacliente.idCliente = cliente.id"
-                                                            + " where dni='" + id + "'");
-            this.dgvCuentas.Columns["idCuenta"].Visible=false;
-        }
-
+        /// <summary>
+        /// Genera el ingreso
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         private void btnRealizar_Click(object sender, EventArgs e)
         {
             if (this.dgvCuentas.SelectedRows.Count == 1)
@@ -79,17 +94,34 @@ namespace uCuenta
                 }
             } 
         }
-
+        /// <summary>
+        /// Cierra el formulario
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+#endregion
+        #region "Metodos"
+        /// <summary>
+        /// Filtra la DataGrid con los datos
+        /// </summary>
+        private void Buscar()
+        {
 
-    
+            String id = csCliente.zzTxtId;
 
-
-
-
-
+            this.dgvCuentas.DataSource = conn.LanzarConsultaT("select cuenta.id as idCuenta, codigoEntidad, codigoOficina, codigoControl, codigoCuenta, saldo"
+                                                            + "  from cuenta "
+                                                            + "  join cuentacliente  "
+                                                            + "    on cuenta.id = cuentacliente.idCuenta"
+                                                            + "  join cliente "
+                                                            + "    on cuentacliente.idCliente = cliente.id"
+                                                            + " where dni='" + id + "'");
+            this.dgvCuentas.Columns["idCuenta"].Visible = false;
+        }
+        #endregion
     }
 }
