@@ -140,7 +140,6 @@
             this.dtpIni.Name = "dtpIni";
             this.dtpIni.Size = new System.Drawing.Size(200, 20);
             this.dtpIni.TabIndex = 10;
-            this.dtpIni.ValueChanged += new System.EventHandler(this.dtpIni_ValueChanged);
             // 
             // label2
             // 
@@ -375,7 +374,6 @@
             this.KeyPreview = true;
             this.Name = "frmConsultaExtracto";
             this.Text = "Consulta del Extracto";
-            this.Load += new System.EventHandler(this.frmConsultaExtracto_Load);
             this.Controls.SetChildIndex(this.btnLimpiar, 0);
             this.Controls.SetChildIndex(this.btnPdf, 0);
             this.Controls.SetChildIndex(this.btnLimpiarControles, 0);
