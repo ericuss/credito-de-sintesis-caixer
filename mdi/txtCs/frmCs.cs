@@ -282,7 +282,7 @@ namespace uFrmCs
             String strMontarWhere = "";
             foreach (object item in this.Controls)
             {
-                if (item.GetType().ToString() == "CustomValidatorTextBox.CustomValidatorTextBox" && ((CustomValidatorTextBox.CustomValidatorTextBox)item).Tag == "filtro" && ((CustomValidatorTextBox.CustomValidatorTextBox)item).Text.Length > 0)
+                if (item.GetType().ToString() == "CustomValidatorTextBox.CustomValidatorTextBox" && ((CustomValidatorTextBox.CustomValidatorTextBox)item).Tag.ToString() == "filtro" && ((CustomValidatorTextBox.CustomValidatorTextBox)item).Text.Length > 0)
                 {
                     strMontarWhere += " and " + ((CustomValidatorTextBox.CustomValidatorTextBox)item).zzCampoBd + " like '%" + ((CustomValidatorTextBox.CustomValidatorTextBox)item).Text + "%' ";
 
