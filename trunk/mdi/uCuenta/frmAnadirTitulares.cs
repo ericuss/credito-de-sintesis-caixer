@@ -10,10 +10,26 @@ using EntityModel;
 
 namespace uCuenta
 {
+    /// <summary>
+    /// Añade titulares a una cuenta
+    /// </summary>
     public partial class frmAnadirTitulares : Form
     {
+        #region "Propiedades"
+        /// <summary>
+        /// Id de la cuenta
+        /// </summary>
         private int idCuenta;
+        /// <summary>
+        /// El entities context del formulario
+        /// </summary>
         private santanderEntities1 context = new santanderEntities1();
+        #endregion
+        #region "New"
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="pidCuenta">El id de la cuenta a modificar</param>
         public frmAnadirTitulares(int pidCuenta)
         {
             InitializeComponent();
@@ -21,21 +37,13 @@ namespace uCuenta
             loadtxtCueta();
             loadGrid();
         }
-
-        private void loadtxtCueta()
-        {
-            var cun = from c in context.cuenta
-                      where c.id == idCuenta
-                      select new
-                      {
-                          Cuenta = c.codigoEntidad + " - " + c.codigoOficina + " - " + c.codigoControl + " - " + c.codigoCuenta
-                      };
-            foreach (var item in cun)
-            {
-                txtCuenta.Text = item.Cuenta;
-            }
-        }
-
+        #endregion
+        #region "Eventos"
+        /// <summary>
+        /// Añade una cuenta
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnAnadir_Click(object sender, EventArgs e)
         {
             try
@@ -73,25 +81,11 @@ namespace uCuenta
                 txtError.setError("Error Añadiendo Titual");
             }
         }
-
-        private void loadGrid()
-        {
-            var grd = from cli in context.cliente
-                      join ccc in context.cuentacliente
-                        on cli.id equals ccc.idCliente
-                      join cuu in context.cuenta
-                        on ccc.idCuenta equals cuu.id
-                      where cuu.id == idCuenta
-                      select new
-                      {
-                          Cliente = cli.nombre + " " + cli.apellidos,
-                          DNI = cli.dni,
-                          idCliente = cli.id
-                      };
-            dgvTitulares.DataSource = grd;
-            dgvTitulares.Columns["idCliente"].Visible = false;
-        }
-
+        /// <summary>
+        /// Borra el titular de la cuenta
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -121,7 +115,47 @@ namespace uCuenta
             }
 
         }
-
+        #endregion
+        #region "Metodos"
+        /// <summary>
+        /// Carta el txtCuenta con la entidad, oficina, control y cuenta
+        /// </summary>
+        private void loadtxtCueta()
+        {
+            var cun = from c in context.cuenta
+                      where c.id == idCuenta
+                      select new
+                      {
+                          Cuenta = c.codigoEntidad + " - " + c.codigoOficina + " - " + c.codigoControl + " - " + c.codigoCuenta
+                      };
+            foreach (var item in cun)
+            {
+                txtCuenta.Text = item.Cuenta;
+            }
+        }
+        /// <summary>
+        /// Carga la DataGrid con los titulares
+        /// </summary>
+        private void loadGrid()
+        {
+            var grd = from cli in context.cliente
+                      join ccc in context.cuentacliente
+                        on cli.id equals ccc.idCliente
+                      join cuu in context.cuenta
+                        on ccc.idCuenta equals cuu.id
+                      where cuu.id == idCuenta
+                      select new
+                      {
+                          Cliente = cli.nombre + " " + cli.apellidos,
+                          DNI = cli.dni,
+                          idCliente = cli.id
+                      };
+            dgvTitulares.DataSource = grd;
+            dgvTitulares.Columns["idCliente"].Visible = false;
+        }
+        /// <summary>
+        /// Marca como borrada la cuenta
+        /// </summary>
         private void deleteAccount()
         {
             cuenta tmpCuenta = new cuenta();
@@ -136,7 +170,9 @@ namespace uCuenta
             context.SaveChanges();
             this.Dispose();
         }
-
+        /// <summary>
+        /// Borra el titular
+        /// </summary>
         private void deleteTitular()
         {
             try
@@ -172,5 +208,6 @@ namespace uCuenta
                 txtError.setError("Error Borrando titular");
             }
         }
+        #endregion
     }
 }

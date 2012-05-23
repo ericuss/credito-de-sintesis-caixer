@@ -1,5 +1,8 @@
 ﻿namespace uCuenta
 {
+    /// <summary>
+    /// Añade titulares a una cuenta
+    /// </summary>
     partial class frmAnadirTitulares
     {
         /// <summary>
