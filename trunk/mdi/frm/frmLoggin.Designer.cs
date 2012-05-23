@@ -155,6 +155,9 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAceptar;
         private CustomValidatorTextBox.CustomValidatorTextBox txtPass;
+        /// <summary>
+        /// Usuario que se quiere autenticar
+        /// </summary>
         public CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
     }
 }
