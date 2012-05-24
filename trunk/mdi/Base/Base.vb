@@ -39,7 +39,11 @@ Public Class Base
     ''' <param name="sender">Objeto del evento</param>
     ''' <param name="e">Objeto del evento</param>
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Try
+            Me.btnPdf.Image = New Bitmap("images/pdf.png")
+        Catch ex As Exception
 
+        End Try
         Dim conn As New AccDatos.OLEDBCON
         If strQuery = "" Then
             dts = conn.ObtenerTablaVacia(tablaBBDD)
