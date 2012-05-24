@@ -73,7 +73,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(700, 157);
+            this.btnLimpiar.Location = new System.Drawing.Point(200, 161);
             this.btnLimpiar.Visible = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
@@ -117,6 +117,7 @@
             // btnLimpiarControles
             // 
             this.btnLimpiarControles.Location = new System.Drawing.Point(119, 157);
+            this.btnLimpiarControles.Size = new System.Drawing.Size(104, 23);
             // 
             // label1
             // 
@@ -198,7 +199,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(596, 157);
+            this.btnBuscar.Location = new System.Drawing.Point(692, 157);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 13;
@@ -374,10 +375,10 @@
             this.KeyPreview = true;
             this.Name = "frmConsultaExtracto";
             this.Text = "Consulta del Extracto";
+            this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.btnLimpiar, 0);
             this.Controls.SetChildIndex(this.btnPdf, 0);
             this.Controls.SetChildIndex(this.btnLimpiarControles, 0);
-            this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.gbFiltro, 0);
             this.Controls.SetChildIndex(this.gbResultado, 0);
             this.Controls.SetChildIndex(this.txtSalir, 0);

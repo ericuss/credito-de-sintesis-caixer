@@ -46,7 +46,7 @@
             // 
             // csBuscarCliente
             // 
-            this.csBuscarCliente.Location = new System.Drawing.Point(28, 51);
+            this.csBuscarCliente.Location = new System.Drawing.Point(31, 36);
             this.csBuscarCliente.Name = "csBuscarCliente";
             this.csBuscarCliente.Size = new System.Drawing.Size(426, 35);
             this.csBuscarCliente.TabIndex = 0;
@@ -64,7 +64,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 19);
+            this.label1.Location = new System.Drawing.Point(34, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 1;
@@ -73,7 +73,7 @@
             // txtCuenta
             // 
             this.txtCuenta.Enabled = false;
-            this.txtCuenta.Location = new System.Drawing.Point(100, 16);
+            this.txtCuenta.Location = new System.Drawing.Point(100, 10);
             this.txtCuenta.Name = "txtCuenta";
             this.txtCuenta.Size = new System.Drawing.Size(221, 20);
             this.txtCuenta.TabIndex = 2;
@@ -81,7 +81,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dgvTitulares);
-            this.groupBox1.Location = new System.Drawing.Point(12, 135);
+            this.groupBox1.Location = new System.Drawing.Point(12, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(459, 160);
             this.groupBox1.TabIndex = 3;
@@ -90,9 +90,9 @@
             // 
             // dgvTitulares
             // 
-            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTitulares.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTitulares.BackgroundColor = System.Drawing.Color.White;
             this.dgvTitulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -103,7 +103,7 @@
             // 
             // btnAnadir
             // 
-            this.btnAnadir.Location = new System.Drawing.Point(396, 106);
+            this.btnAnadir.Location = new System.Drawing.Point(396, 77);
             this.btnAnadir.Name = "btnAnadir";
             this.btnAnadir.Size = new System.Drawing.Size(75, 23);
             this.btnAnadir.TabIndex = 4;
@@ -113,7 +113,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(305, 106);
+            this.btnBorrar.Location = new System.Drawing.Point(305, 77);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 5;
@@ -123,7 +123,7 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 301);
+            this.txtError.Location = new System.Drawing.Point(12, 272);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(459, 20);
             this.txtError.TabIndex = 6;
@@ -138,7 +138,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(483, 333);
+            this.ClientSize = new System.Drawing.Size(483, 304);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAnadir);
