@@ -517,7 +517,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(390, 246);
+            this.btnAceptar.Location = new System.Drawing.Point(491, 245);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(81, 23);
             this.btnAceptar.TabIndex = 21;
@@ -527,7 +527,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(581, 246);
+            this.btnCancelar.Location = new System.Drawing.Point(621, 245);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(81, 23);
             this.btnCancelar.TabIndex = 22;
@@ -537,9 +537,9 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 232);
+            this.txtError.Location = new System.Drawing.Point(16, 248);
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(299, 20);
+            this.txtError.Size = new System.Drawing.Size(436, 20);
             this.txtError.TabIndex = 23;
             this.txtError.ValidValue = "";
             this.txtError.Visible = false;
