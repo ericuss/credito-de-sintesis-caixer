@@ -63,8 +63,8 @@
             // 
             // tcMain
             // 
-            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tcMain.Controls.Add(this.tabPage1);
             this.tcMain.Controls.Add(this.tabPage2);
             this.tcMain.Location = new System.Drawing.Point(12, 23);
@@ -232,9 +232,9 @@
             // 
             // dgvTitulares
             // 
-            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvTitulares.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTitulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTitulares.Location = new System.Drawing.Point(6, 19);
             this.dgvTitulares.Name = "dgvTitulares";
@@ -270,7 +270,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(16, 441);
+            this.btnAceptar.Location = new System.Drawing.Point(193, 406);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 2;
@@ -280,7 +280,7 @@
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(156, 441);
+            this.btnDenegar.Location = new System.Drawing.Point(293, 406);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.Size = new System.Drawing.Size(75, 23);
             this.btnDenegar.TabIndex = 3;
@@ -290,7 +290,7 @@
             // 
             // btnMantener
             // 
-            this.btnMantener.Location = new System.Drawing.Point(297, 441);
+            this.btnMantener.Location = new System.Drawing.Point(93, 406);
             this.btnMantener.Name = "btnMantener";
             this.btnMantener.Size = new System.Drawing.Size(75, 23);
             this.btnMantener.TabIndex = 4;
@@ -302,7 +302,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 476);
+            this.ClientSize = new System.Drawing.Size(384, 441);
             this.Controls.Add(this.btnMantener);
             this.Controls.Add(this.btnDenegar);
             this.Controls.Add(this.btnAceptar);

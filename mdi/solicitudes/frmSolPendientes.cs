@@ -37,7 +37,15 @@ namespace solicitudes
         #endregion
 
         #region "Eventos"
-
+        /// <summary>
+        /// Lanza el evento de filtro de datos
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            filtrar();
+        }
         /// <summary>
         /// Evento que se ejecuta al pulsar la tecla F3. 
         /// Llama a la funcion de Filtrado de la DataGridView
@@ -195,5 +203,7 @@ namespace solicitudes
         }
 
         #endregion
+
+       
     }
 }
