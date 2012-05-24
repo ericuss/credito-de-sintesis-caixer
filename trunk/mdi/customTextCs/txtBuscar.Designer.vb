@@ -71,7 +71,7 @@ Partial Class txtBuscar
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.txtId)
         Me.Name = "txtBuscar"
-        Me.Size = New System.Drawing.Size(426, 35)
+        Me.Size = New System.Drawing.Size(426, 34)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
