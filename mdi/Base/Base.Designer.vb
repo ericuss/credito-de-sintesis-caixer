@@ -110,7 +110,7 @@ Partial Class Base
         'btnPdf
         '
         Me.btnPdf.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnPdf.Image = Global.Base.My.Resources.Resources.pdf
+
         Me.btnPdf.Location = New System.Drawing.Point(632, 25)
         Me.btnPdf.Name = "btnPdf"
         Me.btnPdf.Size = New System.Drawing.Size(27, 37)
