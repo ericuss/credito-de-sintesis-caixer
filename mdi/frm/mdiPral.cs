@@ -11,6 +11,7 @@ using uMdi;
 using customBtn;
 using Microsoft.VisualBasic;
 using System.IO;
+using Microsoft.Win32;
 
 
 namespace uMdi
@@ -113,12 +114,57 @@ namespace uMdi
             Thread.Sleep(2800);
             th.Abort();
             Thread.Sleep(2800);
+            checkConnector();
             doLogin();
             loadMenuLateral();
             this.WindowState = FormWindowState.Maximized;
             this.BackColor = Color.White;
         }
+
+        private void checkConnector()
+        {
+
+
+            RegistryKey mysqlcon = Registry.LocalMachine.OpenSubKey("Software").OpenSubKey("MySQL AB");
+            if (mysqlcon != null)
+            {
+                RegistryKey netConnector = mysqlcon.OpenSubKey("MySQL Connector/Net");
+                if (netConnector == null)
+                {
+                    MessageBox.Show("El conector .Net de MySql ha de estar instalado.\n Por favor instale el producto y ejecute de nuevo la aplicación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+            }
+
+
+
+
+
+            /*   string registryKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+               RegistryKey key = Registry.LocalMachine.OpenSubKey(registryKey);
+               String[] list = key.GetSubKeyNames();
+               String[] namList = new String[list.Length];
+               RegistryKey subkey;
+
+               for (int i = 0; i < list.Length; i++)
+               {
+                   subkey = key.OpenSubKey(list[i]);
+                   if (subkey.GetValue("DisplayName") != null)
+                   {
+                       namList[i] = subkey.GetValue("DisplayName").ToString();
+                   }
+               }
+
+
+               int num = (from n in namList
+                          where n.Contains("MySQL Connector Net")
+                          select n).Count();
+               Console.WriteLine(num);*/
+
+        }
+
         #endregion
+
         #region "Metodos"
         /// <summary>
         /// Carga el menu lateral
