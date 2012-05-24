@@ -43,33 +43,42 @@
             // 
             // txtSalir
             // 
-            this.txtSalir.Location = new System.Drawing.Point(423, 78);
+            this.txtSalir.Location = new System.Drawing.Point(423, 67);
+            this.txtSalir.Visible = false;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(527, 78);
+            this.btnUpdate.Location = new System.Drawing.Point(527, 67);
+            this.btnUpdate.Text = "Guardar";
+            // 
+            // btnTodos
+            // 
+            this.btnTodos.Location = new System.Drawing.Point(30, 67);
             // 
             // btnLimpiar
             // 
+            this.btnLimpiar.Location = new System.Drawing.Point(254, 67);
             this.btnLimpiar.Visible = false;
             // 
             // gbResultado
             // 
-            this.gbResultado.Size = new System.Drawing.Size(650, 322);
+            this.gbResultado.Location = new System.Drawing.Point(12, 96);
+            this.gbResultado.Size = new System.Drawing.Size(650, 333);
             // 
             // gbFiltro
             // 
-            this.gbFiltro.Location = new System.Drawing.Point(590, 12);
-            this.gbFiltro.Size = new System.Drawing.Size(48, 60);
+            this.gbFiltro.Location = new System.Drawing.Point(500, 6);
+            this.gbFiltro.Size = new System.Drawing.Size(48, 46);
             this.gbFiltro.Visible = false;
             // 
             // btnPdf
             // 
-            this.btnPdf.Location = new System.Drawing.Point(540, 15);
+            this.btnPdf.Location = new System.Drawing.Point(632, 6);
             // 
             // btnLimpiarControles
             // 
-            this.btnLimpiarControles.Location = new System.Drawing.Point(266, 78);
+            this.btnLimpiarControles.Location = new System.Drawing.Point(134, 67);
+            this.btnLimpiarControles.Size = new System.Drawing.Size(103, 23);
             // 
             // customTextBox1
             // 
@@ -77,7 +86,7 @@
             this.customTextBox1.Dll = null;
             this.customTextBox1.Form = null;
             this.customTextBox1.isID = "True";
-            this.customTextBox1.Location = new System.Drawing.Point(464, 12);
+            this.customTextBox1.Location = new System.Drawing.Point(445, 6);
             this.customTextBox1.Name = "customTextBox1";
             this.customTextBox1.NomTaula = null;
             this.customTextBox1.Size = new System.Drawing.Size(36, 20);
@@ -92,7 +101,7 @@
             this.customTextBox2.Dll = null;
             this.customTextBox2.Form = null;
             this.customTextBox2.isID = "False";
-            this.customTextBox2.Location = new System.Drawing.Point(99, 12);
+            this.customTextBox2.Location = new System.Drawing.Point(99, 6);
             this.customTextBox2.Name = "customTextBox2";
             this.customTextBox2.NomTaula = null;
             this.customTextBox2.Size = new System.Drawing.Size(100, 20);
@@ -106,7 +115,7 @@
             this.customTextBox3.Dll = null;
             this.customTextBox3.Form = null;
             this.customTextBox3.isID = "False";
-            this.customTextBox3.Location = new System.Drawing.Point(99, 37);
+            this.customTextBox3.Location = new System.Drawing.Point(99, 32);
             this.customTextBox3.Name = "customTextBox3";
             this.customTextBox3.NomTaula = null;
             this.customTextBox3.Size = new System.Drawing.Size(100, 20);
@@ -120,7 +129,7 @@
             this.customTextBox4.Dll = null;
             this.customTextBox4.Form = null;
             this.customTextBox4.isID = "False";
-            this.customTextBox4.Location = new System.Drawing.Point(318, 15);
+            this.customTextBox4.Location = new System.Drawing.Point(318, 6);
             this.customTextBox4.Name = "customTextBox4";
             this.customTextBox4.NomTaula = null;
             this.customTextBox4.Size = new System.Drawing.Size(100, 20);
@@ -134,7 +143,7 @@
             this.customTextBox5.Dll = null;
             this.customTextBox5.Form = null;
             this.customTextBox5.isID = "False";
-            this.customTextBox5.Location = new System.Drawing.Point(318, 41);
+            this.customTextBox5.Location = new System.Drawing.Point(318, 32);
             this.customTextBox5.Name = "customTextBox5";
             this.customTextBox5.NomTaula = null;
             this.customTextBox5.Size = new System.Drawing.Size(100, 20);
@@ -145,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Location = new System.Drawing.Point(55, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 21;
@@ -154,7 +163,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 41);
+            this.label2.Location = new System.Drawing.Point(15, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 13);
             this.label2.TabIndex = 22;
@@ -163,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(217, 18);
+            this.label3.Location = new System.Drawing.Point(284, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 23;
@@ -172,7 +181,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(217, 44);
+            this.label4.Location = new System.Drawing.Point(217, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 24;
