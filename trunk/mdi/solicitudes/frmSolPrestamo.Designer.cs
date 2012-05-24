@@ -95,10 +95,10 @@
             this.tcMain.Controls.Add(this.tabPage1);
             this.tcMain.Controls.Add(this.tabPage4);
             this.tcMain.Controls.Add(this.tabPage3);
-            this.tcMain.Location = new System.Drawing.Point(12, 18);
+            this.tcMain.Location = new System.Drawing.Point(12, -3);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(503, 356);
+            this.tcMain.Size = new System.Drawing.Size(503, 374);
             this.tcMain.TabIndex = 2;
             // 
             // tabPage5
@@ -107,15 +107,15 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(495, 330);
+            this.tabPage5.Size = new System.Drawing.Size(495, 348);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Resumen";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.txtCuota);
             this.groupBox6.Controls.Add(this.txtPlazo);
             this.groupBox6.Controls.Add(this.txtFinalidad);
@@ -254,7 +254,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(495, 330);
+            this.tabPage1.Size = new System.Drawing.Size(495, 348);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos Personales";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -368,15 +368,15 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(495, 330);
+            this.tabPage4.Size = new System.Drawing.Size(495, 348);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Cuentas";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.dgvMovimientos);
             this.groupBox2.Location = new System.Drawing.Point(6, 126);
             this.groupBox2.Name = "groupBox2";
@@ -399,8 +399,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvCuentas);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
@@ -429,15 +429,15 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(495, 330);
+            this.tabPage3.Size = new System.Drawing.Size(495, 348);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Acciones";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.dgvHistAcciones);
             this.groupBox4.Location = new System.Drawing.Point(6, 125);
             this.groupBox4.Name = "groupBox4";
@@ -451,9 +451,9 @@
             this.dgvHistAcciones.AllowUserToAddRows = false;
             this.dgvHistAcciones.AllowUserToDeleteRows = false;
             this.dgvHistAcciones.AllowUserToOrderColumns = true;
-            this.dgvHistAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHistAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHistAcciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistAcciones.Location = new System.Drawing.Point(6, 19);
             this.dgvHistAcciones.Name = "dgvHistAcciones";
@@ -463,8 +463,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.dgvAcciones);
             this.groupBox3.Location = new System.Drawing.Point(6, 6);
             this.groupBox3.Name = "groupBox3";
@@ -478,8 +478,8 @@
             this.dgvAcciones.AllowUserToAddRows = false;
             this.dgvAcciones.AllowUserToDeleteRows = false;
             this.dgvAcciones.AllowUserToOrderColumns = true;
-            this.dgvAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAcciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAcciones.Location = new System.Drawing.Point(6, 19);
             this.dgvAcciones.Name = "dgvAcciones";
@@ -498,7 +498,7 @@
             // 
             // btnMantener
             // 
-            this.btnMantener.Location = new System.Drawing.Point(411, 400);
+            this.btnMantener.Location = new System.Drawing.Point(229, 377);
             this.btnMantener.Name = "btnMantener";
             this.btnMantener.Size = new System.Drawing.Size(75, 23);
             this.btnMantener.TabIndex = 8;
@@ -508,7 +508,7 @@
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(194, 400);
+            this.btnDenegar.Location = new System.Drawing.Point(436, 377);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.Size = new System.Drawing.Size(75, 23);
             this.btnDenegar.TabIndex = 7;
@@ -518,7 +518,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(20, 400);
+            this.btnAceptar.Location = new System.Drawing.Point(334, 377);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -528,9 +528,9 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 440);
+            this.txtError.Location = new System.Drawing.Point(12, 404);
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(503, 20);
+            this.txtError.Size = new System.Drawing.Size(499, 20);
             this.txtError.TabIndex = 10;
             this.txtError.ValidValue = "";
             this.txtError.Visible = false;
@@ -543,7 +543,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 472);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(527, 430);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMantener);
