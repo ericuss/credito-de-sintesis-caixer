@@ -46,6 +46,7 @@
             // txtSalir
             // 
             this.txtSalir.Location = new System.Drawing.Point(566, 83);
+            this.txtSalir.Visible = false;
             // 
             // btnUpdate
             // 
@@ -86,8 +87,8 @@
             // 
             // btnLimpiarControles
             // 
-            this.btnLimpiarControles.Location = new System.Drawing.Point(30, 83);
-            this.btnLimpiarControles.Size = new System.Drawing.Size(104, 23);
+            this.btnLimpiarControles.Location = new System.Drawing.Point(21, 83);
+            this.btnLimpiarControles.Size = new System.Drawing.Size(117, 23);
             // 
             // groupBox1
             // 
@@ -116,7 +117,7 @@
             // 
             // btnNuevaCuenta
             // 
-            this.btnNuevaCuenta.Location = new System.Drawing.Point(144, 83);
+            this.btnNuevaCuenta.Location = new System.Drawing.Point(439, 83);
             this.btnNuevaCuenta.Name = "btnNuevaCuenta";
             this.btnNuevaCuenta.Size = new System.Drawing.Size(75, 23);
             this.btnNuevaCuenta.TabIndex = 17;
@@ -126,7 +127,7 @@
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(271, 83);
+            this.btnBorrar.Location = new System.Drawing.Point(589, 83);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(75, 23);
             this.btnBorrar.TabIndex = 18;

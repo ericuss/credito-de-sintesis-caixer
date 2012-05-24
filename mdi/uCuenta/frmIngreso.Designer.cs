@@ -46,31 +46,31 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvCuentas);
-            this.groupBox1.Location = new System.Drawing.Point(12, 65);
+            this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 191);
+            this.groupBox1.Size = new System.Drawing.Size(544, 203);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cuentas";
             // 
             // dgvCuentas
             // 
-            this.dgvCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuentas.Location = new System.Drawing.Point(6, 19);
             this.dgvCuentas.Name = "dgvCuentas";
             this.dgvCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCuentas.Size = new System.Drawing.Size(532, 158);
+            this.dgvCuentas.Size = new System.Drawing.Size(532, 170);
             this.dgvCuentas.TabIndex = 0;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(481, 355);
+            this.btnCerrar.Location = new System.Drawing.Point(481, 313);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // btnRealizar
             // 
-            this.btnRealizar.Location = new System.Drawing.Point(116, 355);
+            this.btnRealizar.Location = new System.Drawing.Point(116, 313);
             this.btnRealizar.Name = "btnRealizar";
             this.btnRealizar.Size = new System.Drawing.Size(75, 23);
             this.btnRealizar.TabIndex = 5;
@@ -90,7 +90,7 @@
             // 
             // btnNueva
             // 
-            this.btnNueva.Location = new System.Drawing.Point(24, 355);
+            this.btnNueva.Location = new System.Drawing.Point(24, 313);
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(75, 23);
             this.btnNueva.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             // csCliente
             // 
-            this.csCliente.Location = new System.Drawing.Point(12, 24);
+            this.csCliente.Location = new System.Drawing.Point(12, 12);
             this.csCliente.Name = "csCliente";
             this.csCliente.Size = new System.Drawing.Size(426, 35);
             this.csCliente.TabIndex = 0;
@@ -127,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 289);
+            this.label1.Location = new System.Drawing.Point(15, 275);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 8;
@@ -136,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(294, 289);
+            this.label2.Location = new System.Drawing.Point(294, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 10;
@@ -144,7 +144,7 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 395);
+            this.txtError.Location = new System.Drawing.Point(12, 353);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(544, 20);
             this.txtError.TabIndex = 11;
@@ -157,7 +157,7 @@
             // 
             // txtImporte
             // 
-            this.txtImporte.Location = new System.Drawing.Point(74, 286);
+            this.txtImporte.Location = new System.Drawing.Point(74, 272);
             this.txtImporte.Name = "txtImporte";
             this.txtImporte.Size = new System.Drawing.Size(214, 20);
             this.txtImporte.TabIndex = 12;
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(568, 427);
+            this.ClientSize = new System.Drawing.Size(568, 384);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.label2);
