@@ -66,7 +66,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(106, 133);
+            this.btnCancelar.Location = new System.Drawing.Point(332, 103);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -76,7 +76,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(296, 133);
+            this.btnAceptar.Location = new System.Drawing.Point(224, 103);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -125,7 +125,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(419, 176);
+            this.ClientSize = new System.Drawing.Size(419, 137);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.btnAceptar);
