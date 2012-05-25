@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtFechaNacimiento = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtMail = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtPoblacion = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtDireccion = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtTelfono = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtApellido = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtNombre = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.chkCrearUser = new System.Windows.Forms.CheckBox();
@@ -42,14 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtNombre = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtApellido = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtTelfono = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtDireccion = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtPoblacion = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtMail = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtFechaNacimiento = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.txtDNI);
             this.groupBox1.Controls.Add(this.txtMail);
@@ -79,44 +81,139 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 334);
+            this.groupBox1.Size = new System.Drawing.Size(325, 371);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
+            // txtFechaNacimiento
+            // 
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
+            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
+            this.txtFechaNacimiento.Size = new System.Drawing.Size(157, 20);
+            this.txtFechaNacimiento.TabIndex = 27;
+            this.txtFechaNacimiento.ValidValue = "";
+            this.txtFechaNacimiento.zzCampoBd = null;
+            this.txtFechaNacimiento.zzValidateIsNumeric = false;
+            this.txtFechaNacimiento.zzValidateLength = false;
+            this.txtFechaNacimiento.zzValidMaxLength = ((short)(0));
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(130, 200);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(157, 20);
+            this.txtDNI.TabIndex = 26;
+            this.txtDNI.ValidValue = "";
+            this.txtDNI.zzCampoBd = null;
+            this.txtDNI.zzValidateIsNumeric = false;
+            this.txtDNI.zzValidateLength = false;
+            this.txtDNI.zzValidMaxLength = ((short)(0));
+            // 
+            // txtMail
+            // 
+            this.txtMail.Location = new System.Drawing.Point(130, 171);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(157, 20);
+            this.txtMail.TabIndex = 25;
+            this.txtMail.ValidValue = "";
+            this.txtMail.zzCampoBd = null;
+            this.txtMail.zzValidateIsNumeric = false;
+            this.txtMail.zzValidateLength = false;
+            this.txtMail.zzValidMaxLength = ((short)(0));
+            // 
+            // txtPoblacion
+            // 
+            this.txtPoblacion.Location = new System.Drawing.Point(130, 142);
+            this.txtPoblacion.Name = "txtPoblacion";
+            this.txtPoblacion.Size = new System.Drawing.Size(157, 20);
+            this.txtPoblacion.TabIndex = 24;
+            this.txtPoblacion.ValidValue = "";
+            this.txtPoblacion.zzCampoBd = null;
+            this.txtPoblacion.zzValidateIsNumeric = false;
+            this.txtPoblacion.zzValidateLength = false;
+            this.txtPoblacion.zzValidMaxLength = ((short)(0));
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(130, 113);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(157, 20);
+            this.txtDireccion.TabIndex = 23;
+            this.txtDireccion.ValidValue = "";
+            this.txtDireccion.zzCampoBd = null;
+            this.txtDireccion.zzValidateIsNumeric = false;
+            this.txtDireccion.zzValidateLength = false;
+            this.txtDireccion.zzValidMaxLength = ((short)(0));
+            // 
+            // txtTelfono
+            // 
+            this.txtTelfono.Location = new System.Drawing.Point(130, 84);
+            this.txtTelfono.Name = "txtTelfono";
+            this.txtTelfono.Size = new System.Drawing.Size(157, 20);
+            this.txtTelfono.TabIndex = 22;
+            this.txtTelfono.ValidValue = "";
+            this.txtTelfono.zzCampoBd = null;
+            this.txtTelfono.zzValidateIsNumeric = false;
+            this.txtTelfono.zzValidateLength = false;
+            this.txtTelfono.zzValidMaxLength = ((short)(0));
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(130, 55);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(157, 20);
+            this.txtApellido.TabIndex = 21;
+            this.txtApellido.ValidValue = "";
+            this.txtApellido.zzCampoBd = null;
+            this.txtApellido.zzValidateIsNumeric = false;
+            this.txtApellido.zzValidateLength = false;
+            this.txtApellido.zzValidMaxLength = ((short)(0));
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(130, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(157, 20);
+            this.txtNombre.TabIndex = 20;
+            this.txtNombre.ValidValue = "";
+            this.txtNombre.zzCampoBd = null;
+            this.txtNombre.zzValidateIsNumeric = false;
+            this.txtNombre.zzValidateLength = false;
+            this.txtNombre.zzValidMaxLength = ((short)(0));
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(210, 292);
+            this.btnCancelar.Location = new System.Drawing.Point(242, 329);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(108, 292);
+            this.btnGuardar.Location = new System.Drawing.Point(140, 329);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // chkCrearUser
             // 
             this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCrearUser.AutoSize = true;
-            this.chkCrearUser.Location = new System.Drawing.Point(169, 269);
+            this.chkCrearUser.Location = new System.Drawing.Point(171, 265);
             this.chkCrearUser.Name = "chkCrearUser";
             this.chkCrearUser.Size = new System.Drawing.Size(116, 17);
             this.chkCrearUser.TabIndex = 16;
             this.chkCrearUser.Text = "Crear Usuario Web";
             this.chkCrearUser.UseVisualStyleBackColor = true;
+            this.chkCrearUser.CheckedChanged += new System.EventHandler(this.chkCrearUser_CheckedChanged);
             // 
             // label8
             // 
@@ -192,9 +289,11 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 353);
+            this.txtError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtError.Location = new System.Drawing.Point(12, 397);
             this.txtError.Name = "txtError";
-            this.txtError.Size = new System.Drawing.Size(293, 20);
+            this.txtError.Size = new System.Drawing.Size(325, 20);
             this.txtError.TabIndex = 1;
             this.txtError.ValidValue = "";
             this.txtError.zzCampoBd = null;
@@ -202,108 +301,26 @@
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
-            // txtNombre
+            // txtUsuario
             // 
-            this.txtNombre.Location = new System.Drawing.Point(130, 26);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(157, 20);
-            this.txtNombre.TabIndex = 20;
-            this.txtNombre.ValidValue = "";
-            this.txtNombre.zzCampoBd = null;
-            this.txtNombre.zzValidateIsNumeric = false;
-            this.txtNombre.zzValidateLength = false;
-            this.txtNombre.zzValidMaxLength = ((short)(0));
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(130, 55);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(157, 20);
-            this.txtApellido.TabIndex = 21;
-            this.txtApellido.ValidValue = "";
-            this.txtApellido.zzCampoBd = null;
-            this.txtApellido.zzValidateIsNumeric = false;
-            this.txtApellido.zzValidateLength = false;
-            this.txtApellido.zzValidMaxLength = ((short)(0));
-            // 
-            // txtTelfono
-            // 
-            this.txtTelfono.Location = new System.Drawing.Point(130, 84);
-            this.txtTelfono.Name = "txtTelfono";
-            this.txtTelfono.Size = new System.Drawing.Size(157, 20);
-            this.txtTelfono.TabIndex = 22;
-            this.txtTelfono.ValidValue = "";
-            this.txtTelfono.zzCampoBd = null;
-            this.txtTelfono.zzValidateIsNumeric = false;
-            this.txtTelfono.zzValidateLength = false;
-            this.txtTelfono.zzValidMaxLength = ((short)(0));
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(130, 113);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(157, 20);
-            this.txtDireccion.TabIndex = 23;
-            this.txtDireccion.ValidValue = "";
-            this.txtDireccion.zzCampoBd = null;
-            this.txtDireccion.zzValidateIsNumeric = false;
-            this.txtDireccion.zzValidateLength = false;
-            this.txtDireccion.zzValidMaxLength = ((short)(0));
-            // 
-            // txtPoblacion
-            // 
-            this.txtPoblacion.Location = new System.Drawing.Point(130, 142);
-            this.txtPoblacion.Name = "txtPoblacion";
-            this.txtPoblacion.Size = new System.Drawing.Size(157, 20);
-            this.txtPoblacion.TabIndex = 24;
-            this.txtPoblacion.ValidValue = "";
-            this.txtPoblacion.zzCampoBd = null;
-            this.txtPoblacion.zzValidateIsNumeric = false;
-            this.txtPoblacion.zzValidateLength = false;
-            this.txtPoblacion.zzValidMaxLength = ((short)(0));
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(130, 171);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(157, 20);
-            this.txtMail.TabIndex = 25;
-            this.txtMail.ValidValue = "";
-            this.txtMail.zzCampoBd = null;
-            this.txtMail.zzValidateIsNumeric = false;
-            this.txtMail.zzValidateLength = false;
-            this.txtMail.zzValidMaxLength = ((short)(0));
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(130, 200);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(157, 20);
-            this.txtDNI.TabIndex = 26;
-            this.txtDNI.ValidValue = "";
-            this.txtDNI.zzCampoBd = null;
-            this.txtDNI.zzValidateIsNumeric = false;
-            this.txtDNI.zzValidateLength = false;
-            this.txtDNI.zzValidMaxLength = ((short)(0));
-            // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(130, 229);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(157, 20);
-            this.txtFechaNacimiento.TabIndex = 27;
-            this.txtFechaNacimiento.ValidValue = "";
-            this.txtFechaNacimiento.zzCampoBd = null;
-            this.txtFechaNacimiento.zzValidateIsNumeric = false;
-            this.txtFechaNacimiento.zzValidateLength = false;
-            this.txtFechaNacimiento.zzValidMaxLength = ((short)(0));
+            this.txtUsuario.Location = new System.Drawing.Point(98, 293);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
+            this.txtUsuario.Size = new System.Drawing.Size(189, 20);
+            this.txtUsuario.TabIndex = 28;
+            this.txtUsuario.ValidValue = "";
+            this.txtUsuario.Visible = false;
+            this.txtUsuario.zzCampoBd = null;
+            this.txtUsuario.zzValidateIsNumeric = false;
+            this.txtUsuario.zzValidateLength = false;
+            this.txtUsuario.zzValidMaxLength = ((short)(0));
             // 
             // frmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(317, 385);
+            this.ClientSize = new System.Drawing.Size(349, 422);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -339,5 +356,6 @@
         private CustomValidatorTextBox.CustomValidatorTextBox txtTelfono;
         private CustomValidatorTextBox.CustomValidatorTextBox txtApellido;
         private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
     }
 }
