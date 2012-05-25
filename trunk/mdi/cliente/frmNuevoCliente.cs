@@ -65,8 +65,16 @@ namespace cliente
         {
             if (chkCrearUser.Checked == true)
             {
-                txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
-                txtUsuario.Visible = true;
+                try
+                {
+                    txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
+                    txtUsuario.Visible = true;
+                }
+                catch (Exception exx)
+                {
+                    txtError.setError(exx.Message);
+
+                }
             }
             else
             {
