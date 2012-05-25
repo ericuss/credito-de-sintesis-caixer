@@ -140,26 +140,7 @@ namespace uMdi
 
 
 
-            /*   string registryKey = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-               RegistryKey key = Registry.LocalMachine.OpenSubKey(registryKey);
-               String[] list = key.GetSubKeyNames();
-               String[] namList = new String[list.Length];
-               RegistryKey subkey;
-
-               for (int i = 0; i < list.Length; i++)
-               {
-                   subkey = key.OpenSubKey(list[i]);
-                   if (subkey.GetValue("DisplayName") != null)
-                   {
-                       namList[i] = subkey.GetValue("DisplayName").ToString();
-                   }
-               }
-
-
-               int num = (from n in namList
-                          where n.Contains("MySQL Connector Net")
-                          select n).Count();
-               Console.WriteLine(num);*/
+          
 
         }
 

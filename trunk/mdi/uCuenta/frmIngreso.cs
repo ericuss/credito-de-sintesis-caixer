@@ -82,9 +82,9 @@ namespace uCuenta
                     String id = csCliente.zzTxtId;
                     int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
                     conn.Ejecutar("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + ", -" + txtImporte.Text + ",'Reintegro por caja de " + txtImporte.Text + "','Reintegro')");
-                    conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han ingresado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Reintegro')");
+                    conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han sacado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Reintegro')");
                     txtImporte.Text = "";
-                    txtError.setOK("Ingreso Realizado");
+                    txtError.setOK("Reintegro Realizado");
                     Buscar();
                 }
                 else
