@@ -40,14 +40,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtImporte = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.btnRetirar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvCuentas);
             this.groupBox1.Location = new System.Drawing.Point(12, 53);
             this.groupBox1.Name = "groupBox1";
@@ -58,9 +59,9 @@
             // 
             // dgvCuentas
             // 
-            this.dgvCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuentas.Location = new System.Drawing.Point(6, 19);
             this.dgvCuentas.Name = "dgvCuentas";
@@ -84,7 +85,7 @@
             this.btnRealizar.Name = "btnRealizar";
             this.btnRealizar.Size = new System.Drawing.Size(75, 23);
             this.btnRealizar.TabIndex = 5;
-            this.btnRealizar.Text = "Realizar";
+            this.btnRealizar.Text = "Ingresar";
             this.btnRealizar.UseVisualStyleBackColor = true;
             this.btnRealizar.Click += new System.EventHandler(this.btnRealizar_Click);
             // 
@@ -94,7 +95,7 @@
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(75, 23);
             this.btnNueva.TabIndex = 6;
-            this.btnNueva.Text = "Nueva";
+            this.btnNueva.Text = "Limpiar";
             this.btnNueva.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
@@ -167,12 +168,23 @@
             this.txtImporte.zzValidateLength = false;
             this.txtImporte.zzValidMaxLength = ((short)(0));
             // 
+            // btnRetirar
+            // 
+            this.btnRetirar.Location = new System.Drawing.Point(213, 313);
+            this.btnRetirar.Name = "btnRetirar";
+            this.btnRetirar.Size = new System.Drawing.Size(75, 23);
+            this.btnRetirar.TabIndex = 13;
+            this.btnRetirar.Text = "Retirar";
+            this.btnRetirar.UseVisualStyleBackColor = true;
+            this.btnRetirar.Click += new System.EventHandler(this.btnRetirar_Click);
+            // 
             // frmIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(568, 384);
+            this.Controls.Add(this.btnRetirar);
             this.Controls.Add(this.txtImporte);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.label2);
@@ -185,7 +197,7 @@
             this.Controls.Add(this.csCliente);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmIngreso";
-            this.Text = "Ingreso";
+            this.Text = "Ingreso y Reintegro";
             this.Load += new System.EventHandler(this.frmIngreso_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).EndInit();
@@ -207,5 +219,6 @@
         private System.Windows.Forms.Label label2;
         private CustomValidatorTextBox.CustomValidatorTextBox txtError;
         private CustomValidatorTextBox.CustomValidatorTextBox txtImporte;
+        private System.Windows.Forms.Button btnRetirar;
     }
 }

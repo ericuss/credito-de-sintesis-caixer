@@ -67,6 +67,38 @@ namespace uCuenta
         {
             Buscar();
         }
+
+        /// <summary>
+        /// Genera el reintegro
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
+        private void btnRetirar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToDouble(txtImporte.Text) > 0)
+                {
+                    String id = csCliente.zzTxtId;
+                    int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+                    conn.Ejecutar("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + ", -" + txtImporte.Text + ",'Reintegro por caja de " + txtImporte.Text + "','Reintegro')");
+                    conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han ingresado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Reintegro')");
+                    txtImporte.Text = "";
+                    txtError.setOK("Ingreso Realizado");
+                    Buscar();
+                }
+                else
+                {
+                    txtError.setError("Error Reintegro Negativo");
+                }
+            }
+            catch (Exception exx)
+            {
+                Console.WriteLine(exx.Message);
+                txtError.setError("Error Cuenta Erronia");
+            }
+        }
+
         /// <summary>
         /// Genera el ingreso
         /// </summary>
@@ -78,21 +110,27 @@ namespace uCuenta
             {
                 try
                 {
-                    String id = csCliente.zzTxtId;
-                    int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
-                    conn.Ejecutar("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + "," + txtImporte.Text + ",'Ingreso por caja de " + txtImporte.Text + "','Ingreso')");
-                    conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han ingresado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Ingreso')");
-                    txtImporte.Text = "";
-                    txtError.setOK("Ingreso Realizado");
-                    Buscar();
-
+                    if (Convert.ToDouble(txtImporte.Text) > 0)
+                    {
+                        String id = csCliente.zzTxtId;
+                        int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
+                        conn.Ejecutar("insert into movimiento(idCuenta,importe,descripcion,concepto) values (" + idCuenta + "," + txtImporte.Text + ",'Ingreso por caja de " + txtImporte.Text + "','Ingreso')");
+                        conn.Ejecutar("insert into notificacion ( text, idCliente, asunto) values ('Se han ingresado" + txtImporte.Text + " Euros.',(select id from cliente where dni='" + id + "'),'Ingreso')");
+                        txtImporte.Text = "";
+                        txtError.setOK("Ingreso Realizado");
+                        Buscar();
+                    }
+                    else
+                    {
+                        txtError.setError("Error Ingreso Negativo");
+                    }
                 }
                 catch (Exception exx)
                 {
                     Console.WriteLine(exx.Message);
                     txtError.setError("Error Cuenta Erronia");
                 }
-            } 
+            }
         }
         /// <summary>
         /// Cierra el formulario
@@ -103,7 +141,7 @@ namespace uCuenta
         {
             this.Dispose();
         }
-#endregion
+        #endregion
         #region "Metodos"
         /// <summary>
         /// Filtra la DataGrid con los datos
@@ -123,5 +161,7 @@ namespace uCuenta
             this.dgvCuentas.Columns["idCuenta"].Visible = false;
         }
         #endregion
+
+
     }
 }
