@@ -132,7 +132,7 @@ namespace uTransferencia
         {
             try
             {
-                if (txtEntidad.Text.Trim() == "" && txtOficina.Text.Trim() == "" && txtControl.Text.Trim() == "" && txtCuenta.Text.Trim() == ""  )
+                if (txtEntidad.Text.Trim() == "" && txtOficina.Text.Trim() == "" && txtControl.Text.Trim() == "" && txtCuenta.Text.Trim() == "")
                 {
                     return false;
                 }
@@ -141,6 +141,10 @@ namespace uTransferencia
                     return false;
                 }
                 if (txtEntidadDes.Text.Trim() == "" && txtOficinaDes.Text.Trim() == "" && txtControlDes.Text.Trim() == "" && txtCuentaDes.Text.Trim() == "")
+                {
+                    return false;
+                }
+                if (txtEntidadDes.Text.Length != 4 && txtOficinaDes.Text.Length != 4 && txtControlDes.Text.Length != 2 && txtCuentaDes.Text.Length != 8)
                 {
                     return false;
                 }
