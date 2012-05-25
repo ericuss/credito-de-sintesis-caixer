@@ -43,8 +43,9 @@ namespace uTransferencia
             if (camposObligatorios())
             {
                 bTransferencia.clsBTransferencia btrans = new bTransferencia.clsBTransferencia();
-                if (txtEntidad.Text != txtEntidadDes.Text && txtOficina.Text != txtOficinaDes.Text
-                    && txtControl.Text != txtControlDes.Text && txtCuenta.Text != txtCuentaDes.Text)
+                String cueOrig = txtEntidad.Text + "" + txtOficina.Text + "" + txtControl.Text + "" + txtCuenta.Text;
+                String cueDes = txtEntidadDes.Text + "" + txtOficinaDes.Text + "" + txtControlDes.Text + "" + txtCuentaDes.Text;
+                if (cueDes!=cueOrig)
                 {
 
                     if (btrans.hayDinero(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text))
