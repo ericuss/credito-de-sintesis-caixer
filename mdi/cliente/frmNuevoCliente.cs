@@ -57,6 +57,24 @@ namespace cliente
         #region "Eventos"
 
         /// <summary>
+        /// Evento que al marcar el checkbox, genera un usuario y lo muestra en un TextBox
+        /// </summary>
+        /// <param name="sender">Parametro del Eento</param>
+        /// <param name="e">Parametro del Eento</param>
+        private void chkCrearUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCrearUser.Checked == true)
+            {
+                txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
+                txtUsuario.Visible = true;
+            }
+            else
+            {
+                txtUsuario.Visible = false;
+            }
+        }
+
+        /// <summary>
         /// Evento que cierra el formulario
         /// </summary>
         /// <param name="sender">Parametros del evento</param>
@@ -172,7 +190,7 @@ namespace cliente
             {
                 usuario tmpUsuario = new usuario
                 {
-                    login = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false),
+                    login = txtUsuario.ValidValue,
                     password = tools.clsTools.getMD5("12345"),
                     idioma = "es",
                     paginaPreferida = "/backend/cuenta/cuenta",
@@ -180,7 +198,6 @@ namespace cliente
                 };
                 context.AddTousuario(tmpUsuario);
             }
-
 
             context.SaveChanges();
             this.Dispose();
@@ -320,6 +337,8 @@ namespace cliente
             }
         }
         #endregion
+
+
     }
 }
 
