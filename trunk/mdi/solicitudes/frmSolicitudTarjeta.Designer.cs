@@ -99,6 +99,7 @@
             // 
             this.txtCorreo.Location = new System.Drawing.Point(129, 185);
             this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(191, 20);
             this.txtCorreo.TabIndex = 12;
             // 
@@ -106,6 +107,7 @@
             // 
             this.txtPoblacion.Location = new System.Drawing.Point(129, 152);
             this.txtPoblacion.Name = "txtPoblacion";
+            this.txtPoblacion.ReadOnly = true;
             this.txtPoblacion.Size = new System.Drawing.Size(191, 20);
             this.txtPoblacion.TabIndex = 11;
             // 
@@ -113,6 +115,7 @@
             // 
             this.txtTelefono.Location = new System.Drawing.Point(129, 121);
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(191, 20);
             this.txtTelefono.TabIndex = 10;
             // 
@@ -120,6 +123,7 @@
             // 
             this.txtApellidos.Location = new System.Drawing.Point(129, 84);
             this.txtApellidos.Name = "txtApellidos";
+            this.txtApellidos.ReadOnly = true;
             this.txtApellidos.Size = new System.Drawing.Size(191, 20);
             this.txtApellidos.TabIndex = 9;
             // 
@@ -127,6 +131,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(129, 56);
             this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(191, 20);
             this.txtNombre.TabIndex = 8;
             // 
@@ -134,6 +139,7 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(129, 25);
             this.txtDNI.Name = "txtDNI";
+            this.txtDNI.ReadOnly = true;
             this.txtDNI.Size = new System.Drawing.Size(191, 20);
             this.txtDNI.TabIndex = 7;
             // 
@@ -210,6 +216,7 @@
             // 
             this.txtSaldo.Location = new System.Drawing.Point(114, 57);
             this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.ReadOnly = true;
             this.txtSaldo.Size = new System.Drawing.Size(206, 20);
             this.txtSaldo.TabIndex = 4;
             // 
@@ -217,6 +224,7 @@
             // 
             this.txtCenta.Location = new System.Drawing.Point(114, 25);
             this.txtCenta.Name = "txtCenta";
+            this.txtCenta.ReadOnly = true;
             this.txtCenta.Size = new System.Drawing.Size(206, 20);
             this.txtCenta.TabIndex = 3;
             // 

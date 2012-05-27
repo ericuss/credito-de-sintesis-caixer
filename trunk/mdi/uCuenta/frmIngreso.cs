@@ -77,7 +77,8 @@ namespace uCuenta
         {
             try
             {
-                if (Convert.ToDouble(txtImporte.Text) > 0)
+                double saldo = Convert.ToDouble(this.dgvCuentas.SelectedRows[0].Cells["saldo"].Value.ToString());
+                if (Convert.ToDouble(txtImporte.Text) > 0 && saldo > Convert.ToDouble(txtImporte.Text))
                 {
                     String id = csCliente.zzTxtId;
                     int idCuenta = Convert.ToInt16(this.dgvCuentas.SelectedRows[0].Cells["idCuenta"].Value.ToString());
