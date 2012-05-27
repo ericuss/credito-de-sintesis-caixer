@@ -158,17 +158,25 @@ namespace uCuenta
         /// </summary>
         private void deleteAccount()
         {
-            cuenta tmpCuenta = new cuenta();
-            var cuen = from cue in context.cuenta
-                       where cue.id == idCuenta
-                       select cue;
-            foreach (var item in cuen)
+            try
             {
-                tmpCuenta = item;
+                cuenta tmpCuenta = new cuenta();
+                var cuen = from cue in context.cuenta
+                           where cue.id == idCuenta
+                           select cue;
+                foreach (var item in cuen)
+                {
+                    tmpCuenta = item;
+                }
+                context.DeleteObject(tmpCuenta);
+                context.SaveChanges();
+                this.Dispose();
             }
-            context.DeleteObject(tmpCuenta);
-            context.SaveChanges();
-            this.Dispose();
+            catch (Exception EX)
+            {
+                txtError.setError("Error borrando cuenta, tiene dependencias");
+                Console.WriteLine(EX.Message);
+            }
         }
         /// <summary>
         /// Borra el titular
