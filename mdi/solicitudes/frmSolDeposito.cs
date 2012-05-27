@@ -73,6 +73,16 @@ namespace solicitudes
 
         }
 
+
+        private void frmSolDeposito_Load_1(object sender, EventArgs e)
+        {
+            loadResumen();
+            loadPersonalData();
+            loadCuentas();
+            loadAcciones();
+            loadHistoricoAcciones();
+        }
+
         /// <summary>
         /// Evento que es ejecutado al hacer DobleClick sobre la cabecera de cada linia.
         /// Al hacer DobleClick carga en la otra grid los movimientos de la cuenta seleccionada
@@ -387,6 +397,7 @@ namespace solicitudes
 
         #endregion
 
+  
 
     }
 }

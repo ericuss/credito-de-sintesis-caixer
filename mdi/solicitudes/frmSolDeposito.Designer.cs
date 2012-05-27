@@ -566,6 +566,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSolDeposito";
             this.Text = "Solicitud Deposito";
+            this.Load += new System.EventHandler(this.frmSolDeposito_Load_1);
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistAcciones)).EndInit();

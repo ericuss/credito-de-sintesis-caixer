@@ -111,7 +111,7 @@ namespace cliente
         {
             if (dgv.SelectedRows.Count > 0 && dgv.SelectedRows.Count <= 1)
             {
-                Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["id"].Value.ToString()));
+                Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString()));
                 frmEdit.ShowDialog();
             }
         }
@@ -179,7 +179,7 @@ namespace cliente
         {
 
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
-            this.dgv.DataSource = conn.LanzarConsultaT("SELECT * FROM CLIENTE WHERE 1=1" + buildWhere());
+            this.dgv.DataSource = conn.LanzarConsultaT("SELECT ID as idCliente, nombre, apellidos, telefono, direccion, poblacion, mail, dni, fechaNacimiento, inactivo FROM CLIENTE WHERE 1=1" + buildWhere());
             ocultarId();
         }
 
