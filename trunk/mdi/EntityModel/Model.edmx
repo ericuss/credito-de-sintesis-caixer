@@ -281,6 +281,7 @@
           <Property Name="idCliente" Type="int" />
           <Property Name="idCuenta" Type="int" />
           <Property Name="idSolicitud" Type="int" />
+          <Property Name="activo" Type="bit" />
         </EntityType>
         <EntityType Name="solicitud">
           <Key>
@@ -1114,6 +1115,7 @@
           <NavigationProperty Name="cuenta" Relationship="santanderModel.cuenta_prestamo_fk" FromRole="prestamo" ToRole="cuenta" />
           <NavigationProperty Name="finalidadprestamo" Relationship="santanderModel.finalidadPrestamo_prestamo_fk" FromRole="prestamo" ToRole="finalidadprestamo" />
           <NavigationProperty Name="solicitud" Relationship="santanderModel.solicitud_prestamo_fk" FromRole="prestamo" ToRole="solicitud" />
+          <Property Type="Boolean" Name="activo" />
         </EntityType>
         <Association Name="cliente_prestamo_fk">
           <End Type="santanderModel.cliente" Role="cliente" Multiplicity="0..1" />
@@ -1402,6 +1404,7 @@
           <EntitySetMapping Name="prestamo">
             <EntityTypeMapping TypeName="santanderModel.prestamo">
               <MappingFragment StoreEntitySet="prestamo">
+                <ScalarProperty Name="activo" ColumnName="activo" />
                 <ScalarProperty Name="idSolicitud" ColumnName="idSolicitud" />
                 <ScalarProperty Name="idCuenta" ColumnName="idCuenta" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />

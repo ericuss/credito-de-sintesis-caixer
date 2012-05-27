@@ -95,7 +95,7 @@
             this.tcMain.Controls.Add(this.tabPage1);
             this.tcMain.Controls.Add(this.tabPage4);
             this.tcMain.Controls.Add(this.tabPage3);
-            this.tcMain.Location = new System.Drawing.Point(12, -3);
+            this.tcMain.Location = new System.Drawing.Point(12, 3);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(503, 374);
@@ -490,7 +490,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 377);
+            this.label1.Location = new System.Drawing.Point(9, 384);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 9;
@@ -498,7 +498,7 @@
             // 
             // btnMantener
             // 
-            this.btnMantener.Location = new System.Drawing.Point(229, 377);
+            this.btnMantener.Location = new System.Drawing.Point(229, 384);
             this.btnMantener.Name = "btnMantener";
             this.btnMantener.Size = new System.Drawing.Size(75, 23);
             this.btnMantener.TabIndex = 8;
@@ -508,7 +508,7 @@
             // 
             // btnDenegar
             // 
-            this.btnDenegar.Location = new System.Drawing.Point(436, 377);
+            this.btnDenegar.Location = new System.Drawing.Point(436, 384);
             this.btnDenegar.Name = "btnDenegar";
             this.btnDenegar.Size = new System.Drawing.Size(75, 23);
             this.btnDenegar.TabIndex = 7;
@@ -518,7 +518,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(334, 377);
+            this.btnAceptar.Location = new System.Drawing.Point(334, 384);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -528,7 +528,7 @@
             // 
             // txtError
             // 
-            this.txtError.Location = new System.Drawing.Point(12, 404);
+            this.txtError.Location = new System.Drawing.Point(12, 411);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(499, 20);
             this.txtError.TabIndex = 10;
@@ -544,7 +544,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 430);
+            this.ClientSize = new System.Drawing.Size(527, 443);
             this.Controls.Add(this.txtError);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMantener);

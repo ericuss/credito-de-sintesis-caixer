@@ -240,8 +240,8 @@ namespace solicitudes
         /// </summary>
         private void loadResumen()
         {
-
-            var pres = from pr in context.prestamo
+            
+           var pres = from pr in context.prestamo
                        join fin in context.finalidadprestamo
                         on pr.idFinalidad equals fin.id
                        join cli in context.cliente
@@ -251,6 +251,7 @@ namespace solicitudes
                        join sol in context.solicitud
                          on pr.idSolicitud equals sol.id
                        where pr.idCliente == idCliente && pr.idCuenta == idCuenta && pr.idSolicitud == idSolicitud
+                        && pr.activo == true
                        select new
                        {
                            Finalidad = fin.tag,
@@ -278,6 +279,8 @@ namespace solicitudes
                 txtFechaP.Text = item.Fecha.ToString();
             }
 
+
+          
         }
 
         /// <summary>
