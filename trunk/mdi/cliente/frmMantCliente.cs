@@ -111,7 +111,7 @@ namespace cliente
         {
             if (dgv.SelectedRows.Count > 0 && dgv.SelectedRows.Count <= 1)
             {
-                Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["idCliente"].Value.ToString()));
+                Form frmEdit = new frmNuevoCliente(Convert.ToInt16(dgv.SelectedRows[0].Cells["id"].Value.ToString()));
                 frmEdit.ShowDialog();
             }
         }

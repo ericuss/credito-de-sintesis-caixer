@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtFechaNacimiento = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtMail = new CustomValidatorTextBox.CustomValidatorTextBox();
@@ -50,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(98, 293);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
+            this.txtUsuario.Size = new System.Drawing.Size(189, 20);
+            this.txtUsuario.TabIndex = 28;
+            this.txtUsuario.ValidValue = "";
+            this.txtUsuario.Visible = false;
+            this.txtUsuario.zzCampoBd = null;
+            this.txtUsuario.zzValidateIsNumeric = false;
+            this.txtUsuario.zzValidateLength = false;
+            this.txtUsuario.zzValidMaxLength = ((short)(0));
             // 
             // txtFechaNacimiento
             // 
@@ -191,6 +205,7 @@
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnGuardar
             // 
@@ -201,6 +216,7 @@
             this.btnGuardar.TabIndex = 17;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // chkCrearUser
             // 
@@ -300,20 +316,6 @@
             this.txtError.zzValidateIsNumeric = false;
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(98, 293);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(189, 20);
-            this.txtUsuario.TabIndex = 28;
-            this.txtUsuario.ValidValue = "";
-            this.txtUsuario.Visible = false;
-            this.txtUsuario.zzCampoBd = null;
-            this.txtUsuario.zzValidateIsNumeric = false;
-            this.txtUsuario.zzValidateLength = false;
-            this.txtUsuario.zzValidMaxLength = ((short)(0));
             // 
             // frmNuevoCliente
             // 
