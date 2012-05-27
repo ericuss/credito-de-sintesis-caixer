@@ -202,6 +202,7 @@ namespace cliente
 
             if (chkCrearUser.Checked == true)
             {
+                tools.clsTools.addNotificacion("Se recominenda cambiar la contraseña por defecto", "Cambio contraseña", idCliente);
                 usuario tmpUsuario = new usuario
                 {
                     login = txtUsuario.ValidValue,
