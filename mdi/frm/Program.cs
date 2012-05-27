@@ -15,10 +15,10 @@ namespace uMdi
         static void Main()
         {
             Application.EnableVisualStyles();
-             Application.Run(new mdiPral());
-        
+            Application.Run(new mdiPral());
+
         }
 
-     
+
     }
 }

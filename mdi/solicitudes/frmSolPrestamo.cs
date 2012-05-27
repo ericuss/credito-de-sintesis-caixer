@@ -182,7 +182,7 @@ namespace solicitudes
                     pres = item;
                 }
 
-                context.DeleteObject(pres);
+                pres.activo = false;
 
                 solicitud sol = new solicitud();
                 var tmpSol = from ss in context.solicitud
@@ -194,6 +194,7 @@ namespace solicitudes
                 }
                 sol.idEstadoSolicitud = 4;
                 context.SaveChanges();
+                tools.clsTools.addNotificacion("Se le ha denegado el denegado el prestamo con un importe de " + txtImporteSol.Text, "Prestamo denegado", idCliente);
                 this.Dispose();
             }
             catch (Exception exx)
@@ -245,7 +246,7 @@ namespace solicitudes
                        join sol in context.solicitud
                          on pr.idSolicitud equals sol.id
                        where pr.idCliente == idCliente && pr.idCuenta == idCuenta && pr.idSolicitud == idSolicitud
-                        && pr.activo == true
+                      
                        select new
                        {
                            Finalidad = fin.tag,
