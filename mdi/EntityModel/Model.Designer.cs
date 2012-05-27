@@ -4188,6 +4188,30 @@ namespace EntityModel
         private Nullable<global::System.Int32> _idSolicitud;
         partial void OnidSolicitudChanging(Nullable<global::System.Int32> value);
         partial void OnidSolicitudChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> activo
+        {
+            get
+            {
+                return _activo;
+            }
+            set
+            {
+                OnactivoChanging(value);
+                ReportPropertyChanging("activo");
+                _activo = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("activo");
+                OnactivoChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _activo;
+        partial void OnactivoChanging(Nullable<global::System.Boolean> value);
+        partial void OnactivoChanged();
 
         #endregion
 
