@@ -57,48 +57,12 @@ namespace cliente
         #region "Eventos"
 
         /// <summary>
-        /// Evento que al marcar el checkbox, genera un usuario y lo muestra en un TextBox
-        /// </summary>
-        /// <param name="sender">Parametro del Eento</param>
-        /// <param name="e">Parametro del Eento</param>
-        private void chkCrearUser_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkCrearUser.Checked == true)
-            {
-                try
-                {
-                    txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
-                    txtUsuario.Visible = true;
-                }
-                catch (Exception exx)
-                {
-                    txtError.setError(exx.Message);
-
-                }
-            }
-            else
-            {
-                txtUsuario.Visible = false;
-            }
-        }
-
-        /// <summary>
-        /// Evento que cierra el formulario
-        /// </summary>
-        /// <param name="sender">Parametros del evento</param>
-        /// <param name="e">Parametros del evento</param>
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        /// <summary>
         /// Evento que guarda los cambios. Si se trata de una edicion, redirije el flujo de la aplicacion hacia el metodo de updatear.
         /// Si se trata de una alta redirije el flujo de la aplicacion hacia el insert.
         /// </summary>
         /// <param name="sender">Parametro del Evento</param>
         /// <param name="e">Parametro del Evento</param>
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (!checkCampos())
             {
@@ -126,6 +90,46 @@ namespace cliente
             }
         }
 
+
+        /// <summary>
+        /// Evento que cierra el formulario
+        /// </summary>
+        /// <param name="sender">Parametros del evento</param>
+        /// <param name="e">Parametros del evento</param>
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
+        /// <summary>
+        /// Evento que al marcar el checkbox, genera un usuario y lo muestra en un TextBox
+        /// </summary>
+        /// <param name="sender">Parametro del Eento</param>
+        /// <param name="e">Parametro del Eento</param>
+        private void chkCrearUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCrearUser.Checked == true)
+            {
+                try
+                {
+                    txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
+                    txtUsuario.Visible = true;
+                }
+                catch (Exception exx)
+                {
+                    txtError.setError(exx.Message);
+
+                }
+            }
+            else
+            {
+                txtUsuario.Visible = false;
+            }
+        }
+
+ 
+        
         #endregion
 
         #region "Metodos"
@@ -345,6 +349,8 @@ namespace cliente
             }
         }
         #endregion
+
+    
 
 
     }
