@@ -87,32 +87,40 @@ namespace uCuenta
         /// <param name="e">Parametro del evento</param>
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
-
-            cuenta tmpCuenta = new cuenta();
-            var cun = from cu in context.cuenta
-                      where cu.id == idCuenta
-                      select cu;
-            foreach (var item in cun)
+            try
             {
-                tmpCuenta = item;
-            }
+                int idCuenta = Convert.ToInt16(dgv.SelectedRows[0].Cells["idCuenta"].Value.ToString());
 
-            cuentacliente tmpCC = new cuentacliente();
-            var ccu = from cc in context.cuentacliente
-                      where cc.idCuenta == idCuenta
-                      select cc;
-            foreach (var item in ccu)
+                cuenta tmpCuenta = new cuenta();
+                var cun = from cu in context.cuenta
+                          where cu.id == idCuenta
+                          select cu;
+                foreach (var item in cun)
+                {
+                    tmpCuenta = item;
+                }
+
+                cuentacliente tmpCC = new cuentacliente();
+                var ccu = from cc in context.cuentacliente
+                          where cc.idCuenta == idCuenta
+                          select cc;
+                foreach (var item in ccu)
+                {
+                    notificarEliminacion(item.idCliente, tmpCuenta);
+                    tmpCC = item;
+                    context.DeleteObject(tmpCC);
+                }
+
+
+                context.DeleteObject(tmpCuenta);
+                context.SaveChanges();
+                loadCuentas();
+            }
+            catch (Exception ex)
             {
-                notificarEliminacion(item.idCliente, tmpCuenta);
-                tmpCC = item;
-                context.DeleteObject(tmpCC);
+                txtError.setError("Error borrando cuenta, Quizas Tiene Dependencias");
+                Console.WriteLine(ex.Message);
             }
-
-
-            context.DeleteObject(tmpCuenta);
-            context.SaveChanges();
-            loadCuentas();
         }
         /// <summary>
         /// Abre el formulario de añadir titulares

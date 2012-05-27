@@ -137,37 +137,20 @@ namespace solicitudes
                     sol = item;
                 }
                 sol.idEstadoSolicitud = 2;
-               
+
                 context.AddTomovimiento(mov);
-              
-                prestamo pres;
-                if (txtCuota.Text != "")
-                {
-                    pres = new prestamo
-                   {
-                       idFinalidad = idFinalidad,
-                       importe = Convert.ToDecimal(txtImporteSol.Text),
-                       cuota = Convert.ToSingle(txtCuota.Text),
-                       idCliente = idCliente,
-                       idCuenta = idCuenta,
-                       idSolicitud = idSolicitud
 
-                   };
-                }
-                else
+                prestamo pres = new prestamo();
+                var tpres = from pr in context.prestamo
+                            where pr.idSolicitud == idSolicitud && pr.idCliente == idCliente && pr.idCuenta == idCuenta
+                            select pr;
+                foreach (var item in tpres)
                 {
-                    pres = new prestamo
-                    {
-                        idFinalidad = idFinalidad,
-                        importe = Convert.ToDecimal(txtImporteSol.Text),
-                        plazo = Convert.ToInt16(txtPlazo.Text),
-                        idCliente = idCliente,
-                        idCuenta = idCuenta,
-                        idSolicitud = idSolicitud
-
-                    };
+                    pres = item;
                 }
-                context.AddToprestamo(pres);
+                pres.activo = true;
+
+
                 context.SaveChanges();
                 //notificar
                 tools.clsTools.addNotificacion("Se ha aceptado la solicitud del prestamo con un importe de " + imp, "Prestamo Aceptado", idCliente);
@@ -190,6 +173,17 @@ namespace solicitudes
         {
             try
             {
+                prestamo pres = new prestamo();
+                var tpres = from pr in context.prestamo
+                            where pr.idSolicitud == idSolicitud && pr.idCliente == idCliente && pr.idCuenta == idCuenta
+                            select pr;
+                foreach (var item in tpres)
+                {
+                    pres = item;
+                }
+
+                context.DeleteObject(pres);
+
                 solicitud sol = new solicitud();
                 var tmpSol = from ss in context.solicitud
                              where ss.id == idSolicitud
@@ -240,8 +234,8 @@ namespace solicitudes
         /// </summary>
         private void loadResumen()
         {
-            
-           var pres = from pr in context.prestamo
+
+            var pres = from pr in context.prestamo
                        join fin in context.finalidadprestamo
                         on pr.idFinalidad equals fin.id
                        join cli in context.cliente
@@ -280,7 +274,7 @@ namespace solicitudes
             }
 
 
-          
+
         }
 
         /// <summary>

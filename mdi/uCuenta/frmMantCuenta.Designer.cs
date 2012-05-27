@@ -38,6 +38,7 @@
             this.txtCuenta = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.gbFiltro.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
@@ -69,7 +70,7 @@
             // gbResultado
             // 
             this.gbResultado.Location = new System.Drawing.Point(12, 112);
-            this.gbResultado.Size = new System.Drawing.Size(672, 201);
+            this.gbResultado.Size = new System.Drawing.Size(672, 212);
             this.gbResultado.Text = "Cuentas";
             // 
             // gbFiltro
@@ -93,10 +94,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgvCliente);
-            this.groupBox1.Location = new System.Drawing.Point(15, 348);
+            this.groupBox1.Location = new System.Drawing.Point(15, 359);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(669, 130);
             this.groupBox1.TabIndex = 16;
@@ -105,9 +106,9 @@
             // 
             // dgvCliente
             // 
-            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCliente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCliente.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -139,7 +140,7 @@
             // btnMantenimiento
             // 
             this.btnMantenimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnMantenimiento.Location = new System.Drawing.Point(15, 319);
+            this.btnMantenimiento.Location = new System.Drawing.Point(15, 330);
             this.btnMantenimiento.Name = "btnMantenimiento";
             this.btnMantenimiento.Size = new System.Drawing.Size(157, 23);
             this.btnMantenimiento.TabIndex = 19;
@@ -195,11 +196,25 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // txtError
+            // 
+            this.txtError.Location = new System.Drawing.Point(15, 495);
+            this.txtError.Name = "txtError";
+            this.txtError.Size = new System.Drawing.Size(669, 20);
+            this.txtError.TabIndex = 20;
+            this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
+            this.txtError.zzCampoBd = null;
+            this.txtError.zzValidateIsNumeric = false;
+            this.txtError.zzValidateLength = false;
+            this.txtError.zzValidMaxLength = ((short)(0));
+            // 
             // frmMantCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 490);
+            this.ClientSize = new System.Drawing.Size(696, 520);
+            this.Controls.Add(this.txtError);
             this.Controls.Add(this.btnMantenimiento);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnNuevaCuenta);
@@ -221,11 +236,13 @@
             this.Controls.SetChildIndex(this.btnNuevaCuenta, 0);
             this.Controls.SetChildIndex(this.btnBorrar, 0);
             this.Controls.SetChildIndex(this.btnMantenimiento, 0);
+            this.Controls.SetChildIndex(this.txtError, 0);
             this.gbFiltro.ResumeLayout(false);
             this.gbFiltro.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -240,5 +257,6 @@
         private System.Windows.Forms.Label label1;
         private CustomValidatorTextBox.CustomValidatorTextBox txtCuenta;
         private customTextCs.txtBuscar csBuscar;
+        private CustomValidatorTextBox.CustomValidatorTextBox txtError;
     }
 }
