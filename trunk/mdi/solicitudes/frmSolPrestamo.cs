@@ -377,5 +377,14 @@ namespace solicitudes
 
         #endregion
 
+        private void frmSolPrestamo_Load_1(object sender, EventArgs e)
+        {
+            loadResumen();
+            loadPersonalData();
+            loadCuentas();
+            loadAcciones();
+            loadHistoricoAcciones();
+        }
+
     }
 }

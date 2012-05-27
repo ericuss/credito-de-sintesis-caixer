@@ -115,6 +115,7 @@ namespace cliente
                 {
                     txtUsuario.Text = txtNombre.ValidValue + txtApellido.ValidValue.Substring(0, 2) + genrandom(2, false);
                     txtUsuario.Visible = true;
+                    lblUsr.Visible = true;
                 }
                 catch (Exception exx)
                 {
@@ -125,6 +126,7 @@ namespace cliente
             else
             {
                 txtUsuario.Visible = false;
+                lblUsr.Visible = false;
             }
         }
 
@@ -223,6 +225,7 @@ namespace cliente
         private void setData(int idc)
         {
             var cliente = from cli in context.cliente
+                         
                           where cli.id == idc
                           select new
                           {
@@ -234,9 +237,12 @@ namespace cliente
                               Poblacion = cli.poblacion,
                               Correo = cli.mail,
                               DNI = cli.dni,
-                              FechaNacimiento = cli.fechaNacimiento
+                              FechaNacimiento = cli.fechaNacimiento,
+                             
 
                           };
+
+           
             foreach (var item in cliente)
             {
                 txtApellido.ValidValue = item.Apellido;
@@ -247,6 +253,23 @@ namespace cliente
                 txtNombre.ValidValue = item.Nombre;
                 txtPoblacion.ValidValue = item.Poblacion;
                 txtTelfono.ValidValue = item.Telefono;
+                
+            }
+
+
+            var user = from usr in context.usuario
+                       where usr.idCliente == idCliente
+                       select usr;
+            if (user.Count() > 0)
+            {
+                foreach (var item in user)
+                {
+                    txtUsuario.Visible = true;
+                    txtUsuario.Text = item.login;
+                    chkCrearUser.Visible = false;
+                    lblUsr.Visible = true;
+                }
+
             }
 
         }

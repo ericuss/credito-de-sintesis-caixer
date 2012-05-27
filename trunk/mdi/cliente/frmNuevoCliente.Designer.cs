@@ -51,6 +51,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
+            this.lblUsr = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.lblUsr);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
             this.groupBox1.Controls.Add(this.txtDNI);
@@ -223,7 +225,7 @@
             this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCrearUser.AutoSize = true;
-            this.chkCrearUser.Location = new System.Drawing.Point(171, 265);
+            this.chkCrearUser.Location = new System.Drawing.Point(151, 259);
             this.chkCrearUser.Name = "chkCrearUser";
             this.chkCrearUser.Size = new System.Drawing.Size(116, 17);
             this.chkCrearUser.TabIndex = 16;
@@ -317,6 +319,16 @@
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
+            // lblUsr
+            // 
+            this.lblUsr.AutoSize = true;
+            this.lblUsr.Location = new System.Drawing.Point(36, 296);
+            this.lblUsr.Name = "lblUsr";
+            this.lblUsr.Size = new System.Drawing.Size(43, 13);
+            this.lblUsr.TabIndex = 29;
+            this.lblUsr.Text = "Usuario";
+            this.lblUsr.Visible = false;
+            // 
             // frmNuevoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +371,6 @@
         private CustomValidatorTextBox.CustomValidatorTextBox txtApellido;
         private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
         private CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
+        private System.Windows.Forms.Label lblUsr;
     }
 }
