@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblUsr = new System.Windows.Forms.Label();
             this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtFechaNacimiento = new CustomValidatorTextBox.CustomValidatorTextBox();
             this.txtDNI = new CustomValidatorTextBox.CustomValidatorTextBox();
@@ -51,15 +52,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.lblUsr = new System.Windows.Forms.Label();
+            this.chkReactivar = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.chkReactivar);
             this.groupBox1.Controls.Add(this.lblUsr);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.txtFechaNacimiento);
@@ -88,12 +90,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             // 
+            // lblUsr
+            // 
+            this.lblUsr.AutoSize = true;
+            this.lblUsr.Location = new System.Drawing.Point(36, 296);
+            this.lblUsr.Name = "lblUsr";
+            this.lblUsr.Size = new System.Drawing.Size(43, 13);
+            this.lblUsr.TabIndex = 29;
+            this.lblUsr.Text = "Usuario";
+            this.lblUsr.Visible = false;
+            // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(98, 293);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(189, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(117, 20);
             this.txtUsuario.TabIndex = 28;
             this.txtUsuario.ValidValue = "";
             this.txtUsuario.Visible = false;
@@ -222,8 +234,8 @@
             // 
             // chkCrearUser
             // 
-            this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCrearUser.AutoSize = true;
             this.chkCrearUser.Location = new System.Drawing.Point(151, 259);
             this.chkCrearUser.Name = "chkCrearUser";
@@ -307,8 +319,8 @@
             // 
             // txtError
             // 
-            this.txtError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.txtError.Location = new System.Drawing.Point(12, 397);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(325, 20);
@@ -319,15 +331,15 @@
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
             // 
-            // lblUsr
+            // chkReactivar
             // 
-            this.lblUsr.AutoSize = true;
-            this.lblUsr.Location = new System.Drawing.Point(36, 296);
-            this.lblUsr.Name = "lblUsr";
-            this.lblUsr.Size = new System.Drawing.Size(43, 13);
-            this.lblUsr.TabIndex = 29;
-            this.lblUsr.Text = "Usuario";
-            this.lblUsr.Visible = false;
+            this.chkReactivar.AutoSize = true;
+            this.chkReactivar.Location = new System.Drawing.Point(237, 295);
+            this.chkReactivar.Name = "chkReactivar";
+            this.chkReactivar.Size = new System.Drawing.Size(72, 17);
+            this.chkReactivar.TabIndex = 30;
+            this.chkReactivar.Text = "Reactivar";
+            this.chkReactivar.UseVisualStyleBackColor = true;
             // 
             // frmNuevoCliente
             // 
@@ -340,6 +352,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNuevoCliente";
             this.Text = "Nuevo Cliente";
+           
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -372,5 +385,6 @@
         private CustomValidatorTextBox.CustomValidatorTextBox txtNombre;
         private CustomValidatorTextBox.CustomValidatorTextBox txtUsuario;
         private System.Windows.Forms.Label lblUsr;
+        private System.Windows.Forms.CheckBox chkReactivar;
     }
 }

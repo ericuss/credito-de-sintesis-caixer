@@ -39,6 +39,7 @@ namespace cliente
         {
             InitializeComponent();
             idCliente = -1;
+            chkReactivar.Visible = false;
         }
 
         /// <summary>
@@ -70,23 +71,25 @@ namespace cliente
             }
             else
             {
-                bCliente.clsBCliente bCliente = new bCliente.clsBCliente();
-                if (!bCliente.existeIdClienteByDni(txtDNI.Text))
-                {
 
-                    if (idCliente == -1)
+
+                if (idCliente == -1)
+                {
+                    bCliente.clsBCliente bCliente = new bCliente.clsBCliente();
+                    if (!bCliente.existeIdClienteByDni(txtDNI.Text))
                     {
                         crearCliente();
                     }
                     else
                     {
-                        updateCliente();
+                        txtError.setError("Error! Ya existe el Dni.");
                     }
                 }
                 else
                 {
-                    txtError.setError("Error! Ya existe el Dni.");
+                    updateCliente();
                 }
+
             }
         }
 
@@ -130,8 +133,8 @@ namespace cliente
             }
         }
 
- 
-        
+
+
         #endregion
 
         #region "Metodos"
@@ -150,6 +153,15 @@ namespace cliente
             {
                 clientFnal = item;
             }
+
+            usuario usr = new usuario();
+            var tusr = from u in context.usuario
+                       where u.idCliente == idCliente
+                       select u;
+            foreach (var item in tusr)
+            {
+                usr = item;
+            }
             clientFnal.nombre = txtNombre.ValidValue;
             clientFnal.apellidos = txtApellido.ValidValue;
             clientFnal.telefono = txtTelfono.ValidValue;
@@ -158,6 +170,11 @@ namespace cliente
             clientFnal.mail = txtMail.ValidValue;
             clientFnal.dni = txtDNI.ValidValue;
             clientFnal.fechaNacimiento = txtFechaNacimiento.ValidValue;
+
+            if (chkReactivar.Visible == true && chkReactivar.Checked == true)
+            {
+                usr.inactivo = false;
+            }
             context.SaveChanges();
             this.Dispose();
         }
@@ -226,7 +243,7 @@ namespace cliente
         private void setData(int idc)
         {
             var cliente = from cli in context.cliente
-                         
+
                           where cli.id == idc
                           select new
                           {
@@ -239,11 +256,11 @@ namespace cliente
                               Correo = cli.mail,
                               DNI = cli.dni,
                               FechaNacimiento = cli.fechaNacimiento,
-                             
+
 
                           };
 
-           
+
             foreach (var item in cliente)
             {
                 txtApellido.ValidValue = item.Apellido;
@@ -254,7 +271,7 @@ namespace cliente
                 txtNombre.ValidValue = item.Nombre;
                 txtPoblacion.ValidValue = item.Poblacion;
                 txtTelfono.ValidValue = item.Telefono;
-                
+
             }
 
 
@@ -269,8 +286,21 @@ namespace cliente
                     txtUsuario.Text = item.login;
                     chkCrearUser.Visible = false;
                     lblUsr.Visible = true;
+                    if (item.inactivo == true)
+                    {
+                        chkReactivar.Visible = true;
+
+                    }
+                    else
+                    {
+                        chkReactivar.Visible = false;
+                    }
                 }
 
+            }
+            else
+            {
+                chkReactivar.Visible = false;
             }
 
         }
@@ -374,7 +404,9 @@ namespace cliente
         }
         #endregion
 
-    
+
+
+
 
 
     }
