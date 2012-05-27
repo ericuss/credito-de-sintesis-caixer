@@ -90,7 +90,7 @@ namespace uCuenta
                 }
                 else
                 {
-                    txtError.setError("Error Reintegro Negativo");
+                    txtError.setError("Error Reintegro Negativo o Superior al saldo de la cuenta");
                 }
             }
             catch (Exception exx)
