@@ -45,28 +45,33 @@ namespace uTransferencia
                 bTransferencia.clsBTransferencia btrans = new bTransferencia.clsBTransferencia();
                 String cueOrig = txtEntidad.Text + "" + txtOficina.Text + "" + txtControl.Text + "" + txtCuenta.Text;
                 String cueDes = txtEntidadDes.Text + "" + txtOficinaDes.Text + "" + txtControlDes.Text + "" + txtCuentaDes.Text;
-                if (cueDes!=cueOrig)
+                if (cueDes != cueOrig)
                 {
-
-                    if (btrans.hayDinero(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text))
+                    if (txtEntidadDes.Text.Length != 4 || txtOficinaDes.Text.Length != 4 || txtControlDes.Text.Length != 2 || txtCuentaDes.Text.Length != 8)
                     {
-                        Boolean blnInsert = btrans.insertTransferenciaOrigen(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text,
-                                                           txtPorCuentaDe.Text, txtConcepto.Text, txtReferencia.Text, txtConceptoAd.Text, txtBeneficiario.Text,
-                                                           txtDescripcion.Text, txtEntidadDes.Text, txtOficinaDes.Text, txtControlDes.Text, txtCuentaDes.Text);
-                        if (blnInsert)
+                        if (btrans.hayDinero(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text))
                         {
-                            txtError.setOK("Transferencia efectuada correctamente");
+                            Boolean blnInsert = btrans.insertTransferenciaOrigen(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text,
+                                                               txtPorCuentaDe.Text, txtConcepto.Text, txtReferencia.Text, txtConceptoAd.Text, txtBeneficiario.Text,
+                                                               txtDescripcion.Text, txtEntidadDes.Text, txtOficinaDes.Text, txtControlDes.Text, txtCuentaDes.Text);
+                            if (blnInsert)
+                            {
+                                txtError.setOK("Transferencia efectuada correctamente");
+                            }
+                            else
+                            {
+                                txtError.setError("Ha ocurrido un error haciendo la transferencia");
+                            }
                         }
                         else
                         {
-                            txtError.setError("Ha ocurrido un error haciendo la transferencia");
+                            txtError.setError("La cuenta de destino no tiene un formato correcto");
                         }
                     }
                     else
                     {
                         txtError.setError("No hay suficiente dinero");
                     }
-
                 }
                 else
                 {
@@ -96,11 +101,11 @@ namespace uTransferencia
                 gbDatos.Enabled = true;
             }
         }
-       /// <summary>
-       /// Cuando pierde el foco habilita la insercion de la cuenta de destino
-       /// </summary>
-       /// <param name="sender">Parametro del evento</param>
-       /// <param name="e">Parametro del evento</param>
+        /// <summary>
+        /// Cuando pierde el foco habilita la insercion de la cuenta de destino
+        /// </summary>
+        /// <param name="sender">Parametro del evento</param>
+        /// <param name="e">Parametro del evento</param>
         private void txtImporte_Leave(object sender, EventArgs e)
         {
             gbCuentaDestino.Enabled = true;
@@ -144,10 +149,7 @@ namespace uTransferencia
                 {
                     return false;
                 }
-                if (txtEntidadDes.Text.Length != 4 && txtOficinaDes.Text.Length != 4 && txtControlDes.Text.Length != 2 && txtCuentaDes.Text.Length != 8)
-                {
-                    return false;
-                }
+
                 return true;
             }
             catch (Exception)
