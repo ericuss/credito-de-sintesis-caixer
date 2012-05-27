@@ -80,7 +80,7 @@
             // gbResultado
             // 
             this.gbResultado.Location = new System.Drawing.Point(12, 186);
-            this.gbResultado.Size = new System.Drawing.Size(789, 361);
+            this.gbResultado.Size = new System.Drawing.Size(755, 336);
             // 
             // gbFiltro
             // 

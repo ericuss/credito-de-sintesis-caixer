@@ -128,6 +128,7 @@
             this.txtError.Size = new System.Drawing.Size(459, 20);
             this.txtError.TabIndex = 6;
             this.txtError.ValidValue = "";
+            this.txtError.Visible = false;
             this.txtError.zzCampoBd = null;
             this.txtError.zzValidateIsNumeric = false;
             this.txtError.zzValidateLength = false;
