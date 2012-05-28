@@ -47,7 +47,7 @@ namespace uTransferencia
                 String cueDes = txtEntidadDes.Text + "" + txtOficinaDes.Text + "" + txtControlDes.Text + "" + txtCuentaDes.Text;
                 if (cueDes != cueOrig)
                 {
-                    if (txtEntidadDes.Text.Length != 4 || txtOficinaDes.Text.Length != 4 || txtControlDes.Text.Length != 2 || txtCuentaDes.Text.Length != 8)
+                    if (txtEntidadDes.Text.Length == 4 || txtOficinaDes.Text.Length == 4 || txtControlDes.Text.Length == 2 || txtCuentaDes.Text.Length == 8)
                     {
                         if (btrans.hayDinero(txtEntidad.Text, txtOficina.Text, txtControl.Text, txtCuenta.Text, txtImporte.Text))
                         {
@@ -65,12 +65,13 @@ namespace uTransferencia
                         }
                         else
                         {
-                            txtError.setError("La cuenta de destino no tiene un formato correcto");
+                            txtError.setError("No hay suficiente dinero");
                         }
                     }
                     else
                     {
-                        txtError.setError("No hay suficiente dinero");
+                        txtError.setError("La cuenta de destino no tiene un formato correcto");
+
                     }
                 }
                 else

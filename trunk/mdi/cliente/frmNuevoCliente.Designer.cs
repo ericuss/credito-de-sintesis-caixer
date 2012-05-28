@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.chkReactivar = new System.Windows.Forms.CheckBox();
             this.lblUsr = new System.Windows.Forms.Label();
             this.txtUsuario = new CustomValidatorTextBox.CustomValidatorTextBox();
@@ -53,22 +61,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtError = new CustomValidatorTextBox.CustomValidatorTextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -105,6 +105,86 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(6, 225);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 13);
+            this.label16.TabIndex = 38;
+            this.label16.Text = "*";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(74, 199);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "*";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(73, 168);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(11, 13);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "*";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(46, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(11, 13);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(47, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(11, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "*";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(49, 82);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 13);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(49, 55);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 13);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(53, 26);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "*";
             // 
             // chkReactivar
             // 
@@ -260,12 +340,13 @@
             // 
             // chkCrearUser
             // 
-            this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkCrearUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chkCrearUser.AutoSize = true;
-            this.chkCrearUser.Location = new System.Drawing.Point(151, 259);
+            this.chkCrearUser.Location = new System.Drawing.Point(130, 266);
+            this.chkCrearUser.MinimumSize = new System.Drawing.Size(150, 0);
             this.chkCrearUser.Name = "chkCrearUser";
-            this.chkCrearUser.Size = new System.Drawing.Size(116, 17);
+            this.chkCrearUser.Size = new System.Drawing.Size(150, 17);
             this.chkCrearUser.TabIndex = 16;
             this.chkCrearUser.Text = "Crear Usuario Web";
             this.chkCrearUser.UseVisualStyleBackColor = true;
@@ -345,8 +426,8 @@
             // 
             // txtError
             // 
-            this.txtError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtError.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtError.Location = new System.Drawing.Point(12, 397);
             this.txtError.Name = "txtError";
             this.txtError.Size = new System.Drawing.Size(325, 20);
@@ -357,86 +438,6 @@
             this.txtError.zzValidateIsNumeric = false;
             this.txtError.zzValidateLength = false;
             this.txtError.zzValidMaxLength = ((short)(0));
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(53, 26);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(11, 13);
-            this.label9.TabIndex = 31;
-            this.label9.Text = "*";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(49, 55);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 32;
-            this.label10.Text = "*";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(49, 82);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 13);
-            this.label11.TabIndex = 33;
-            this.label11.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(47, 110);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(11, 13);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "*";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(46, 139);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 13);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "*";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(73, 168);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(11, 13);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "*";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(74, 199);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(11, 13);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "*";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(6, 225);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "*";
             // 
             // frmNuevoCliente
             // 

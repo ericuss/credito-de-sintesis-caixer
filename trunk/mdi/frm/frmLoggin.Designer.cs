@@ -101,8 +101,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 6;
-            this.txtUsuario.Text = "nick2";
-            this.txtUsuario.ValidValue = "nick2";
+            this.txtUsuario.ValidValue = "";
             this.txtUsuario.zzCampoBd = null;
             this.txtUsuario.zzValidateIsNumeric = false;
             this.txtUsuario.zzValidateLength = false;
@@ -115,8 +114,7 @@
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(100, 20);
             this.txtPass.TabIndex = 7;
-            this.txtPass.Text = "12345";
-            this.txtPass.ValidValue = "12345";
+            this.txtPass.ValidValue = "";
             this.txtPass.zzCampoBd = null;
             this.txtPass.zzValidateIsNumeric = false;
             this.txtPass.zzValidateLength = false;

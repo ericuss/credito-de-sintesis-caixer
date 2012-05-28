@@ -185,27 +185,14 @@ namespace cliente
         /// </summary>
         private void crearCliente()
         {
-            /*   EntityModel.cliente tmpCliente = new EntityModel.cliente
-               {
-                   nombre = txtNombre.ValidValue,
-                   apellidos = txtApellido.ValidValue,
-                   telefono = txtTelfono.ValidValue,
-                   direccion = txtDireccion.ValidValue,
-                   poblacion = txtPoblacion.ValidValue,
-                   mail = txtMail.ValidValue,
-                   dni = txtDNI.ValidValue,
-                   fechaNacimiento = "Test",
-                   inactivo=false
-               };
-
-
-               context.AddTocliente(tmpCliente);*/
+         
             AccDatos.OLEDBCON conn = new AccDatos.OLEDBCON();
             conn.Ejecutar("insert into cliente ( nombre, apellidos,telefono,direccion,poblacion, mail,dni,fechaNacimiento,inactivo) "
             + "values ('" + txtNombre.ValidValue + "','" + txtApellido.ValidValue + "','" + txtTelfono.ValidValue + "','" + txtDireccion.ValidValue + "','"
             + txtPoblacion.ValidValue + "','" + txtMail.ValidValue + "','" + txtDNI.ValidValue + "','" + txtFechaNacimiento.ValidValue + "',0 )");
-
-            int tmpidCuenta = Convert.ToInt16(conn.LanzarConsultaT("select max(id) from cliente").Columns[0].ToString()); 
+           
+            DataTable ttable = (conn.LanzarConsultaT("select max(id) as id from cliente"));
+            int tmpidCuenta = Convert.ToInt16(ttable.Rows[0]["id"].ToString())+1;
 
             cuenta tmpCuenta = new cuenta
             {
