@@ -192,7 +192,7 @@ namespace cliente
             + txtPoblacion.ValidValue + "','" + txtMail.ValidValue + "','" + txtDNI.ValidValue + "','" + txtFechaNacimiento.ValidValue + "',0 )");
            
             DataTable ttable = (conn.LanzarConsultaT("select max(id) as id from cliente"));
-            int tmpidCuenta = Convert.ToInt16(ttable.Rows[0]["id"].ToString())+1;
+            int tmpidCliente = Convert.ToInt16(ttable.Rows[0]["id"].ToString());
 
             cuenta tmpCuenta = new cuenta
             {
@@ -207,21 +207,22 @@ namespace cliente
 
             cuentacliente tmpcc = new cuentacliente
             {
-                idCliente = tmpidCuenta,
+                idCliente = tmpidCliente,
                 idCuenta = tmpCuenta.id
             };
             context.AddTocuentacliente(tmpcc);
 
             if (chkCrearUser.Checked == true)
             {
-                tools.clsTools.addNotificacion("Se recominenda cambiar la contraseña por defecto", "Cambio contraseña", idCliente);
+                tools.clsTools.addNotificacion("Se recominenda cambiar la contraseña por defecto", "Cambio contraseña", tmpidCliente);
                 usuario tmpUsuario = new usuario
                 {
                     login = txtUsuario.ValidValue,
                     password = tools.clsTools.getMD5("12345"),
                     idioma = "es",
                     paginaPreferida = "/backend/cuenta/cuenta",
-                    inactivo = false
+                    inactivo = false,
+                    idCliente = tmpidCliente
                 };
                 context.AddTousuario(tmpUsuario);
             }
