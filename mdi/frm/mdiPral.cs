@@ -135,6 +135,11 @@ namespace uMdi
                     this.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("El conector .Net de MySql ha de estar instalado.\n Por favor instale el producto y ejecute de nuevo la aplicación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
 
 
 
