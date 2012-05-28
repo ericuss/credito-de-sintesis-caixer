@@ -8,13 +8,12 @@
 //------------------------------------------------------------------------------
 
 using System;
-using System.ComponentModel;
-using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Linq;
-using System.Runtime.Serialization;
+using System.Data.EntityClient;
+using System.ComponentModel;
 using System.Xml.Serialization;
+using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
@@ -410,7 +409,6 @@ namespace EntityModel
         private ObjectSet<prestamo> _prestamo;
 
         #endregion
-
         #region Métodos AddTo
     
         /// <summary>
@@ -574,11 +572,11 @@ namespace EntityModel
         }
 
         #endregion
-
     }
+    
 
     #endregion
-
+    
     #region Entidades
     
     /// <summary>
@@ -603,7 +601,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -754,7 +751,6 @@ namespace EntityModel
         partial void OnvalorCompraChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -835,7 +831,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -860,7 +855,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -1107,7 +1101,6 @@ namespace EntityModel
         partial void OninactivoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -1244,7 +1237,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1269,7 +1261,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -1420,7 +1411,6 @@ namespace EntityModel
         partial void OnsaldoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -1513,7 +1503,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1542,7 +1531,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -1624,7 +1612,6 @@ namespace EntityModel
         partial void OnidCuentaChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -1727,7 +1714,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1760,7 +1746,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -1887,7 +1872,6 @@ namespace EntityModel
         partial void OnmultaCancelacionChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -1914,7 +1898,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -1951,7 +1934,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -2198,7 +2180,6 @@ namespace EntityModel
         partial void OnfechaVencimientoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -2317,7 +2298,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2342,7 +2322,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -2565,7 +2544,6 @@ namespace EntityModel
         partial void OnhoraChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -2614,7 +2592,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2641,7 +2618,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -2696,7 +2672,6 @@ namespace EntityModel
         partial void OntagChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -2723,7 +2698,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2748,7 +2722,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -2803,7 +2776,6 @@ namespace EntityModel
         partial void OntagChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -2830,7 +2802,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -2855,7 +2826,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -3078,7 +3048,6 @@ namespace EntityModel
         partial void OnvalorVentaChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -3159,7 +3128,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -3188,7 +3156,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -3363,7 +3330,6 @@ namespace EntityModel
         partial void OnicoSChanged();
 
         #endregion
-
     
     }
     
@@ -3391,7 +3357,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -3569,7 +3534,6 @@ namespace EntityModel
         partial void OnrestoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -3612,7 +3576,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -3641,7 +3604,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -3816,7 +3778,6 @@ namespace EntityModel
         partial void OnborradoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -3859,7 +3820,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -3886,7 +3846,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -3965,7 +3924,6 @@ namespace EntityModel
         partial void OndireccionChanged();
 
         #endregion
-
     
     }
     
@@ -3991,7 +3949,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -4214,7 +4171,6 @@ namespace EntityModel
         partial void OnactivoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -4371,7 +4327,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -4398,7 +4353,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -4549,7 +4503,6 @@ namespace EntityModel
         partial void OnidEstadoSolicitudChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -4674,7 +4627,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -4703,7 +4655,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -4854,7 +4805,6 @@ namespace EntityModel
         partial void OnfechaCaducidadChanged();
 
         #endregion
-
     
     }
     
@@ -4882,7 +4832,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -4961,7 +4910,6 @@ namespace EntityModel
         partial void OndescripcionChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -4988,7 +4936,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -5019,7 +4966,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -5218,7 +5164,6 @@ namespace EntityModel
         partial void OnconceptoAdChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -5261,7 +5206,6 @@ namespace EntityModel
         }
 
         #endregion
-
     }
     
     /// <summary>
@@ -5294,7 +5238,6 @@ namespace EntityModel
         }
 
         #endregion
-
         #region Propiedades primitivas
     
         /// <summary>
@@ -5469,7 +5412,6 @@ namespace EntityModel
         partial void OninactivoChanged();
 
         #endregion
-
     
         #region Propiedades de navegación
     
@@ -5512,10 +5454,8 @@ namespace EntityModel
         }
 
         #endregion
-
     }
 
     #endregion
-
     
 }
